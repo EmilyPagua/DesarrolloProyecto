@@ -31,7 +31,7 @@ urlpatterns = patterns('',
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
     url(r'^verUsuario/(?P<nombre>.+)/$', 'polls.views.ver_usuario',name ='verUsuario'),
     url(r'^buscar/$', 'polls.views.busqueda',name ='busqueda'),
-    url(r'^logout/$', logout, {'next_page': '/loginPrincipal/'} ,name='logout'),
+    url(r'^logout/$', logout, {'next_page': '/login/'} ,name='logout'),
     url(r'', include('social_auth.urls')),    
     
 )

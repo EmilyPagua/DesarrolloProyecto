@@ -140,4 +140,4 @@ class RegistroAmigo(forms.Form):
         amigo = User.objects.get(id=id_amigo)
         amistad = RelacionUsuario(usuario=id_usuario, fkamigo=amigo)
         amistad.save()
-        
+

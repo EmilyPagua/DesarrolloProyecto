@@ -135,8 +135,11 @@ class RegistroAmigo(forms.Form):
         
     def procesar_amigo(self, usuario):
         id_amigo = self.cleaned_data['fkamigo']
+        #import pdb; pdb.set_trace()
         id_usuario = UsuarioPerfil.objects.get(fkusuario=usuario)
         amigo = User.objects.get(id=id_amigo)
         amistad = RelacionUsuario(usuario=id_usuario, fkamigo=amigo)
         amistad.save()
-        
+        amistad1 = RelacionUsuario(usuario=amigo, fkamigo=id_usuario)
+        amistad1.save()
+
