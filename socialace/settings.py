@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 HEROKU = True
 #HEROKU = False
-
+ 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
 )
@@ -40,6 +40,7 @@ else:
 		'PORT': '',                      # Set to empty string for default.
 	    }
 	}
+
 
 # Hosts/domain names that are valid for this site; required if DEBUG is False
 # See https://docs.djangoproject.com/en/1.5/ref/settings/#allowed-hosts
@@ -146,6 +147,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
+    'gunicorn',
     'polls',
     'gunicorn',
     
@@ -183,17 +185,24 @@ LOGGING = {
 }
 
 
-import dj_database_url
 
 if HEROKU:
-    DATABASES['default'] = dj_database_url.config()
-    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    import dj_database_url
+    DATABASES['default']= dj_database_url.config()
+    DATABASES['default']['ENGINE']= 'django_postgrespool'
+
+    DATABASE_POOL_ARGS = {
+        'max_overflow': 5,
+        'pool_size': 5,
+        'recycle': 500,
+        }
+
+   SECURE_PROXY_SSL_HEADER = ('HTTTP_X_FOWARDED_PROTO', 'https')
 
 ALLOWED_HOSTS = ['*']
 
-
 DATE_INPUT_FORMATS = ( '%m/%d/%Y', )
-LOGIN_REDIRECT_URL = '/principalInicio/'
+LOGIN_REDIRECT_URL = '/registroUsuario/'
 #AUTENTIFICACION FACEBOOK Y GOOGLE+
 LOGIN_URL = '/login/'
 #LOGIN_REDIRECT_URL = '/facebook/'
@@ -224,3 +233,5 @@ FACEBOOK_APP_ID = '203158246533782'
 FACEBOOK_API_SECRET = '97c1295fb4c9481734c436b7e14aeec1'
 GOOGLE_OAUTH2_CLIENT_ID = '982082487474-jpkgtbep5lct0kjp4q40c8avbbg0ppho.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = '-d8_3Ebw-X5_83gFpCFK8ygd'
+
+

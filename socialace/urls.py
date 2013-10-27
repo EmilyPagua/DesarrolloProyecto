@@ -15,8 +15,10 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
+    #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
     #url(r'^$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
+#    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
+    url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^prueba/$', 'polls.views.prueba', name='prueba'),
     url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
@@ -34,7 +36,6 @@ urlpatterns = patterns('',
     url(r'', include('social_auth.urls')),    
     
 )
-
 
 urlpatterns += patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
