@@ -160,7 +160,7 @@
 				
 						
 						<table width="482" height="130" border="1" align="left">
-                            <form enctype="multipart/form-data" name="form3" method="post" action="{% url 'login' %}" >
+                            <form enctype="multipart/form-data" name="form3" method="post" action="." >
                             {% csrf_token %}
 				            <tr>
  							<td>
@@ -173,10 +173,9 @@
                                		{{ campo.label }} {{ campo }}
                                	 </label>	 
                                {% endfor %}		                             
-                              	
-						         <label>
+                              	<label>
 						               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-						         </label> 
+						        </label> 
 						    </td>					                                          	                      
 						   	<td>
                                 <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
@@ -190,9 +189,6 @@
 				<!-- ENDS wrapper-main -->
 			</div>
 			<!-- ENDS MAIN -->
-			
 		
-	
-	
 	</body>
 </html>

@@ -2,7 +2,11 @@
 from django.core.urlresolvers import reverse
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-HEROKU =False 
+#HEROKU = True
+#HEROKU = False
+HEROKU = False
+ 
+ 
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -48,7 +52,7 @@ ALLOWED_HOSTS = []
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'America/Chicago'
+TIME_ZONE = 'America/Caracas'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
@@ -147,6 +151,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'gunicorn',
     'polls',
+    'gunicorn',
     
 )
 
@@ -182,6 +187,8 @@ LOGGING = {
 }
 
 
+
+
 if HEROKU:
     import dj_database_url
     DATABASES['default']= dj_database_url.config()
@@ -192,11 +199,15 @@ if HEROKU:
         'pool_size': 5,
         'recycle': 500,
         }
+    
+    SECURE_PROXY_SSL_HEADER = ('HTTTP_X_FOWARDED_PROTO', 'https')
 
-SECURE_PROXY_SSL_HEADER = ('HTTTP_X_FOWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
 
 DATE_INPUT_FORMATS = ( '%m/%d/%Y', )
-LOGIN_REDIRECT_URL = '/principalInicio/'
+LOGIN_REDIRECT_URL = '/registroUsuario/'
 #AUTENTIFICACION FACEBOOK Y GOOGLE+
 LOGIN_URL = '/login/'
 #LOGIN_REDIRECT_URL = '/facebook/'
@@ -227,3 +238,5 @@ FACEBOOK_APP_ID = '203158246533782'
 FACEBOOK_API_SECRET = '97c1295fb4c9481734c436b7e14aeec1'
 GOOGLE_OAUTH2_CLIENT_ID = '982082487474-jpkgtbep5lct0kjp4q40c8avbbg0ppho.apps.googleusercontent.com'
 GOOGLE_OAUTH2_CLIENT_SECRET = '-d8_3Ebw-X5_83gFpCFK8ygd'
+
+
