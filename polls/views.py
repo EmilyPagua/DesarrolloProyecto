@@ -65,12 +65,14 @@ def modificar_album(request,id_album):
 
 #Registrar Usuario
 def registro_usuario(request):
-	if request.method == 'POST':
-	    formulario = RegistroUsuario(request.POST, request.FILES)
-	    if formulario.is_valid():
-	        formulario.procesar_registro()
-	contexto = {'formulario': RegistroUsuario()}
-	return render_to_response('usuarioRegistrar.html',context_instance=RequestContext(request, contexto))
+  
+    if request.method == 'POST':
+        formulario = RegistroUsuario(request.POST, request.FILES)
+        if formulario.is_valid():
+	    formulario.procesar_registro()
+	    return HttpResponseRedirect(reverse('loginPrincipal'))   
+    contexto = {'formulario': RegistroUsuario()}
+    return render_to_response('usuarioRegistrar.html',context_instance=RequestContext(request, contexto))
 	
 
 #Crear Album
