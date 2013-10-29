@@ -18,7 +18,7 @@
                                {% for album in albumes %}
 						      	 <label> 
 						       		*-----Nombre: {{ album.first_name }}
-						       		description: {{ album.last_name }} <br/>
+						       		Descripion: {{ album.last_name }} <br/>
 						       		
 						       	 </label>	 
 						       {% endfor %}                              
