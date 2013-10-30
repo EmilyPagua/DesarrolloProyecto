@@ -21,7 +21,8 @@ if not HEROKU:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'socialacebd',                      # Or path to database file if using sqlite3.
+            'NAME': 'socialbd',                      # Or path to database file if using sqlite3.
+#            socialbd
             # The following settings are not used with sqlite3:
             'USER': 'postgres',
             'PASSWORD': '1234567',
@@ -207,7 +208,7 @@ ALLOWED_HOSTS = ['*']
 
 
 DATE_INPUT_FORMATS = ( '%m/%d/%Y', )
-LOGIN_REDIRECT_URL = '/registroUsuario/'
+LOGIN_REDIRECT_URL = '/principalInicio/'
 #AUTENTIFICACION FACEBOOK Y GOOGLE+
 LOGIN_URL = '/login/'
 #LOGIN_REDIRECT_URL = '/facebook/'
