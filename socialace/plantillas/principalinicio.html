@@ -1,0 +1,58 @@
+{% extends 'base.html'%}
+{% block contenido%}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}registro.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}font/css/fontello.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<script src="../../jquery-1.9.1.js"></script>
+	<script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.datepicker.js"></script>
+	<link rel="stylesheet" href="../demos.css">
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+	</script>
+
+							<!-- TABS -->
+							<!-- the tabs -->
+							<ul class="tabs">
+							</ul>
+							
+							<!-- tab "panes" -->
+							<div class="panes">
+							
+								<!-- Posts -->
+								<div>
+									<ul class="blocks-thumbs thumbs-rollover">
+										<li>
+											<img  src="{{STATIC_URL}}img/fotos.jpeg" alt="SocialAce" with="190" height="190"/></a>
+											<div class="excerpt">
+												<a href="single.html" class="header">Tus mejores imagenes</a>
+												
+											</div>
+											
+										</li>
+										<li>
+										<img  src="{{STATIC_URL}}img/video.jpg" alt="SocialAce" with="190" height="190"/></a>
+											<div class="excerpt">
+												<a href="single.html" class="header">Publica tus videos</a>
+												
+											</div>
+											
+										</li>
+										<li>
+										<img  src="{{STATIC_URL}}img/redessociales.png" alt="SocialAce" with="190" height="190"/></a>
+											<div class="excerpt">
+												<a href="single.html" class="header">Otras redes asociadas</a>
+												
+											</div>
+											
+										</li>
+									</ul>
+								</div>
+								<!-- ENDS posts -->
+								
+							</div>
+{% endblock %}
