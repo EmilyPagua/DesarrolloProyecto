@@ -14,39 +14,11 @@ class UsuarioPerfil(models.Model):
 	direccion = models.CharField(max_length=100)
 	twitter = models.CharField(max_length=50)
 	facebook = models.CharField(max_length=50)
-	privacidad = models.BooleanField(max_length=50)
+	privacidad = models.BooleanField(max_length=10)
 	foto = models.ImageField(upload_to='imagenusuario', null=True,blank=True)
 
 	def __str__(self):
 		return self.fkusuario.username
-
-
-class Calendario(models.Model):
-	fecha = models.DateTimeField('date published')
-
-	def __str__(self):
-		return '%s' % self.fecha
-
-
-class Instagram(models.Model):
-	url = models.CharField(max_length=200)
-
-	def __str__(self):
-		return self.url
-
-
-class SoundCloud(models.Model):
-	url = models.CharField(max_length=200)
-
-	def __str__(self):
-		return self.url
-
-
-class YouTube(models.Model):
-	url = models.CharField(max_length=200)
-
-	def __str__(self):
-		return self.url
 
 
 class Album(models.Model):
@@ -55,50 +27,53 @@ class Album(models.Model):
 	privacidad = models.BooleanField(default=True)
 	foto = models.ImageField(upload_to='imagenalbum')
 	fkusuario = models.ForeignKey(User)
-	fkcalendario = models.ForeignKey(Calendario)
 
 	def __str__(self):
 		return self.nombre
 
-
-class Comentario(models.Model):
+class Contenido(models.Model):
 	descripcion	= models.CharField(max_length=200)
-	fkemisor = models.ForeignKey(User)
-	fkalbum	= models.ForeignKey(Album)
-	fkinstagram	= models.ForeignKey(Instagram)
-	fkyoutube = models.ForeignKey(YouTube)
-	fksoundcloud = models.ForeignKey(SoundCloud)
-	fkcalendario = models.ForeignKey(Calendario)
+	foto = models.ImageField(upload_to='imagenusuario', null=True,blank=True)
+	video = models.ImageField(upload_to='videousuario', null=True,blank=True)
+	audio = models.ImageField(upload_to='audiousuario', null=True,blank=True)
 	
 	def __str__(self):
 		return self.descripcion
 
 
-class MeGusta(models.Model):
-	like = models.CharField(max_length=200)
-	fkemisor = models.ForeignKey(User)
+class Comentario(models.Model):
+	descripcion	= models.CharField(max_length=200)
+	userComentador = models.ForeignKey(User)
 	fkalbum	= models.ForeignKey(Album)
-	fkinstagram	= models.ForeignKey(Instagram)
-	fkyoutube = models.ForeignKey(YouTube)
-	fksoundcloud = models.ForeignKey(SoundCloud)
-	fkcalendario = models.ForeignKey(Calendario)
+	
+	def __str__(self):
+		return self.descripcion
+
+
+class Like(models.Model):
+	like = models.BooleanField(max_length=50)
+	userComentador = models.ForeignKey(User)
+	fkalbum	= models.ForeignKey(Album)
 
 	def __str__(self):
 		return self.like
 
-class Notificacion(models.Model):
-	fkemisor = models.ForeignKey(User)
-	fkalbum	= models.ForeignKey(Album)
-	fkinstagram	= models.ForeignKey(Instagram)
-	fkyoutube = models.ForeignKey(YouTube)
-	fksoundcloud = models.ForeignKey(SoundCloud)
-	fkcalendario = models.ForeignKey(Calendario)
+class Historial(models.Model):
+	accion = models.CharField(max_length=200)
+	usuario = models.ForeignKey(User)
+	fkcontenido	= models.ForeignKey(Contenido)
+	fkcomentario = models.ForeignKey(Comentario)
+	fklike = models.ForeignKey(Like)
 	
+	def __str__(self):
+		return self.accion
 
-class RelacionNotificacion(models.Model):
-	fknotificacion = models.ManyToManyField(Notificacion)
+	
+class Notificacion(models.Model):
+	usuario = models.ForeignKey(User)
+	historia = models.ForeignKey(Historial)
+	
+	def __str__(self):
+		return self.usuario
 
-
-class RelacionComentario(models.Model):
-	fkcomentario = models.ManyToManyField(Comentario)
 

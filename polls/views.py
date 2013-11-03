@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from .forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo
-from .models import UsuarioPerfil , Album , Calendario
+from .models import UsuarioPerfil , Album 
 from django.contrib.auth.models import User
 from django.db.models import Q
 

@@ -191,12 +191,19 @@
 			<div id="header">
 				<!-- wrapper-header -->
 			  <div class="wrapper">
-					<a href="{% url 'principalInicio' %}"><img id="logo" src="{{STATIC_URL}}img/logo3.png" alt="SocialAce" with="120" height="120"/></a>
+			  	<a href="{% url 'principalInicio' %}">
+				  	<img id="logo" src="{{STATIC_URL}}img/logo3.png" alt="SocialAce" with="120" height="120"/>
+				</a>
+				
+				</tr>
 					<div class="top-search">
-						<label> <h6>Usuario: {{ usuario.username }} -- {{ usuario.id }} </h6></label> 
-						
-					</div>
-				 
+					<tr>
+					<td>
+						<label> <h6>Usuario: {{ usuario.username }} </label>					
+						<label><img src="{{STATIC_URL}}{{usuario.usuarioperfil.foto}} " alt="{{usuario.usuarioperfil.foto}}"  with="50" height="70"/> </label>
+					</td>
+					</tr>
+					</div>				
 			  </div>
 			  
 	</div>

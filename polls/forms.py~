@@ -1,5 +1,5 @@
 from django import forms
-from polls.models import UsuarioPerfil, Calendario, Album
+from polls.models import UsuarioPerfil,  Album
 from django.contrib.auth.models import User
 import datetime
 
@@ -91,8 +91,8 @@ class EditarUsuario(RegistroUsuario):
 
 #Formulario del Album
 class RegistroAlbum(forms.Form):
-    nombre = forms.CharField(max_length=50, label='Nombre')
-    descripcion = forms.CharField(max_length=20,label='Descripcion')
+    nombre = forms.CharField(max_length=50, label='Nombre (*)')
+    descripcion = forms.CharField(max_length=20,label='Descripcion (*)')
     privacidad = forms.BooleanField(label='Privacidad', required=False)
     foto = forms.ImageField(label='Foto', required=False)   
    
@@ -107,9 +107,7 @@ class RegistroAlbum(forms.Form):
         descripcion = self.cleaned_data['descripcion']
         privacidad = self.cleaned_data['privacidad']
         foto = self.cleaned_data['foto']
-        calendar = Calendario(fecha=datetime.date.today())
-        calendar.save()
-        album = Album(nombre=nombre, descripcion=descripcion, privacidad=privacidad, fkusuario=usuario, fkcalendario=calendar)
+        album = Album(nombre=nombre, descripcion=descripcion, privacidad=privacidad, fkusuario=usuario)
         if foto:
             album.foto = foto
         album.save()

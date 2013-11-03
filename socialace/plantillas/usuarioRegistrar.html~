@@ -175,7 +175,7 @@
                                {% endfor %}	
                                 <br>	                               
                                <label>
-                                     <h1>(*) Datos obligatorios</h1>
+                                     <h7>(*) Datos obligatorios</h7>
                                 </label> 
                                 <br>	                             
                               	<label>
