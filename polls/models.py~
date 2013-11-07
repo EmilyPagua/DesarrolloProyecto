@@ -4,6 +4,9 @@ from django.conf import settings
 from django.contrib.auth.models import User
 import datetime
 
+
+User.add_to_class('amigos', models.ManyToManyField('self', symmetrical=True,  blank=True))
+
 # Create your models here.
 class UsuarioPerfil(models.Model):
 	fkusuario = models.OneToOneField(User)
@@ -17,15 +20,6 @@ class UsuarioPerfil(models.Model):
 	def __str__(self):
 		return self.fkusuario.username
 
-class RelacionUsuario(models.Model):
-    fkamigo = models.ForeignKey(User) #es el que NO esta logueado
-    usuario = models.ForeignKey(UsuarioPerfil) # es el usuario Logueado
-    
-    class Meta:
-        unique_together = ['fkamigo', 'usuario']
-
-	def __str__(self):
-		return '%s %s' % (self.fkamigo, self.fkamigo)
 
 class Calendario(models.Model):
 	fecha = models.DateTimeField('date published')

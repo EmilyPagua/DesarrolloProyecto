@@ -21,18 +21,27 @@
                          <h5>Registrar Datos</h5>
                     </label>    							
                    <br>
+                   <br>
+                   <br>
                    {% for campo in formulario %}
                   	 <label> 
-                   		{{ campo.label }} {{ campo }}
+                   		{{ campo.label }} <br> {{ campo }}
+                   		
                    	 </label>	 
-                   {% endfor %}		                             
-                  	
+                   {% endfor %}		
+                     <br>                                                
+		              	 <br>	                               
+		                   <label>
+		                         <h7>(*) Datos obligatorios</h7>
+		                   </label> 
+		                 <br>	  
+                     <br>                                
 			         <label>
 			               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
 			         </label> 
 			    </td>					                                          	                      
 			   	<td>
-                    <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
+                    <img src="{{STATIC_URL}}img/albumes.png" alt="SocialAce" with="400" height="400" aling="left">  
                 </td>
                </form>  
                </table>

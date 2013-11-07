@@ -1,8 +1,7 @@
 from django.contrib import admin
-from polls.models import UsuarioPerfil, Calendario, Instagram, SoundCloud, YouTube, Album, Comentario, MeGusta, RelacionComentario, RelacionNotificacion, Notificacion, RelacionUsuario
+from polls.models import UsuarioPerfil, Calendario, Instagram, SoundCloud, YouTube, Album, Comentario, MeGusta, RelacionComentario, RelacionNotificacion, Notificacion
 
 admin.site.register(UsuarioPerfil)
-admin.site.register(RelacionUsuario)
 admin.site.register(Calendario)
 admin.site.register(Instagram)
 admin.site.register(SoundCloud)

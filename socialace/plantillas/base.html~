@@ -191,12 +191,16 @@
 			<div id="header">
 				<!-- wrapper-header -->
 			  <div class="wrapper">
-					<a href="index.html"><img id="logo" src="{{STATIC_URL}}img/logo3.png" alt="SocialAce" with="190" height="190"/></a>
+					<a href="index.html"><img id="logo" src="{{STATIC_URL}}img/logo3.png" alt="SocialAce" with="120" height="120"/></a>
+					<div class="top-search">
+						<label> <h6>Usuario: {{ usuario.username }} -- {{ usuario.id }} </h6></label> 
+						
+					</div>
 				 
 			  </div>
 			  
 	</div>
-			<hr align="LEFT" size="0" width="300" color="white" noshade> 
+
 				<!-- ENDS wrapper-header -->					
 			</div>
 			<!-- ENDS HEADER -->			
@@ -213,10 +217,15 @@
 						<div class="navbar navbar-inverse">
 <!-- navbar content -->
 						  <ul class="nav navbar-nav">
-						  
+						  <li>
+								<form id="form_busqueda" class="formulariodemo cf" action="" method='POST'>
+								{% csrf_token %}
+  <input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
+  <button type="submit" onclick="javascript:buscarUsuario();">buscar</button>
+</form>
+							</li>
 							<li align="LEFT">
-							  <a href="#">
-								Inicio
+							  <a href="{% url 'principalInicio' %}"> Inicio
 								<!-- Indicator with number -->
 								<span class="navbar-unread"></span>
 							  </a>
@@ -258,6 +267,8 @@
 						
 							</li>	
 							
+																										 
+							
 							 <li class="current-menu-item">
 							 	<a href="#">Perfil
 							 	<span class="navbar-unread"></span>
@@ -267,7 +278,7 @@
 									
 								</ul>
 						
-							</li>	
+							</li>
 							<li align="LEFT">
 							  <a href="{% url 'logout' %}">
 								Salir
@@ -275,21 +286,7 @@
 								<span class="navbar-unread"></span>
 							  </a>
 							</li>	
-											
-							 <li align="LEFT">
-							  <a href="{% url 'logout' %}">
-								USUARIO: {{ usuario.username }}
-								<!-- Indicator with number -->
-								<span class="navbar-unread"></span>
-							  </a>
-							</li>	
-							<li>
-								<form id="form_busqueda" class="formulariodemo cf" action="" method='POST'>
-								{% csrf_token %}
-  <input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
-  <button type="submit" onclick="javascript:buscarUsuario();">buscar</button>
-</form>
-							</li>
+							
 							
 						  </ul>
 						</div>

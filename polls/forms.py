@@ -1,16 +1,16 @@
 from django import forms
-from polls.models import UsuarioPerfil, Calendario, Album, RelacionUsuario
+from polls.models import UsuarioPerfil, Calendario, Album
 from django.contrib.auth.models import User
 import datetime
 
 
 class RegistroUsuario(forms.Form):
-    usuario = forms.CharField(max_length=50, label='Usuario')
-    clave =  forms.CharField(max_length=20, widget=forms.PasswordInput,label='Clave')
-    nombre =  forms.CharField(max_length=50, label='Nombre')
-    apellido = forms.CharField(max_length=50, label='Apellido')
-    nacimiento = forms.CharField(max_length=50, label='Nacimiento')
-    direccion =  forms.CharField(max_length=50, label='Direccion')
+    usuario = forms.CharField(max_length=50, label='Usuario (*)')
+    clave =  forms.CharField(max_length=20, widget=forms.PasswordInput,label='Clave (*)')
+    nombre =  forms.CharField(max_length=50, label='Nombre (*)')
+    apellido = forms.CharField(max_length=50, label='Apellido (*)')
+    nacimiento = forms.CharField(max_length=50, label='Nacimiento (*)')
+    direccion =  forms.CharField(max_length=50, label='Direccion (*)')
     twitter =  forms.CharField(max_length=50, label='Twitter')
     facebook =  forms.CharField(max_length=50, label='Facebook')
     correo =  forms.CharField(max_length=50, label='Correo')
@@ -91,8 +91,8 @@ class EditarUsuario(RegistroUsuario):
 
 #Formulario del Album
 class RegistroAlbum(forms.Form):
-    nombre = forms.CharField(max_length=50, label='Nombre')
-    descripcion = forms.CharField(max_length=20,label='Descripcion')
+    nombre = forms.CharField(max_length=50, label='Nombre (*)')
+    descripcion = forms.CharField(max_length=20,label='Descripcion (*)')
     privacidad = forms.BooleanField(label='Privacidad', required=False)
     foto = forms.ImageField(label='Foto', required=False)   
    

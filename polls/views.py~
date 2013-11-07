@@ -70,7 +70,7 @@ def registro_usuario(request):
         formulario = RegistroUsuario(request.POST, request.FILES)
         if formulario.is_valid():
 	    formulario.procesar_registro()
-	    return HttpResponseRedirect(reverse('loginPrincipal'))   
+	    return HttpResponseRedirect(reverse('login'))   
     contexto = {'formulario': RegistroUsuario()}
     return render_to_response('usuarioRegistrar.html',context_instance=RequestContext(request, contexto))
 	

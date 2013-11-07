@@ -6,18 +6,10 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'socialace.views.home', name='home'),
-    # url(r'^socialace/', include('socialace.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-#    url(r'^$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
-    url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
-   # url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
+    url(r'^$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
+    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
+   #url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^prueba/$', 'polls.views.prueba', name='prueba'),
     url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
@@ -31,7 +23,7 @@ urlpatterns = patterns('',
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
     url(r'^verUsuario/(?P<nombre>.+)/$', 'polls.views.ver_usuario',name ='verUsuario'),
     url(r'^buscar/$', 'polls.views.busqueda',name ='busqueda'),
-    url(r'^logout/$', logout, {'next_page': '/login/'} ,name='logout'),
+    url(r'^logout/$', logout, {'next_page': '/loginPrincipal/'} ,name='logout'),
     url(r'', include('social_auth.urls')),    
     
 )
