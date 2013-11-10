@@ -7,28 +7,30 @@
 	</script>
 
 	<!-- content -->
-					<div id="content">
-						<table width="482" height="130" border="1" align="left">                                                         
-				            <tr>
- 							<td>
-                                <label>
-                                     <h2>Mis Amigos</h2>
-                                </label>    							
-                               <br> 
-                               {% for campo in persona %}
-						      	 <label> 
-						       		 <h5>{{ campo.first_name }} </h5>
-  						       						       		
-						       	 </label>	 
-						       {% endfor %}                              
-                                  
-                                
-						    </td>					                                          	                      
-						   	<td>
-                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
-                            </td>
-                             
-                           </table>
-                      </div>
+		<div id="content">
+			<table width="100" height="100" border="1" align="center">                                                         
+	            <tr>
+						<h2>Mis Amigos</h2>
+						<hr>
+                    
+                 </tr>
+                 {% for campo in persona %}
+			     <tr>
+			      	 <td>
+			      	 	<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}" alt="{{campo.usuarioperfil.foto}}" with="50" height="50"/>
+			      	 </td>
+			         <td>
+			         	Nombre: <h7>{{ campo.first_name }} {{ campo.last_name }} </h7> <br>
+			       	 	Correo: <h7>{{ campo.email }}</h7>
+			       	 </td>				       	 
+			       	  <td>
+			         	Direccion: <h7>{{ campo.usuarioperfil.direccion }} </h7> <br>
+			       	 	Correo: <h7>{{ campo.usuarioperfil.twitter }}</h7><br>
+			       	    Fecha de Nacimiento: <h7>{{ campo.usuarioperfil.fechanacimiento }}</h7>
+			       	 </td>	
+			  </tr>	
+			  {% endfor %}                                             
+               </table>
+          </div>
 					<!-- ENDS content -->						
 {% endblock %}

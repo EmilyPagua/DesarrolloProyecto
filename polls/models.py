@@ -5,8 +5,6 @@ from django.contrib.auth.models import User
 import datetime
 
 
-User.add_to_class('amigos', models.ManyToManyField('self', symmetrical=True,  blank=True))
-
 # Create your models here.
 class UsuarioPerfil(models.Model):
 	fkusuario = models.OneToOneField(User)
@@ -16,9 +14,14 @@ class UsuarioPerfil(models.Model):
 	facebook = models.CharField(max_length=50)
 	privacidad = models.BooleanField(max_length=10)
 	foto = models.ImageField(upload_to='imagenusuario', null=True,blank=True)
+	amigos = models.ManyToManyField(User, related_name ='amigos', null=True,blank=True)
 
 	def __str__(self):
-		return self.fkusuario.username
+		datos = self.fkusuario.username+ ', '+ self.fkusuario.last_name+' - ' +self.fkusuario.first_name
+		return datos
+	
+	class Meta: 
+		ordering = ('fkusuario',)
 
 
 class Album(models.Model):
@@ -30,6 +33,7 @@ class Album(models.Model):
 
 	def __str__(self):
 		return self.nombre
+
 
 class Contenido(models.Model):
 	descripcion	= models.CharField(max_length=200)

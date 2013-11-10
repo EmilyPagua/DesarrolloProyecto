@@ -124,17 +124,18 @@ class RegistroAlbum(forms.Form):
 
 #Relacion Usuario
 class RegistroAmigo(forms.Form):
-    fkamigo = forms.IntegerField(label='Amigo')
+    amigos = forms.IntegerField(label='Amigos')
     
     def __init__(self,*args, **kwargs):	
         super(RegistroAmigo, self).__init__(*args, **kwargs)
-        self.fields['fkamigo'].widget.attrs = {'placeholder': 'fkamigo', 'class': 'form-control'}
+        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos', 'class': 'form-control'}
         
     def procesar_amigo(self, usuario):
-        id_amigo = self.cleaned_data['fkamigo']
-        #import pdb; pdb.set_trace()
-        id_usuario = UsuarioPerfil.objects.get(fkusuario=usuario)
-        amigo = User.objects.get(id=id_amigo)
-        amistad = RelacionUsuario(usuario=id_usuario, fkamigo=amigo)
-        amistad.save()
+        id_amigo = self.cleaned_data['amigos']
+        #id_amigo = self.cleaned_data['fkamigo']
+        #import pdb; pdb.set_trace()        
+        k = User.objects.get(id=usuario.id)
+        l = User.objects.get(id=id_amigo)
+        l.usuarioperfil.amigos.add(k)
+        l.save()
 

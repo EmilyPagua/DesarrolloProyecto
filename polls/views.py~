@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from .forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo
-from .models import UsuarioPerfil , Album , Calendario
+from .models import UsuarioPerfil, Album 
 from django.contrib.auth.models import User
 from django.db.models import Q
 
@@ -90,12 +90,10 @@ def registro_album(request):
 
 #Ver Amigos
 @login_required
-def ver_amigos(request):
-	
+def ver_amigos(request):	
     usuario = request.user
-    up = UsuarioPerfil.objects.get(fkusuario=usuario)
-    amigos = RelacionUsuario.objects.filter(Q(usuario=usuario) | Q(fkamigo=up))
-    id_per =[amigo.id for amigo in amigos] #lista por comprension
+    amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
+    id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
     persona = User.objects.filter(id__in=id_per)
     contexto = {'persona': persona, 'usuario': usuario}
     return render_to_response('verAmigos.html',context_instance=RequestContext(request,contexto))
@@ -129,9 +127,10 @@ def ver_usuario(request, nombre):
     usuario = request.user
     if request.method == 'POST':            
         formulario = RegistroAmigo(request.POST)
-       # import pdb; pdb.set_trace()
+       
 
         if formulario.is_valid():
+
             formulario.procesar_amigo(usuario)
             return HttpResponseRedirect(reverse('principalInicio'))  
     
