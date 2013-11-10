@@ -222,81 +222,56 @@
 					<div class="wrapper">
 						<!-- Navigation -->
 						<div class="navbar navbar-inverse">
-<!-- navbar content -->
+						<!-- navbar content -->
 						  <ul class="nav navbar-nav">
 						  <li>
 								<form id="form_busqueda" class="formulariodemo cf" action="" method='POST'>
-								{% csrf_token %}
-  <input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
-  <button type="submit" onclick="javascript:buscarUsuario();">buscar</button>
-</form>
+										{% csrf_token %}
+								  <input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
+								  <button type="submit" onclick="javascript:buscarUsuario();">buscar</button>
+								</form>
 							</li>
+							<!--<li align="LEFT">
+							  <a href="{% url 'principalInicio' %}"> Inicio<span class="navbar-unread"></span></a>
+							</li align="LEFT">-->
 							<li align="LEFT">
-							  <a href="{% url 'principalInicio' %}"> Inicio
-								<!-- Indicator with number -->
-								<span class="navbar-unread"></span>
-							  </a>
+							  <a href="{% url 'prueba' %}"> Notificacion<span class="navbar-unread"></span></a>
 							</li align="LEFT">
-							
-							 <li class="current-menu-item">
-							  <a href="#">Amigos
-								<!-- Indicator with number -->
-								<span class="navbar-unread"></span>
-								<span class="navbar-unread"></span>
-							  </a>
-								<ul>
-									<li><a href="{% url 'verAmigos' %}"><span>Mis Amigos</span></a></li>
-									
-								</ul>
-							  </a>
+							<li class="current-menu-item">
+							  	<a href="#">Amigos<span class="navbar-unread"></span></a>
+								  	<ul>
+										<li><a href="{% url 'verAmigos' %}"><span>Mis Amigos</span></a></li>
+									</ul>
 							</li>
-							  <li class="current-menu-item">
-							 	<a href="#">Album
-							 	<span class="navbar-unread"></span>
-							  </a>
+							<li class="current-menu-item">
+								<a href="#">Album<span class="navbar-unread"></span></a>
 								<ul>
 									<li><a href="{% url 'verAlbumes' %}"><span>Mis Albumes</span></a></li>
 									<li><a href="{% url 'registroAlbum' %}"><span>Crear</span></a></li>
 									<li><a href="#"><span>Modificar</span></a>
-										<span class="navbar-unread"></span>
-											<ul>
-										{% for album in albumes %}
-										<label> 
-								   		
-								   		<li><a href="{% url 'modificarAlbum' album.id %}"><span>{{ album.name }} {{ album }}</span></a></li>
-					    			   	 </label>	 
-				    					   {% endfor %} 
-											
-											
+									<span class="navbar-unread"></span>
+										<ul>
+											{% for album in albumes %}
+											<label> 
+											<li><a href="{% url 'modificarAlbum' album.id %}"><span>
+											{{ album.name }} {{ album }}</span></a></li>
+											</label>	 
+			    					   		{% endfor %} 
 										</ul>
 									</li>
 								</ul>
-						
 							</li>	
-							
-																										 
-							
-							 <li class="current-menu-item">
-							 	<a href="#">Perfil
-							 	<span class="navbar-unread"></span>
-							  </a>
+							<li class="current-menu-item">
+							 	<a href="#">Perfil<span class="navbar-unread"></span></a>
 								<ul>
 									<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>Modificar</span></a></li>
-									
 								</ul>
-						
 							</li>
 							<li align="LEFT">
-							  <a href="{% url 'logout' %}">
-								Salir
-								<!-- Indicator with number -->
-								<span class="navbar-unread"></span>
-							  </a>
+								<a href="{% url 'logout' %}">Salir<span class="navbar-unread"></span></a>
 							</li>	
-							
-							
-						  </ul>
-						</div>
+						</ul>
+					</div>
 
 								<!-- search -->
 						

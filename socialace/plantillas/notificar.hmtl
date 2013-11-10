@@ -1,0 +1,41 @@
+{% extends 'base.html'%}
+{% block contenido%}
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}registro.css">
+<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}font/css/fontello.css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
+	<script src="../../jquery-1.9.1.js"></script>
+	<script src="../../ui/jquery.ui.core.js"></script>
+	<script src="../../ui/jquery.ui.widget.js"></script>
+	<script src="../../ui/jquery.ui.datepicker.js"></script>
+	<link rel="stylesheet" href="../demos.css">
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+	</script>
+
+	<!-- content -->
+					<div id="content">
+						<form name="form1" method="post" action= "" >
+						
+						<table width="482" height="130" border="1" align="left">
+                            <form name="form3" method="post" action="">
+				            <tr>
+ 							<td>
+                                <label>
+                                     <h5>Mis Amigo</h5>
+                                </label>    							
+                               <br>                               
+                                  
+                                
+						    </td>					                                          	                      
+						   	<td>
+                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
+                            </td>
+                             
+                           </table>
+                         </form>
+                      </div>
+					<!-- ENDS content -->						
+{% endblock %}

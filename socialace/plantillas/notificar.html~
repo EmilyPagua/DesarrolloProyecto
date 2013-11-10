@@ -1,0 +1,53 @@
+{% extends 'base.html'%}
+{% block contenido%}
+<!-- Loading Flat UI -->
+		<link href="{{STATIC_URL}}flat-ui.css" rel="stylesheet">
+		<link href="{{STATIC_URL}}docs.css" rel="stylesheet">
+
+		<link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.ico">
+		<!-- END Loading Flat UI -->
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+	</script>
+
+	<!-- content -->
+					<div id="content">
+						<table width="482" height="130" border="1" align="left">                                                         
+						 
+				            <tr>
+ 							<td>
+                                <label>
+                                     <h5>Mis Notificaciones</h5>
+                                </label>    							
+                               <br> <br> 
+                              
+                               {% for campo in informacion %}
+                                <form name="form3"  action="."  method="post" enctype="multipart/form-data">
+						      	 <label> 						       		
+						       		<h6>
+						       		
+						       		{{ campo.historia.usuario.first_name }}
+						       		{{ campo.historia.usuario.last_name }}</h6><h7>
+						       		{{ campo.descripcion }}
+						       		</h7>
+						       	 </label><br>	
+						       	 <label>
+						               <button class="btn btn-block btn-lg btn-info" type="submit">Aceptar</button> 
+						         
+						               <button class="btn btn-block btn-lg btn-info" type="submit">Rechazar</button> 
+						         </label> 
+						       	 
+								 </form>
+						       {% endfor %}                              
+                            </td>					                                          	                      
+						   	<td>
+                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
+                            </td>
+                           
+                         </table>
+
+                      </div>
+					<!-- ENDS content -->						
+{% endblock %}

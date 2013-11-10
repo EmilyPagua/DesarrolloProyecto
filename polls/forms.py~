@@ -1,5 +1,5 @@
 from django import forms
-from polls.models import UsuarioPerfil,  Album
+from polls.models import UsuarioPerfil,  Album, Notificacion,Historial
 from django.contrib.auth.models import User
 import datetime
 
@@ -130,12 +130,35 @@ class RegistroAmigo(forms.Form):
         super(RegistroAmigo, self).__init__(*args, **kwargs)
         self.fields['amigos'].widget.attrs = {'placeholder': 'amigos', 'class': 'form-control'}
         
+    def procesar_notificacion(self, usuario):
+        id_amigo = self.cleaned_data['amigos']
+        l = User.objects.get(id=id_amigo)
+        k = User.objects.get(id=usuario.id)
+        #llenar historial
+        b = Historial(usuario=k, accion='amistad')
+        b.save()
+        #llenar notificacion
+        c = Notificacion(usuario=l, historia=b, descripcion ='Quiere tu amistad')
+        c.save()
+        
+        #import pdb; pdb.set_trace()        
+        #k = User.objects.get(id=usuario.id)
+        #l.usuarioperfil.amigos.add(k)
+        #l.save()
+
     def procesar_amigo(self, usuario):
         id_amigo = self.cleaned_data['amigos']
-        #id_amigo = self.cleaned_data['fkamigo']
-        import pdb; pdb.set_trace()        
-        k = User.objects.get(id=usuario.id)
         l = User.objects.get(id=id_amigo)
-        l.usuarioperfil.amigos.add(k)
-        l.save()
+        k = User.objects.get(id=usuario.id)
+        #llenar historial
+        #b = Historial(usuario=k, accion='amistad')
+        #b.save()
+        #llenar notificacion
+        #c = Notificacion(usuario=l, historia=b, descripcion ='Quiere tu amistad')
+        #c.save()
+        
+        #import pdb; pdb.set_trace()        
+        #k = User.objects.get(id=usuario.id)
+        #l.usuarioperfil.amigos.add(k)
+        #l.save()
 

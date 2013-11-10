@@ -65,19 +65,20 @@ class Like(models.Model):
 class Historial(models.Model):
 	accion = models.CharField(max_length=200)
 	usuario = models.ForeignKey(User)
-	fkcontenido	= models.ForeignKey(Contenido)
-	fkcomentario = models.ForeignKey(Comentario)
-	fklike = models.ForeignKey(Like)
+	fkcontenido	= models.ForeignKey(Contenido, null=True,blank=True)
+	fkcomentario = models.ForeignKey(Comentario, null=True,blank=True)
+	fklike = models.ForeignKey(Like, null=True,blank=True)
 	
 	def __str__(self):
-		return self.accion
+		return self.usuario.username+' '+self.accion
 
 	
 class Notificacion(models.Model):
 	usuario = models.ForeignKey(User)
-	historia = models.ForeignKey(Historial)
+	historia = models.ForeignKey(Historial, null=True,blank=True)
+	descripcion = models.CharField(max_length=200)
+	
 	
 	def __str__(self):
-		return self.usuario
-
+		return self.usuario.username + '  <---  '+ self.historia.usuario.username 
 
