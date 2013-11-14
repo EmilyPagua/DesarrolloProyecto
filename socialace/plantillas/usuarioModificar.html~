@@ -13,14 +13,49 @@
 	$(function() {
 		$( ".datepicker" ).datepicker();
 	});
+	
+				function validarForm(formulario) {
+			   if(formulario.usuario.value.length==0) { //comprueba que no esté vacío
+				formulario.usuario.focus();   
+				alert('Requiere de un nombre de usuario'); 
+				return false; //devolvemos el foco
+			  }
+			  if(formulario.clave.value.length==0) { //comprueba que no esté vacío
+				formulario.clave.focus();
+				alert('Requiere de una clave personal');
+				return false;
+			  }	
+			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+				formulario.nombre.focus();
+				alert('Requiere de un nombre');
+				return false;
+			  }	
+			   if(formulario.apellido.value.length==0) { //comprueba que no esté vacío
+				formulario.apellido.focus();
+				alert('Requiere de un apellido');
+				return false;
+			  }	
+			   if(formulario.nacimiento.value.length==0) { //comprueba que no esté vacío
+				formulario.nacimiento.focus();
+				alert('Requiere de una fecha de nacimiento');
+				return false;
+			  }	
+			  if(formulario.direccion.value.length==0) { //comprueba que no esté vacío
+				formulario.direccion.focus();
+				alert('Requiere de una direccion');
+				return false;
+			  }
+			  
+			 alert('Será registrado en SocialAce');		  
+			  return true;
+			}
 	</script>
 
 	<!-- content -->
 					<div id="content">
-						<form name="form1" method="post" action= "" >
 						
 						<table width="482" height="130" border="1" align="left">
-                            <form name="form3"  action="{% url 'modificarUsuario' usuario.id %}"  method="post" enctype="multipart/form-data">
+                            <form name="form3"  action="{% url 'modificarUsuario' usuario.id %}"  method="post" enctype="multipart/form-data" onsubmit="return validarForm(this);">
                             {% csrf_token %}
 				            <tr>
  							<td>
@@ -42,9 +77,9 @@
 						   	<td>
                                 <img src="{{STATIC_URL}}img/modificar.png" alt="SocialAce" with="400" height="400" aling="left"/>  
                             </td>
-                             
-                           </table>
-                         </form>
+              
+                         </table>
+                    </form>          
                       </div>
 					<!-- ENDS content -->						
 {% endblock %}

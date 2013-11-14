@@ -264,7 +264,9 @@
 							<li class="current-menu-item">
 							 	<a href="#">Perfil<span class="navbar-unread"></span></a>
 								<ul>
+									<li><a href="{% url 'Miperfil' usuario.id %}"><span>Mi perfil</span></a></li>
 									<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>Modificar</span></a></li>
+									
 								</ul>
 							</li>
 							<li align="LEFT">

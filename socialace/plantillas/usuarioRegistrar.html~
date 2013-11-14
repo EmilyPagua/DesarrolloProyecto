@@ -114,7 +114,7 @@
 			<div id="header">
 				<!-- wrapper-header -->
 			  <div class="wrapper">
-					<a href="{% url 'logout' %}"><img id="logo" src="{{STATIC_URL}}img/logo3.png" alt="SocialAce" with="190" height="190"/></a>
+					<a href="{% url 'login' %}"><img id="logo" src="{{STATIC_URL}}img/logo3.png" alt="SocialAce" with="190" height="190"/></a>
 				 
 			  </div>
 	</div>
@@ -139,10 +139,45 @@
 			</div>
 			<!-- ENDS Menu -->
 			
-			<script>
+	<script type="text/javascript">
 	$(function() {
 		$( ".datepicker" ).datepicker();
 	});
+			function validarForm(formulario) {
+			   if(formulario.usuario.value.length==0) { //comprueba que no esté vacío
+				formulario.usuario.focus();   
+				alert('Requiere de un nombre de usuario'); 
+				return false; //devolvemos el foco
+			  }
+			  if(formulario.clave.value.length==0) { //comprueba que no esté vacío
+				formulario.clave.focus();
+				alert('Requiere de una clave personal');
+				return false;
+			  }	
+			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+				formulario.nombre.focus();
+				alert('Requiere de un nombre');
+				return false;
+			  }	
+			   if(formulario.apellido.value.length==0) { //comprueba que no esté vacío
+				formulario.apellido.focus();
+				alert('Requiere de un apellido');
+				return false;
+			  }	
+			   if(formulario.nacimiento.value.length==0) { //comprueba que no esté vacío
+				formulario.nacimiento.focus();
+				alert('Requiere de una fecha de nacimiento');
+				return false;
+			  }	
+			  if(formulario.direccion.value.length==0) { //comprueba que no esté vacío
+				formulario.direccion.focus();
+				alert('Requiere de una direccion');
+				return false;
+			  }
+			  
+			 alert('Insertado Correctamente');		  
+			  return true;
+			}
 	</script>
 			<!-- MAIN -->
 			<div id="main">
@@ -160,7 +195,7 @@
 				
 						
 						<table width="482" height="130" border="1" align="left">
-                            <form enctype="multipart/form-data" name="form3" method="post" action="." >
+                            <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
                             {% csrf_token %}
 				            <tr>
  							<td>

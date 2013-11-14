@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block contenido%}
+	<!-- content -->
+					<div id="content">
+						<table width="482" height="130" border="1" align="left">                                                         
+				            <tr>
+				            
+                                     <h3>Mis Perfil</h3>
+                               
+				            </tr>
+				            <hr>
+				            <tr>
+				             {% for campo in usu %}
+	 								<td>
+		                             <img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="150" height="150"/><br>
+		                        </td>
+		                        <td>
+		                          
+		                          
+								  	 <label> 
+								   	   <h5> Usuario: {{ campo.username }}</h5> <br>
+								       <h6> Nombre Completo:{{ campo.last_name}} {{ campo.first_name}}<br>
+								       <h6> Email: {{ campo.email }}<br>
+								   	   <h6> Direccion: {{ campo.usuarioperfil.direccion}}<br>
+								   	   <h6> Fecha Nacimiento: {{ campo.usuarioperfil.nacimiento}}<br>
+								       <h6> Twitter: {{ campo.usuarioperfil.twitter}}<br>
+								   	</label>
+								   	 <br/>
+								 </td>					                                          	                      
+							   
+                            <tr>
+                             {% endfor %}      
+                             
+                           </table>
+                      </div>
+					<!-- ENDS content -->						
+{% endblock %}

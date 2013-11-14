@@ -120,6 +120,7 @@ class RegistroAlbum(forms.Form):
       
         if foto:
             album.foto = foto
+        
         album.save()    
 
 #Relacion Usuario

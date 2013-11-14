@@ -120,6 +120,8 @@ class RegistroAlbum(forms.Form):
       
         if foto:
             album.foto = foto
+        elif foto=""
+            album.foto = '{{STATIC_URL}}img/paisajesDefinido.jpg'
         album.save()    
 
 #Relacion Usuario
@@ -128,7 +130,7 @@ class RegistroAmigo(forms.Form):
     
     def __init__(self,*args, **kwargs):	
         super(RegistroAmigo, self).__init__(*args, **kwargs)
-        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos1', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos', 'class': 'form-control'}#,'style':'visibility:hidden'}
         
     def procesar_notificacion(self, usuario):      	
         id_amigo = self.cleaned_data['amigos']

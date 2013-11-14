@@ -10,17 +10,30 @@
   <link rel="stylesheet" href="/resources/demos/style.css" />
 
 		<script>
-	$(function() {
-		$( ".datepicker" ).datepicker();
-	});
+	function validarForm(formulario) {
+			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+				formulario.nombre.focus();   
+				alert('Requiere de un nombre'); 
+				return false; //devolvemos el foco
+			  }
+			  if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
+				formulario.descripcion.focus();
+				alert('Requiere de una descripcion');
+				return false;
+			  }	
+			  
+			 	alert('Su album sera modificado');	  
+			  return true;
+			}
 	</script>
 
 	<!-- content -->
 					<div id="content">
-						<form name="form1" method="post" action= "" >
+						
 						
 						<table width="482" height="130" border="1" align="left">
-                            <form name="form3" method="POST" action="{% url 'modificarAlbum' album.id %}" enctype="multipart/form-data"/>
+                            
+                            <form name="form3" method="POST" action="{% url 'modificarAlbum' album.id %}" enctype="multipart/form-data" onsubmit="return validarForm(this);">
                             {% csrf_token %}
 				            <tr>
  							<td>
@@ -31,6 +44,8 @@
                                {% for campo in formulario %}
                               	 <label> 
                                		{{ campo.label }} {{ campo }}
+                               		
+                               		
                                	 </label>	 
                                {% endfor %}	                   
                                
@@ -43,8 +58,9 @@
                                 <img src="{{STATIC_URL}}img/modificarima.png" alt="SocialAce" with="400" height="400" aling="left"/>  
                             </td>
                              
-                           </table>
+              
                          </form>
+                      </table>
                       </div>
 					<!-- ENDS content -->						
 {% endblock %}

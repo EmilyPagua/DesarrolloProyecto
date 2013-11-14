@@ -4,16 +4,30 @@
 <link rel="stylesheet" type="text/css" href="{{STATIC_URL}}font/css/fontello.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
-	<script>
-	$(function() {
-		$( "#datepicker" ).datepicker();
-	});
+	
+	<script type="text/javascript">
+			function validarForm(formulario) {
+			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+				formulario.nombre.focus();   
+				alert('Requiere de un nombre'); 
+				return false; //devolvemos el foco
+			  }
+			  if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
+				formulario.descripcion.focus();
+				alert('Requiere de una descripcion');
+				return false;
+			  }	
+			 
+			  
+			 		  
+			  return true;
+			}
 	</script>
 
 	<!-- content -->
 		<div id="content">
 			<table width="482" height="130" border="1" align="left">
-                <form enctype="multipart/form-data" name="form3" method="post" action="." >
+                <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
                 {% csrf_token %}
 	            <tr>
 				<td>
@@ -38,7 +52,7 @@
 		                 <br>	  
                      <br>                                
 			         <label>
-			               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+			               <button class="btn btn-hg btn-primary" type="submit" >Aceptar</button> 
 			         </label> 
 			    </td>					                                          	                      
 			   	<td>

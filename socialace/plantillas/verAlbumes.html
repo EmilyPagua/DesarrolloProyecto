@@ -1,30 +1,26 @@
 {% extends 'base.html'%}
 {% block contenido%}
-	<script>
-	$(function() {
-		$( "#datepicker" ).datepicker();
-	});
-	</script>
-
 	<!-- content -->
 					<div id="content">
 						<table width="482" height="130" border="1" align="left">                                                         
 				            <tr>
  							<td>
                                 <label>
-                                     <h5>Mis Albumes</h5>
+                                     <h4>Mis Albumes</h4>
                                 </label>    							
                                <br> 
                                {% for album in albumes %}
 						      	 <label> 
-						       		Nombre: {{ album.nombre }}
-						       		Descripcion: {{ album.descripcion }} <br/>
-						       		
+						       		<h5>{{ album.nombre }}</h5>
+						       		Descripcion: {{ album.descripcion }} 
+						       		<br/>
+						       		<img src="{{STATIC_URL}}{{ album.foto}}" alt="{{album.foto}}" with="50" height="50"/>
+						       		<a rel="nofollow" href="{% url 'prueba' %}"> <h7> Agregar fotos</h7> </a>
+									<a rel="nofollow" href="{% url 'prueba' %}"> <h7>Ver</h7> </a>
 						       	 </label>
-<a rel="nofollow" href="{% url 'prueba' %}"> <h7> Agregar fotos</h7> </a>
-<a rel="nofollow" href="{% url 'prueba' %}"> <h7>Ver</h7> </a>
-<label>
-                                      
+						       	 <br/>
+
+				                        
 						       {% endfor %}                              
                                   
                                 

@@ -64,6 +64,16 @@ def modificar_usuario(request,id_usuario):
     return render_to_response('usuarioModificar.html',context_instance=RequestContext(request, contexto))
 
 
+#Ver Mi Perfil
+@login_required
+def ver_MiPerfil(request,id_usuario):    
+    usuario = request.user
+    usu = User.objects.filter(id=id_usuario)
+    
+    contexto = {'usuario': usuario, 'usu':usu}
+    return render_to_response('verMiPerfil.html',context_instance=RequestContext(request,contexto))
+
+
 #---------------- A L B U M E S ------------------
 
 #Crear Album

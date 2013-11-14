@@ -15,7 +15,7 @@ from django.db.models import Q
 def prueba(request):
     usuario = request.user
     contexto = {'usuario': usuario}
-    return render_to_response('notificar.html',context_instance=RequestContext(request, contexto))
+    return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
 
 
 
@@ -62,6 +62,16 @@ def modificar_usuario(request,id_usuario):
     }
     contexto = {'formulario': EditarUsuario(initial=form_data), 'usuario': usuario}
     return render_to_response('usuarioModificar.html',context_instance=RequestContext(request, contexto))
+
+
+#Ver Mi Perfil
+@login_required
+def ver_MiPerfil(request,id_usuario):    
+    usuario = request.user
+    usu = get_object_or_404(User, id=id_usuario)
+    
+    contexto = {'usuario': usuario, 'usu':usu}
+    return render_to_response('verMiPerfil.html',context_instance=RequestContext(request,contexto))
 
 
 #---------------- A L B U M E S ------------------
@@ -118,7 +128,8 @@ def ver_notificacion(request):
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
             print '------------------------------------'
-            print formulario
+            print formulario  
+            print '------------------------------------'
             formulario.procesar_amigo(usuario)
             return HttpResponseRedirect(reverse('principalInicio')) 
             
