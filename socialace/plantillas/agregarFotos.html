@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+{% block contenido%}
+	<script>
+	$(function() {
+		$( "#datepicker" ).datepicker();
+	});
+	
+
+	jQuery.ajax({
+		type: "GET",
+		dataType: "jsonp", 
+		cache: false, 
+		url:  "https://api.instagram.com/v1/media/popular?client_id=b3763ab25a714807b8b3c99b4a55816a&access_token=563704717.b3763ab.8318b81a43ab41d09769b4dd49021a74", 
+		success: function(data)  { 
+				
+                $(".pics").append("<a target='_blank' href='" + data.data[i].link + "'><img src='" + data.data[i].images.low_resolution.url +"'></img></a>");
+throw 'entro en la funcion';
+                for (var i = 0; i < 10; i++) {
+                        throw 'entro en la for';
+                         $(".pics").append("<a target='_blank' href='" + data.data[i].link + "'><img src='" + data.data[i].images.low_resolution.url +"'></img></a>"); } }  
+
+ }); 
+
+
+
+</script>
+{% endblock %}

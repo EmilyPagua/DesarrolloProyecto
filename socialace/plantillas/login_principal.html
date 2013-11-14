@@ -92,6 +92,7 @@
 		<link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.ico">
 		<!-- END Loading Flat UI -->
 
+	
 	</head>
 	
 	<body class="home">
@@ -131,7 +132,11 @@
 					 js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=203158246533782";
 					 fjs.parentNode.insertBefore(js, fjs);
 					}(document, 'script', 'facebook-jssdk'));
-					</script>
+					</script> 
+
+
+
+
 			<div id="main">
 
 					
@@ -169,8 +174,72 @@
                                        <button class="btn btn-hg btn-primary" type="submit"> Aceptar</button> </label>                                 
                                     </form>
 									
-                   <label>Registrese por medio de:<a rel="nofollow" href="{% url 'registroUsuario' %}"> <h7>Registro Usuario</h7> </a><label>                                                                                                            
-                                   		
+              <!--    <label>Registrese por medio de:<a rel="nofollow" href="{% url "socialauth_begin" "facebook" %}">Facebook </a><label> --> 
+<label> Registrese por medio de: <label>
+<a rel="nofollow" href="{% url 'registroUsuario' %}"> <h7>Registro Usuario</h7> </a>
+<fb:login-button length="long" onlogin="location.href='<? echo $_SERVER['REQUEST_URI'];?>'"></fb:login-button> 
+<script type="text/javascript" src="H T T P : //static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php"></script> 
+<script type="text/javascript"> 
+FB.init("203158246533782","xd_receiver.html"); 
+</script> 
+
+
+<script type="text/javascript">
+  // Specify the language code prior to loading the JavaScript API
+  window.___gcfg = {
+    lang: 'es'
+  }
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js?onload=onLoadCallback';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+ <!-- Place this asynchronous JavaScript just before your </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
+<script type="text/javascript">
+function signinCallback(authResult) {
+  if (authResult['access_token']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    document.getElementById('signinButton').setAttribute('style', 'display: none');
+  } else if (authResult['error']) {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
+</script>
+
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="982082487474-jpkgtbep5lct0kjp4q40c8avbbg0ppho.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
+
+
+
+
+
+
+                                                                                                              
+                         
                                   </td>
                                 </tr>
                               </table>

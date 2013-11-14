@@ -15,7 +15,7 @@ from django.db.models import Q
 def prueba(request):
     usuario = request.user
     contexto = {'usuario': usuario}
-    return render_to_response('notificar.html',context_instance=RequestContext(request, contexto))
+    return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
 
 
 
