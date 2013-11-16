@@ -1,5 +1,5 @@
 from django import forms
-from polls.models import UsuarioPerfil,  Album, Notificacion,Historial
+from polls.models import UsuarioPerfil,  Album, Notificacion,Historial, Contenido
 from django.contrib.auth.models import User
 import datetime
 
@@ -120,8 +120,6 @@ class RegistroAlbum(forms.Form):
       
         if foto:
             album.foto = foto
-        elif foto=""
-            album.foto = '{{STATIC_URL}}img/paisajesDefinido.jpg'
         album.save()    
 
 #Relacion Usuario
@@ -164,4 +162,63 @@ class RegistroAmigo(forms.Form):
         #k = User.objects.get(id=usuario.id)
         #l.usuarioperfil.amigos.add(k)
         #l.save()
+
+
+#agregarfotos
+class RegistroFoto(forms.Form):
+    foto1 = forms.CharField(max_length=200, label='Fotos')  
+    foto2 = forms.CharField(max_length=200, label='Fotos')   
+    foto3 = forms.CharField(max_length=200, label='Fotos')
+    foto4 = forms.CharField(max_length=200, label='Fotos')
+    foto5 = forms.CharField(max_length=200, label='Fotos')
+    foto6 = forms.CharField(max_length=200, label='Fotos')
+    foto7 = forms.CharField(max_length=200, label='Fotos')
+    foto8 = forms.CharField(max_length=200, label='Fotos')
+    foto9 = forms.CharField(max_length=200, label='Fotos')
+    foto10 = forms.CharField(max_length=200, label='Fotos')                                               
+    
+    def __init__(self,*args, **kwargs):	
+        super(RegistroFoto, self).__init__(*args, **kwargs)
+        self.fields['foto1'].widget.attrs = {'placeholder': 'foto1', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto2'].widget.attrs = {'placeholder': 'foto2', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto3'].widget.attrs = {'placeholder': 'foto3', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto4'].widget.attrs = {'placeholder': 'foto4', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto5'].widget.attrs = {'placeholder': 'foto5', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto6'].widget.attrs = {'placeholder': 'foto6', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto7'].widget.attrs = {'placeholder': 'foto7', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto8'].widget.attrs = {'placeholder': 'foto8', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto9'].widget.attrs = {'placeholder': 'foto9', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['foto10'].widget.attrs = {'placeholder': 'foto10', 'class': 'form-control'}#,'style':'visibility:hidden'}
+
+    def procesar_foto(self, usuario, album):      	
+        foto1 = self.cleaned_data['foto1']
+        foto2 = self.cleaned_data['foto2']
+        foto3 = self.cleaned_data['foto3']
+        foto4 = self.cleaned_data['foto4']
+        foto5 = self.cleaned_data['foto5']
+        foto6 = self.cleaned_data['foto6']
+        foto7 = self.cleaned_data['foto7']
+        foto8 = self.cleaned_data['foto8']
+        foto9 = self.cleaned_data['foto9']
+        foto10 = self.cleaned_data['foto10']
+        contenido1 = Contenido(fkalbum= album, descripcion= foto1)
+        contenido1.save()
+        contenido2 = Contenido(fkalbum= album, descripcion= foto2)
+        contenido2.save()
+        contenido3 = Contenido(fkalbum= album, descripcion= foto3)
+        contenido3.save() 
+        contenido4 = Contenido(fkalbum= album, descripcion= foto4)
+        contenido4.save()
+        contenido5 = Contenido(fkalbum= album, descripcion= foto5)
+        contenido5.save(
+        contenido6 = Contenido(fkalbum= album, descripcion= foto6)
+        contenido6.save()
+        contenido7 = Contenido(fkalbum= album, descripcion= foto7)
+        contenido7.save()
+        contenido8 = Contenido(fkalbum= album, descripcion= foto8)
+        contenido8.save()
+        contenido9 = Contenido(fkalbum= album, descripcion= foto9)
+        contenido9.save()
+        contenido10 = Contenido(fkalbum= album, descripcion= foto0)
+        contenido10.save()
 

@@ -62,7 +62,16 @@ miArray[i] = data.data[i].images.low_resolution.url;
 
 
       		}   
-
+<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
+       {% csrf_token %}
+       {% for campo in formulario %}
+                 	
+  {{ campo }}
+  
+  {% endfor %}	
+  
+              <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+      </form>
 for(var i=0;i<miArray.length;i++){
 document.write("<b>miArray["+i+"] is </b>=>"+miArray[i]+"<br>");
 }                

@@ -14,12 +14,13 @@ urlpatterns = patterns('',
     
     url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
     url(r'^modificarUsuario/(?P<id_usuario>\d+)/$', 'polls.views.modificar_usuario',name ='modificarUsuario'),
-    url(r'^MiPerfil/(?P<id_usuario>\d+)/$', 'polls.views.ver_MiPerfil',name ='Miperfil'),    
+    url(r'^MiPerfil/(?P<id_usuario>\d+)/$', 'polls.views.registro_foto',name ='Miperfil'),    
     
     url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),
     url(r'^modificarAlbum/(?P<id_album>\d+)/$', 'polls.views.modificar_album',name ='modificarAlbum'),
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
-    
+    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.registro_foto',name ='agregarFoto'),
+
     url(r'^registroAmigo/$', 'polls.views.registro_amigo',name ='registroAmigo'),
     url(r'^verAmigos/$', 'polls.views.ver_amigos',name ='verAmigos'),
     url(r'^verUsuario/(?P<nombre>.+)/$', 'polls.views.ver_usuario',name ='verUsuario'),
