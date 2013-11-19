@@ -124,15 +124,15 @@ class RegistroAlbum(forms.Form):
 
 #Relacion Usuario
 class RegistroAmigo(forms.Form):
-    amigos = forms.IntegerField(label='Amigos')
+    amigos = forms.CharField(max_length=50, label='Amigos',required=False) 
     
     def __init__(self,*args, **kwargs):	
         super(RegistroAmigo, self).__init__(*args, **kwargs)
-        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos', 'class': 'form-control'}
+        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos1', 'class': 'form-control'}#,'style':'visibility:hidden'}
         
-    def procesar_notificacion(self, usuario):
+    def procesar_notificacion(self, usuario):      	
         id_amigo = self.cleaned_data['amigos']
-        l = User.objects.get(id=id_amigo)
+        l = User.objects.get(username=id_amigo)
         k = User.objects.get(id=usuario.id)
         #llenar historial
         b = Historial(usuario=k, accion='amistad')
@@ -140,16 +140,17 @@ class RegistroAmigo(forms.Form):
         #llenar notificacion
         c = Notificacion(usuario=l, historia=b, descripcion ='Quiere tu amistad')
         c.save()
-        
-        #import pdb; pdb.set_trace()        
-        #k = User.objects.get(id=usuario.id)
-        #l.usuarioperfil.amigos.add(k)
-        #l.save()
+       
 
+#ACOMODANDO
     def procesar_amigo(self, usuario):
-        id_amigo = self.cleaned_data['amigos']
-        l = User.objects.get(id=id_amigo)
+        import pdb; pdb.set_trace() 
         k = User.objects.get(id=usuario.id)
+        
+        id_amigo = self.cleaned_data['amigos']           
+        print self.cleaned_data['amigos']
+        l = User.objects.get(username=id_amigo)
+        print l
         #llenar historial
         #b = Historial(usuario=k, accion='amistad')
         #b.save()

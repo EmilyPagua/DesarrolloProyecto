@@ -24,24 +24,35 @@
                                <br> <br> 
                               
                                {% for campo in informacion %}
-                                <form name="form3"  action="."  method="post" enctype="multipart/form-data">
-						      	 <label> 						       		
+                               <label> 						       		
 						       		<h6>
 						       		
 						       		{{ campo.historia.usuario.first_name }}
 						       		{{ campo.historia.usuario.last_name }}</h6><h7>
 						       		{{ campo.descripcion }}
+						       		
 						       		</h7>
-						       	 </label><br>	
+						       	 </label>
+						       	   <form name="form3"  action="."  method="post" enctype="multipart/form-data">
+						      	 {% csrf_token %}
+										<label><input  class="form-control" placeholder="amigos" type="text" value="{{ campo.historia.usuario.username }}"></input></label>
+										<!--style="visibility:hidden"-->
+								
+						      
+						       	 
+						       	<br>	
 						       	 <label>
-						               <button class="btn btn-block btn-lg btn-info" type="submit">Aceptar</button> 
+						               <button class="btn btn-block btn-lg btn-info" type="submit" name="aceptar" value="{{ campo.historia.usuario.username }}" id= "{{ campo.historia.usuario.username }}">Aceptar</button> 
 						         </label> 
 						         <label>
-						               <button class="btn btn-block btn-lg btn-info" type="submit">Rechazar</button> 
+						               <button class="btn btn-block btn-lg btn-info" type="submit"  name="aceptar">Rechazar</button> 
 						         </label> 
 						       	 
 								 </form>
-						       {% endfor %}                              
+						       	 {% endfor %}   
+						       	 
+                              
+						                                  
                             </td>					                                          	                      
 						   	<td>
                                 <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  

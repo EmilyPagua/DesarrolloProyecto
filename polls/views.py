@@ -3,8 +3,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from .forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo
-from .models import UsuarioPerfil, Album ,Notificacion
+from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo
+from polls.models import UsuarioPerfil, Album ,Notificacion
 from django.contrib.auth.models import User
 from django.db.models import Q
 
@@ -16,16 +16,6 @@ def prueba(request):
     usuario = request.user
     contexto = {'usuario': usuario}
     return render_to_response('notificar.html',context_instance=RequestContext(request, contexto))
-
-
-#---------------- N O T I F I C A C I O N E S ------------------
-
-@login_required
-def ver_notificacion(request):
-    usuario = request.user
-    informacion = Notificacion.objects.filter(usuario=usuario)
-    contexto = {'informacion': informacion,'usuario': usuario}
-    return render_to_response('notificar.html',context_instance=RequestContext(request,contexto))
 
 
 
@@ -118,6 +108,26 @@ def ver_albumes(request):
     return render_to_response('verAlbumes.html',context_instance=RequestContext(request,contexto))
 
 
+#---------------- N O T I F I C A C I O N E S ------------------
+
+@login_required
+def ver_notificacion(request):
+    usuario = request.user    
+    if 'aceptar' in request.POST:  
+                   
+        formulario = RegistroAmigo(request.POST)
+        if formulario.is_valid():
+            print '------------------------------------'
+            print formulario  
+            print '------------------------------------'
+            formulario.procesar_amigo(usuario)
+            return HttpResponseRedirect(reverse('principalInicio')) 
+            
+    informacion = Notificacion.objects.filter(usuario=usuario)
+    contexto = {'informacion': informacion,'usuario': usuario}
+    return render_to_response('notificar.html',context_instance=RequestContext(request,contexto))
+
+
 #---------------- R E L A C I O N   A M I S T A D ------------------
 
 #Crear Relacion
@@ -129,7 +139,8 @@ def registro_amigo(request):
         if formulario.is_valid():
             formulario.procesar_amigo(usuario)
             return HttpResponseRedirect(reverse('principalInicio'))  
-    formulario = RegistroAmigo()      
+    
+
     contexto = {'usuario': usuario, 'perfil': perfil, 'formulario': formulario}
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 
@@ -149,7 +160,7 @@ def ver_amigos(request):
 @login_required
 def ver_usuario(request, nombre):
     usuario = request.user
-    if request.method == 'POST':            
+    if request.method == 'POST':               
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
 
@@ -159,11 +170,13 @@ def ver_usuario(request, nombre):
     nc = nombre.split(" ")
     n = nc[0]
     a = nc [1]
-    persona = User.objects.filter(first_name=n, last_name=a)
+    persona = User.objects.get(first_name=n, last_name=a)
     perfil= UsuarioPerfil.objects.filter(fkusuario=persona)
+    form_data = {
+        'amigos': persona,
+    }
 
-    formulario = RegistroAmigo()   
-    #persona = User.objects.filter(=usuario)
+    formulario = RegistroAmigo(initial=form_data)
     contexto = {'usuario': usuario, 'perfil': perfil,'formulario': formulario}
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 

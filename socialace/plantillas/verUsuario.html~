@@ -22,12 +22,9 @@
                                {% for campo in perfil %}
                                
 						      	 <label> 
-						      	      Identificador:
-						      	        <input type="text" required name="q" id="id_usuario" value="{{ campo.fkusuario.id }}"/>
-						      	      
 						      			<h6>Nombre: {{ campo.fkusuario.first_name }}
 						    		<br/>
-						    		
+						    		 {{ campo.foto }}
 						       		Apellido: {{ campo.fkusuario.last_name }}<br/>
 						       		Direccion: {{ campo.direccion }}<br/>
 						       		Twitter: {{ campo.twitter }}<br/>						       		
@@ -37,7 +34,8 @@
 						       	 </label>	 
 						       {% endfor %}  
 						       
-						      <!--  <form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="">{% 									csrf_token %}
+						        <form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="">
+						        {% csrf_token %}
 						        {% for campo in formulario %}
                   	 
 									   		{{ campo }}
@@ -45,7 +43,7 @@
 									   {% endfor %}	
 							   
 					               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-						       </form>-->
+						       </form>
 						    </td>						                                          	                      
 						   	<td>
                                 <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
