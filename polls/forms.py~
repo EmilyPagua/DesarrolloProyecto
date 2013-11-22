@@ -120,8 +120,7 @@ class RegistroAlbum(forms.Form):
       
         if foto:
             album.foto = foto
-        elif foto=""
-            album.foto = '{{STATIC_URL}}img/paisajesDefinido.jpg'
+        
         album.save()    
 
 #Relacion Usuario

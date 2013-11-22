@@ -13,7 +13,7 @@ uses jQuery and json to get an instagram user feed and display it on your site.
 <br/>
 
  <label>
-                                     <h5>Mis Albume s</h5>
+                                     <h5>Mis Albumes</h5>
                                 </label>    							
                                <br> 
                                {% for album in albumes %}

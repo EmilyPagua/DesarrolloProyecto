@@ -1,5 +1,5 @@
 from django import forms
-from polls.models import UsuarioPerfil,  Album, Notificacion,Historial
+from polls.models import UsuarioPerfil,  Album, Notificacion,Historial, Contenido
 from django.contrib.auth.models import User
 import datetime
 
@@ -120,7 +120,6 @@ class RegistroAlbum(forms.Form):
       
         if foto:
             album.foto = foto
-        
         album.save()    
 
 #Relacion Usuario
@@ -163,4 +162,18 @@ class RegistroAmigo(forms.Form):
         #k = User.objects.get(id=usuario.id)
         #l.usuarioperfil.amigos.add(k)
         #l.save()
+
+
+#agregarfotos
+class RegistroFoto(forms.Form):
+    descripcion = forms.CharField(max_length=200, label='Fotos')                                                
+    
+    def __init__(self,*args, **kwargs):	
+        super(RegistroFoto, self).__init__(*args, **kwargs)
+        self.fields['descripcion'].widget.attrs = {'placeholder': 'descripcion', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        
+    def procesar_foto(self, usuario, album):      	
+        descripcion = self.cleaned_data['descripcion']
+        contenido = Contenido(fkalbum= album, descripcion= descripcion)
+        contenido.save()
 

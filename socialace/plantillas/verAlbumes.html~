@@ -15,10 +15,10 @@
 						       		Descripcion: {{ album.descripcion }} 
 						       		<br/>
 						       		<img src="{{STATIC_URL}}{{ album.foto}}" alt="{{album.foto}}" with="50" height="50"/>
-
 						       		<a rel="nofollow" href="{% url 'prueba' %}"> <h7> Agregar fotos</h7> </a>
 									<a rel="nofollow" href="{% url 'prueba' %}"> <h7>Ver</h7> </a>
 						       	 </label>
+<a rel="nofollow" href="{% url 'agregarFoto' album.id %}">
 						       	 <br/>
 
 				                        
