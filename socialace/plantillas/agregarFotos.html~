@@ -13,7 +13,7 @@ uses jQuery and json to get an instagram user feed and display it on your site.
 <br/>
 
  <label>
-                                     <h5>Mis Albumes</h5>
+                                     <h5>Mis Albume s</h5>
                                 </label>    							
                                <br> 
                                {% for album in albumes %}
@@ -24,10 +24,20 @@ uses jQuery and json to get an instagram user feed and display it on your site.
 						       	 </label>
 
 <br/>
+<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
+       {% csrf_token %}
+       {% for campo in formulario %}
+                 	
+  {{ campo }}
+  
+  {% endfor %}	
+  
+              <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+      </form>
 
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
 <div class="instagram"></div>
-<script>
+<script type="text/javascript">
 
 //HELP FROM HERE...
 //https://forrst.com/posts/Using_the_Instagram_API-ti5
@@ -45,22 +55,29 @@ $(function() {
         success: function(data) {
 	  var miArray = new Array(10); 
             for (var i = 0; i < 10; i++) {
+		 
         	 $(".instagram").append("<div class='instagram-placeholder'><a target='_blank' href='" + data.data[i].link +"'><img class='instagram-image' src='" + data.data[i].images.low_resolution.url +"'/></a></div><div><input type='text' id='foto' value='" + data.data[i].images.low_resolution.url +"'></div>");
 console.log (data.data[i].images.low_resolution.url);
-miArray= data.data[i].images.low_resolution.url;
+miArray[i] = data.data[i].images.low_resolution.url;
 
 
-
-
-
-
-
-
-      		}     
-
-
-                            
+      		}   
+<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
+       {% csrf_token %}
+       {% for campo in formulario %}
+                 	
+  {{ campo }}
+  
+  {% endfor %}	
+  
+              <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+      </form>
+for(var i=0;i<miArray.length;i++){
+document.write("<b>miArray["+i+"] is </b>=>"+miArray[i]+"<br>");
+}                
         }
+
+
     });
 
 

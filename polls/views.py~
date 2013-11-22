@@ -3,8 +3,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo
-from polls.models import UsuarioPerfil, Album ,Notificacion
+from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo, RegistroFoto
+from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido
 from django.contrib.auth.models import User
 from django.db.models import Q
 
@@ -16,6 +16,36 @@ def prueba(request):
     usuario = request.user
     contexto = {'usuario': usuario}
     return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
+
+#agregarfotos
+@login_required
+def registro_foto(request,id_album):
+    usuario = request.user
+    albumes = Album.objects.filter(id=id_album)
+    if request.method == 'POST':               
+        formulario =RegistroFoto(request.POST)
+        if formulario.is_valid():
+
+           formulario.procesar_foto(usuario)
+           return HttpResponseRedirect(reverse('principalInicio')) 
+
+    #import pdb; pdb.set_trace()
+    form_data = {
+        'foto1': '',
+        'foto2': '',
+        'foto3': '',
+        'foto4': '',
+        'foto5': '',
+        'foto6': '',
+        'foto7': '',
+        'foto8': '',
+        'foto9': '',
+        'foto10': '',
+    }
+    formulario =RegistroFoto(initial=form_data)
+    contexto = {'usuario': usuario,'albumes':albumes, 'formulario': formulario }
+    return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
+
 
 
 
@@ -62,16 +92,6 @@ def modificar_usuario(request,id_usuario):
     }
     contexto = {'formulario': EditarUsuario(initial=form_data), 'usuario': usuario}
     return render_to_response('usuarioModificar.html',context_instance=RequestContext(request, contexto))
-
-
-#Ver Mi Perfil
-@login_required
-def ver_MiPerfil(request,id_usuario):    
-    usuario = request.user
-    usu = User.objects.filter(id=id_usuario)
-    
-    contexto = {'usuario': usuario, 'usu':usu}
-    return render_to_response('verMiPerfil.html',context_instance=RequestContext(request,contexto))
 
 
 #---------------- A L B U M E S ------------------
