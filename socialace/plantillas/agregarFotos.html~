@@ -6,45 +6,31 @@
 float: left;
 }
 </style>
-
-<h1>jQuery Instagram User Stream Display Really Easy with a json call</h1>
-uses jQuery and json to get an instagram user feed and display it on your site.
-<br/>
-<br/>
-
- <label>
-                                     <h5>Mis Albume s</h5>
-                                </label>    							
-                               <br> 
-                               {% for album in albumes %}
-						      	 <label> 
-						       		Nombre: {{ album.nombre }}
-						       		Descripcion: {{ album.descripcion }} <br/>
-						       		
-						       	 </label>
+<label>
+     <h5>Mis Albumes</h5>
+</label>    							
+<br> 
+ {% for album in albumes %}
+ <label> 
+	Nombre: {{ album.nombre }}
+	Descripcion: {{ album.descripcion }} <br/>
+	
+ </label>
 
 <br/>
-<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
-       {% csrf_token %}
-       {% for campo in formulario %}
-                 	
-  {{ campo }}
-  
-  {% endfor %}	
-  
-              <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-      </form>
 
+<script type="text/javascript">
+function printIt(){
+   alert(document.getElementById('foto0').value +' '+ document.getElementById('foto1').value);
+   
+   
+}
+</script>
 <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
+<form class='form-wrapper-01' id='formulario' method='post' enctype='multipart/form-data' action="" >
+ {% csrf_token %}
 <div class="instagram"></div>
 <script type="text/javascript">
-
-//HELP FROM HERE...
-//https://forrst.com/posts/Using_the_Instagram_API-ti5
-
-// small = + data.data[i].images.thumbnail.url +
-// resolution: low_resolution, thumbnail, standard_resolution
-
 $(function() {
     $.ajax({
     	type: "GET",
@@ -53,36 +39,22 @@ $(function() {
         url: "https://api.instagram.com/v1/tags/ucab/media/recent/?access_token=563704717.5b9e1e6.4f296fd9e3a5449aa35c2beefb4db0d1",
        // url: "https://api.instagram.com/v1/users/563704717/media/recent/?access_token=563704717.5b9e1e6.4f296fd9e3a5449aa35c2beefb4db0d1",
         success: function(data) {
-	  var miArray = new Array(10); 
-            for (var i = 0; i < 10; i++) {
+	  var miArray = new Array(5); 
+            for (var i = 0; i < 5; i++) {
 		 
-        	 $(".instagram").append("<div class='instagram-placeholder'><a target='_blank' href='" + data.data[i].link +"'><img class='instagram-image' src='" + data.data[i].images.low_resolution.url +"'/></a></div><div><input type='text' id='foto' value='" + data.data[i].images.low_resolution.url +"'></div>");
+        	 $(".instagram").append("<div class='instagram-placeholder'><a target='_blank' href='" + data.data[i].link +"'><img class='instagram-image' src='" + data.data[i].images.low_resolution.url +"'/></a><br></div><div><label type=hidden id='foto" + [i] +"' value='" + data.data[i].images.low_resolution.url +"'></label></div>");
 console.log (data.data[i].images.low_resolution.url);
 miArray[i] = data.data[i].images.low_resolution.url;
-
-
-      		}   
-<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
-       {% csrf_token %}
-       {% for campo in formulario %}
-                 	
-  {{ campo }}
-  
-  {% endfor %}	
-  
-              <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-      </form>
-for(var i=0;i<miArray.length;i++){
+		}
+		for(var i=0;i<miArray.length;i++){
 document.write("<b>miArray["+i+"] is </b>=>"+miArray[i]+"<br>");
-}                
-        }
-
-
+}            
+		}
     });
-
-
 });
-
 </script>
+       <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+</form>
+
 {% endfor %}
 {% endblock %}

@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),
     url(r'^modificarAlbum/(?P<id_album>\d+)/$', 'polls.views.modificar_album',name ='modificarAlbum'),
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
-    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.modificar_album',name ='agregarFoto'),
+    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.registro_foto',name ='agregarFoto'),
 
     url(r'^registroAmigo/$', 'polls.views.registro_amigo',name ='registroAmigo'),
     url(r'^verAmigos/$', 'polls.views.ver_amigos',name ='verAmigos'),

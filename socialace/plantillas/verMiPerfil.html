@@ -1,37 +1,48 @@
 {% extends 'base.html'%}
-{% block contenido%}
-	<!-- content -->
-					<div id="content">
-						<table width="482" height="130" border="1" align="left">                                                         
-				            <tr>
-				            
-                                     <h3>Mis Perfil</h3>
-                               
-				            </tr>
-				            <hr>
-				            <tr>
-				             {% for campo in usu %}
-	 								<td>
-		                             <img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="150" height="150"/><br>
-		                        </td>
-		                        <td>
-		                          
-		                          
-								  	 <label> 
-								   	   <h5> Usuario: {{ campo.username }}</h5> <br>
-								       <h6> Nombre Completo:{{ campo.last_name}} {{ campo.first_name}}<br>
-								       <h6> Email: {{ campo.email }}<br>
-								   	   <h6> Direccion: {{ campo.usuarioperfil.direccion}}<br>
-								   	   <h6> Fecha Nacimiento: {{ campo.usuarioperfil.nacimiento}}<br>
-								       <h6> Twitter: {{ campo.usuarioperfil.twitter}}<br>
-								   	</label>
-								   	 <br/>
-								 </td>					                                          	                      
-							   
-                            <tr>
-                             {% endfor %}      
-                             
-                           </table>
-                      </div>
-					<!-- ENDS content -->						
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis Datos</span>
+	<span class="subtitle">A continuacion vera los datos basicos de su perfil, imagenes, musica y video </span>
+</div>
+<!-- ENDS title -->
+				
+<!-- page-content -->
+<div id="page-content">	
+	<div class="accordion">
+		
+		<h5><a href="#">Datos Basicos</a></h5>
+		<div>
+			{% for campo in usu %}
+			<p> <img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="50" height="50"/> 		
+			<strong>Nombre Completo:</strong>{{ campo.last_name}} {{ campo.first_name}}. <br>
+		    <strong>Mi direccion es:</strong> {{ campo.usuarioperfil.direccion}}. 
+		    <strong>Mi fecha de nacimiento es:</strong> {{ campo.usuarioperfil.fechanacimiento}}<br>
+	   	    <strong>Email: </strong>{{ campo.email }}
+	   	    <strong>Twitter: </strong>{{ campo.usuarioperfil.twitter}}
+			</p>
+			{% endfor %}
+		</div>
+		
+		<h5><a href="#">Mis amigos</a></h5>
+		<div>
+			<ul>
+			{% for campo in persona %}
+				<li><img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="20" height="20"/> 					<strong>Nombre:</strong>{{ campo.last_name}} {{ campo.first_name}}. </li>
+			{% endfor %}	
+			</ul>
+		</div>
+		<h5><a href="#">Mis Albumes</a></h5>
+		<div>
+			<ul>
+			{% for campo in albumes %}
+			<li><img src="{{STATIC_URL}}{{ campo.foto}}" alt="{{ campo.foto}}" with="20" height="20"/> 		
+			<strong>Nombre Completo:</strong>{{ campo.nombre}} {{ campo.descripcion}}. 
+			</li>
+			{% endfor %}
+			</ul>
+		</div>	
+			   
+	</div>						
+</div>						
 {% endblock %}

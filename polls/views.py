@@ -4,7 +4,7 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo, RegistroFoto
-from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido
+from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido, Historial, Contenido, Comentario
 from django.contrib.auth.models import User
 from django.db.models import Q
 
@@ -15,7 +15,7 @@ from django.db.models import Q
 def prueba(request):
     usuario = request.user
     contexto = {'usuario': usuario}
-    return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
+    return render_to_response('features-toggle.html',context_instance=RequestContext(request, contexto))
 
 #agregarfotos
 @login_required
@@ -23,27 +23,19 @@ def registro_foto(request,id_album):
     usuario = request.user
     albumes = Album.objects.filter(id=id_album)
     if request.method == 'POST':               
+        print ('Ya entro por post')
+        import pdb; pdb.set_trace()
+        print request.POST 
         formulario =RegistroFoto(request.POST)
         if formulario.is_valid():
-
-           formulario.procesar_foto(usuario)
-           return HttpResponseRedirect(reverse('principalInicio')) 
+            print request.method    
+            formulario.procesar_foto(usuario)
+            return HttpResponseRedirect(reverse('principalInicio')) 
 
     #import pdb; pdb.set_trace()
-    form_data = {
-        'foto1': '',
-        'foto2': '',
-        'foto3': '',
-        'foto4': '',
-        'foto5': '',
-        'foto6': '',
-        'foto7': '',
-        'foto8': '',
-        'foto9': '',
-        'foto10': '',
-    }
-    formulario =RegistroFoto(initial=form_data)
-    contexto = {'usuario': usuario,'albumes':albumes, 'formulario': formulario }
+   
+    
+    contexto = {'usuario': usuario,'albumes':albumes }
     return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
 
 
@@ -55,7 +47,11 @@ def registro_foto(request,id_album):
 @login_required
 def principal_inicio(request):
     usuario = request.user
-    contexto = {'usuario': usuario}
+    historial =  Historial.objects.order_by('id').reverse()
+    contenido = Contenido.objects.all()
+    notificacion = Notificacion.objects.all()
+    comentario = Comentario.objects.all()
+    contexto = {'usuario': usuario, 'historial':historial,'contenido':contenido,'notificacion':notificacion, 'comentario':comentario}
     return render_to_response('principalinicio.html',context_instance=RequestContext(request, contexto))
 
 
@@ -94,13 +90,26 @@ def modificar_usuario(request,id_usuario):
     return render_to_response('usuarioModificar.html',context_instance=RequestContext(request, contexto))
 
 
+@login_required
+def ver_MiPerfil(request,id_usuario):    
+    usuario = request.user
+    
+    amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
+    id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
+    persona = User.objects.filter(id__in=id_per)
+    
+    usu = User.objects.filter(id=id_usuario)    
+    albumes = Album.objects.filter(fkusuario=usuario)
+    contexto = {'usuario': usuario, 'usu':usu,'albumes':albumes,'persona':persona}
+    return render_to_response('verMiPerfil.html',context_instance=RequestContext(request,contexto))
+ 
 #---------------- A L B U M E S ------------------
 
 #Crear Album
 @login_required
 def registro_album(request): 
     usuario = request.user
-    if request.method == 'POST':
+    if request.method == 'POST':        
         formulario = RegistroAlbum(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.procesar_album(usuario)
@@ -160,24 +169,24 @@ def ver_notificacion(request):
 
 #---------------- R E L A C I O N   A M I S T A D ------------------
 
+
 #Crear Relacion
 @login_required
-def registro_amigo(request): 
+def registro_amigo(request):
     usuario = request.user
-    if request.method == 'POST':            
+    if request.method == 'POST':
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
             formulario.procesar_amigo(usuario)
-            return HttpResponseRedirect(reverse('principalInicio'))  
-    
-
+            return HttpResponseRedirect(reverse('principalInicio'))
+    formulario = RegistroAmigo()
     contexto = {'usuario': usuario, 'perfil': perfil, 'formulario': formulario}
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 
-	
+        
 #Ver Amigos ACOMODANDO
 @login_required
-def ver_amigos(request):	
+def ver_amigos(request):        
     usuario = request.user
     amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
@@ -190,23 +199,21 @@ def ver_amigos(request):
 @login_required
 def ver_usuario(request, nombre):
     usuario = request.user
-    if request.method == 'POST':               
+    if request.method == 'POST':
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
 
             formulario.procesar_notificacion(usuario)
-            return HttpResponseRedirect(reverse('principalInicio'))  
+            return HttpResponseRedirect(reverse('principalInicio'))
     
     nc = nombre.split(" ")
     n = nc[0]
     a = nc [1]
-    persona = User.objects.get(first_name=n, last_name=a)
+    persona = User.objects.filter(first_name=n, last_name=a)
     perfil= UsuarioPerfil.objects.filter(fkusuario=persona)
-    form_data = {
-        'amigos': persona,
-    }
 
-    formulario = RegistroAmigo(initial=form_data)
+    formulario = RegistroAmigo()
+    #persona = User.objects.filter(=usuario)
     contexto = {'usuario': usuario, 'perfil': perfil,'formulario': formulario}
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 
@@ -228,10 +235,11 @@ def busqueda(request):
     cont = 0
     objects = []
     for i in query:
-    	nombre_completo = i.first_name + " " + i.last_name
-    	element = {"nombre":nombre_completo}
-    	objects.append(json.dumps(element))
- 	items = { "items" : objects}
+            nombre_completo = i.first_name + " " + i.last_name
+            element = {"nombre":nombre_completo}
+            objects.append(json.dumps(element))
+            items = { "items" : objects}
     return HttpResponse(json.dumps(items),mimetype="text/plain")
-    
+
+
 

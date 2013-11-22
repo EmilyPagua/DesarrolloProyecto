@@ -1,0 +1,114 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<!-- title -->
+	<div id="page-title">
+		<span class="title">Ultimas Noticias</span>
+		<span class="subtitle">historial de los amigos</span>
+	</div>
+	<!-- ENDS title -->
+<!-- Posts -->
+				<div id="posts">
+				<!-- post -->
+				{% for campo in historial %} 
+					<div class="post">
+						<h3><a href="single.html">his:{{ campo.id }}{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</a></h3>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+						<!-- <div class="n-comments">165</div> -->
+						{% if campo.accion = 'Nuevo album' %}
+						
+						<!-- shadow Nuevo album-->
+						<div class="thumb-shadow">
+							<!-- post-thumb -->
+							<div class="post-thumbnail">
+								<img src="{{STATIC_URL}}{{ campo.fkalbum.foto }}"   width="496" heigt="70"/>
+							</div>
+							<!-- ENDS post-thumb -->
+							
+							<div class="the-excerpt">
+								{{ campo.accion}} :{{ campo.fkalbum.nombre}} <br>
+								Descripcion:  {{ campo.fkalbum.descripcion}}
+			
+							</div>		
+						</div>
+						<!-- ENDS shadow Nuevo album-->	
+													
+						{% elif campo.accion = 'Amistad'  %}
+						{% for aux in notificacion %}
+						{% if campo.id = aux.historia.id %}	
+			   			{% if aux.descripcion = 'Amistad' %}	
+						<!-- shadow Nuevo Amistad-->
+						<div class="thumb-shadow">  		
+							<!-- post-thumb -->
+							
+							<!-- ENDS post-thumb -->
+							<div class="the-excerpt">
+							<hr>
+							Quiere ser amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	
+							<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" with="60" height="60"/></a>
+								
+							</div>	
+							{% endif %}
+							{% endif %}
+							{% endfor %} 
+						
+						</div>
+						<!-- ENDS shadow Amistad-->
+						
+						{% elif campo.accion = 'Comentar Album'  %}	
+						{% for aux in comentario %}
+        				{% if campo.fkcomentario.id = aux.id %}	
+						<!-- shadow Nuevo Comentar Album-->
+						<div class="thumb-shadow"> 
+							<!-- post-thumb -->
+							<div class="post-thumbnail">
+								<img src="{{STATIC_URL}}{{ aux.fkalbum.foto }}"  alt="Feature image" width="396" heigt="70"/></a>
+							</div>
+							<!-- ENDS post-thumb --> 		
+							<div class="the-excerpt">
+							<hr>
+							Comento el album de:{{aux.fkalbum.fkusuario.first_name}} {{ aux.fkalbum.fkusuario.last_name}}<br>
+							Nombre del Album: {{ aux.fkalbum.nombre}}
+						
+							</div>	
+							{% endif %}
+							{% endfor %} 
+						</div>
+						<!-- ENDS shadow Comentar Album-->
+						{% endif %}
+					</div>
+					<!-- ENDS post -->
+					
+					{% endfor %}
+				</div>
+				<!-- ENDS Posts -->
+				
+				<!-- sidebar -->
+				<ul id="sidebar">
+					<!-- init sidebar -->
+					<li>
+						<h6>Categories</h6>		
+						<ul>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+						</ul>
+					</li>	
+					
+					<li>
+						<h6>Archives</h6>		
+						<ul>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+							<li class="cat-item"><a href="#" title="View all posts">Pellentesque habitant morbi</a></li>
+						</ul>
+					</li>
+					<!-- ENDS init sidebar -->
+				</ul>
+				<!-- ENDS sidebar -->
+	
+	
+
+{% endblock %}

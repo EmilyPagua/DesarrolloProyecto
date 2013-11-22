@@ -1,36 +1,22 @@
 {% extends 'base.html'%}
-{% block contenido%}
-	<script>
-	$(function() {
-		$( "#datepicker" ).datepicker();
-	});
-	</script>
-
-	<!-- content -->
-		<div id="content">
-			<table width="100" height="100" border="1" align="center">                                                         
-	            <tr>
-						<h2>Mis Amigos</h2>
-						<hr>
-                    
-                 </tr>
-                 {% for campo in persona %}
-			     <tr>
-			      	 <td>
-			      	 	<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}" alt="{{campo.usuarioperfil.foto}}" with="50" height="50"/>
-			      	 </td>
-			         <td>
-			         	Nombre: <h7>{{ campo.first_name }} {{ campo.last_name }} </h7> <br>
-			       	 	Correo: <h7>{{ campo.email }}</h7>
-			       	 </td>				       	 
-			       	  <td>
-			         	Direccion: <h7>{{ campo.usuarioperfil.direccion }} </h7> <br>
-			       	 	Correo: <h7>{{ campo.usuarioperfil.twitter }}</h7><br>
-			       	    Fecha de Nacimiento: <h7>{{ campo.usuarioperfil.fechanacimiento }}</h7>
-			       	 </td>	
-			  </tr>	
-			  {% endfor %}                                             
-               </table>
-          </div>
-					<!-- ENDS content -->						
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis amigos</span>
+	<span class="subtitle">Estos son los amigos a los que tengo agregado en mi red social</span>
+</div>
+<!-- ENDS title -->
+<!-- gallery-->
+<ul id="portfolio-list" class="gallery three-cols">
+   {% for campo in persona %}
+	<li class="pink">
+		<a href="#" rel="group1"  title="Direccion:{{ campo.usuarioperfil.direccion }} 
+	    Correo: {{ campo.email }}
+	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}" >
+		{{ campo.first_name }} {{ campo.last_name }}
+		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  ></a>
+	</li>
+	{% endfor %}   	
+</ul>
+	<!-- ENDS gallery -->						
 {% endblock %}

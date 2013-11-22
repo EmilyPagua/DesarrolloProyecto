@@ -1,69 +1,81 @@
 {% extends 'base.html'%}
-{% block contenido%}
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}registro.css">
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}font/css/fontello.css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
-	
-	<script type="text/javascript">
-			function validarForm(formulario) {
-			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
-				formulario.nombre.focus();   
-				alert('Requiere de un nombre'); 
-				return false; //devolvemos el foco
-			  }
-			  if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
-				formulario.descripcion.focus();
-				alert('Requiere de una descripcion');
-				return false;
-			  }	
-			   if(formulario.foto.value.length==0) { //comprueba que no esté vacío
-				
-				formulario.foto.value= "{{STATIC_URL}}img/paisajesDefinido.jpg";
-				return true;
-			  }	
-			  
-			 		  
-			  return true;
-			}
-	</script>
+{% block content%}
+<script type="text/javascript">
+	function validarForm(formulario) {
+	   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+		formulario.nombre.focus();   
+		alert('Requiere de un nombre'); 
+		return false; //devolvemos el foco
+	  }
+	  if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
+		formulario.descripcion.focus();
+		alert('Requiere de una descripcion');
+		return false;
+	  }	
+	 
+	  
+	 		  
+	  return true;
+	}
+</script>
 
-	<!-- content -->
-		<div id="content">
-			<table width="482" height="130" border="1" align="left">
-                <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
-                {% csrf_token %}
-	            <tr>
-				<td>
-                    <label>
-                         <h5>Registrar Datos</h5>
-                    </label>    							
-                   <br>
-                   <br>
-                   <br>
-                   {% for campo in formulario %}
-                  	 <label> 
-                   		{{ campo.label }}  {{ campo }}
-                   		
-                   	 </label>	
-                   	 <br> 
-                   {% endfor %}		
-                     <br>                                                
-		              	 <br>	                               
-		                   <label>
-		                         <h7>(*) Datos obligatorios</h7>
-		                   </label> 
-		                 <br>	  
-                     <br>                                
-			         <label>
-			               <button class="btn btn-hg btn-primary" type="submit" >Aceptar</button> 
-			         </label> 
-			    </td>					                                          	                      
-			   	<td>
-                    <img src="{{STATIC_URL}}img/albumes.png" alt="SocialAce" with="400" height="400" aling="left">  
-                </td>
-               </form>  
-               </table>
-          </div>
-					<!-- ENDS content -->						
+<!-- title -->
+<div id="page-title">
+	<span class="title">Crear nuevo Album</span>
+	<span class="subtitle">Crea tu nuevo album de fotos, musica o videos...</span>
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	<div class="post">
+		<!-- shadow -->
+		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+            {% csrf_token %}
+            <tr>
+			<td>
+               <br>
+               {% for campo in formulario %}
+               {% if campo.label.name='foto' %}
+                             	 
+               		{{ campo.label }} 
+               {% elif %}
+              {{ campo.label }} {{ campo }}
+               {% endif %}
+               
+               
+              	 <label> 
+               		{{ campo.label }} {{ campo }}
+               	 </label>
+               	 <br>	 
+               {% endfor %}	
+                <br>	                               
+                     <h7>(*) Datos obligatorios</h7>
+                <br>	                             
+              	<label>
+		               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+		        </label> 
+		    </td>					                                          	                      
+		    </tr>
+           </form> 
+		<!-- ENDS shadow -->
+	</div>
+	<!-- ENDS post -->
+</div>
+<!-- ENDS Posts -->	
+
+<!-- sidebar -->
+<ul id="sidebar">
+	<!-- init sidebar -->
+	<li>
+		<h6>Creer un nuevo album</h6>		
+		<ul>
+			<img src="{{STATIC_URL}}img/albumes.png" alt="SocialAce" with="260" height="260" aling="left"> 
+		</ul>
+	</li>
+	<!-- ENDS init sidebar -->
+</ul>
+<!-- ENDS sidebar -->
+				
 {% endblock %}

@@ -44,13 +44,12 @@ jQuery(document).ready(function($) {
 		alignY: 'center',
 		offsetX: 5
 	});
-	
+	 
 	// Superfish menu ------------------------------------------------------ //
 	
 	$("ul.sf-menu").superfish({ 
         animation: {height:'show'},   // slide-down effect without fade-in 
-        delay:     800 ,              // 1.2 second delay on mouseout 
-        autoArrows:  false
+        delay:     800               // 1.2 second delay on mouseout 
     });
     
     // Scroll to top ------------------------------------------------------ //
@@ -72,6 +71,7 @@ jQuery(document).ready(function($) {
 			marginLeft: "0" 
 		}, "fast");
 	});
+	
 	
 	// Tweet Feed ------------------------------------------------------ //
 	
@@ -137,7 +137,12 @@ jQuery(document).ready(function($) {
 			opacity: "1" 
 		}, "fast");
 	});
-		
+	
+	// Resize home top-padding ------------------------------------------------------ //
+	
+	//$('#headline-gap').height($('#headline').height());
+	$('.home #header').height($('#headline').height() + 430);
+	
 	
 	// Blog posts rollover --------------------------------------------- //
 	
@@ -245,31 +250,44 @@ jQuery(document).ready(function($) {
 	// init
 	thumbsFunctions();
 	
-	// Filtering using isotope -----------------------------------------------------------//
+	// Quicksand -----------------------------------------------------------//
 	
-	var $container = $('#portfolio-list');
-	
-	$container.imagesLoaded( function(){
-		$container.isotope({
-			itemSelector : 'li',
-			filter: '*',
-			animationEngine: 'jquery'
-		});
-	});
-	
-	// filter buttons
+	// get the initial (full) list
+	var $filterList = $('ul#portfolio-list');
 		
-	$('#portfolio-filter a').click(function(){
+	// Unique id 
+	for(var i=0; i<$('ul#portfolio-list li').length; i++){
+		$('ul#portfolio-list li:eq(' + i + ')').attr('id','unique_item' + i);
+	}
 	
-		// select current
-		var $optionSet = $(this).parents('#portfolio-filter');
-	    $optionSet.find('.selected').removeClass('selected');
-	    $(this).parent().addClass('selected');
-    
-		var selector = $(this).attr('data-filter');
-		$container.isotope({ filter: selector });
-		return false;
+	// clone list
+	var $data = $filterList.clone();
+	
+	// Click 
+	$('#portfolio-filter a').click(function(e) {
+		if($(this).attr('rel') == 'all') {
+			// get a group of all items
+			var $filteredData = $data.find('li');
+		} else {
+			// get a group of items of a particular class
+			var $filteredData = $data.find('li.' + $(this).attr('rel'));
+		}
+		
+		// call Quicksand
+		$('ul#portfolio-list').quicksand($filteredData, {
+			duration: 500,
+			attribute: function(v) {
+				// this is the unique id attribute we created above
+				return $(v).attr('id');
+			}
+		}, function() {
+	        // restart thumbs functions
+	        thumbsFunctions();
+		});
+		// remove # link
+		e.preventDefault();
 	});
+
 		
 	// UI Accordion ------------------------------------------------------ //
 	
@@ -281,16 +299,6 @@ jQuery(document).ready(function($) {
 	$(".toggle-trigger").click(function(){
 		$(this).toggleClass("active").next().slideToggle("slow");
 		return false;
-	});
-	
-	// Footer menu rollover --------------------------------------------------- //
-
-	$('#footer .col .page_item').hover(function(){
-		// over
-		$(this).children('a').stop().animate({ marginLeft: "5"	}, "fast");
-	} , function(){
-		// out
-		$(this).children('a').stop().animate({marginLeft: "0"}, "fast");
 	});
 		
 //close			
