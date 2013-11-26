@@ -26,7 +26,7 @@ class UsuarioPerfil(models.Model):
 
 class Album(models.Model):
 	nombre = models.CharField(max_length=100)
-	descripcion = models.CharField(max_length=200)
+	descripcion = models.TextField(max_length=200)
 	privacidad = models.BooleanField(default=False)
 	foto = models.ImageField(upload_to='imagenalbum', null=True,blank=True)
 	fkusuario = models.ForeignKey(User)

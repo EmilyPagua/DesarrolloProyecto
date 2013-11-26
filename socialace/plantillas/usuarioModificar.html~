@@ -98,9 +98,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
               	 <label> 
               	 	{{ campo.label }} {{ campo }}
 
-               		<!--{{% if campo.label = 'nacimiento' %}}
-               		{{ campo.label }}
-               		{{% endif %}}-->
+               		
                		               		
                	 </label>	 
                {% endfor %}	

@@ -20,30 +20,33 @@
 	<!-- post -->
 	<div class="post">
 		{% for campo in informacion %}
-		<h4>{{ campo.historia.usuario.first_name }}
+		{% if campo.status %}
+		
+		{% else %} 
+		{{campo.id}}
+			<h4>{{campo.historia.usuario.first_name }}
 		   		{{ campo.historia.usuario.last_name }}</h4>
 		<!-- shadow -->
 		<div class="thumb-shadow">
 			<!-- ENDS post-thumb -->
 			<div class="the-excerpt">
-		   		{{ campo.descripcion }}
-		   		 <form name="form3"  action="."  method="post" enctype="multipart/form-data">
+		   		
+		   		{{ campo.descripcion }} {{ campo.status }}
+		   		 <form name="form3"  method="post" enctype="multipart/form-data" action="{% url 'notificacionesAprobadas' campo.id %}">
 			  	 {% csrf_token %}
 				 <label>
-				 	 <input  class="form-control" placeholder="amigos" type="text" value="{{ campo.historia.usuario.username }}"></input>
-				 </label>
-				 <br>	
-	   	 		 <label>
-		       		 <button class="btn btn-primary dropdown-toggle" type="submit" name="aceptar" value="{{ campo.historia.usuario.username }}" id= "{{ campo.historia.usuario.username }}">Aceptar</button> 
+		       		<button class="btn btn-primary dropdown-toggle" type="submit" name="aceptar" value="{{ album.id }}">Aceptar</button> 
+			
 		 		 </label> 
 		 		 <label>
-		       		 <button class="btn btn-primary dropdown-toggle" type="submit"  name="aceptar">Rechazar</button> 
+		       		 <button class="btn btn-primary dropdown-toggle" type="submit" name="rechazar" value="{{ album.id }}">Rechazar</button> 
 		 		 </label> 
 			   	 </form>					       	
 			</div>		
 		</div>
-		<!-- ENDS shadow -->
-		 {% endfor %}   						       	 
+ 		{% endif %} 
+ 		  						       	 
+ 		{% endfor %}   						       	 
 	</div>
 </div>
 <!-- ENDS post -->					

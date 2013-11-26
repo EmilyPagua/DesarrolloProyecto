@@ -1,0 +1,178 @@
+{% extends 'base.html'%}
+{% block content%}
+<link rel="stylesheet" href="{{STATIC_URL}}css/picture-slides.css" type="text/css">
+<script type="text/javascript" src="{{STATIC_URL}}js/jqueryImgene.min.js"></script>
+<script type="text/javascript" src="{{STATIC_URL}}js/PictureSlides-jquery-2.0.js"></script>
+<script type="text/javascript">
+		jQuery.PictureSlides.set({
+			// Switches to decide what features to use
+			useFadingIn : true,
+			useFadingOut : true,
+			useFadeWhenNotSlideshow : true,
+			useFadeForSlideshow : true,
+			useDimBackgroundForSlideshow : true,
+			loopSlideshow : false,
+			usePreloading : true,
+			useAltAsTooltip : true,
+			useTextAsTooltip : false,
+			
+			// Fading settings
+			fadeTime : 500, // Milliseconds	
+			timeForSlideInSlideshow : 2000, // Milliseconds
+
+			// At page load
+			startIndex : 1,	
+			startSlideShowFromBeginning : true,
+			startSlideshowAtLoad : false,
+			dimBackgroundAtLoad : false,
+
+			// Large images to use and thumbnail settings
+			images : [
+				{% for campo in contenido %}
+				{
+					image : "{{ campo.urlfoto }}", 
+					alt : "Imagenes",
+					text : "Imagenes"
+				},{% endfor %}
+				
+				
+			],
+			thumbnailActivationEvent : "click",
+
+			// Classes of HTML elements to use
+			mainImageClass : "picture-slides-image", // Mandatory
+			mainImageFailedToLoadClass : "picture-slides-image-load-fail",
+			imageLinkClass : "picture-slides-image-link",
+			fadeContainerClass : "picture-slides-fade-container",
+			imageTextContainerClass : "picture-slides-image-text",
+			previousLinkClass : "picture-slides-previous-image",
+			nextLinkClass : "picture-slides-next-image",
+			imageCounterClass : "picture-slides-image-counter",
+			startSlideShowClass : "picture-slides-start-slideshow",
+			stopSlideShowClass : "picture-slides-stop-slideshow",
+			thumbnailContainerClass: "picture-slides-thumbnails",
+			dimBackgroundOverlayClass : "picture-slides-dim-overlay"
+		});
+	</script>
+
+<!-- title -->
+
+<div id="page-title">
+	{% for campo in albumes %}
+	<span class="title">
+	<img src="{{STATIC_URL}}{{ campo.foto }}" title="Portada" alt="" width="70" height="70"/></a> {{ campo.nombre }}</span>
+	<span class="subtitle">Descripcion: {{ campo.descripcion }}</span>
+	{% endfor %} 
+					
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts" class="single">
+	<!-- post -->
+	<div class="post">
+		<!-- shadow -->
+		<div class="thumb-shadow">
+		
+			<!-- post-thumb -->
+			<div class="post-thumbnailin">
+				<div id="container">
+		
+		<div class="picture-slides-container">
+			{% for campo2 in albumes %}<div class="picture-slides-fade-container">
+				<a class="picture-slides-image-link">										
+					<img class="picture-slides-image" src="{{STATIC_URL}}{{ campo2.foto }}" alt="Foto Album" />					
+				</a>
+				
+			</div>		{% endfor %} 	
+					
+			<div class="navigation-controls">
+				<a href="#" class="picture-slides-previous-image"><<</a>
+				<span class="picture-slides-image-counter"></span>
+				<a href="#" class="picture-slides-next-image">>></a>
+		
+				<a href="#" class="picture-slides-start-slideshow">Iniciar Presentacion</a>
+				<a href="#" class="picture-slides-stop-slideshow">Parar Presentacion</a>
+			</div>					
+		</div>
+	</div>
+		
+			</div>
+			<!-- ENDS post-thumb -->
+			
+		</div>
+		<!-- ENDS shadow -->
+		
+	</div>
+	<!-- ENDS post -->
+	<!-- Comments-Block -->
+					<div id="comments-block">
+						<div class="n-comments"> {{ catidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
+		
+						<!-- comments list -->
+						<ul class="commentlist">
+						{% for aux in comentarioAlbum %}
+							<li class="comment" id="comment-18">
+								<div id="div-comment-18" class="comment-body">
+									<div class="comment-author vcard">
+										<img alt='' src="{{STATIC_URL}}{{ aux.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
+										<cite class="fn">{{ aux.userComentador.last_name }} {{ aux.userComentador.first_name }}</cite><span class="says"> escribió:</span>
+									</div>										
+									<p>{{ aux.descripcion }}  </p>
+					
+									<div class="reply">
+										<a class='comment-reply-link' href='/archives/196?replytocom=18#respond' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
+									</div>
+									<div class="like">
+										<a class='comment-reply-link' href='/archives/196?replytocom=18#respond' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
+									</div>
+								</div>
+							</li>
+							{% endfor %} 
+						</ul>
+						<!-- ENDS comments list -->
+		
+			
+						<!-- Navi -->
+						<div class="comments-pagination">
+						<a class='prev page-numbers' href='http://localhost:8888/archives/586/comment-page-1#comments'>&laquo; Previous</a>
+						<a class='page-numbers' href='http://localhost:8888/archives/586/comment-page-1#comments'>1</a>
+						<span class='page-numbers current'>2</span>	</div>
+						<!-- ENDS Navi -->
+		
+						<!-- comments form -->
+						<div id="respond">
+							<div class="leave-comment">
+								<h2>Leave a Reply</h2>	
+								<!-- form -->
+								<form action="#" method="post" id="commentform">
+									<fieldset>
+										<div><label >NAME </label>
+										<input type="text" name="author" id="author" value="" tabindex="1" /></div>
+										<div><label >EMAIL (Will not be published) </label>
+										<input type="text" name="email" id="email" value="" tabindex="2" /></div>
+										<div><label >WEBSITE</label><input type="text" name="url" id="url" value="" tabindex="3" /></div>
+										<div class="admin-form">
+											<div>
+												<label >COMMENTS</label>
+												<textarea  name="comment" id="comment" rows="10" tabindex="4"></textarea>
+											</div>
+											<div><input type="submit" name="submit" id="submit" tabindex="5" value="SEND" /></div>
+											<div><input type="hidden" name="comment_post_ID" value="586" /></div>
+										</div>
+										<input type='hidden' name='comment_post_ID' value='586' id='comment_post_ID' />
+										<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+									</fieldset>
+								</form>
+								<!-- ENDS form -->
+							</div>
+						</div>
+						<!-- ENDS comments form -->	
+					</div>
+					<!-- ENDS Comments-block -->		
+					
+					
+</div>
+<!-- ENDS Posts -->	
+	
+{% endblock %}

@@ -9,15 +9,20 @@
 
 <!-- gallery-->
 <ul id="portfolio-list" class="gallery three-cols">
-    {% for album in albumes %}
-	<li class="pink">
-		<a href="#" rel="group1" class="fancybox" title="{{ album.nombre }}. Descripcion: {{ album.descripcion }} " >
-		{{ album.nombre }}
-		<img src="{{STATIC_URL}}{{ album.foto}}"  width="280" heigth="280"></a>
-		<button class="btn btn-primary dropdown-toggle" type="submit">Agregar Fotos</button> 
-		<button class="btn btn-primary dropdown-toggle" type="submit">Ver Fotos</button> 
-	</li>
-	{% endfor %}   	
+	{% for album in albumes %}
+	<form enctype="multipart/form-data" name="form3" method="post" action="{% url 'detalleAlbum' album.id %}">
+	{% csrf_token %}
+		<li class="pink">
+			<a href="#" rel="group1" class="fancybox" title="{{ album.nombre }}. Descripcion: {{ album.descripcion }} " >
+			{{ album.nombre }}
+			<img src="{{STATIC_URL}}{{ album.foto}}"  width="280" heigth="280"></a>
+			
+			<button class="btn btn-primary dropdown-toggle" type="submit" name="agregar" value="{{ album.id }}">Agregar Fotos</button> 
+			<button class="btn btn-primary dropdown-toggle" type="submit" name="ver" value="{{ album.id }}">Ver Fotos</button> 
+		</li>
+	  	
+	</form> 
+	{% endfor %} 
 </ul>
 <!-- ENDS gallery -->						
 {% endblock %}

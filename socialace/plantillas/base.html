@@ -3,12 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>SocialAce</title>
-		
+		<!-- CSS -->
 		<link rel="stylesheet" href="{{STATIC_URL}}css/style.css" type="text/css" media="screen" />
 		<link rel="stylesheet" href="{{STATIC_URL}}css/social-icons.css" type="text/css" media="screen" />
-		<!--[if IE 8]>
-			<link rel="stylesheet" type="text/css" media="screen" href="/css/ie8-hacks.css" />
-		<![endif]-->
+		
 		<!-- ENDS CSS -->	
 		
 		<!-- GOOGLE FONTS -->
@@ -23,7 +21,7 @@
 		<script type="text/javascript" src="{{STATIC_URL}}js/jquery.cycle.all.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/custom.js"></script>
 		
-		<!-- Nivo slider -->
+		<!-- Nivo slider 
 		<link rel="stylesheet" href="{{STATIC_URL}}css/nivo-slider.css" type="text/css" media="screen" />
 		<script src="{{STATIC_URL}}js/nivo-slider/jquery.nivo.slider.js" type="text/javascript"></script>
 		<!-- ENDS Nivo slider -->
@@ -71,21 +69,22 @@
 		
 		<!-- Isotope -->
 		<script src="{{STATIC_URL}}js/jquery.isotope.min.js"></script>
-		 <!-- Loading Bootstrap -->
-		<link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
-		<link href="{{STATIC_URL}}bootstrap/css/prettify.css" rel="stylesheet">
-	   <!-- END Loading Bootstrap -->
+
 		
 		<!-- Scriptaculo -->		
 <script src="{{STATIC_URL}}js/prototype.js" type="text/javascript"></script>
 <script src="{{STATIC_URL}}js/scriptaculous.js" type="text/javascript"></script>
 		<!-- END Scriptaculo -->		
-	    
+
+	 <!-- Loading Bootstrap -->
+    <link href="{{STATIC_URL}}bootstrap/css/bootstrap.css" rel="stylesheet">
+    <link href="{{STATIC_URL}}bootstrap/css/prettify.css" rel="stylesheet">
+
       
 </head>
 	
 	
-	<body class="home">
+	<body class="">
 	
 	
 		<!-- WRAPPER -->
@@ -96,37 +95,35 @@
 				<a href="{% url 'principalInicio' %}"><img id="logo" src="{{STATIC_URL}}img/logo.png" alt="Nova" with="120" height="120"/></a>
 				<!-- Social -->
 				<div id="social-holder">
-				
 					<ul class="social">
-					
-						<label color="red"> <h3>Usuario: {{ usuario.last_name }} {{ usuario.first_name }}--{{ usuario.id }}</h3> </label>					
+						<label color="red"><h3>Usuario:{{ usuario.last_name }} {{ usuario.first_name }}-{{ usuario.id }}</h3></label>					
 						<label><img src="{{STATIC_URL}}{{usuario.usuarioperfil.foto}} " alt="{{usuario.usuarioperfil.foto}}"  with="50" height="70"/> </label>
 					</ul>
 				</div>
 				<!-- ENDS Social -->
 				<!-- Navigation -->
 				<ul id="nav" class="sf-menu">
-					<li class="current-menu-item"><a href="{% url 'principalInicio' %}">HOME</a></li>
+					<li><a href="{% url 'principalInicio' %}">HOME</a></li>
 					<li><a href="{% url 'verNotificacion' %}">NOTIFICACION</a>
 						<ul>
-							<li><a href="#"><span> Appearance</span></a></li>
+							<li><a href="{% url 'misNotificaciones' %}"><span> Aceptadas</span></a></li>
 							<li><a href="#"><span> Columns layout</span></a></li>							
 						</ul>
 					</li>
 					<li><a href="{% url 'verAmigos' %}">AMIGOS</a>
 						
 					</li>
-					<li><a href="#">ALBUMES</a>
+					<li><a href="{% url 'verAlbumes' %}">ALBUMES</a>
 						<ul>
-							<li><a href="{% url 'verAlbumes' %}"><span>MIS ALBUMES</span></a></li>
+							
 									<li><a href="{% url 'registroAlbum' %}"><span>CREAR</span></a></li>
 									<li><a href="#"><span>MODIFICAR</span></a>
 									<span class="navbar-unread"></span>
 										<ul>
-											{% for album in albumes %}
+											{% for campo in albumes %}
 											<label> 
-											<li><a href="{% url 'modificarAlbum' album.id %}"><span>
-											{{ album.name }} {{ album }}</span></a></li>
+											<li><a href="{% url 'modificarAlbum' campo.id %}"><span>
+											{{ campo.name }} {{ campo }}</span></a></li>
 											</label>	 
 			    					   		{% endfor %} 
 										</ul>
@@ -134,14 +131,14 @@
 							</li>
 						</ul>
 					</li>
-					<li><a href="#">PERFIL</a>
+					<li><a href="{% url 'Miperfil' usuario.id %}">PERFIL</a>
 						<ul>
-							<li><a href="{% url 'Miperfil' usuario.id %}"><span>Mi perfil</span></a></li>
+							
 							<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>Modificar</span></a></li>
 						</ul>
 					</li>
 					<li><a href="{% url 'logout' %}">SALIR</a></li>
-					<li><a href="{% url 'prueba' %}">PRUEBA</a></li>
+					
 				</ul>
 				<!-- Navigation -->	
 				

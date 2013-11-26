@@ -1,0 +1,48 @@
+{% extends 'base.html'%}
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis Datos</span>
+	<span class="subtitle">Datos basicos del perfil de mi amig@ </span>
+</div>
+<!-- ENDS title -->
+				
+<!-- page-content -->
+<div id="page-content">	
+	<div class="accordion">
+		
+		<h3>Datos Basicos</a></h3>
+		<div>
+			{% for campo in usu %}
+			<p> <img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="50" height="50"/> 		
+			<strong>Nombre Completo:</strong>{{ campo.last_name}} {{ campo.first_name}}. <br>
+		    <strong>Mi direccion es:</strong> {{ campo.usuarioperfil.direccion}}. 
+		    <strong>Mi fecha de nacimiento es:</strong> {{ campo.usuarioperfil.fechanacimiento}}<br>
+	   	    <strong>Email: </strong>{{ campo.email }}
+	   	    <strong>Twitter: </strong>{{ campo.usuarioperfil.twitter}}
+			</p>
+			{% endfor %}
+		</div>
+		
+		<h3>Mis amigos</a></h3>
+		<div>
+			<ul>
+			{% for campo in persona %}
+				<li><img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="20" height="20"/> 					<strong>Nombre:</strong>{{ campo.last_name}} {{ campo.first_name}}. </li>
+			{% endfor %}	
+			</ul>
+		</div>
+		<h3>Mis Albumes</a></h3>
+		<div>
+			<ul>
+			{% for campo in albumes %}
+			<li><img src="{{STATIC_URL}}{{ campo.foto}}" alt="{{ campo.foto}}" with="20" height="20"/> 		
+			<a href="{% url 'detalleAlbum2' campo.id %}"><strong>{{ campo.nombre}} </strong></a>{{ campo.descripcion}}. 
+			</li>
+			{% endfor %}
+			</ul>
+		</div>	
+			   
+	</div>						
+</div>						
+{% endblock %}

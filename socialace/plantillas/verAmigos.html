@@ -10,7 +10,7 @@
 <ul id="portfolio-list" class="gallery three-cols">
    {% for campo in persona %}
 	<li class="pink">
-		<a href="#" rel="group1"  title="Direccion:{{ campo.usuarioperfil.direccion }} 
+		<a href="{% url 'perfilAmigo' campo.id %}" rel="group1"  title="Direccion:{{ campo.usuarioperfil.direccion }} 
 	    Correo: {{ campo.email }}
 	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}" >
 		{{ campo.first_name }} {{ campo.last_name }}

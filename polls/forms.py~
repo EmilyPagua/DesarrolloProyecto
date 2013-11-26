@@ -92,7 +92,7 @@ class EditarUsuario(RegistroUsuario):
 class RegistroAlbum(forms.Form):
     nombre = forms.CharField(max_length=50, label='Nombre (*)')
     descripcion = forms.CharField(max_length=200,label='Descripcion (*)')
-    privacidad = forms.BooleanField(label='Privacidad')
+    privacidad = forms.BooleanField(label='Privacidad',required=False)
     foto = forms.ImageField(label='Foto', required=False)   
    
     def __init__(self,*args, **kwargs):
@@ -106,7 +106,9 @@ class RegistroAlbum(forms.Form):
         descripcion = self.cleaned_data['descripcion']
         privacidad = self.cleaned_data['privacidad']
         foto = self.cleaned_data['foto']
+        print "fotico "
         album = Album(nombre=nombre, descripcion=descripcion, privacidad=privacidad, fkusuario=usuario)
+        
         if foto:
             album.foto = foto
         album.save()
@@ -127,7 +129,7 @@ class RegistroAmigo(forms.Form):
     
     def __init__(self,*args, **kwargs):	
         super(RegistroAmigo, self).__init__(*args, **kwargs)
-        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos', 'class': 'form-control'}#,'style':'visibility:hidden'}
+        self.fields['amigos'].widget.attrs = {'placeholder': 'amigos', 'class': 'admin-form'}#,'style':'visibility:hidden'}
         
     def procesar_notificacion(self, usuario):      	
         id_amigo = self.cleaned_data['amigos']
@@ -140,7 +142,7 @@ class RegistroAmigo(forms.Form):
         b = Historial(usuario=k, accion='Amistad')
         b.save()
         #llenar notificacion
-        c = Notificacion(usuario=l, historia=b, descripcion ='Quiere tu amistad')
+        c = Notificacion(usuario=l, historia=b, descripcion ='Amistad')
         c.save()
        
 
@@ -163,6 +165,32 @@ class RegistroAmigo(forms.Form):
         #k = User.objects.get(id=usuario.id)
         #l.usuarioperfil.amigos.add(k)
         #l.save()
+
+
+#Formulario del Comentario
+class RegistroComentario(forms.Form):
+    descripcion = forms.CharField(max_length=200,label='Amigos',required=True)    
+   
+    def __init__(self,*args, **kwargs):
+        super(RegistroComentario, self).__init__(*args, **kwargs)
+        self.fields['descripcion'].widget.attrs = {'placeholder': 'descripcion', 'class': 'form-control'}
+        
+    def procesar_comentario(self,usuario):
+        descripcion = self.cleaned_data['descripcion']
+        print "llego hasta el prcesar"
+        #album = Album(nombre=nombre, descripcion=descripcion, privacidad=privacidad, fkusuario=usuario)
+        #album.save()
+
+    def modificar_album(self, album):
+        album.nombre = self.cleaned_data['nombre']
+        album.descripcion = self.cleaned_data['descripcion']
+        album.privacidad = self.cleaned_data['privacidad']
+        foto = self.cleaned_data['foto']
+      
+        if foto:
+            album.foto = foto
+        album.save()  
+
 
 
 #agregarfotos

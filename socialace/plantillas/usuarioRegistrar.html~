@@ -96,9 +96,7 @@ $.datepicker.regional['es'] = {
 	firstDay: 1,
 	numberOfMonths: 1,
 	isRTL: false,
-	showMonthAfterYear: false,
-	 minDate: 1
-	beforeShowDay: noFinesDeSemanaNiFestivos,
+	showMonthAfterYear: false,	 
 yearSuffix: ''};
 $.datepicker.setDefaults($.datepicker.regional['es']);
 });
@@ -113,6 +111,42 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 				changeYear: true,
 				onSelect: function(dateText, inst) {} });
 			});
+			
+				function validarForm(formulario) {
+			   if(formulario.usuario.value.length==0) { //comprueba que no esté vacío
+				formulario.usuario.focus();   
+				alert('Requiere de un nombre de usuario'); 
+				return false; //devolvemos el foco
+			  }
+			  if(formulario.clave.value.length==0) { //comprueba que no esté vacío
+				formulario.clave.focus();
+				alert('Requiere de una clave personal');
+				return false;
+			  }	
+			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+				formulario.nombre.focus();
+				alert('Requiere de un nombre');
+				return false;
+			  }	
+			   if(formulario.apellido.value.length==0) { //comprueba que no esté vacío
+				formulario.apellido.focus();
+				alert('Requiere de un apellido');
+				return false;
+			  }	
+			   if(formulario.nacimiento.value.length==0) { //comprueba que no esté vacío
+				formulario.nacimiento.focus();
+				alert('Requiere de una fecha de nacimiento');
+				return false;
+			  }	
+			  if(formulario.direccion.value.length==0) { //comprueba que no esté vacío
+				formulario.direccion.focus();
+				alert('Requiere de una direccion');
+				return false;
+			  }
+			  
+			 alert('Sus datos seran insertados');		  
+			  return true;
+			}
 			</script>
 	<body class="home">
 	

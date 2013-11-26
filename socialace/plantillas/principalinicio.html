@@ -12,11 +12,11 @@
 				<!-- post -->
 				{% for campo in historial %} 
 					<div class="post">
-						<h3><a href="single.html">his:{{ campo.id }}{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</a></h3>
-	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+						
 						<!-- <div class="n-comments">165</div> -->
 						{% if campo.accion = 'Nuevo album' %}
-						
+						<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
 						<!-- shadow Nuevo album-->
 						<div class="thumb-shadow">
 							<!-- post-thumb -->
@@ -26,8 +26,9 @@
 							<!-- ENDS post-thumb -->
 							
 							<div class="the-excerpt">
-								{{ campo.accion}} :{{ campo.fkalbum.nombre}} <br>
-								Descripcion:  {{ campo.fkalbum.descripcion}}
+								Album :<a href="{% url 'detalleAlbum2' campo.id %}"><strong>{{ campo.fkalbum.nombre}} </strong></a><br>
+								Descripcion:  {{ campo.fkalbum.descripcion}} <br>
+								
 			
 							</div>		
 						</div>
@@ -36,16 +37,17 @@
 						{% elif campo.accion = 'Amistad'  %}
 						{% for aux in notificacion %}
 						{% if campo.id = aux.historia.id %}	
-			   			{% if aux.descripcion = 'Amistad' %}	
+			   			{% if aux.descripcion = 'Amistad' %}
+			   			
+			   			<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " with="55" height="55" /> Quiere ser amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" with="60" height="60"/>
+	   						
 						<!-- shadow Nuevo Amistad-->
 						<div class="thumb-shadow">  		
 							<!-- post-thumb -->
 							
 							<!-- ENDS post-thumb -->
 							<div class="the-excerpt">
-							<hr>
-							Quiere ser amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	
-							<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" with="60" height="60"/></a>
 								
 							</div>	
 							{% endif %}
@@ -58,6 +60,8 @@
 						{% elif campo.accion = 'Comentar Album'  %}	
 						{% for aux in comentario %}
         				{% if campo.fkcomentario.id = aux.id %}	
+        				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " with="55" height="55" />
 						<!-- shadow Nuevo Comentar Album-->
 						<div class="thumb-shadow"> 
 							<!-- post-thumb -->

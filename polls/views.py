@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo, RegistroFoto
+from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo, RegistroFoto,RegistroComentario
 from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido, Historial, Contenido, Comentario
 from django.contrib.auth.models import User
 from django.db.models import Q
@@ -12,11 +12,68 @@ from django.db.models import Q
 
 #Prueba
 @login_required
-def prueba(request):
+def prueba(request,id_album):
     usuario = request.user
-    contexto = {'usuario': usuario}
-    return render_to_response('features-toggle.html',context_instance=RequestContext(request, contexto))
-
+    albu = get_object_or_404(Album, id=id_album)
+    albumes = Album.objects.filter(id=albu.id)
+    contenido = Contenido.objects.filter(fkalbum=albu.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
+    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()       
+    print 'cantidad de comentario'
+    print catidadComentario
+    if 'ver' in request.POST:
+        formulario = RegistroComentario(request.POST)
+        if formulario.is_valid():
+            #import pdb; pdb.set_trace() 
+            formulario.procesar_comentario()
+            return HttpResponseRedirect(reverse('principalInicio'))  
+	        
+	contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,  'formulario' : RegistroComentario(),'catidadComentario':catidadComentario }
+    return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
+	        
+  
+  
+  
+  
+#Detalle Album (Se ven las fotos en el carrusel)
+@login_required
+def detalle_album(request,id_album):
+    usuario = request.user
+    albu = get_object_or_404(Album, id=id_album)
+    albumes = Album.objects.filter(id=albu.id)
+    contenido = Contenido.objects.filter(fkalbum=albu.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
+    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()       
+    print 'cantidad de comentario'
+    print catidadComentario
+    if 'ver' in request.POST:
+        formulario = RegistroComentario(request.POST)
+        if formulario.is_valid():
+            #import pdb; pdb.set_trace() 
+            formulario.procesar_comentario()
+            return HttpResponseRedirect(reverse('principalInicio'))  
+	if 'agregar' in request.POST:
+	    print request.POST 
+	contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
+    return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
+	        
+  
+  
+#Detalle Album (Se ven las fotos en el carrusel)
+@login_required
+def detalle_album2(request,id_album):
+    usuario = request.user
+    albu = get_object_or_404(Album, id=id_album)
+    albumes = Album.objects.filter(id=albu.id)
+    contenido = Contenido.objects.filter(fkalbum=albu.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
+    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()       
+    print 'cantidad de comentario'
+    print catidadComentario
+    
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
+    return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
+	
 #agregarfotos
 @login_required
 def registro_foto(request,id_album):
@@ -32,13 +89,9 @@ def registro_foto(request,id_album):
             formulario.procesar_foto(usuario)
             return HttpResponseRedirect(reverse('principalInicio')) 
 
-    #import pdb; pdb.set_trace()
-   
-    
+    #import pdb; pdb.set_trace()       
     contexto = {'usuario': usuario,'albumes':albumes }
     return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
-
-
 
 
 #---------------- U S U A R I O ------------------
@@ -61,8 +114,8 @@ def registro_usuario(request):
     if request.method == 'POST':
         formulario = RegistroUsuario(request.POST, request.FILES)
         if formulario.is_valid():
-	    formulario.procesar_registro()
-	    return HttpResponseRedirect(reverse('login'))   
+	        formulario.procesar_registro()
+	        return HttpResponseRedirect(reverse('login'))   
     contexto = {'formulario': RegistroUsuario()}
     return render_to_response('usuarioRegistrar.html',context_instance=RequestContext(request, contexto))
 	
@@ -156,9 +209,6 @@ def ver_notificacion(request):
                    
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
-            print '------------------------------------'
-            print formulario  
-            print '------------------------------------'
             formulario.procesar_amigo(usuario)
             return HttpResponseRedirect(reverse('principalInicio')) 
             
@@ -166,6 +216,28 @@ def ver_notificacion(request):
     contexto = {'informacion': informacion,'usuario': usuario}
     return render_to_response('notificar.html',context_instance=RequestContext(request,contexto))
 
+   #Notificaciones Aprobadas
+@login_required
+def notificaciones_aprobadas(request,id_notificacion):
+    usuario = request.user
+    noti = get_object_or_404(Notificacion, id=id_notificacion)
+    notifica = Notificacion.objects.filter(id=noti.id)
+    informacion = Notificacion.objects.filter(usuario=usuario)
+    notifica.update(status='true')
+    if 'aceptar' in request.POST:
+        contexto = {'usuario' : usuario,'informacion':informacion }
+        
+        return render_to_response('verNotificacionesAceptadas.html',context_instance=RequestContext(request, contexto))    
+    return HttpResponseRedirect(reverse('principalInicio')) 	        
+   
+ #Ver Todas la notificaciones Aceptadas
+@login_required
+def notificaciones_aceptadas(request):
+    usuario = request.user
+    albumes = Album.objects.filter(fkusuario=usuario)
+    informacion = Notificacion.objects.filter(usuario=usuario)
+    contexto = {'albumes': albumes,'usuario': usuario,'informacion':informacion}
+    return render_to_response('NotificacionesAprobadas.html',context_instance=RequestContext(request,contexto))
 
 #---------------- R E L A C I O N   A M I S T A D ------------------
 
@@ -218,6 +290,19 @@ def ver_usuario(request, nombre):
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 
 
+#Ver perfil Amigo
+@login_required
+def ver_PerfilAmigo(request,id_usuario):    
+    usuario = request.user
+    amigos = UsuarioPerfil.objects.filter(amigos=id_usuario)
+    id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
+    persona = User.objects.filter(id__in=id_per)    
+    usu = User.objects.filter(id=id_usuario)    
+    albumes = Album.objects.filter(fkusuario=usu)
+    contexto = {'usuario': usuario, 'usu':usu,'albumes':albumes,'persona':persona}
+    return render_to_response('PerfilAmigo.html',context_instance=RequestContext(request,contexto))
+ 
+ 
 #Buscador de Amigos
 import json
 from django.views.decorators.csrf import csrf_exempt

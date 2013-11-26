@@ -42,7 +42,7 @@ body {
 }
 
 #header{
-	height: 200px;
+	height: 160px;
 	position: relative;
 	z-index: 10;
 }
@@ -798,6 +798,18 @@ h6{ font-size: 20px; }
 	-webkit-border-radius: 10px;
 }
 
+#posts .post .post-thumbnailin{
+	position: relative;
+	overflow: hidden;
+	width: 596px;
+	height: 430px;
+	margin-bottom: 30px;
+	background: #f1f1f1;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
 
 #posts .post .post-thumbnail .cover{
 	position: absolute;
@@ -953,11 +965,25 @@ h6{ font-size: 20px; }
 	background: #ccc;
 	color: #f1f1f1;
 	font-size: 12px;
+	margin: 2px ;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;
 }
 
+#content .commentlist .like a{
+	display: block;
+	text-decoration: none;
+	float: right;
+	padding: 2px 8px;
+	background: #ccc;
+	color: #f1f1f1;
+	font-size: 12px;
+	margin: 2px ;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+}
 /* COMMENTS PAGINATION ------------------------------------------------------------*/
 
 #content .comments-pagination {

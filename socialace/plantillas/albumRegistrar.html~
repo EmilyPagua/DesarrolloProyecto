@@ -31,20 +31,12 @@
 	<!-- post -->
 	<div class="post">
 		<!-- shadow -->
-		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+		  <form action="." method="post" id="commentform" onsubmit="return validarForm(this);">
             {% csrf_token %}
             <tr>
 			<td>
                <br>
                {% for campo in formulario %}
-               {% if campo.label.name='foto' %}
-                             	 
-               		{{ campo.label }} 
-               {% elif %}
-              {{ campo.label }} {{ campo }}
-               {% endif %}
-               
-               
               	 <label> 
                		{{ campo.label }} {{ campo }}
                	 </label>
@@ -53,9 +45,10 @@
                 <br>	                               
                      <h7>(*) Datos obligatorios</h7>
                 <br>	                             
-              	<label>
+              	
+
 		               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-		        </label> 
+		        
 		    </td>					                                          	                      
 		    </tr>
            </form> 
