@@ -10,40 +10,38 @@
 <!-- Posts -->
 <div id="posts">
 	<!-- post -->
-	{% for campo in perfil %}
-	<div class="post">
-		<h3><a href="single.html">{{ campo.fkusuario.last_name }} {{ campo.fkusuario.first_name }}</a></h3>
-		
-		<!-- shadow Nuevo album-->
-		<div class="thumb-shadow">
-			<!-- post-thumb -->
-			
-			
-			<!-- ENDS post-thumb -->
-			<img src="{{STATIC_URL}}{{ campo.foto }}"  width="120" heigt="70" />
-			<div class="the-excerpt">
-				<p>{{ campo.fkusuario.username }}
-			
-				<stron>Direccion:</stron> {{ campo.direccion }}
-	       		<strom>Twitter:</strom> {{ campo.twitter }}						       		
-	       		<strom>Facebook:</strom> {{ campo.facebook }}
-	       		<strom>Fecha de Nacimiento:</strom> {{ campo.fechanacimiento }}
-	       		<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
-						        {% csrf_token %}
-						        {% for campo in formulario %}
-                  	 
-									   		{{ campo }}
-									   	 
-									   {% endfor %}	
-							   
-					               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-						       </form></p>
-			</div>		
+	{% if perfil %}
+	
+		{% for campo in perfil %}
+		<div class="post">
+			<h3><a href="single.html">{{ campo.last_name }} {{ campo.first_name }}</a></h3>
+			<!-- shadow Nuevo album-->
+			<div class="thumb-shadow">
+				<!-- post-thumb -->
+				<!-- ENDS post-thumb -->
+				<img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto }}"  width="80" heigt="70" />
+				<div class="the-excerpt">
+					<p>
+					<stron>Direccion:</stron> {{ campo.usuarioperfil.direccion }}<br>			       		
+			   		<strom>Facebook:</strom> {{ campo.usuarioperfil.facebook }}<br>
+			   		<strom>Fecha de Nacimiento:</strom> {{ campo.usuarioperfil.fechanacimiento }}<br>
+			   		<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
+				    {% csrf_token %}
+				    {% for campo in formulario %}
+	  	 			   		{{ campo }}
+						   {% endfor %}	
+				       <button class="btn btn-hg btn-primary" type="submit">Enviar Solicitud</button> 
+				   </form></p>
+				</div>		
+			</div>
+			<!-- ENDS shadow Nuevo album-->		
 		</div>
-		<!-- ENDS shadow Nuevo album-->		
-	</div>
+	
 	<!-- ENDS post -->	
 	{% endfor %}
+	{% else %}	
+		no hay personas con el nombre de:
+	{% endif%}
 </div>
 <!-- ENDS Posts -->
 {% endblock %}

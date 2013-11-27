@@ -144,7 +144,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 				return false;
 			  }
 			  
-			 alert('Sus datos seran insertados');		  
+			 alert('Sus datos fueron insertados con exito..!');		  
 			  return true;
 			}
 			</script>

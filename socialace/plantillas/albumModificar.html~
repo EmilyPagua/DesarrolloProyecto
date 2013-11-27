@@ -31,7 +31,7 @@
 	<div class="post">
 	
 		<!-- shadow -->
-		<div class="thumb-shadow">
+		
 		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
             {% csrf_token %}
                {% for campo in formulario %}
@@ -49,7 +49,7 @@
 		    </td>					                                          	                      
 		    </tr>
            </form> 
-           </div>
+         
 		<!-- ENDS shadow -->
 	</div>
 	<!-- ENDS post -->

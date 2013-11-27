@@ -107,11 +107,14 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 		<script>
 			$(function() {
 				$( ".datepicker" ).datepicker({
+		
 				changeMonth: true,
 				changeYear: true,
+				yearRange: "c-50:2006",
+				minDate:'c-18250:c',
+				maxDate: '0',
 				onSelect: function(dateText, inst) {} });
 			});
-			
 				function validarForm(formulario) {
 			   if(formulario.usuario.value.length==0) { //comprueba que no esté vacío
 				formulario.usuario.focus();   

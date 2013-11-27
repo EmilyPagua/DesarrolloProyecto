@@ -18,7 +18,7 @@ dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
 dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
 weekHeader: 'Sm',
 dateFormat: 'dd/mm/yy',
-firstDay: 1,
+firstDay: 0,
 numberOfMonths: 1,
 isRTL: false,
 showMonthAfterYear: false,
@@ -26,54 +26,49 @@ yearSuffix: ''};
 $.datepicker.setDefaults($.datepicker.regional['es']);
 });
 </script>
-
-
-
-		<script>
-			$(function() {
-				$( ".datepicker" ).datepicker({
-				changeMonth: true,
-				changeYear: true,
-				onSelect: function(dateText, inst) {} });
-			});
-			
+<script>
+	$(function() {
+		$( ".datepicker" ).datepicker({
+		
+		changeMonth: true,
+		changeYear: true,
+		yearRange: "c-50:2006",
+		minDate:'c-18250:c',
+        maxDate: '0',
+		onSelect: function(dateText, inst) {} });
+	});
 	
-				function validarForm(formulario) {
-			   if(formulario.usuario.value.length==0) { //comprueba que no esté vacío
-				formulario.usuario.focus();   
-				alert('Requiere de un nombre de usuario'); 
-				return false; //devolvemos el foco
-			  }
-			  if(formulario.clave.value.length==0) { //comprueba que no esté vacío
-				formulario.clave.focus();
-				alert('Requiere de una clave personal');
-				return false;
-			  }	
-			   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
-				formulario.nombre.focus();
-				alert('Requiere de un nombre');
-				return false;
-			  }	
-			   if(formulario.apellido.value.length==0) { //comprueba que no esté vacío
-				formulario.apellido.focus();
-				alert('Requiere de un apellido');
-				return false;
-			  }	
-			   if(formulario.nacimiento.value.length==0) { //comprueba que no esté vacío
-				formulario.nacimiento.focus();
-				alert('Requiere de una fecha de nacimiento');
-				return false;
-			  }	
-			  if(formulario.direccion.value.length==0) { //comprueba que no esté vacío
-				formulario.direccion.focus();
-				alert('Requiere de una direccion');
-				return false;
-			  }
-			  
-			 alert('Sus datos seran modificados');		  
-			  return true;
-			}
-	</script>
+	function validarForm(formulario) {	   
+	  if(formulario.clave.value.length==0) { //comprueba que no esté vacío
+		formulario.clave.focus();
+		alert('Requiere de una clave personal');
+		return false;
+	  }	
+	   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+		formulario.nombre.focus();
+		alert('Requiere de un nombre');
+		return false;
+	  }	
+	   if(formulario.apellido.value.length==0) { //comprueba que no esté vacío
+		formulario.apellido.focus();
+		alert('Requiere de un apellido');
+		return false;
+	  }	
+	   if(formulario.nacimiento.value.length==0) { //comprueba que no esté vacío
+		formulario.nacimiento.focus();
+		alert('Requiere de una fecha de nacimiento');
+		return false;
+	  }	
+	  if(formulario.direccion.value.length==0) { //comprueba que no esté vacío
+		formulario.direccion.focus();
+		alert('Requiere de una direccion');
+		return false;
+	  }
+	  
+	 alert('Sus datos seran modificados');		  
+	  return true;
+	}
+</script>
 <!-- title -->
 <div id="page-title">
 	<span class="title">Modificar datos personales</span>
@@ -88,18 +83,16 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 		
 		<!-- shadow -->
 		
-		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+		 <form enctype="multipart/form-data" name="form3" method="post" action="{% url 'Miperfil' usuario.id %}" onsubmit="return validarForm(this);">
             {% csrf_token %}
             <tr>
 			<td>
                <br>
                {% for campo in formulario %}
-              	 <label> 
-              	 	{{ campo.label }} {{ campo }}
-
-               		
-               		               		
-               	 </label>	 
+               
+              	 <label>                
+              		{{ campo.label }} {{ campo }}
+              	  </label>	 
                {% endfor %}	
                 <br>	                               
                      <h7>(*) Datos obligatorios</h7>

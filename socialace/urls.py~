@@ -28,6 +28,8 @@ urlpatterns = patterns('',
     url(r'^verUsuario/(?P<nombre>.+)/$', 'polls.views.ver_usuario',name ='verUsuario'),
     url(r'^buscar/$', 'polls.views.busqueda',name ='busqueda'),
     url(r'^perfilAmigo/(?P<id_usuario>\d+)/$', 'polls.views.ver_PerfilAmigo',name ='perfilAmigo'),    
+    url(r'^misComentarios/(?P<id_album>\d+)/$', 'polls.views.misComentarios',name ='misComentarios'),
+    url(r'^Comentarios/$', 'polls.views.comentario_Mio',name ='comentar'),
     
     url(r'^verNotificacion/$', 'polls.views.ver_notificacion',name ='verNotificacion'),    
     url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),

@@ -13,26 +13,40 @@ from django.db.models import Q
 #Prueba
 @login_required
 def prueba(request,id_album):
-    usuario = request.user
-    albu = get_object_or_404(Album, id=id_album)
-    albumes = Album.objects.filter(id=albu.id)
-    contenido = Contenido.objects.filter(fkalbum=albu.id)
-    comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
-    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()       
-    print 'cantidad de comentario'
-    print catidadComentario
-    if 'ver' in request.POST:
-        formulario = RegistroComentario(request.POST)
-        if formulario.is_valid():
-            #import pdb; pdb.set_trace() 
-            formulario.procesar_comentario()
-            return HttpResponseRedirect(reverse('principalInicio'))  
-	        
-	contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,  'formulario' : RegistroComentario(),'catidadComentario':catidadComentario }
+    usuario = request.user    
+    contexto = {'usuario' : usuario}
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
 	        
-  
-  
+#comentarios mios
+@login_required
+def comentario_Mio(request):
+    usuario = request.user     
+    usu = User.objects.get(id=usuario.id)      
+    comentario = Comentario.objects.filter(userComentador=usu.id)      
+    contexto = {'usuario' : usuario, 'comentario':comentario }
+    return render_to_response('MisComentarios.html',context_instance=RequestContext(request, contexto))    
+    	        
+   
+#Mis comentarios
+@login_required
+def misComentarios(request,id_album):
+    usuario = request.user     
+    usu = User.objects.get(id=usuario.id) 
+    albu = get_object_or_404(Album, id=id_album)
+    albumes = Album.objects.get(id=albu.id)    
+    if request.method == 'POST':         
+        formulario = RegistroComentario(request.POST)
+        if formulario.is_valid():
+            
+            formulario.procesar_comentario(albumes,usuario)
+            comentarioPersona = Comentario.objects.filter(userComentador=usu.id)      
+            contexto = {'usuario' : usuario, 'comentario':comentarioPersona }
+            return render_to_response('comentariosHechos.html',context_instance=RequestContext(request, contexto))    
+    
+    contexto = {'usuario' : usuario}
+    return render_to_response('comentariosHechos.html',context_instance=RequestContext(request, contexto))    
+	        
+   
   
   
 #Detalle Album (Se ven las fotos en el carrusel)
@@ -43,17 +57,16 @@ def detalle_album(request,id_album):
     albumes = Album.objects.filter(id=albu.id)
     contenido = Contenido.objects.filter(fkalbum=albu.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
-    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()       
-    print 'cantidad de comentario'
-    print catidadComentario
+    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()            
     if 'ver' in request.POST:
         formulario = RegistroComentario(request.POST)
         if formulario.is_valid():
             #import pdb; pdb.set_trace() 
             formulario.procesar_comentario()
             return HttpResponseRedirect(reverse('principalInicio'))  
-	if 'agregar' in request.POST:
+	elif 'agregar' in request.POST:
 	    print request.POST 
+	    
 	contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
 	        
@@ -68,8 +81,6 @@ def detalle_album2(request,id_album):
     contenido = Contenido.objects.filter(fkalbum=albu.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
     catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()       
-    print 'cantidad de comentario'
-    print catidadComentario
     
     contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
@@ -80,8 +91,7 @@ def registro_foto(request,id_album):
     usuario = request.user
     albumes = Album.objects.filter(id=id_album)
     if request.method == 'POST':               
-        print ('Ya entro por post')
-        import pdb; pdb.set_trace()
+        #import pdb; pdb.set_trace()
         print request.POST 
         formulario =RegistroFoto(request.POST)
         if formulario.is_valid():
@@ -109,8 +119,7 @@ def principal_inicio(request):
 
 
 #Registrar Usuario
-def registro_usuario(request):
-  
+def registro_usuario(request):  
     if request.method == 'POST':
         formulario = RegistroUsuario(request.POST, request.FILES)
         if formulario.is_valid():
@@ -127,13 +136,11 @@ def modificar_usuario(request,id_usuario):
         formulario = EditarUsuario(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.modificar_registro(usuario)           
-    form_data = {
-        'usuario': usuario.username,
+    form_data = {        
         'nombre': usuario.first_name,
         'apellido' : usuario.last_name,
-        'nacimiento' : usuario.usuarioperfil.fechanacimiento,
-        'direccion' : usuario.usuarioperfil.direccion,
-        'twitter' : usuario.usuarioperfil.twitter,
+        'nacimiento' : '',
+        'direccion' : usuario.usuarioperfil.direccion,        
         'facebook' : usuario.usuarioperfil.facebook,
         'correo' : usuario.email,
         'privacidad' : usuario.usuarioperfil.privacidad,
@@ -145,8 +152,7 @@ def modificar_usuario(request,id_usuario):
 
 @login_required
 def ver_MiPerfil(request,id_usuario):    
-    usuario = request.user
-    
+    usuario = request.user    
     amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
     persona = User.objects.filter(id__in=id_per)
@@ -245,7 +251,7 @@ def notificaciones_aceptadas(request):
 #Crear Relacion
 @login_required
 def registro_amigo(request):
-    usuario = request.user
+    usuario = request.user    
     if request.method == 'POST':
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
@@ -270,23 +276,25 @@ def ver_amigos(request):
 #Ver Amigos buscados
 @login_required
 def ver_usuario(request, nombre):
-    usuario = request.user
+    usuario = request.user   
     if request.method == 'POST':
         formulario = RegistroAmigo(request.POST)
         if formulario.is_valid():
 
             formulario.procesar_notificacion(usuario)
             return HttpResponseRedirect(reverse('principalInicio'))
-    
-    nc = nombre.split(" ")
-    n = nc[0]
-    a = nc [1]
-    persona = User.objects.filter(first_name=n, last_name=a)
-    perfil= UsuarioPerfil.objects.filter(fkusuario=persona)
 
-    formulario = RegistroAmigo()
-    #persona = User.objects.filter(=usuario)
-    contexto = {'usuario': usuario, 'perfil': perfil,'formulario': formulario}
+     
+    nc = nombre.split(" ")    
+    print nombre
+    #persona = User.objects.get(first_name=n, last_name=a)
+    persona = User.objects.filter(first_name__regex = nombre)
+    id_per = [amigo.id for amigo in persona] #lista por comprension    
+    #import pdb; pdb.set_trace()
+    print "ya se busco a la persona"
+    print id_per
+    personitas = User.objects.filter(id__in=id_per)    
+    contexto = {'usuario': usuario, 'perfil': personitas}
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 
 
@@ -320,7 +328,7 @@ def busqueda(request):
     cont = 0
     objects = []
     for i in query:
-            nombre_completo = i.first_name + " " + i.last_name
+            nombre_completo = i.first_name 
             element = {"nombre":nombre_completo}
             objects.append(json.dumps(element))
             items = { "items" : objects}

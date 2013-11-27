@@ -21,7 +21,7 @@
 		<script type="text/javascript" src="{{STATIC_URL}}js/jquery.cycle.all.js"></script>
 		<script type="text/javascript" src="{{STATIC_URL}}js/custom.js"></script>
 		
-		<!-- Nivo slider 
+		<!-- Nivo slider -->
 		<link rel="stylesheet" href="{{STATIC_URL}}css/nivo-slider.css" type="text/css" media="screen" />
 		<script src="{{STATIC_URL}}js/nivo-slider/jquery.nivo.slider.js" type="text/javascript"></script>
 		<!-- ENDS Nivo slider -->
@@ -131,10 +131,11 @@
 							</li>
 						</ul>
 					</li>
-					<li><a href="#">PERFIL</a>
+					<li><a href="{% url 'Miperfil' usuario.id %}">PERFIL</a>
 						<ul>
-							<li><a href="{% url 'Miperfil' usuario.id %}"><span>Mi perfil</span></a></li>
+							
 							<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>Modificar</span></a></li>
+							<li><a href="{% url 'comentar' %}"><span>Comentario</span></a></li>
 						</ul>
 					</li>
 					<li><a href="{% url 'logout' %}">SALIR</a></li>

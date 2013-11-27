@@ -53,8 +53,18 @@
 			thumbnailContainerClass: "picture-slides-thumbnails",
 			dimBackgroundOverlayClass : "picture-slides-dim-overlay"
 		});
-	</script>
 
+	function validarForm(formulario) {
+	   if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
+		formulario.descripcion.focus();   
+		alert('Requiere de comentario'); 
+		return false; //devolvemos el foco
+	  }
+	  
+	 	alert('Su comentario sera enviado..!');	  
+	  return true;
+}
+</script>
 <!-- title -->
 
 <div id="page-title">
@@ -107,7 +117,7 @@
 	<!-- ENDS post -->
 	<!-- Comments-Block -->
 					<div id="comments-block">
-						<div class="n-comments"> {{ catidadComentario  }} </div> <div class="n-comments-text">comments</div>
+						<div class="n-comments"> {{ catidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
 		
 						<!-- comments list -->
 						<ul class="commentlist">
@@ -143,27 +153,27 @@
 						<!-- comments form -->
 						<div id="respond">
 							<div class="leave-comment">
-								<h2>Leave a Reply</h2>	
+								<h2>De su opinion sobre el album</h2>	
 								<!-- form -->
-								<form action="#" method="post" id="commentform">
-									<fieldset>
-										<div><label >NAME </label>
-										<input type="text" name="author" id="author" value="" tabindex="1" /></div>
-										<div><label >EMAIL (Will not be published) </label>
-										<input type="text" name="email" id="email" value="" tabindex="2" /></div>
-										<div><label >WEBSITE</label><input type="text" name="url" id="url" value="" tabindex="3" /></div>
+								 {% for campo in albumes %}
+								<form action="{% url 'misComentarios' campo.id %}" method="post" id="commentform">
+								 {% csrf_token %}
+									<fieldset>									
 										<div class="admin-form">
 											<div>
-												<label >COMMENTS</label>
-												<textarea  name="comment" id="comment" rows="10" tabindex="4"></textarea>
+											   <label >Comentario</label>												
+												{% for aux in formulario %}
+												{{aux}}
+												{% endfor %}												
 											</div>
-											<div><input type="submit" name="submit" id="submit" tabindex="5" value="SEND" /></div>
+											<div><input type="submit" name="enviar" id="submit" tabindex="5" value="Enviar" /></div>
 											<div><input type="hidden" name="comment_post_ID" value="586" /></div>
 										</div>
 										<input type='hidden' name='comment_post_ID' value='586' id='comment_post_ID' />
 										<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
 									</fieldset>
 								</form>
+								 {% endfor %}
 								<!-- ENDS form -->
 							</div>
 						</div>
