@@ -117,11 +117,12 @@
 	<!-- ENDS post -->
 	<!-- Comments-Block -->
 					<div id="comments-block">
-						<div class="n-comments"> {{ catidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
+						<div class="n-comments"> {{ cantidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
 		
 						<!-- comments list -->
 						<ul class="commentlist">
 						{% for aux in comentarioAlbum %}
+						<form enctype="multipart/form-data" name="form3" method="post" action=".">
 							<li class="comment" id="comment-18">
 								<div id="div-comment-18" class="comment-body">
 									<div class="comment-author vcard">
@@ -131,14 +132,15 @@
 									<p>{{ aux.descripcion }}  </p>
 					
 									<div class="reply">
-										<a class='comment-reply-link' href='/archives/196?replytocom=18#respond' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
+										<a class='comment-reply-link' href='#' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href='/archives/196?replytocom=18#respond' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
+										<a class='comment-reply-link' href='#' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
 									</div>
 								</div>
 							</li>
-							{% endfor %} 
+						</form> 
+						{% endfor %} 
 						</ul>
 						<!-- ENDS comments list -->
 		

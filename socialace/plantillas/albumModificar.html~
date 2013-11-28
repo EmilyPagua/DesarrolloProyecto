@@ -21,7 +21,7 @@
 <!-- title -->
 <div id="page-title">
 	<span class="title">Mis albumes</span>
-	<span class="subtitle">Seleccione y lea la informacion de cada albun y luego modifique el album que desee</span>
+	<span class="subtitle">Seleccione y lea la informacion de cada album y luego modifique el album que desee</span>
 </div>
 <!-- ENDS title -->
 
@@ -36,7 +36,7 @@
             {% csrf_token %}
                {% for campo in formulario %}
               	    <label> 
-               		{{ campo.label }} {{ campo }}
+               		{{ campo.label }}<br> {{ campo }}
                		</label>
                	<br>	 
                {% endfor %}	
@@ -44,7 +44,7 @@
                      <h7>(*) Datos obligatorios</h7>
                 <br>	                             
               	<label>
-		               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+		               <button class="btn btn-hg btn-primary" type="submit"  name="acep" value="modi">Aceptar</button> 
 		        </label> 
 		    </td>					                                          	                      
 		    </tr>

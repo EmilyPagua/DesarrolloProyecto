@@ -16,8 +16,7 @@ urlpatterns = patterns('',
     url(r'^modificarUsuario/(?P<id_usuario>\d+)/$', 'polls.views.modificar_usuario',name ='modificarUsuario'),
     url(r'^MiPerfil/(?P<id_usuario>\d+)/$', 'polls.views.ver_MiPerfil',name ='Miperfil'),    
     
-    url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),
-    url(r'^modificarAlbum/(?P<id_album>\d+)/$', 'polls.views.modificar_album',name ='modificarAlbum'),
+    url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),    
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
     url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.registro_foto',name ='agregarFoto'),
     url(r'^detalleAlbum/(?P<id_album>\d+)/$', 'polls.views.detalle_album', name='detalleAlbum'), 
@@ -33,7 +32,7 @@ urlpatterns = patterns('',
     url(r'^Comentarios/$', 'polls.views.comentario_Mio',name ='comentar'),
     
     url(r'^verNotificacion/$', 'polls.views.ver_notificacion',name ='verNotificacion'),    
-    url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),
+    url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/(?P<id_amigo>\d+)$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),
     url(r'^MisNotificaciones/$', 'polls.views.notificaciones_aceptadas',name ='misNotificaciones'),
     
     

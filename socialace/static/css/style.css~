@@ -23,7 +23,7 @@
 
 body {
 	line-height: 1;
-	color: #696969;
+	color: #c1c1c1;
 	background: #f1f1f1 url(../img/bg/patterns/obl-1x1.png);
 	font-family: Arial, Helvetica, sans-serif;
 	font-size:  100%;
@@ -289,7 +289,7 @@ h6{ font-size: 20px; }
 	left: 30px;
 	height: 46px;
 	width: 906px;
-	background: #ffd800;
+	background: #ffed89;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
@@ -714,7 +714,7 @@ h6{ font-size: 20px; }
 
 #content .gallery.three-cols li{
 	width: 282px;
-	height: 267px;
+	height: 290px;
 }
 
 #content .gallery.two-cols li{
@@ -965,6 +965,7 @@ h6{ font-size: 20px; }
 	background: #ccc;
 	color: #f1f1f1;
 	font-size: 12px;
+	margin: 2px ;
 	border-radius: 5px;
 	-moz-border-radius: 5px;
 	-webkit-border-radius: 5px;

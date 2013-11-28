@@ -117,25 +117,15 @@
 						<ul>
 							
 									<li><a href="{% url 'registroAlbum' %}"><span>CREAR</span></a></li>
-									<li><a href="#"><span>MODIFICAR</span></a>
-									<span class="navbar-unread"></span>
-										<ul>
-											{% for campo in albumes %}
-											<label> 
-											<li><a href="{% url 'modificarAlbum' campo.id %}"><span>
-											{{ campo.name }} {{ campo }}</span></a></li>
-											</label>	 
-			    					   		{% endfor %} 
-										</ul>
-									</li>
+									
 							</li>
 						</ul>
 					</li>
 					<li><a href="{% url 'Miperfil' usuario.id %}">PERFIL</a>
 						<ul>
 							
-							<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>Modificar</span></a></li>
-							<li><a href="{% url 'comentar' %}"><span>Comentario</span></a></li>
+							<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>MODIFICAR</span></a></li>
+							<li><a href="{% url 'comentar' %}"><span>COMENTARIO</span></a></li>
 						</ul>
 					</li>
 					<li><a href="{% url 'logout' %}">SALIR</a></li>
@@ -150,7 +140,7 @@
 				<form id="searchform" class="formulariodemo cf" action="" method='POST'>
                 {% csrf_token %}
   					<input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
-  					<button type="submit" onclick="javascript:buscarUsuario();">buscar</button>
+  					<button type="submit" onclick="javascript:buscarUsuario();" name="buscar" >buscar</button>
   				</form>
   				
 				

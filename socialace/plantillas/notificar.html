@@ -21,10 +21,16 @@
 	<div class="post">
 		{% for campo in informacion %}
 		{% if campo.status %}
-		
-		{% else %} 
-		{{campo.id}}
-			<h4>{{campo.historia.usuario.first_name }}
+		<!-- shadow -->
+		<div class="thumb-shadow">
+			<!-- ENDS post-thumb -->
+			<div class="the-excerpt">
+		   		<h3>Usted no tiene notificaciones disponibles</h3>					       	
+			</div>		
+		</div>
+		{% else %} 		
+			<h4>
+			{{campo.historia.usuario.first_name }}
 		   		{{ campo.historia.usuario.last_name }}</h4>
 		<!-- shadow -->
 		<div class="thumb-shadow">
@@ -32,7 +38,7 @@
 			<div class="the-excerpt">
 		   		
 		   		{{ campo.descripcion }} {{ campo.status }}
-		   		 <form name="form3"  method="post" enctype="multipart/form-data" action="{% url 'notificacionesAprobadas' campo.id %}">
+		   		 <form name="form3"  method="post" enctype="multipart/form-data" action="{% url 'notificacionesAprobadas' campo.id campo.historia.usuario.id %}">
 			  	 {% csrf_token %}
 				 <label>
 		       		<button class="btn btn-primary dropdown-toggle" type="submit" name="aceptar" value="{{ album.id }}">Aceptar</button> 
