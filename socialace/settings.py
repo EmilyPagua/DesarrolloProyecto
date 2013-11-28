@@ -1,6 +1,6 @@
 # Django settings for socialace project.
 from django.core.urlresolvers import reverse
-#DEBUG = True
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 HEROKU = True
 #HEROKU = False
