@@ -7,7 +7,7 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
+    url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
     #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
