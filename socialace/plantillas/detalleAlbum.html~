@@ -86,6 +86,7 @@ function suma(numero) {
 </div>
 <!-- ENDS title -->
 
+
 <!-- Posts -->
 <div id="posts" class="single">
 	<!-- post -->
@@ -143,23 +144,23 @@ function suma(numero) {
 										<img alt='' src="{{STATIC_URL}}{{ nivel.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
 										<cite class="fn">{{ nivel.userComentador.last_name }} {{ nivel.userComentador.first_name }}</cite><span class="says"> escribió:</span>
 									</div>										
-									<p>{{ nivel.descripcion }}{{nivel.id}} </p>
+									<p>{{ nivel.descripcion }}<br> 
+									<h5>like:
+									<script> var num=0 </script>
+									{% for aux1 in cantidadLike %}
+									{% if aux1.fkcomentario.id = nivel.id %}
+									<script>  
+									num=num+1 </script>
+									{% endif %}
+									{% endfor %}
+									<script>  document.write(num)
+									</script> </5></p>
 					
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 									</div>
 									<div class="like">
-									   <span class="says"> Like: {% for liked in cantidadLike %}	
-									   						ni{{nivel.id}}-- kli {{ liked.id }}
-																	{% if  liked.fkusuario.id = nivel.id %}
-																
-									   <SCRIPT LANGUAGE="JavaScript">
-										
-										//EJECTUA LA FUNCION HazPregunta
-										resultado = suma(resultado)
-										document.write('kkhj')
-										
-										</SCRIPT>{% endif %}{% endfor %}
+									   <span class="says"> 
 									   </span>
 										<a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
 									</div>									
@@ -182,12 +183,23 @@ function suma(numero) {
 										<cite class="fn">{{ nivel1.userComentador.last_name }} {{ nivel1.userComentador.first_name }}</cite><span class="says"> escribió:</span>
 									</div>										
 									<p>{{ nivel1.descripcion }}  </p>
+								
+									<h5>like:
+									<script> var num=0 </script>
+									{% for aux1 in cantidadLike %}
+									{% if aux1.fkcomentario.id = nivel1.id %}
+									<script>  
+									num=num+1 </script>
+									{% endif %}
+									{% endfor %}
+									<script>  document.write(num)
+									</script> </5></p>
 					
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel1.id %}" onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href='#' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
+										<a class='comment-reply-link' href="{% url 'likeComentario' nivel1.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -205,13 +217,23 @@ function suma(numero) {
 										<img alt='' src="{{STATIC_URL}}{{nivel2.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
 										<cite class="fn">{{ nivel2.userComentador.last_name }} {{ nivel2.userComentador.first_name }}</cite><span class="says"> escribió:</span>
 									</div>										
-									<p>{{ nivel2.descripcion }}  </p>
+									<p>{{ nivel2.descripcion }}  
+									<h5>like:
+									<script> var num=0 </script>
+									{% for aux1 in cantidadLike %}
+									{% if aux1.fkcomentario.id = nivel2.id %}
+									<script>  
+									num=num+1 </script>
+									{% endif %}
+									{% endfor %}
+									<script>  document.write(num)
+									</script> </5></p>
 					
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel2.id %}" onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href='#' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
+										<a class='comment-reply-link' href="{% url 'likeComentario' nivel2.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -229,13 +251,24 @@ function suma(numero) {
 										<img alt='' src="{{STATIC_URL}}{{nivel3.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
 										<cite class="fn">{{ nivel3.userComentador.last_name }} {{ nivel3.userComentador.first_name }}</cite><span class="says"> escribió:</span>
 									</div>										
-									<p>{{ nivel3.descripcion }} </p>
+									<p>{{ nivel3.descripcion }} 
+									<h5>like:
+									<script> var num=0 </script>
+									{% for aux1 in cantidadLike %}
+									{% if aux1.fkcomentario.id = nivel3.id %}
+									<script>  
+									num=num+1 </script>
+									{% endif %}
+									{% endfor %}
+									<script>  document.write(num)
+									</script> </5>
+									</p>
 					
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel3.id %}" onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href='#' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
+										<a class='comment-reply-link' href="{% url 'likeComentario' nivel3.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -255,11 +288,21 @@ function suma(numero) {
 										<img alt='' src="{{STATIC_URL}}{{nivel4.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
 										<cite class="fn">{{ nivel4.userComentador.last_name }} {{ nivel4.userComentador.first_name }}</cite><span class="says"> escribió:</span>
 									</div>										
-									<p>{{ nivel4.descripcion }}  </p>
+									<p>{{ nivel4.descripcion }} 
+									<h5>like:
+									<script> var num=0 </script>
+									{% for aux1 in cantidadLike %}
+									{% if aux1.fkcomentario.id = nivel4.id %}
+									<script>  
+									num=num+1 </script>
+									{% endif %}
+									{% endfor %}
+									<script>  document.write(num)
+									</script> </5> </p>
 					
 									
 									<div class="like">
-										<a class='comment-reply-link' href='#' onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>like</a>
+										<a class='comment-reply-link' href="{% url 'likeComentario' nivel4.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -276,16 +319,7 @@ function suma(numero) {
 						{% endfor %} 
 						</ul>
 						<!-- ENDS comments list -->
-		
-			
-						<!-- Navi -->
-						<div class="comments-pagination">
-						<a class='prev page-numbers' href='http://localhost:8888/archives/586/comment-page-1#comments'>&laquo; Previous</a>
-						<a class='page-numbers' href='http://localhost:8888/archives/586/comment-page-1#comments'>1</a>
-						<span class='page-numbers current'>2</span>	</div>
-						<!-- ENDS Navi -->
-		
-						<!-- comments form -->
+		<!-- comments form -->
 						<div id="respond">
 							<div class="leave-comment">
 								<h2>De su opinion sobre el album</h2>	
@@ -297,6 +331,7 @@ function suma(numero) {
 										<div class="admin-form">
 											<div>
 											   <label >Comentario</label>												
+											   <label >Nota: no escribir caracteres esperciales como: acentos, eñes, entre otros</label>
 												{% for aux in formulario %}
 												{{aux}}
 												{% endfor %}												

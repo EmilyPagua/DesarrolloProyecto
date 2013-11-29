@@ -9,9 +9,9 @@
 				
 <!-- page-content -->
 <div id="page-content">	
-	<div class="accordion">
+	
 		
-		<h5><a href="#">Datos Basicos</a></h5>
+		<h3>Datos Basicos</h3>
 		<div>
 			{% for campo in usu %}
 			<p> <img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="50" height="50"/> 		
@@ -23,8 +23,8 @@
 			</p>
 			{% endfor %}
 		</div>
-		
-		<h5><a href="#">Mis amigos</a></h5>
+		<hr>
+		<h3>Mis amigos</h3>
 		<div>
 			<ul>
 			{% for campo in persona %}
@@ -32,7 +32,8 @@
 			{% endfor %}	
 			</ul>
 		</div>
-		<h5><a href="#">Mis Albumes</a></h5>
+		<hr>
+		<h3>Mis Albumes</h3>
 		<div>
 			<ul>
 			{% for campo in albumes %}
@@ -43,6 +44,6 @@
 			</ul>
 		</div>	
 			   
-	</div>						
+				
 </div>						
 {% endblock %}

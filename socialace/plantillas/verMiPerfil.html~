@@ -2,16 +2,16 @@
 {% block content%}
 <!-- title -->
 <div id="page-title">
-	<span class="title">Features, Toggle box</span>
-	<span class="subtitle">Donec eu libero sit amet quam egestas semper.</span>
+	<span class="title">Mis Datos</span>
+	<span class="subtitle">A continuacion vera los datos basicos de su perfil, imagenes, musica y video </span>
 </div>
 <!-- ENDS title -->
 				
 <!-- page-content -->
 <div id="page-content">	
-	<div class="accordion">
+	
 		
-		<h5><a href="#">Datos Basicos</a></h5>
+		<h5>Datos Basicos</h5>
 		<div>
 			{% for campo in usu %}
 			<p> <img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="50" height="50"/> 		
@@ -23,8 +23,8 @@
 			</p>
 			{% endfor %}
 		</div>
-		
-		<h5><a href="#">Mis amigos</a></h5>
+		<hr>
+		<h5>Mis amigos</h5>
 		<div>
 			<ul>
 			{% for campo in persona %}
@@ -32,7 +32,8 @@
 			{% endfor %}	
 			</ul>
 		</div>
-		<h5><a href="#">Mis Albumes</a></h5>
+		<hr>
+		<h5>Mis Albumes</h5>
 		<div>
 			<ul>
 			{% for campo in albumes %}
@@ -43,6 +44,6 @@
 			</ul>
 		</div>	
 			   
-	</div>						
+				
 </div>						
 {% endblock %}

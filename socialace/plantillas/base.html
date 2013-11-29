@@ -97,7 +97,7 @@
 				<div id="social-holder">
 					<ul class="social">
 						<label color="red"><h3>Usuario:{{ usuario.last_name }} {{ usuario.first_name }}</h3></label>					
-						<label><img src="{{MEDIA_URL}}{{usuario.usuarioperfil.foto}} " alt="{{usuario.usuarioperfil.foto}}"  with="50" height="70"/> </label>
+						<label><img src="{{STATIC_URL}}{{ usuario.usuarioperfil.foto }}" alt="nada"  with="50" height="70"/> </label>
 					</ul>
 				</div>
 				<!-- ENDS Social -->
@@ -107,7 +107,7 @@
 					<li><a href="{% url 'verNotificacion' %}">NOTIFICACION</a>
 						<ul>
 							<li><a href="{% url 'misNotificaciones' %}"><span> Aceptadas</span></a></li>
-							<li><a href="#"><span> Columns layout</span></a></li>							
+													
 						</ul>
 					</li>
 					<li><a href="{% url 'verAmigos' %}">AMIGOS</a>
@@ -128,7 +128,7 @@
 							<li><a href="{% url 'comentar' %}"><span>COMENTARIO</span></a></li>
 						</ul>
 					</li>
-					<li><a href="{% url 'logout' %}">SALIR</a></li>
+					<li><a href="{% url 'login' %}">SALIR</a></li>
 					
 				</ul>
 				<!-- Navigation -->	
