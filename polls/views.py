@@ -5,12 +5,15 @@ from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo,RegistroComentario,BuscarHashtag
-from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido, Historial, Contenido, Comentario
+from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido, Historial, Contenido, Comentario, Like
 from django.contrib.auth.models import User
 from django.db.models import Q
 
 
 
+
+
+#***************************
 #Prueba
 @login_required
 def prueba(request,id_album):
@@ -19,9 +22,41 @@ def prueba(request,id_album):
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
 
 
-#hashtag Adreina
+#---------------- C O M E N T A R I O S------------------
+	        
+#Enviar Replicar Comentario
+@login_required
+def likeComentario(request,id_comentario):    
+    usuario = request.user
+    #import pdb; pdb.set_trace() 
+    comentario = get_object_or_404(Comentario, id=id_comentario)
+    album = Album.objects.get(id=comentario.fkalbum.id)
+    albumes = Album.objects.filter(id=album.id)
+    usu = User.objects.get(id=comentario.fkalbum.id)
+    contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
+    cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
+    cantidadLike = Comentario.objects.all()      
+    Liked = Like(fkcomentario=comentario, userLike=usuario,like=True)        
+    Liked.save()   
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
+    return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
+  
+  
+
+#---------------- I N S T A G R A M------------------
+#hashtag 
 @login_required
 def agregarFoto(request,id_album):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('L -- Leyendo el hashtag ingresado...\n')
+    outfile.close()
+    # Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+    infile.close() 
+   # Cerramos el fichero.
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.get(id=albu.id) 
@@ -31,20 +66,56 @@ def agregarFoto(request,id_album):
         return render_to_response('buscarHashtag.html',context_instance=RequestContext(request, contexto))
 
     contexto = {'usuario': usuario, 'formulario': BuscarHashtag(),'albumes':albumes}  
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Hashtag capturado con exito buscando imagenes...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
 
-#paso de hashtag andreina
+
+#paso de hashtag 
 @login_required
 def buscarHashtag(request):
-    
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Imprimiendo imagenes relacionadas al hashtag...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
-    contexto = {'usuario': usuario, 'formulario': BuscarHashtag()}      
+    contexto = {'usuario': usuario, 'formulario': BuscarHashtag()}
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Trayendo más fotos...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close()           
     return render_to_response('buscarHashtag.html',context_instance=RequestContext(request, contexto))
 
 
 #Guardando Imagenes
 @login_required
 def guardarFoto(request,id_album):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('guardando imagenes seleccionadas...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     if request.method == 'POST':
@@ -56,16 +127,52 @@ def guardarFoto(request,id_album):
        contenido.save()     
     return HttpResponse(status=200) 
     
-
-
-
-
-	        
+       
 #---------------- C O M E N T A R I O S------------------
 	        
+#Enviar Replicar Comentario
+@login_required
+def EscribirReplicaComentario(request,id_comentario):    
+    
+    usuario = request.user
+    #import pdb; pdb.set_trace() 
+    comentario = get_object_or_404(Comentario, id=id_comentario)
+    album = Album.objects.get(id=comentario.fkalbum.id)
+    albumes = Album.objects.filter(id=album.id)
+    usu = User.objects.get(id=comentario.fkalbum.id)
+    contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
+    cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
+    cantidadLike = Comentario.objects.all()      
+    if request.method == 'POST':         
+        formulario = RegistroComentario(request.POST)
+        if formulario.is_valid():
+            formulario.procesar_replica(album,usu,comentario)
+            
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
+    return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
+        
+
+#Replicar Comentario
+@login_required
+def replicarComentario(request,id_comentario):    
+    usuario = request.user
+    coment = Comentario.objects.filter(id=id_comentario)          
+    contexto = {'usuario' : usuario, 'formulario': RegistroComentario(),'coment':coment }
+    return render_to_response('ReplicarComentario.html',context_instance=RequestContext(request, contexto))
+
 #comentarios mios
 @login_required
 def comentario_Mio(request):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando comentarios...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user     
     usu = User.objects.get(id=usuario.id)
     comentario = Comentario.objects.filter(userComentador=usu.id)      
@@ -78,7 +185,7 @@ def comentario_Mio(request):
 def misComentarios(request,id_album):
     usuario = request.user        
     usu = User.objects.get(id=usuario.id)
-    import pdb; pdb.set_trace() 
+    #import pdb; pdb.set_trace() 
     print usu.id
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.get(id=albu.id)    
@@ -99,6 +206,15 @@ def misComentarios(request,id_album):
 #Pagina de inicio despues de login
 @login_required
 def principal_inicio(request):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Entrando a la cuenta en socialace...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     historial =  Historial.objects.order_by('id').reverse()
     contenido = Contenido.objects.all()
@@ -109,22 +225,58 @@ def principal_inicio(request):
     persona = User.objects.filter(id__in=id_per)
     
     contexto = {'usuario': usuario, 'historial':historial,'contenido':contenido,'notificacion':notificacion, 'comentario':comentario,'persona':persona}
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando muro de noticias...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     return render_to_response('principalinicio.html',context_instance=RequestContext(request, contexto))
 
 
 #Registrar Usuario
-def registro_usuario(request):  
+def registro_usuario(request): 
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Capturando datos del registro del usuario...\n')
+    outfile.close()
+    # Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+    # Cerramos el fichero.
+    infile.close() 
     if request.method == 'POST':
         formulario = RegistroUsuario(request.POST, request.FILES)
         if formulario.is_valid():
 	        formulario.procesar_registro()
 	        return HttpResponseRedirect(reverse('login'))   
     contexto = {'formulario': RegistroUsuario()}
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Usuario registrado con exito...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     return render_to_response('usuarioRegistrar.html',context_instance=RequestContext(request, contexto))
 	
 
 #Modificar usuario
 def modificar_usuario(request,id_usuario):    
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Recibiendo peticion de modificacion de usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close()   
     usuario = get_object_or_404(User, id=id_usuario)
     if request.method == 'POST':
         formulario = EditarUsuario(request.POST, request.FILES)
@@ -141,11 +293,29 @@ def modificar_usuario(request,id_usuario):
         'foto' : usuario.usuarioperfil.foto,
     }
     contexto = {'formulario': EditarUsuario(initial=form_data), 'usuario': usuario}
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Usuario modificado con exito...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     return render_to_response('usuarioModificar.html',context_instance=RequestContext(request, contexto))
 
 
 @login_required
 def ver_MiPerfil(request,id_usuario):    
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando perfil de usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close()   
     usuario = request.user    
     amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
@@ -161,13 +331,31 @@ def ver_MiPerfil(request,id_usuario):
 #Crear Album
 @login_required
 def registro_album(request): 
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Creando album del usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     if request.method == 'POST':        
         formulario = RegistroAlbum(request.POST, request.FILES)
         if formulario.is_valid():
             formulario.procesar_album(usuario)
-            return HttpResponseRedirect(reverse('principalInicio'))   
+            return HttpResponseRedirect(reverse('verAlbumes'))   
     contexto = {'formulario': RegistroAlbum(),'usuario': usuario}
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Album creado con exito...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     return render_to_response('albumRegistrar.html',context_instance=RequestContext(request, contexto))
 
 
@@ -175,9 +363,27 @@ def registro_album(request):
 #Ver Albumes
 @login_required
 def ver_albumes(request):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando albumes del usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     albumes = Album.objects.filter(fkusuario=usuario)
     contexto = {'albumes': albumes,'usuario': usuario}
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Albumes mostrados con exito...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     return render_to_response('verAlbumes.html',context_instance=RequestContext(request,contexto))
 
 
@@ -185,12 +391,31 @@ def ver_albumes(request):
 #Detalle Mi Album (Va a detalle del album, modifica el album 
 @login_required
 def detalle_album(request,id_album):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando detalle del album...\n')
+    outfile.close()
+    # Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+    # Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.filter(id=albu.id)
     contenido = Contenido.objects.filter(fkalbum=albu.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()                    
+    cantidadLike = Comentario.objects.all()      
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Modificando album...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close()                   
     #Modificar Album
     if 'modi' in request.POST:        
         form_data = {
@@ -204,7 +429,7 @@ def detalle_album(request,id_album):
     
     #Ver album, ver sus fotos y comentarios
     if 'ver' in request.POST:       
-        contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario  }
+        contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario,'cantidadLike':cantidadLike  }
         return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
     
     #Agregar fotos al album
@@ -229,6 +454,15 @@ def detalle_album(request,id_album):
 #Detalle de los albumes de mis amigos (Se ven las fotos en el carrusel)
 @login_required
 def detalle_album2(request,id_album):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando albumes de fotos de amigos...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.filter(id=albu.id)
@@ -245,6 +479,15 @@ def detalle_album2(request,id_album):
 
 @login_required
 def ver_notificacion(request):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando notificaciones...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user    
     if 'aceptar' in request.POST:                     
         formulario = RegistroAmigo(request.POST)
@@ -260,6 +503,15 @@ def ver_notificacion(request):
 #Notificaciones Aprobadas
 @login_required
 def notificaciones_aprobadas(request,id_notificacion,id_amigo):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrar notificaciones aceptadas...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     noti = get_object_or_404(Notificacion, id=id_notificacion)
     notifica = Notificacion.objects.filter(id=noti.id)
@@ -281,6 +533,15 @@ def notificaciones_aprobadas(request,id_notificacion,id_amigo):
  #Ver Todas la notificaciones Aceptadas
 @login_required
 def notificaciones_aceptadas(request):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando todas las notificaciones aceptadas del usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user
     albumes = Album.objects.filter(fkusuario=usuario)
     informacion = Notificacion.objects.filter(usuario=usuario)
@@ -293,6 +554,15 @@ def notificaciones_aceptadas(request):
 #Crear Relacion
 @login_required
 def registro_amigo(request):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Creando enlace de amistad...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user    
     if request.method == 'POST':
         formulario = RegistroAmigo(request.POST)
@@ -307,6 +577,15 @@ def registro_amigo(request):
 #Ver Amigos ACOMODANDO
 @login_required
 def ver_amigos(request):        
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrandos los amigos del usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close()       
     usuario = request.user
     amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
@@ -318,6 +597,15 @@ def ver_amigos(request):
 #Ver Amigos buscados
 @login_required
 def ver_usuario(request, nombre):
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Enviando solicitud de amistad del amigo buscado...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
     usuario = request.user  
              
     if 'buscar' in request.POST:    
@@ -350,6 +638,15 @@ def ver_usuario(request, nombre):
 #Ver perfil Amigo
 @login_required
 def ver_PerfilAmigo(request,id_usuario):    
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Mostrando el perfil del amigo del usuario...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close()  
     usuario = request.user
     amigos = UsuarioPerfil.objects.filter(amigos=id_usuario)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
@@ -366,7 +663,16 @@ from django.views.decorators.csrf import csrf_exempt
 
 @csrf_exempt
 def busqueda(request):
- 
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('Buscando amistades...\n')
+    outfile.close()
+# Leemos el contenido para comprobar que ha sobreescrito el contenido.
+    infile = open('archivoLogs.txt', 'r')
+    print('>>> Escritura de fichero concatenando su contenido.')
+    print(infile.read())
+# Cerramos el fichero.
+    infile.close() 
+    
     if request.method=='GET' or not request.POST.__contains__('start'):
         return HttpResponseForbidden()
  

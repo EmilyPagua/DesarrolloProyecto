@@ -186,6 +186,11 @@ class RegistroComentario(forms.Form):
         descripcio = self.cleaned_data['descripcion']        
         comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)        
         comentar.save()
+     
+    def procesar_replica(self,albumes,usuario,comentReplic):        
+        descripcio = self.cleaned_data['descripcion']        
+        comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)        
+        comentar.save()
         
 
 #buscandoHashtag

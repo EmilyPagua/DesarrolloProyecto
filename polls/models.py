@@ -58,9 +58,10 @@ class Like(models.Model):
     fkalbum	= models.ForeignKey(Album, null=True,blank=True)
     fkcomentario = models.ForeignKey(Comentario, null=True,blank=True)
     like = models.BooleanField(default=False)
-
+    
     def __str__(self):
-        return self.like
+		datos = self.userLike.username+ ', '+ self.userLike.last_name+' - ' +self.userLike.first_name
+		return datos
 
 class Historial(models.Model):
 	usuario = models.ForeignKey(User)
