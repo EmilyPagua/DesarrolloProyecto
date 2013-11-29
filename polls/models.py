@@ -53,6 +53,7 @@ class Comentario(models.Model):
         return self.descripcion +' '+self.userComentador.username
 
 
+
 class Like(models.Model):
     userLike = models.ForeignKey(User)
     fkalbum	= models.ForeignKey(Album, null=True,blank=True)
