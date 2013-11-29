@@ -1,60 +1,37 @@
 {% extends 'base.html'%}
-{% block contenido%}
+{% block content%}
 
-<style>	
-.instagram-placeholder {
-float: left;
-}
-</style>
-<label>
-     <h5>Mis Albumes</h5>
-</label>    							
-<br> 
- {% for album in albumes %}
- <label> 
-	Nombre: {{ album.nombre }}
-	Descripcion: {{ album.descripcion }} <br/>
+
+<!-- title -->
+<div id="page-title">
+	<span class="title">{{albumes.nombre}}</span>
+	<span class="subtitle">Buscando fotos para el album</span>
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	<div class="post">
 	
- </label>
-
-<br/>
-
-<script type="text/javascript">
-function printIt(){
-   alert(document.getElementById('foto0').value +' '+ document.getElementById('foto1').value);
-   
-   
-}
-</script>
-<script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-<form class='form-wrapper-01' id='formulario' method='post' enctype='multipart/form-data' action="" >
- {% csrf_token %}
-<div class="instagram"></div>
-<script type="text/javascript">
-$(function() {
-    $.ajax({
-    	type: "GET",
-        dataType: "jsonp", 
-        cache: false,
-        url: "https://api.instagram.com/v1/tags/ucab/media/recent/?access_token=563704717.5b9e1e6.4f296fd9e3a5449aa35c2beefb4db0d1",
-       // url: "https://api.instagram.com/v1/users/563704717/media/recent/?access_token=563704717.5b9e1e6.4f296fd9e3a5449aa35c2beefb4db0d1",
-        success: function(data) {
-	  var miArray = new Array(10); 
-            for (var i = 0; i < 10; i++) {
-		 
-        	 $(".instagram").append("<div class='instagram-placeholder'><a target='_blank' href='" + data.data[i].link +"'><img class='instagram-image' src='" + data.data[i].images.low_resolution.url +"'/></a><br></div><div><label type=hidden id='foto" + [i] +"' value='" + data.data[i].images.low_resolution.url +"'></label></div>");
-console.log (data.data[i].images.low_resolution.url);
-miArray[i] = data.data[i].images.low_resolution.url;
-		}
-		for(var i=0;i<miArray.length;i++){
-document.write("<b>miArray["+i+"] is </b>=>"+miArray[i]+"<br>");
-}            
-		}
-    });
-});
-</script>
-       <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-</form>
-
-{% endfor %}
+		<!-- shadow -->
+		
+		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+            {% csrf_token %}
+               {% for aux in formulario %}
+			{{aux.label}} {{aux}}
+			{% endfor%}
+			
+              	<label>
+		               <button class="btn btn-hg btn-primary" type="submit" value="">Aceptar</button> 	                             
+		        </label> 
+		    </td>					                                          	                      
+		    </tr>
+           </form> 
+         
+		<!-- ENDS shadow -->
+	</div>
+	<!-- ENDS post -->
+</div>
+<!-- ENDS Posts -->	
 {% endblock %}

@@ -8,18 +8,17 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
-    #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
+    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
     #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
-    url(r'^logout/$', logout, {'next_page': '/loginPrincipal/'} ,name='logout'),
+    url(r'^logout/$', logout, {'next_page': '/login/'} ,name='logout'),
     
     url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
     url(r'^modificarUsuario/(?P<id_usuario>\d+)/$', 'polls.views.modificar_usuario',name ='modificarUsuario'),
     url(r'^MiPerfil/(?P<id_usuario>\d+)/$', 'polls.views.ver_MiPerfil',name ='Miperfil'),    
     
     url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),    
-    url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
-    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.registro_foto',name ='agregarFoto'),
+    url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),        
     url(r'^detalleAlbum/(?P<id_album>\d+)/$', 'polls.views.detalle_album', name='detalleAlbum'), 
 
     url(r'^detalleAlbum2/(?P<id_album>\d+)/$', 'polls.views.detalle_album2', name='detalleAlbum2'), 
@@ -36,6 +35,10 @@ urlpatterns = patterns('',
     url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/(?P<id_amigo>\d+)$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),
     url(r'^MisNotificaciones/$', 'polls.views.notificaciones_aceptadas',name ='misNotificaciones'),
     
+    
+    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.agregarFoto',name ='agregarFoto'),
+    url(r'^buscarHashtag/(?P<id_album>\d+)/$', 'polls.views.buscarHashtag',name ='buscarHashtag'),
+    url(r'^guardarFoto/(?P<id_album>\d+)/$', 'polls.views.guardarFoto',name ='guardarFoto'),
     
     url(r'', include('social_auth.urls')),    
     url(r'^prueba/(?P<id_album>\d+)/$', 'polls.views.prueba', name='prueba'),    

@@ -130,7 +130,7 @@ class RegistroAlbum(forms.Form):
             album.foto = foto
         album.save()   
              
-        b = Historial(usuario=usuario, accion='crear album',fkalbum=album)
+        b = Historial(usuario=usuario, accion='Nuevo album',fkalbum=album)
         b.save()
 
     def modificar_album(self, album):
@@ -187,6 +187,18 @@ class RegistroComentario(forms.Form):
         comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)        
         comentar.save()
         
+
+#buscandoHashtag
+class BuscarHashtag(forms.Form):
+   hashtag = forms.CharField(max_length=50, label='Introduzca un hashtag')      
+ 
+   def __init__(self,*args, **kwargs):
+       super(BuscarHashtag, self).__init__(*args, **kwargs)
+       self.fields['hashtag'].widget.attrs = {'placeholder': 'hashtag', 'class': 'form-control'}        
+       
+   def procesar_album(self,usuario):
+       hashtag = self.cleaned_data['hashtag']
+
 
 
 

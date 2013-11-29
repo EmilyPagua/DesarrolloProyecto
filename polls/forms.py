@@ -188,6 +188,17 @@ class RegistroComentario(forms.Form):
         comentar.save()
         
 
+#buscandoHashtag
+class BuscarHashtag(forms.Form):
+   hashtag = forms.CharField(max_length=50, label='Introduzca un hashtag')      
+ 
+   def __init__(self,*args, **kwargs):
+       super(BuscarHashtag, self).__init__(*args, **kwargs)
+       self.fields['hashtag'].widget.attrs = {'placeholder': 'hashtag', 'class': 'form-control'}        
+       
+   def procesar_album(self,usuario):
+       hashtag = self.cleaned_data['hashtag']
+
 
 
 #agregarfotos

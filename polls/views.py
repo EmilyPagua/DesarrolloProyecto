@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
-from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo, RegistroFoto,RegistroComentario
+from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo,RegistroComentario,BuscarHashtag
 from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido, Historial, Contenido, Comentario
 from django.contrib.auth.models import User
 from django.db.models import Q
@@ -17,6 +17,49 @@ def prueba(request,id_album):
     usuario = request.user    
     contexto = {'usuario' : usuario}
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
+
+
+#hashtag Adreina
+@login_required
+def agregarFoto(request,id_album):
+    usuario = request.user
+    albu = get_object_or_404(Album, id=id_album)
+    albumes = Album.objects.get(id=albu.id) 
+    if request.method == 'POST':
+        p = request.POST['hashtag']
+        contexto = {'usuario': usuario,'p':p,'albumes':albumes}
+        return render_to_response('buscarHashtag.html',context_instance=RequestContext(request, contexto))
+
+    contexto = {'usuario': usuario, 'formulario': BuscarHashtag(),'albumes':albumes}  
+    return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
+
+#paso de hashtag andreina
+@login_required
+def buscarHashtag(request):
+    
+    usuario = request.user
+    contexto = {'usuario': usuario, 'formulario': BuscarHashtag()}      
+    return render_to_response('buscarHashtag.html',context_instance=RequestContext(request, contexto))
+
+
+#Guardando Imagenes
+@login_required
+def guardarFoto(request,id_album):
+    usuario = request.user
+    albu = get_object_or_404(Album, id=id_album)
+    if request.method == 'POST':
+       print albu.id
+       imagenes = request.POST.getlist('imagenes[]')
+       
+    for imagen in imagenes: 
+       contenido= Contenido(urlfoto=imagen,fkalbum=albu)
+       contenido.save()     
+    return HttpResponse(status=200) 
+    
+
+
+
+
 	        
 #---------------- C O M E N T A R I O S------------------
 	        
@@ -196,23 +239,6 @@ def detalle_album2(request,id_album):
     contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
 	
-#agregarfotos
-@login_required
-def registro_foto(request,id_album):
-    usuario = request.user
-    albumes = Album.objects.filter(id=id_album)
-    if request.method == 'POST':               
-        #import pdb; pdb.set_trace()
-        print request.POST 
-        formulario =RegistroFoto(request.POST)
-        if formulario.is_valid():
-            print request.method    
-            formulario.procesar_foto(usuario)
-            return HttpResponseRedirect(reverse('principalInicio')) 
-
-    #import pdb; pdb.set_trace()       
-    contexto = {'usuario': usuario,'albumes':albumes }
-    return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
 
 
 #---------------- N O T I F I C A C I O N E S ------------------
