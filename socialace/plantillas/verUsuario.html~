@@ -30,7 +30,7 @@
 			   		<stron>Privado:</stron>  
 						{% if campo.usuarioperfil.privacidad %}
 						Si		
-					<stron>AMIGO</stron>  				
+									
 						{% else %}
 						No
 						{% endif %}
@@ -49,7 +49,8 @@
 	<!-- ENDS post -->	
 	{% endfor %}
 	{% else %}	
-		no hay personas con el nombre de:
+		<stron>No hay personas con el nombre solicitado.</stron>
+		<stron>Haga combinaciones con lasmayusculas y minusculas, ejemplo: Emily </stron>		
 	{% endif%}
 </div>
 <!-- ENDS Posts -->

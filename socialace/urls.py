@@ -8,7 +8,7 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
-    url(r'^logout/$', logout, {'next_page': 'loginPrincipal'} ,name='logout'),
+    url(r'^logout/$', logout, {'next_page': ''} ,name='logout'),
     url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
     #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
@@ -35,6 +35,8 @@ urlpatterns = patterns('',
     url(r'^enviarReplicaComentario/(?P<id_comentario>\d+)/$', 'polls.views.EscribirReplicaComentario',name ='EscribirReplicaComentario'),
     
     url(r'^likeComentario/(?P<id_comentario>\d+)/$', 'polls.views.likeComentario',name ='likeComentario'),
+    url(r'^borrarComentario/(?P<id_comentario>\d+)/$', 'polls.views.borrarComentario',name ='borrarComentario'),
+    url(r'^Nolike/(?P<id_comentario>\d+)/$', 'polls.views.Nolike',name ='Nolike'),
     
     url(r'^verNotificacion/$', 'polls.views.ver_notificacion',name ='verNotificacion'),    
     url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/(?P<id_amigo>\d+)$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),

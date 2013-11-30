@@ -751,8 +751,8 @@
  1779  heroku addons:add heroku-postgresql:socialheroku -a socialace
  1780  heroku addons:add heroku-postgresql:dev -a socialace
  1781  heroku config -a socialace
- 1782  heroku pg:promote HEROKU_POSTGRESQL_YELLOW_URL
- 1783  heroku pg:promote HEROKU_POSTGRESQL_YELLOW_URL -a socialace
+ 1782  heroku pg:promote HEROKU_POSTGRESQL_ROSE_URL
+ 1783  heroku pg:promote HEROKU_POSTGRESQL_ROSE_URL -a socialace
  1784  heroku pg:info
  1785  heroku pg:info -a socialace
  1786  heroku config -a socialace

@@ -63,8 +63,6 @@
 							<div class="the-excerpt">
 								
 							</div>	
-								
-						
 						</div>
 						{% endif %}
 								{% endif %}
@@ -72,7 +70,7 @@
 								{% endfor %} 
 						<!-- ENDS shadow Amistad-->
 						
-						{% elif campo.accion = 'Comentar Album'  %}	
+						{% elif campo.accion = 'comentario'  %}	
 							{% for aux in comentario %}
         					{% if campo.fkcomentario.id = aux.id %}	
         				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
@@ -85,8 +83,8 @@
 							</div>
 							<!-- ENDS post-thumb --> 		
 							<div class="the-excerpt">
-							<hr>
-							Comento el album de:{{aux.fkalbum.fkusuario.first_name}} {{ aux.fkalbum.fkusuario.last_name}}<br>
+							<hr>							
+							<h4>{{aux.userComentador.first_name}} {{ aux.userComentador.last_name}}, ha comentado tu album</h4>
 							Nombre del Album: {{ aux.fkalbum.nombre}}
 						
 							</div>	
@@ -94,13 +92,39 @@
 							{% endfor %} 
 						</div>
 						<!-- ENDS shadow Comentar Album-->
-						{% endif %}
+						
 					</div>
+					 {% elif campo.accion = 'like'  %}	
+					  
+					  
+					  {% for aux in liked %}
+        					{% if campo.fklike.id = aux.id %}	
+        				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
+	   					
+						<!-- shadow Nuevo Comentar Album-->
+						<div class="thumb-shadow"> 
+							<!-- post-thumb -->
+							
+							<!-- ENDS post-thumb --> 		
+							<div class="the-excerpt">
+							<hr>							
+							<h4>{{aux.userLike.first_name}} {{ aux.userLike.last_name}}, ha hecho like sobre tu comentario</h4>
+							 {{ aux.fkcomentario.descripcion}} <br>Del Album: {{ aux.fkcomentario.fkalbum.nombre}}
+						
+							</div>	
+							{% endif %}
+							{% endfor %} 
+						</div>
+					 
+					  
+					  
+					  {% endif %}
+					
 					<!-- ENDS post -->
 					
 					{% endfor %}
 					{% else %}
-					no hay histrorial para mostrar
+					<h3>No hay historias disponibes para mostrar</h3>
 					{% endif %}
 				</div>
 				<!-- ENDS Posts -->

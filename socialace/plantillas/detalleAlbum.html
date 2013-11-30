@@ -147,8 +147,8 @@ function suma(numero) {
 									<p>{{ nivel.descripcion }}<br> 
 									<h5>like:
 									<script> var num=0 </script>
-									{% for aux1 in cantidadLike %}
-									{% if aux1.fkcomentario.id = nivel.id %}
+									{% for aux0 in cantidadLike %}
+									{% if aux0.fkcomentario.id = nivel.id %}
 									<script>  
 									num=num+1 </script>
 									{% endif %}
@@ -159,11 +159,18 @@ function suma(numero) {
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 									</div>
+									{% if nivel.userComentador.id = usuario.id %}
 									<div class="like">
-									   <span class="says"> 
-									   </span>
-										<a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
-									</div>									
+									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
+									</div>
+									{% endif %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
+									</div>
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
+									</div>
+																		
 								</div>
 							</li>
 						</form> 
@@ -196,10 +203,18 @@ function suma(numero) {
 									</script> </5></p>
 					
 									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel1.id %}" onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
+										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
+									</div>
+									{% if nivel1.userComentador.id = usuario.id %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
+									</div>
+									{% endif %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href="{% url 'likeComentario' nivel1.id %}" >like</a>
+									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -230,10 +245,18 @@ function suma(numero) {
 									</script> </5></p>
 					
 									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel2.id %}" onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
+										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
+									</div>
+									{% if nivel2.userComentador.id = usuario.id %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
+									</div>
+									{% endif %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href="{% url 'likeComentario' nivel2.id %}" >like</a>
+									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -265,10 +288,18 @@ function suma(numero) {
 									</p>
 					
 									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel3.id %}" onclick='return addComment.moveForm("div-comment-18", "18", "respond", "196")'>Reply</a>
+										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
+									</div>
+									{% if nivel3.userComentador.id = usuario.id %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
+									</div>
+									{% endif %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
 									</div>
 									<div class="like">
-										<a class='comment-reply-link' href="{% url 'likeComentario' nivel3.id %}" >like</a>
+									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
 									</div>									
 								</div>
 							</li>
@@ -299,10 +330,16 @@ function suma(numero) {
 									{% endfor %}
 									<script>  document.write(num)
 									</script> </5> </p>
-					
-									
+									{% if nivel4.userComentador.id = usuario.id %}
 									<div class="like">
-										<a class='comment-reply-link' href="{% url 'likeComentario' nivel4.id %}" >like</a>
+									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
+									</div>
+									{% endif %}
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
+									</div>
+									<div class="like">
+									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
 									</div>									
 								</div>
 							</li>

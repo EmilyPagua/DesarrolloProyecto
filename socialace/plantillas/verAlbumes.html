@@ -15,7 +15,7 @@
 		<li class="pink">
 			<a href="#" rel="group1" class="fancybox" title="{{ album.nombre }}. Descripcion: {{ album.descripcion }} " >
 			{{ album.nombre }}
-			<img src="{{MEDIA_URL}}{{ album.foto}}"  width="280" heigth="280"></a>
+			<img src="{{STATIC_URL}}{{ album.foto}}"  width="280" heigth="280"></a>
 			
 			<a rel="nofollow" href="{% url 'agregarFoto' album.id %}"> <h7> <img class="alignleft" alt="cameraplus32.png" title="cameraplus32.png" src="{{STATIC_URL}}img/mono-icons/cameraplus32.png"  width="33" heigth="33"></img></h7> </a>
 			
