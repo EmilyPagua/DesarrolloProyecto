@@ -1,1000 +1,1000 @@
-  986  kill 14321
-  987  ps -ef | grep manage.py 
-  988  kill -9 14321
-  989  ps -ef | grep manage.py 
-  990  kill -9 14623
-  991  kill -9 16268
-  992  ps -ef | grep manage.py 
-  993  kill -9 16103
-  994  ps -ef | grep manage.py 
-  995  python manage.py runserver
-  996  ps -ef | grep manage.py 
-  997  kill -9 22747
-  998  kill -9 22748
-  999  ps -ef | grep manage.py 
- 1000  python manage.py runserver
- 1001  exit
- 1002  python socialacep/socialacegit/manage.py syncdb
- 1003  python manage.py runserver
- 1004  cd socialacep/socialacegit/
- 1005  ls
- 1006  python manage.py runserver
- 1007  init git
- 1008  git ini
- 1009  git init
- 1010  git status
- 1011  git add appproyecto/admin.py
- 1012  git add appproyecto/admin.pyc
- 1013  git add appproyecto/models.py
- 1014  git add appproyecto/models.pyc
- 1015  git add proyecto/plantillas/loginfacebook.html
- 1016  git commit -am original master
- 1017  git commit -am "Subiendo nueva version"
- 1018  git pull origin master
- 1019  git push origin master 
- 1020  git pull origin master
- 1021  git push origin master 
- 1022  python manage.py syncdb
- 1023  python manage.py runserver
- 1024  python manage.py syncdb
- 1025  python manage.py runserver
- 1026  python manage.py syncdb
- 1027  python manage.py runserver
- 1028  python manage.py reset principal
- 1029  python manage.py reset 
- 1030  python manage.py reset principal
- 1031  python manage.py reset
- 1032  ls
- 1033  python manage.py reset principal
- 1034  python manage.py sqlclear socialace
- 1035  python manage.py syncdb
- 1036  python manage.py runserver
- 1037  python manage.py syncdb
- 1038  python manage.py runserver
- 1039  python manage.py reset principal
- 1040  python manage.py reset socialacebd
- 1041  python manage.py validate
- 1042  sudo python manage.py validate
- 1043  sudo python manage.py reset principal
- 1044  ps -ef | grep manage.py 
- 1045  python manage.py runserver
- 1046  source socialacep/env_socialace/virt/bin/activate
- 1047  cd socialacep/socialacegit/
- 1048  ls
- 1049  python manage.py runserver
- 1050  history 
- 1051  git status
- 1052  git add appproyecto/admin.py
- 1053  git add appproyecto/models.py
- 1054  git commit -am "Suebiendo el admin y el models"
- 1055  git pull origin master
- 1056  git push origin master 
- 1057  history 
- 1058  python manage.py reset socialacebd
- 1059  python manage.py reset root
- 1060  python manage.py reset principal
- 1061  sudo postgres 
- 1062  sudo postgres
- 1063  sudo su postgres 
- 1064  sudo su postgres
- 1065  su postgres
- 1066  python manage.py syncdb
- 1067  git status
- 1068  git pull origin master
- 1069  git push origin master
- 1070  source socialacep/env_socialace/virt/bin/activate
- 1071  cd socialacep/socialacegit/
- 1072  python manage.py runservergugsadugaus
- 1073  source socialacep/env_socialace/virt/bin/activate
- 1074  python socialacep/socialacegit/manage.py runserver
- 1075  c
- 1076  ls
- 1077  cd socialacep/
- 1078  ls
- 1079  source env_socialace/virt/bin/activate
- 1080  ls
- 1081  cd socialacegit/
- 1082  ls
- 1083  python manage.py runserver
- 1084  ls
- 1085  source env_socialace/virt/bin/activate
- 1086  lsppppppppppppp
- 1087  python manage.py  runserver
- 1088  source env_socialace/virt/bin/activate
- 1089  lspython manage.py runserver
- 1090  source ../env_socialace/virt/bin/activate
- 1091  vi appproyecto/views.py
- 1092  vi appproyecto/forms.py
- 1093  vi appproyecto/views.py
- 1094  source socialacep/env_socialace/virt/bin/activate
- 1095  cd socialacep/socialacegit/
- 1096  python manage.py runserver
- 1097  cccc
- 1098  ccccpython manage.py runserver
- 1099  source ../env_socialace/virt/bin/activate
- 1100  git status
- 1101  ls
- 1102  vi appproyecto/__init__.py
- 1103  vi appproyecto/__init__.pyc 
- 1104  vi appproyecto/forms.py
- 1105  vi proyecto/plantillas/registroplantilla.html
- 1106  vi proyecto/settings.py
- 1107  git status
- 1108  vi instalaciondesarroll 
- 1109  git add .
- 1110  git branch
- 1111  git commit -am "No prestar atencion tampoco"
- 1112  git push origin master
- 1113  git status
- 1114  git branch
- 1115  git checkout -b soya
- 1116  git merge master 
- 1117  git status}
- 1118  git status
- 1119  vi proyecto/settings.py
- 1120  git status
- 1121  git add .
- 1122  git commit -m "Prueba para Israel"
- 1123  git remote -v
- 1124  git push socialace development
- 1125  vi proyecto/settings.py
- 1126  git status
- 1127  git add proyecto/settings.py
- 1128  git commit -m "LOL"
- 1129  git push origin master 
- 1130  vi appproyecto/urls.py~ 
- 1131  vi proyecto/urls.py
- 1132  source ../env_socialace/virt/bin/activate
- 1133  sudo su - postgres
- 1134  python manage.py runserver
- 1135  sear grep | manage.py
- 1136  python manage.py runserver 8001
- 1137  ls
- 1138  cd socialacep
- 1139  ls
- 1140  source env_socialace/virt/bin/activate
- 1141  cd socialacegit/socialace/
- 1142  ls
+ 1029  vi socialace/settings.py
+ 1030  git checkout socialace/settings.py
+ 1031  git checkout -b development2
+ 1032  git checkout -d development
+ 1033  git branch
+ 1034  git checkout -help
+ 1035  git branch
+ 1036  heroku apps:create --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
+ 1037  heroku apps:create socialaceRelease --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
+ 1038  heroku apps:create socialace-elease --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
+ 1039  heroku apps:create socialacepro --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
+ 1040  git remote
+ 1041  git remote -v
+ 1042  git remote add heroku git@heroku.com:socialacepro.git 
+ 1043  git remote rm heroku
+ 1044  git remote add heroku git@heroku.com:socialacepro.git 
+ 1045  git remote -v
+ 1046  git push heroku master
+ 1047  heroku login
+ 1048  heroku keys:add id_rsa_heroku.pub 
+ 1049  heroku keys
+ 1050  git push heroku master
+ 1051  ls
+ 1052  git add .
+ 1053  git status
+ 1054  git rm id_rsa_heroku
+ 1055  git rm id_rsa_heroku --cached
+ 1056  git rm id_rsa_heroku.pub --cached
+ 1057  git status
+ 1058  git commit -am "intento"
+ 1059  vi Procfile 
+ 1060  git push heroku master
+ 1061  git remote add herokuOriginal git@heroku.com:socialace.git 
+ 1062  git remote -v
+ 1063  git branch
+ 1064  git push herokuOriginal development2:development
+ 1065  git push herokuOriginal development2:master
+ 1066  git status
+ 1067  vi socialace/settings.py
+ 1068  python manage.py runserver
+ 1069  git push heroku master
+ 1070  ls
+ 1071  vi socialace/urls.py
+ 1072  ls socialace/
+ 1073  vi socialace/plantillas/
+ 1074  ls -l socialace/
+ 1075  git status
+ 1076  git add .
+ 1077  git status
+ 1078  git add socialace/static/*
+ 1079  git status
+ 1080  git commit -am "cargando de nuevo los static"
+ 1081  git push herokuOriginal development2:master
+ 1082  git remote -v
+ 1083  vi socialace/urls.py
+ 1084  vi socialace/settings.py
+ 1085  git status
+ 1086  vi socialace/settings.py
+ 1087  git add socialace/settings.py
+ 1088  git add socialace/urls.py
+ 1089  git commit -am "nuevo settings"
+ 1090  git push herokuOriginal development2:master
+ 1091  vi socialace/plantillas/usuarioRegistrar.html
+ 1092  vi socialace/plantillas/login_principal.html
+ 1093  git status
+ 1094  git add socialace/plantillas/usuarioRegistrar.html
+ 1095  git commit -am "redireccionar a login"
+ 1096  git push herokuOriginal development2:master
+ 1097  heroku run python manage.py syncdb
+ 1098  heroku run python manage.py syncdb -a socialace
+ 1099  heroku config
+ 1100  heroku config -a socialace
+ 1101  heroku logs -a socialace
+ 1102  heroku log -a socialace
+ 1103  heroku logs -a socialace
+ 1104  heroku logs -t -a socialace
+ 1105  sudo su postgres
+ 1106  la
+ 1107  ls
+ 1108  python manage.py syncdb
+ 1109  cd
+ 1110  cd socialacep/socialacegit/socialace/
+ 1111  ls
+ 1112  sudo su postgres
+ 1113  cd 
+ 1114  cd DesarrolloProyecto/
+ 1115  ls
+ 1116  sudo su postgres 
+ 1117  python manage.py syncdb
+ 1118  pip install django_postgrespoll.base
+ 1119  sudo apt-get install django_postgrespoll.base
+ 1120  sudo aptitude install django_postgrespoll.base
+ 1121  pip install postgresql_psycopg2
+ 1122  sudo apt-get install postgresql_psycopg2
+ 1123  source socialacep/env_socialace/virt/bin/activate
+ 1124  ls
+ 1125  cd DesarrolloProyecto/
+ 1126  ls
+ 1127  vi socialace/urls.py
+ 1128  python manage.py runserver
+ 1129  git remote -v
+ 1130  git status 
+ 1131  git status
+ 1132  vi socialace/settings.py
+ 1133  git merge master 
+ 1134  git status
+ 1135  git checkout socialace/settings.py
+ 1136  git checkout socialace/urls.py
+ 1137  git status
+ 1138  git checkout socialace/settings.pyc
+ 1139  git checkout socialace/urls.pyc
+ 1140  git checkout master 
+ 1141  python manage.py runserver
+ 1142  vi socialace/settings.py
  1143  python manage.py runserver
- 1144  p
- 1145  reset
- 1146  python manage.py shell
- 1147  python manage.py runserver
- 1148  python manage.py syncdb
- 1149  python manage.py runserver
- 1150  reset
- 1151  python manage.py runserver
- 1152  reset
- 1153  python manage.py runserver
- 1154  sudo su postgres
- 1155  python manage.py runserver
- 1156  python manage.py syncdb
- 1157  python manage.py runserver
- 1158  python manage.py syncd
- 1159  sudo su postgres
- 1160  cd socialacep/socialacegit/socialace/
- 1161  ls
- 1162  rgrep pdb\.set_trace .
- 1163  reset
- 1164  source socialacep/env_socialace/virt/bin/activate
- 1165  cd socialacep/socialacegit/socialace/
- 1166  ls
- 1167  python manage.py runserver
- 1168  c
- 1169  cd
- 1170  ls
- 1171  cd DesarrolloProyecto/
- 1172  ls
- 1173  git status 
- 1174  git add polls/
- 1175  git add socialace/
- 1176  git commit -m "Cambios de Registro y Modificacion de usario"
- 1177  git pull origin master 
- 1178  git push origin master 
- 1179  git pull origin master
- 1180  git push origin master 
- 1181  ls
- 1182  python manage.py runserver
- 1183  source socialacep/env_socialace/virt/bin/activate
- 1184  cd socialacep/socialacegit/
- 1185  cd socialace/
- 1186  ls
- 1187  python manage.py shell
- 1188  cd socialacep
- 1189  ls
- 1190  source env_socialace/virt/bin/activate
- 1191  sudo pip install django-social-auth
- 1192  python manage.py runserver
- 1193  ls
- 1194  cd socialacegit/
- 1195  python manage.py runserver
- 1196  ls
- 1197  cd socialace/
+ 1144  vi socialace/settings.py
+ 1145  python manage.py runserver
+ 1146  vi socialace/settings.py
+ 1147  git status
+ 1148  git remove -v
+ 1149  git remov -v
+ 1150  git remote -v
+ 1151  git status
+ 1152  git branch 
+ 1153  git remote -v
+ 1154  git push herokuOriginal development2: master
+ 1155  git push herokuOriginal development2:master
+ 1156  vi socialace/settings.py
+ 1157  git pull herokuOriginal master
+ 1158  git status
+ 1159  git add socialace/settings.py
+ 1160  git add socialace/static/*
+ 1161  git status
+ 1162  git commit -am "Imagenes de nuevo"
+ 1163  git push herokuOriginal development2:master
+ 1164  git pull herokuOriginal master
+ 1165  git status
+ 1166  ls polls/
+ 1167  rm polls/forms.pyc 
+ 1168  rm polls/models.pyc 
+ 1169  rm polls/views.pyc 
+ 1170  vi socialace/settings.py
+ 1171  vi socialace/urls.py
+ 1172  pyton manage.py runserver
+ 1173  python manage.py runserver
+ 1174  heroku ps
+ 1175  heroku ps -a socialace
+ 1176  python manage.py runserver
+ 1177  herokvi socialace/settings.py
+ 1178  vi socialace/settings.py
+ 1179  python manage.py runserver
+ 1180  python manage.py syncdb
+ 1181  heroku pg:reset postgres://nzxfzyozqjuefp:prsaNHsb6Glkb0pfBYIWj9eRFt@ec2-184-72-246-120.compute-1.amazonaws.com:5432/d57goa0nmo5k9e
+ 1182  heroku addons:add heroku-postgresql
+ 1183  heroku addons:add heroku-postgresql -a socialace
+ 1184  heroku addons:docs heroku-postgresql -a socialace
+ 1185  heroku pg:promote HEROKU_POSTGRESQL_OLIVE_URL
+ 1186  heroku pg:promote HEROKU_POSTGRESQL_OLIVE_URL -a socialace
+ 1187  heroku run python manage.py syncdb
+ 1188  heroku run python manage.py syncdb -a socialace
+ 1189  python manage.py runserver
+ 1190  git branch
+ 1191  python manage.py runserver
+ 1192  python manage.py syncdb
+ 1193  python manage.py runserver
+ 1194  sudo su
+ 1195  sudo su postgres
+ 1196  cd
+ 1197  cd socialacep/socialacegit/socialace/
  1198  ls
- 1199  python manage.py runserver
- 1200  sudo pip install django-social-auth
- 1201  pip install django-social-auth
- 1202  python manage.py runserver
- 1203  pip freeze > requeriments.txt
- 1204  ls
- 1205  nano requeriments.txt 
- 1206  python manage.py runserver
- 1207  end
- 1208  exit
- 1209  source socialacep/env_socialace/virt/bin/activate
+ 1199  sudo su postgres
+ 1200  python manage.py syncdb
+ 1201  python manage.py runserver
+ 1202  source ../socialacep/env_socialace/virt/bin/activate
+ 1203  heroku config -a socialace
+ 1204  source ../socialacep/env_socialace/virt/bin/activate
+ 1205  cd socialacep/socialacegit/socialace/
+ 1206  ls
+ 1207  python manage.py shell
+ 1208  source socialacep/env_socialace/virt/bin/activate
+ 1209  cd socialacep/socialacegit/socialace/
  1210  ls
- 1211  cd DesarrolloProyecto/
- 1212  ls
- 1213  git status
- 1214  git add polls/
- 1215  git add socialace/
- 1216  git commit -m "Arreglado lo del album"
- 1217  git pull origin master
- 1218  git push origin master 
- 1219  exit
- 1220  source 
- 1221  source socialacep/env_socialace/virt/bin/activate
- 1222  cd socialacep/socialacegit/
+ 1211  python manage.py runserver
+ 1212  
+ 1213  python manage.py runserver
+ 1214  sudo su - postgres
+ 1215  source socialacep/env_socialace/virt/bin/activate
+ 1216  ls
+ 1217  cd socialacep/socialacegit/socialace/
+ 1218  ls
+ 1219  python manage.py runserver
+ 1220  source socialacep/env_socialace/virt/bin/activate
+ 1221  python socialacep/socialacegit/socialace/manage.py runserver
+ 1222  cd DesarrolloProyecto/
  1223  ls
- 1224  cd ls
- 1225  ls
- 1226  cd socialace/
- 1227  ls
- 1228  python manage.py runserver
- 1229  c
- 1230  git push origin master 
- 1231  python manage.py runserver
- 1232  python manage.py syncdb
- 1233  python manage.py runserver
- 1234  python manage.py syncdb
- 1235  python manage.py runserver
- 1236  source socialacep/env_socialace/virt/bin/activate
- 1237  ls
- 1238  cd DesarrolloProyecto/
- 1239  ls
- 1240  git status 
- 1241  cd 
- 1242  cd socialacep/socialacegit/socialace/socialace/
- 1243  ls
- 1244  cd ..
- 1245  ls
- 1246  python manage.py runserver
- 1247  pg_dump -U db_username -Fc db_name > dump.db
- 1248  pg_dump -U root -Fc socialacebd > dump.db
- 1249  pg_dump -U  root -Fc socialacebd > dump.db
- 1250  pg_dump -U root -Fc socialacebd > dump.db
- 1251  pg_dump -U  postgres -Fc socialacebd > dump.db
- 1252  pg_dump -U postgres -Fc socialacebd > dump.db
+ 1224  git status
+ 1225  git add polls/
+ 1226  git add socialace/
+ 1227  git commit -m "Arreglando el url del login"
+ 1228  history 
+ 1229  git push herokuOriginal development2:master
+ 1230  git status 
+ 1231  git push origin development2
+ 1232  git push herokuOriginal development2:master
+ 1233  source socialacep/env_socialace/virt/bin/activate
+ 1234  cd DesarrolloProyecto/
+ 1235  git status 
+ 1236  git sta
+ 1237  git status 
+ 1238  git add polls/
+ 1239  git add socialace/
+ 1240  git commit -m "Subiendo nuevos cambios del Setting para ver si funciona la pagina en el heroku"
+ 1241  git push origin development2
+ 1242  git push herokuOriginal development2:master
+ 1243  git status 
+ 1244  git add socialace/
+ 1245  git commit -m "Subiendo nuevos cambios del Setting, base de datos acomodada"
+ 1246  git push origin development2
+ 1247  git push herokuOriginal development2:master
+ 1248  git status 
+ 1249  git add socialace/urls.py
+ 1250  git commit -m "Url acomodado segun el Setting"
+ 1251  git push origin development2
+ 1252  git push herokuOriginal development2:master
  1253  source socialacep/env_socialace/virt/bin/activate
- 1254  cd DesarrolloProyecto/
- 1255  ls
- 1256  pyhton manage.py runserver
- 1257  python manage.py runserver
- 1258  source socialacep/env_socialace/virt/bin/a
- 1259  source socialacep/env_socialace/virt/bin/activate
- 1260  ls
- 1261  cd DesarrolloProyecto/
- 1262  ls
- 1263  git status
- 1264  git add socialace/
- 1265  git commit -m "Subiendo Entrega 1 Final"
- 1266  git push origin master 
- 1267  ls
- 1268  cd ..
- 1269  cd socialacep/socialacegit/socialace/
+ 1254  python socialacep/socialacegit/socialace/manage.py runserver
+ 1255  cd
+ 1256  python socialacep/socialacegit/socialace/manage.py runserver
+ 1257  source socialacep/env_socialace/virt/bin/activate
+ 1258  python socialacep/socialacegit/socialace/manage.py runserver
+ 1259  python DesarrolloProyecto/manage.py runserver
+ 1260  cd 
+ 1261  cd Desa
+ 1262  cd DesarrolloProyecto/
+ 1263  ls
+ 1264  python manage.py runserver
+ 1265  sudo su postgres
+ 1266  python manage.py syncdb
+ 1267  python manage.py runserver
+ 1268  source socialacep/env_socialace/virt/bin/activate
+ 1269  cd DesarrolloProyecto/
  1270  ls
- 1271  python manage.py runserver
- 1272  python manage.py runserver 8001
- 1273  sudo su postgres
- 1274  source socialacep/env_socialace/virt/bin/activate
- 1275  cd socialaceps
- 1276  cd socialacep/socialacegit/socialace/
- 1277  ls
- 1278  pip freeze
- 1279  ls
- 1280  cd ..
- 1281  ls
- 1282  cd 
- 1283  ls
+ 1271  git status 
+ 1272  git add socialace/
+ 1273  exit
+ 1274  source  socialacep/env_socialace/
+ 1275  source  socialacep/env_socialace/virt/bin/activate
+ 1276  cd DesarrolloProyecto/
+ 1277  git status 
+ 1278  git add socialace/urls.py
+ 1279  git commit -m "Modificado url"
+ 1280  git push origin development2
+ 1281  exit
+ 1282  git status 
+ 1283  source socialacep/env_socialace/virt/bin/activate
  1284  cd DesarrolloProyecto/
- 1285  ls
- 1286  pip install dj_postgres_url
- 1287  pip install dj_database_url
- 1288  pip install dj-database-url
- 1289  pip install django
- 1290  pip install dj-database-url
- 1291  pip install gunicorn
- 1292  source socialacep/env_socialace/virt/bin/activate
- 1293  cd DesarrolloProyecto/
- 1294  ls
- 1295  pip freeze 
- 1296  vi socialace/settings.py
- 1297  python manage.py syncdb
- 1298  git remote
- 1299  heroku login
- 1300  git remote add heroku git@heroku.com:socialace.git
- 1301  git remote -v
- 1302  vi socialace/settings.py
- 1303  git status
- 1304  git add .
- 1305  git commit -am "Prueba de static"
- 1306  git push heroku master
- 1307  heroku keys:add /home/mily/.ssh/id_rsa.pub
- 1308  ssh-keygen -t rsa
- 1309  heroku keys:add /home/mily/.ssh/id_rsals
- 1310  ls
- 1311  heroku keys:add id_rsa_heroku.pub 
- 1312  heroku keys
- 1313  heroku keys:remove mily@mily
- 1314  ssh-keygen -t rsa -C emilyfpg@gmail.com
- 1315  ls
- 1316  heroku keys:add id_rsa_heroku.pub 
- 1317  heroku keys
- 1318  git remote -v
- 1319  git push heroku master
- 1320  git status
- 1321  git branch
- 1322  git checkout -b development
- 1323  git branch
- 1324  git pull heroku master
- 1325  vi socialace/settings.py
- 1326  vi socialace/urls.py
- 1327  vi polls/forms.pyc 
- 1328  git remote -v
- 1329  git add .
- 1330  git rm id_rsa_heroku
- 1331  git rm id_rsa_heroku --cached
- 1332  git rm id_rsa_heroku.pub --cached
- 1333  git commit -am "Prueba de subida con los nuevos static files"
- 1334  git remote -v
- 1335  git push origin development
- 1336  python manage.py runserver}
- 1337  python manage.py runserver
- 1338  vi socialace/settings.py
- 1339  python manage.py runserver
- 1340  vi socialace/settings.py
- 1341  python manage.py runserver
- 1342  vi socialace/settings.py
- 1343  git checkout socialace/settings.py
- 1344  git checkout -b development2
- 1345  git checkout -d development
- 1346  git branch
- 1347  git checkout -help
- 1348  git branch
- 1349  heroku apps:create --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
- 1350  heroku apps:create socialaceRelease --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
- 1351  heroku apps:create socialace-elease --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
- 1352  heroku apps:create socialacepro --stack cedar --buildpack git://github.com/heroku/heroku-buildpack-python.git
- 1353  git remote
- 1354  git remote -v
- 1355  git remote add heroku git@heroku.com:socialacepro.git 
- 1356  git remote rm heroku
- 1357  git remote add heroku git@heroku.com:socialacepro.git 
- 1358  git remote -v
- 1359  git push heroku master
- 1360  heroku login
- 1361  heroku keys:add id_rsa_heroku.pub 
- 1362  heroku keys
- 1363  git push heroku master
- 1364  ls
- 1365  git add .
- 1366  git status
- 1367  git rm id_rsa_heroku
- 1368  git rm id_rsa_heroku --cached
- 1369  git rm id_rsa_heroku.pub --cached
- 1370  git status
- 1371  git commit -am "intento"
- 1372  vi Procfile 
- 1373  git push heroku master
- 1374  git remote add herokuOriginal git@heroku.com:socialace.git 
- 1375  git remote -v
- 1376  git branch
- 1377  git push herokuOriginal development2:development
- 1378  git push herokuOriginal development2:master
- 1379  git status
- 1380  vi socialace/settings.py
- 1381  python manage.py runserver
- 1382  git push heroku master
- 1383  ls
- 1384  vi socialace/urls.py
- 1385  ls socialace/
- 1386  vi socialace/plantillas/
- 1387  ls -l socialace/
- 1388  git status
- 1389  git add .
- 1390  git status
- 1391  git add socialace/static/*
- 1392  git status
- 1393  git commit -am "cargando de nuevo los static"
- 1394  git push herokuOriginal development2:master
- 1395  git remote -v
- 1396  vi socialace/urls.py
- 1397  vi socialace/settings.py
- 1398  git status
- 1399  vi socialace/settings.py
- 1400  git add socialace/settings.py
- 1401  git add socialace/urls.py
- 1402  git commit -am "nuevo settings"
- 1403  git push herokuOriginal development2:master
- 1404  vi socialace/plantillas/usuarioRegistrar.html
- 1405  vi socialace/plantillas/login_principal.html
- 1406  git status
- 1407  git add socialace/plantillas/usuarioRegistrar.html
- 1408  git commit -am "redireccionar a login"
- 1409  git push herokuOriginal development2:master
- 1410  heroku run python manage.py syncdb
- 1411  heroku run python manage.py syncdb -a socialace
- 1412  heroku config
- 1413  heroku config -a socialace
- 1414  heroku logs -a socialace
- 1415  heroku log -a socialace
- 1416  heroku logs -a socialace
- 1417  heroku logs -t -a socialace
- 1418  sudo su postgres
- 1419  la
- 1420  ls
- 1421  python manage.py syncdb
- 1422  cd
- 1423  cd socialacep/socialacegit/socialace/
- 1424  ls
- 1425  sudo su postgres
- 1426  cd 
- 1427  cd DesarrolloProyecto/
- 1428  ls
- 1429  sudo su postgres 
- 1430  python manage.py syncdb
- 1431  pip install django_postgrespoll.base
- 1432  sudo apt-get install django_postgrespoll.base
- 1433  sudo aptitude install django_postgrespoll.base
- 1434  pip install postgresql_psycopg2
- 1435  sudo apt-get install postgresql_psycopg2
+ 1285  lsl
+ 1286  ls
+ 1287  git status
+ 1288  git add socialace/settings.py
+ 1289  git status
+ 1290  git add socialace/prueba.txt
+ 1291  git commit -m "Archivo Prueba"
+ 1292  git push origin development2
+ 1293  date
+ 1294  git commit -m "Archivo Prueba"
+ 1295  git statua
+ 1296  git status
+ 1297  git 
+ 1298  git branch master
+ 1299  git branch
+ 1300  git checkout master
+ 1301  git status
+ 1302  git checkout master
+ 1303  git checkout origin master
+ 1304  git checkout master
+ 1305  git status
+ 1306  git branch master
+ 1307  git branch origin master
+ 1308  git status
+ 1309  git status 
+ 1310  git add socialace/prueba.txt
+ 1311  git commit -m "Subiendo cambios"
+ 1312  git push origin development2
+ 1313  git checkout master
+ 1314  git status 
+ 1315  git
+ 1316  git checkout master
+ 1317  git push origin master 
+ 1318  git status 
+ 1319  git checkout -b master
+ 1320  git pus
+ 1321  git push origin development2
+ 1322  git status 
+ 1323  git add polls/
+ 1324  git add socialace/
+ 1325  git commit -m "Nueva modificacion"
+ 1326  git push origin master 
+ 1327  git status 
+ 1328  git push origin development2
+ 1329  git status 
+ 1330  git checkout master
+ 1331  git status 
+ 1332  git add  build/
+ 1333  git commit -m "Nueva modificacion"
+ 1334  git push origin master 
+ 1335  python manage.py runserver
+ 1336  git stau
+ 1337  git status 
+ 1338  git checkout development2
+ 1339  git add socialace/
+ 1340  git status 
+ 1341  git add polls/
+ 1342  git status 
+ 1343  git commit -m "Ultimo Cambio"
+ 1344  git push origin master 
+ 1345  git checkout development2
+ 1346  ls
+ 1347  git status 
+ 1348  git add socialace/
+ 1349  git commit 
+ 1350  git commit -m "Nuevos Cambios"
+ 1351  git status 
+ 1352  python manage.py runserver
+ 1353  git status 
+ 1354  git add socialace/
+ 1355  git commit -m "Nuevos Cambios"
+ 1356  git push origin development2
+ 1357  git commit -m "Nueva modificacion"
+ 1358  git status
+ 1359  git push origin development2
+ 1360  history 
+ 1361  git push herokuOriginal development2:master te
+ 1362  git push herokuOriginal development2:master
+ 1363  git status
+ 1364  git add socialace/
+ 1365  git commit -m "Nuevos Cambios"
+ 1366  git push origin development2
+ 1367  git push herokuOriginal development2:master
+ 1368  history 
+ 1369  cd 
+ 1370  cd socialacep
+ 1371  ls
+ 1372  history 
+ 1373  cd ls
+ 1374  ls
+ 1375  source socialacep/env_socialace/virt/bin/activate
+ 1376  cd DesarrolloProyecto/
+ 1377  ls
+ 1378  python manage.py runserver
+ 1379  cd
+ 1380  source socialacep/env_socialace/virt/bin/activate
+ 1381  cd DesarrolloProyecto/
+ 1382  sudo su postgres 
+ 1383  python manage.py syncdb
+ 1384  python manage.py runserver
+ 1385  sudo su postgres 
+ 1386  python manage.py runserver
+ 1387  python manage.py syncdb
+ 1388  python manage.py runserver
+ 1389  sudo su postgres 
+ 1390  source socialacep/env_socialace/virt/bin/activate
+ 1391  cd DesarrolloProyecto/
+ 1392  ls
+ 1393  git sta
+ 1394  git status 
+ 1395  git add polls/
+ 1396  git add socialace/
+ 1397  git commit -m "Mostrando foto, acomodado base de datos"
+ 1398  git push origin development2
+ 1399  python manage.py sycndb
+ 1400  python manage.py syncdb
+ 1401  python manage.py runserver
+ 1402  python manage.py syncdb
+ 1403  python manage.py runserver
+ 1404  python manage.py syncdb
+ 1405  python manage.py runserver
+ 1406  python manage.py syncdb
+ 1407  python manage.py runserver
+ 1408  python manage.py syncdb
+ 1409  python manage.py runserver
+ 1410  python manage.py syncdb
+ 1411  python manage.py runserver
+ 1412  python manage.py syncdb
+ 1413  python manage.py runserver
+ 1414  python manage.py syncdb
+ 1415  python manage.py runserver
+ 1416  python manage.py syncdb
+ 1417  python manage.py runserver
+ 1418  python manage.py shell
+ 1419  python manage.py syncdb
+ 1420  source socialacep/env_socialace/virt/bin/activate
+ 1421  cd
+ 1422  source socialacep/env_socialace/virt/bin/activate
+ 1423  sudo su postgres 
+ 1424  source socialacep/env_socialace/virt/bin/activate
+ 1425  cd DesarrolloProyecto/
+ 1426  ls
+ 1427  python manage.py runserver
+ 1428  python manage.py shell
+ 1429  pythonpython manage.py runserver
+ 1430  python manage.py  runserver
+ 1431  n
+ 1432  cd
+ 1433  cd DesarrolloProyecto/
+ 1434  python magane.py runserver
+ 1435  cd
  1436  source socialacep/env_socialace/virt/bin/activate
- 1437  ls
- 1438  cd DesarrolloProyecto/
- 1439  ls
- 1440  vi socialace/urls.py
- 1441  python manage.py runserver
- 1442  git remote -v
- 1443  git status 
- 1444  git status
- 1445  vi socialace/settings.py
- 1446  git merge master 
- 1447  git status
- 1448  git checkout socialace/settings.py
- 1449  git checkout socialace/urls.py
- 1450  git status
- 1451  git checkout socialace/settings.pyc
- 1452  git checkout socialace/urls.pyc
- 1453  git checkout master 
- 1454  python manage.py runserver
- 1455  vi socialace/settings.py
- 1456  python manage.py runserver
- 1457  vi socialace/settings.py
- 1458  python manage.py runserver
- 1459  vi socialace/settings.py
- 1460  git status
- 1461  git remove -v
- 1462  git remov -v
- 1463  git remote -v
+ 1437  cd DesarrolloProyecto/
+ 1438  ls
+ 1439  python manage.py shell
+ 1440  cd
+ 1441  source socialacep/env_socialace/virt/bin/activate
+ 1442  cd DesarrolloProyecto/
+ 1443  python magane.py runserver
+ 1444  ls
+ 1445  python magane.py runserver
+ 1446  cd 
+ 1447  source socialacep/env_socialace/virt/bin/a
+ 1448  source socialacep/env_socialace/virt/bin/activate
+ 1449  cd DesarrolloProyecto/
+ 1450  ls
+ 1451  l
+ 1452  python manage.py shell
+ 1453  source socialacep/env_socialace/virt/bin/activate
+ 1454  cd DesarrolloProyecto/
+ 1455  python manage.py shell
+ 1456  cd 
+ 1457  source socialacep/env_socialace/virt/bin/activate
+ 1458  cd DesarrolloProyecto/
+ 1459  python manage.py runserver
+ 1460  source socialacep/env_socialace/virt/bin/activate
+ 1461  cd DesarrolloProyecto/
+ 1462  ls
+ 1463  python manage.py runserver
  1464  git status
- 1465  git branch 
- 1466  git remote -v
- 1467  git push herokuOriginal development2: master
- 1468  git push herokuOriginal development2:master
- 1469  vi socialace/settings.py
- 1470  git pull herokuOriginal master
- 1471  git status
- 1472  git add socialace/settings.py
- 1473  git add socialace/static/*
- 1474  git status
- 1475  git commit -am "Imagenes de nuevo"
- 1476  git push herokuOriginal development2:master
- 1477  git pull herokuOriginal master
- 1478  git status
- 1479  ls polls/
- 1480  rm polls/forms.pyc 
- 1481  rm polls/models.pyc 
- 1482  rm polls/views.pyc 
- 1483  vi socialace/settings.py
- 1484  vi socialace/urls.py
- 1485  pyton manage.py runserver
- 1486  python manage.py runserver
- 1487  heroku ps
- 1488  heroku ps -a socialace
- 1489  python manage.py runserver
- 1490  herokvi socialace/settings.py
- 1491  vi socialace/settings.py
- 1492  python manage.py runserver
- 1493  python manage.py syncdb
- 1494  heroku pg:reset postgres://nzxfzyozqjuefp:prsaNHsb6Glkb0pfBYIWj9eRFt@ec2-184-72-246-120.compute-1.amazonaws.com:5432/d57goa0nmo5k9e
- 1495  heroku addons:add heroku-postgresql
- 1496  heroku addons:add heroku-postgresql -a socialace
- 1497  heroku addons:docs heroku-postgresql -a socialace
- 1498  heroku pg:promote HEROKU_POSTGRESQL_OLIVE_URL
- 1499  heroku pg:promote HEROKU_POSTGRESQL_OLIVE_URL -a socialace
- 1500  heroku run python manage.py syncdb
- 1501  heroku run python manage.py syncdb -a socialace
- 1502  python manage.py runserver
- 1503  git branch
- 1504  python manage.py runserver
- 1505  python manage.py syncdb
- 1506  python manage.py runserver
- 1507  sudo su
- 1508  sudo su postgres
- 1509  cd
- 1510  cd socialacep/socialacegit/socialace/
- 1511  ls
- 1512  sudo su postgres
- 1513  python manage.py syncdb
- 1514  python manage.py runserver
- 1515  source ../socialacep/env_socialace/virt/bin/activate
- 1516  heroku config -a socialace
- 1517  source ../socialacep/env_socialace/virt/bin/activate
- 1518  cd socialacep/socialacegit/socialace/
- 1519  ls
- 1520  python manage.py shell
- 1521  source socialacep/env_socialace/virt/bin/activate
- 1522  cd socialacep/socialacegit/socialace/
- 1523  ls
- 1524  python manage.py runserver
- 1525  
- 1526  python manage.py runserver
- 1527  sudo su - postgres
- 1528  source socialacep/env_socialace/virt/bin/activate
- 1529  ls
- 1530  cd socialacep/socialacegit/socialace/
- 1531  ls
- 1532  python manage.py runserver
- 1533  source socialacep/env_socialace/virt/bin/activate
- 1534  python socialacep/socialacegit/socialace/manage.py runserver
- 1535  cd DesarrolloProyecto/
- 1536  ls
- 1537  git status
- 1538  git add polls/
- 1539  git add socialace/
- 1540  git commit -m "Arreglando el url del login"
- 1541  history 
- 1542  git push herokuOriginal development2:master
- 1543  git status 
- 1544  git push origin development2
- 1545  git push herokuOriginal development2:master
+ 1465  git pull origin developmentve2
+ 1466  git pull origin development2
+ 1467  python manage.py runserver
+ 1468  git status
+ 1469  git add polls/
+ 1470  git add socialace/
+ 1471  git commit -m "Falta acomodar lo de loas amigo"
+ 1472  git push origin development2
+ 1473  exit
+ 1474  cd
+ 1475  source socialacep/env_socialace/virt/bin/activate
+ 1476  cd DesarrolloProyecto/
+ 1477  python manage.py shell
+ 1478  exit
+ 1479  source socialacep/env_socialace/virt/bin/activate
+ 1480  cd DesarrolloProyecto/
+ 1481  ls
+ 1482  python manage.py runserver
+ 1483  pip instalar python-instagram
+ 1484  sudo pip instalar python-instagram
+ 1485  sudo apt-get instalar python-instagram
+ 1486  exit
+ 1487  cd DesarrolloProyecto/
+ 1488  pip instalar python-instagram
+ 1489  sudo apt-get instal pip
+ 1490  sudo apt-get install pip
+ 1491  sudo apt-get install python-instagram
+ 1492  sudo apt-get install httplib2
+ 1493  sudo aptitude install httplib2
+ 1494  sudo aptitude install simplejson
+ 1495  sudo aptitude install python-intagram
+ 1496  sudo aptitude install python-instagram
+ 1497  sudo aptitude install instagram
+ 1498  sudo aptitude install pip
+ 1499  sudo pip install --upgrade virtualenv
+ 1500  cd 
+ 1501  source socialacep/env_socialace/virt/bin/activate
+ 1502  cd DesarrolloProyecto/
+ 1503  sudo aptitude install pip
+ 1504  sudo aptitude install python-intagram
+ 1505  sudo pip install python-intagram
+ 1506  sudo pip install python-instagram
+ 1507  python manage.py runserver
+ 1508  source socialacep/env_socialace/virt/bin/activate
+ 1509  cd DesarrolloProyecto/
+ 1510  ls
+ 1511  git status 
+ 1512  git add polls/
+ 1513  git add socialace/
+ 1514  git commit -m "Integrando con instagram"
+ 1515  git push origin development2
+ 1516  git pull origin development2
+ 1517  python manage.py runserver
+ 1518  sudo su postgres 
+ 1519  python manage.py syncdb
+ 1520  python manage.py runserver
+ 1521  git status
+ 1522  git add polls/
+ 1523  git add socialace/
+ 1524  git commit -m "Muestra de errores, albumes, fotos"
+ 1525  git push origin development2
+ 1526  git status
+ 1527  git rm  socialace/plantillas/base2.html
+ 1528  git rm socialace/plantillas/demo.html
+ 1529  git rm socialace/static/img/big-button.png
+ 1530  git rm socialace/plantillas/base2.html
+ 1531  git status
+ 1532  git rm socialace/static/img/bird.png
+ 1533  git rm socialace/static/img/bottom-shadow.png
+ 1534  git rm socialace/static/img/breadcrumb-slash.png
+ 1535  git rm socialace/static/img/button.png
+ 1536  git status
+ 1537  git push origin development2
+ 1538  git status
+ 1539  git rm socialace/plantillas/notificar.hmtl
+ 1540  git rm socialace/static/img/balloon.png
+ 1541  git status
+ 1542  git commit -m "Elimando algunos archivos de mas"
+ 1543  git push origin development2
+ 1544  git status
+ 1545  git pull origin development2
  1546  source socialacep/env_socialace/virt/bin/activate
  1547  cd DesarrolloProyecto/
- 1548  git status 
- 1549  git sta
- 1550  git status 
- 1551  git add polls/
- 1552  git add socialace/
- 1553  git commit -m "Subiendo nuevos cambios del Setting para ver si funciona la pagina en el heroku"
+ 1548  ls
+ 1549  git status 
+ 1550  git pull origin developmente2
+ 1551  git pull origin development2
+ 1552  git add polls/
+ 1553  git commit -m "Actualizando el polls"
  1554  git push origin development2
- 1555  git push herokuOriginal development2:master
- 1556  git status 
- 1557  git add socialace/
- 1558  git commit -m "Subiendo nuevos cambios del Setting, base de datos acomodada"
- 1559  git push origin development2
- 1560  git push herokuOriginal development2:master
- 1561  git status 
- 1562  git add socialace/urls.py
- 1563  git commit -m "Url acomodado segun el Setting"
- 1564  git push origin development2
- 1565  git push herokuOriginal development2:master
- 1566  source socialacep/env_socialace/virt/bin/activate
- 1567  python socialacep/socialacegit/socialace/manage.py runserver
+ 1555  git pull origin development2
+ 1556  git push origin development2
+ 1557  git pull origin development2
+ 1558  git add polls/
+ 1559  git add socialace/
+ 1560  git commit -m "Actualizando el polls"
+ 1561  git push origin development2
+ 1562  git pull origin development2
+ 1563  python manage.py runserver
+ 1564  cd
+ 1565  source socialacep/env_socialace/virt/bin/activate
+ 1566  cd DesarrolloProyecto/
+ 1567  python manage.py shell
  1568  cd
- 1569  python socialacep/socialacegit/socialace/manage.py runserver
- 1570  source socialacep/env_socialace/virt/bin/activate
- 1571  python socialacep/socialacegit/socialace/manage.py runserver
- 1572  python DesarrolloProyecto/manage.py runserver
- 1573  cd 
- 1574  cd Desa
- 1575  cd DesarrolloProyecto/
- 1576  ls
+ 1569  source socialacep/env_socialace/virt/bin/activate
+ 1570  cd DesarrolloProyecto/
+ 1571  ls
+ 1572  cd
+ 1573  source socialacep/env_socialace/virt/bin/activate
+ 1574  cd DesarrolloProyecto/
+ 1575  python manage.py shell
+ 1576  cd DesarrolloProyecto/
  1577  python manage.py runserver
- 1578  sudo su postgres
- 1579  python manage.py syncdb
+ 1578  history 
+ 1579  python manage.py dumpdata > backup.json
  1580  python manage.py runserver
- 1581  source socialacep/env_socialace/virt/bin/activate
- 1582  cd DesarrolloProyecto/
- 1583  ls
- 1584  git status 
- 1585  git add socialace/
- 1586  exit
- 1587  source  socialacep/env_socialace/
- 1588  source  socialacep/env_socialace/virt/bin/activate
+ 1581  python manage.py dumpdata > backup.json
+ 1582  sudo su postgres 
+ 1583  python manage.py syncdb
+ 1584  python manage.py loaddata backup.json
+ 1585  python manage.py runserver
+ 1586  python manage.py dumpdata > backup.json
+ 1587  python manage.py runserver
+ 1588  source socialacep/env_socialace/virt/bin/activate
  1589  cd DesarrolloProyecto/
- 1590  git status 
- 1591  git add socialace/urls.py
- 1592  git commit -m "Modificado url"
- 1593  git push origin development2
- 1594  exit
- 1595  git status 
- 1596  source socialacep/env_socialace/virt/bin/activate
- 1597  cd DesarrolloProyecto/
- 1598  lsl
- 1599  ls
- 1600  git status
- 1601  git add socialace/settings.py
- 1602  git status
- 1603  git add socialace/prueba.txt
- 1604  git commit -m "Archivo Prueba"
- 1605  git push origin development2
- 1606  date
- 1607  git commit -m "Archivo Prueba"
- 1608  git statua
- 1609  git status
- 1610  git 
- 1611  git branch master
- 1612  git branch
- 1613  git checkout master
- 1614  git status
- 1615  git checkout master
- 1616  git checkout origin master
- 1617  git checkout master
- 1618  git status
- 1619  git branch master
- 1620  git branch origin master
- 1621  git status
- 1622  git status 
- 1623  git add socialace/prueba.txt
- 1624  git commit -m "Subiendo cambios"
- 1625  git push origin development2
- 1626  git checkout master
- 1627  git status 
- 1628  git
- 1629  git checkout master
- 1630  git push origin master 
- 1631  git status 
- 1632  git checkout -b master
- 1633  git pus
- 1634  git push origin development2
- 1635  git status 
- 1636  git add polls/
- 1637  git add socialace/
- 1638  git commit -m "Nueva modificacion"
- 1639  git push origin master 
- 1640  git status 
- 1641  git push origin development2
+ 1590  python manage.py runserver
+ 1591  cc
+ 1592  python manage.py runserver
+ 1593  git status 
+ 1594  python manage.py dumpdata > backup.json
+ 1595  git add polls/
+ 1596  git add socialace/
+ 1597  git commit -m "Acomodado: plantilla, buscador, historial. Agregado: Calendario"
+ 1598  git push origin development2
+ 1599  git sta
+ 1600  git status 
+ 1601  rm socialace/
+ 1602  git rm socialace/
+ 1603  git rm socialace/static/
+ 1604  git add backup.json
+ 1605  git commit -m "Respaldo de la base de datos"
+ 1606  git push origin development2
+ 1607  git status 
+ 1608  git rm socialace/static/tabs.css
+ 1609  git status 
+ 1610  git rm socialace/static/img/
+ 1611  git rm socialace/static/img/bg/patterns/noise.png
+ 1612  git rm socialace/static/img/user.png
+ 1613  git rm socialace/static/img/tans.png
+ 1614  git rm socialace/static/img/tabs.png
+ 1615  git rm socialace/static/img/slider-bg.png
+ 1616  git status 
+ 1617  git rm socialace/static/img/search.png
+ 1618  git rm socialace/static/img/tabs-divider.png
+ 1619  git rm socialace/static/img/portfolio-left-shadow.png
+ 1620  git rm socialace/static/img/portfolio-divider.png
+ 1621  git rm socialace/static/img/perfil.jpg
+ 1622  git rm socialace/static/img/password.png
+ 1623  git status 
+ 1624  git rm socialace/static/img/paisajesDefinido.jpg
+ 1625  git rm socialace/static/img/menu-bg.png
+ 1626  git rm socialace/static/img/menu-arrow1.png
+ 1627  git rm socialace/static/img/menu-arrow.jpg
+ 1628  git rm socialace/static/img/logo3.png
+ 1629  git rm socialace/static/img/header-glow.png
+ 1630  git rm socialace/static/img/footer-glow.png
+ 1631  git rm socialace/static/img/fondo(1).png
+ 1632  git status 
+ 1633  git rm socialace/static/img/footer-bullet.png
+ 1634  git rm socialace/static/img/fondo(1).png
+ 1635  git rm socialace/static/img/email.png
+ 1636  git rm socialace/static/font/font/fontello.woff
+ 1637  git rm socialace/static/font/font/fontello.ttf
+ 1638  git rm socialace/static/font/font/fontello.svg
+ 1639  git rm socialace/static/font/font/fontello.eot
+ 1640  git rm 
+ 1641  git rm socialace/static/font/demo.html
  1642  git status 
- 1643  git checkout master
- 1644  git status 
- 1645  git add  build/
- 1646  git commit -m "Nueva modificacion"
- 1647  git push origin master 
- 1648  python manage.py runserver
- 1649  git stau
- 1650  git status 
- 1651  git checkout development2
- 1652  git add socialace/
- 1653  git status 
- 1654  git add polls/
- 1655  git status 
- 1656  git commit -m "Ultimo Cambio"
- 1657  git push origin master 
- 1658  git checkout development2
- 1659  ls
+ 1643  git rm socialace/static/img/dummies/.DS_Store
+ 1644  git rm 
+ 1645  git rm socialace/static/font/css/fontello.css
+ 1646  git rm socialace/static/font/css/fontello-ie7.css
+ 1647  git rm socialace/static/font/css/fontello-ie7-codes.css
+ 1648  git rm socialace/plantillas/index.html
+ 1649  git rm socialace/plantillas/usuarioRegistrar.html
+ 1650  git rm 
+ 1651  git rm socialace/static/font/LICENSE.txt
+ 1652  git status 
+ 1653  git rm socialace/plantillas/plantilla.html
+ 1654  git rm socialace/static/font/README.txt
+ 1655  git rm socialace/static/font/config.json
+ 1656  git rm socialace/static/font/css/animation.css
+ 1657  git rm 
+ 1658  git rm socialace/static/font/css/fontello-codes.css
+ 1659  git rm socialace/static/font/css/fontello-embedded.css
  1660  git status 
- 1661  git add socialace/
- 1662  git commit 
- 1663  git commit -m "Nuevos Cambios"
+ 1661  git rm socialace/static/img/fondo(1).png
+ 1662  git status 
+ 1663  python manage.py runserver
  1664  git status 
- 1665  python manage.py runserver
- 1666  git status 
- 1667  git add socialace/
- 1668  git commit -m "Nuevos Cambios"
- 1669  git push origin development2
- 1670  git commit -m "Nueva modificacion"
- 1671  git status
- 1672  git push origin development2
- 1673  history 
- 1674  git push herokuOriginal development2:master te
- 1675  git push herokuOriginal development2:master
- 1676  git status
- 1677  git add socialace/
- 1678  git commit -m "Nuevos Cambios"
- 1679  git push origin development2
- 1680  git push herokuOriginal development2:master
- 1681  history 
- 1682  cd 
- 1683  cd socialacep
- 1684  ls
- 1685  history 
- 1686  cd ls
- 1687  ls
- 1688  source socialacep/env_socialace/virt/bin/activate
- 1689  cd DesarrolloProyecto/
- 1690  ls
- 1691  python manage.py runserver
- 1692  cd
- 1693  source socialacep/env_socialace/virt/bin/activate
- 1694  cd DesarrolloProyecto/
- 1695  sudo su postgres 
- 1696  python manage.py syncdb
- 1697  python manage.py runserver
- 1698  sudo su postgres 
- 1699  python manage.py runserver
- 1700  python manage.py syncdb
- 1701  python manage.py runserver
- 1702  sudo su postgres 
- 1703  source socialacep/env_socialace/virt/bin/activate
- 1704  cd DesarrolloProyecto/
- 1705  ls
- 1706  git sta
- 1707  git status 
- 1708  git add polls/
- 1709  git add socialace/
- 1710  git commit -m "Mostrando foto, acomodado base de datos"
- 1711  git push origin development2
- 1712  python manage.py sycndb
- 1713  python manage.py syncdb
- 1714  python manage.py runserver
- 1715  python manage.py syncdb
- 1716  python manage.py runserver
- 1717  python manage.py syncdb
+ 1665  git commit -m "Eliminado archivos de ccs, js e imagenes que sobran"
+ 1666  git push origin development2
+ 1667  git status 
+ 1668  history 
+ 1669  source socialacep/env_socialace/virt/bin/activate
+ 1670  cd DesarrolloProyecto/
+ 1671  push herokuOriginal development2:master
+ 1672  history > comandos.txt
+ 1673  source socialacep/env_socialace/virt/bin/activate
+ 1674  cd DesarrolloProyecto/
+ 1675  python manage.py runserver
+ 1676  sudo dpkg -i Escritorio/openshot_1.1.3-1_all.deb 
+ 1677  sudo dpkg -i Escritorio/dependencies/openshot-ffmpeg_git-2623d8f-1_i386.deb 
+ 1678  sudo dpkg -i Escritorio/dependencies/openshot-frei0r_1.1.22-1_i386.deb 
+ 1679  sudo dpkg -i Escritorio/dependencies/openshot-mlt_0.4.3-1_i386.deb 
+ 1680  sudo dpkg -i Escritorio/dependencies/openshot-x264_0.67.1173-1_i386.deb 
+ 1681  sudo dpkg -i Escritorio/dependencies/openshot-ffmpeg_git-2623d8f-1_i386.deb 
+ 1682  sudo dpkg -i Escritorio/dependencies/openshot-ffmpeg_git-2623d8f_1_i386.deb 
+ 1683  top
+ 1684  sudo dpkg -i Escritorio/openshot_1.1.3-1_all.deb 
+ 1685  sudo dpkg -i Escritorio/dependencies/openshot-ffmpeg_git-2623d8f-1_i386.deb 
+ 1686  sudo apt-get purgue openshort
+ 1687  sudo apt-get purgue openshot
+ 1688  sudo apt-get pugue openshot
+ 1689  sudo apt-get purgue openshot
+ 1690  sudo apt-get purge openshot
+ 1691  sudo dpkg -i Escritorio/openshot_1.1.3-1_all.deb 
+ 1692  sudo apt-get purge openshot
+ 1693  sudo dpkg -i Escritorio/dependencies/openshot-ffmpeg_git_2623d8f-1_i386.deb 
+ 1694  sudo apt-get purge openshot
+ 1695  sudo add-apt-repository ppa:openshot.developers/ppa
+ 1696  wget -c https://launchpad.net/~openshot.developers/+archive/ppa/+files/openshot_1.4.3-1_all.deb
+ 1697  sudo dpkg -i openshot_1.4.3-1_all.deb
+ 1698  sudo apt-get purge openshot
+ 1699  sudo add-apt-repository ppa:jonoomph/openshot-edge
+ 1700  sudo apt-get update
+ 1701  ls
+ 1702  sudo apt-get purge openshot
+ 1703  ls
+ 1704  sudo dpkg -i openshot_1.4.3-1_all.deb 
+ 1705  source socialacep/env_socialace/virt/bin/a
+ 1706  source socialacep/env_socialace/virt/bin/activate
+ 1707  cd DesarrolloProyecto/
+ 1708  ls
+ 1709  python manage.py runserver
+ 1710  c
+ 1711  python manage.py runserver
+ 1712  git add backup.json
+ 1713  python manage.py runserver
+ 1714  git add backup.json
+ 1715  source socialacep/env_socialace/virt/bin/activate
+ 1716  cd DesarrolloProyecto/
+ 1717  python runserver
  1718  python manage.py runserver
- 1719  python manage.py syncdb
- 1720  python manage.py runserver
- 1721  python manage.py syncdb
+ 1719  shell
+ 1720  source socialacep/env_socialace/virt/bin/activate
+ 1721  cd DesarrolloProyecto/
  1722  python manage.py runserver
- 1723  python manage.py syncdb
- 1724  python manage.py runserver
- 1725  python manage.py syncdb
- 1726  python manage.py runserver
- 1727  python manage.py syncdb
- 1728  python manage.py runserver
- 1729  python manage.py syncdb
- 1730  python manage.py runserver
- 1731  python manage.py shell
- 1732  python manage.py syncdb
- 1733  source socialacep/env_socialace/virt/bin/activate
- 1734  cd
- 1735  source socialacep/env_socialace/virt/bin/activate
- 1736  sudo su postgres 
- 1737  source socialacep/env_socialace/virt/bin/activate
- 1738  cd DesarrolloProyecto/
- 1739  ls
- 1740  python manage.py runserver
- 1741  python manage.py shell
- 1742  pythonpython manage.py runserver
- 1743  python manage.py  runserver
- 1744  n
- 1745  cd
- 1746  cd DesarrolloProyecto/
- 1747  python magane.py runserver
- 1748  cd
- 1749  source socialacep/env_socialace/virt/bin/activate
- 1750  cd DesarrolloProyecto/
- 1751  ls
- 1752  python manage.py shell
- 1753  cd
- 1754  source socialacep/env_socialace/virt/bin/activate
- 1755  cd DesarrolloProyecto/
- 1756  python magane.py runserver
- 1757  ls
- 1758  python magane.py runserver
- 1759  cd 
- 1760  source socialacep/env_socialace/virt/bin/a
- 1761  source socialacep/env_socialace/virt/bin/activate
- 1762  cd DesarrolloProyecto/
- 1763  ls
- 1764  l
- 1765  python manage.py shell
- 1766  source socialacep/env_socialace/virt/bin/activate
- 1767  cd DesarrolloProyecto/
- 1768  python manage.py shell
- 1769  cd 
- 1770  source socialacep/env_socialace/virt/bin/activate
- 1771  cd DesarrolloProyecto/
- 1772  python manage.py runserver
- 1773  source socialacep/env_socialace/virt/bin/activate
- 1774  cd DesarrolloProyecto/
- 1775  ls
- 1776  python manage.py runserver
- 1777  git status
- 1778  git pull origin developmentve2
- 1779  git pull origin development2
- 1780  python manage.py runserver
- 1781  git status
- 1782  git add polls/
- 1783  git add socialace/
- 1784  git commit -m "Falta acomodar lo de loas amigo"
- 1785  git push origin development2
- 1786  exit
- 1787  cd
- 1788  source socialacep/env_socialace/virt/bin/activate
- 1789  cd DesarrolloProyecto/
- 1790  python manage.py shell
- 1791  exit
- 1792  source socialacep/env_socialace/virt/bin/activate
- 1793  cd DesarrolloProyecto/
- 1794  ls
- 1795  python manage.py runserver
- 1796  pip instalar python-instagram
- 1797  sudo pip instalar python-instagram
- 1798  sudo apt-get instalar python-instagram
- 1799  exit
- 1800  cd DesarrolloProyecto/
- 1801  pip instalar python-instagram
- 1802  sudo apt-get instal pip
- 1803  sudo apt-get install pip
- 1804  sudo apt-get install python-instagram
- 1805  sudo apt-get install httplib2
- 1806  sudo aptitude install httplib2
- 1807  sudo aptitude install simplejson
- 1808  sudo aptitude install python-intagram
- 1809  sudo aptitude install python-instagram
- 1810  sudo aptitude install instagram
- 1811  sudo aptitude install pip
- 1812  sudo pip install --upgrade virtualenv
- 1813  cd 
- 1814  source socialacep/env_socialace/virt/bin/activate
- 1815  cd DesarrolloProyecto/
- 1816  sudo aptitude install pip
- 1817  sudo aptitude install python-intagram
- 1818  sudo pip install python-intagram
- 1819  sudo pip install python-instagram
- 1820  python manage.py runserver
- 1821  source socialacep/env_socialace/virt/bin/activate
- 1822  cd DesarrolloProyecto/
- 1823  ls
- 1824  git status 
- 1825  git add polls/
- 1826  git add socialace/
- 1827  git commit -m "Integrando con instagram"
- 1828  git push origin development2
- 1829  git pull origin development2
- 1830  python manage.py runserver
- 1831  sudo su postgres 
- 1832  python manage.py syncdb
- 1833  python manage.py runserver
- 1834  git status
- 1835  git add polls/
- 1836  git add socialace/
- 1837  git commit -m "Muestra de errores, albumes, fotos"
- 1838  git push origin development2
- 1839  git status
- 1840  git rm  socialace/plantillas/base2.html
- 1841  git rm socialace/plantillas/demo.html
- 1842  git rm socialace/static/img/big-button.png
- 1843  git rm socialace/plantillas/base2.html
- 1844  git status
- 1845  git rm socialace/static/img/bird.png
- 1846  git rm socialace/static/img/bottom-shadow.png
- 1847  git rm socialace/static/img/breadcrumb-slash.png
- 1848  git rm socialace/static/img/button.png
- 1849  git status
- 1850  git push origin development2
- 1851  git status
- 1852  git rm socialace/plantillas/notificar.hmtl
- 1853  git rm socialace/static/img/balloon.png
- 1854  git status
- 1855  git commit -m "Elimando algunos archivos de mas"
- 1856  git push origin development2
- 1857  git status
- 1858  git pull origin development2
- 1859  source socialacep/env_socialace/virt/bin/activate
- 1860  cd DesarrolloProyecto/
- 1861  ls
- 1862  git status 
- 1863  git pull origin developmente2
- 1864  git pull origin development2
- 1865  git add polls/
- 1866  git commit -m "Actualizando el polls"
- 1867  git push origin development2
- 1868  git pull origin development2
- 1869  git push origin development2
- 1870  git pull origin development2
- 1871  git add polls/
- 1872  git add socialace/
- 1873  git commit -m "Actualizando el polls"
- 1874  git push origin development2
- 1875  git pull origin development2
- 1876  python manage.py runserver
- 1877  cd
- 1878  source socialacep/env_socialace/virt/bin/activate
- 1879  cd DesarrolloProyecto/
- 1880  python manage.py shell
- 1881  cd
- 1882  source socialacep/env_socialace/virt/bin/activate
- 1883  cd DesarrolloProyecto/
- 1884  ls
- 1885  cd
- 1886  source socialacep/env_socialace/virt/bin/activate
- 1887  cd DesarrolloProyecto/
- 1888  python manage.py shell
- 1889  cd DesarrolloProyecto/
- 1890  python manage.py runserver
- 1891  history 
- 1892  python manage.py dumpdata > backup.json
- 1893  python manage.py runserver
- 1894  python manage.py dumpdata > backup.json
- 1895  sudo su postgres 
- 1896  python manage.py syncdb
- 1897  python manage.py loaddata backup.json
- 1898  python manage.py runserver
- 1899  python manage.py dumpdata > backup.json
- 1900  python manage.py runserver
- 1901  source socialacep/env_socialace/virt/bin/activate
- 1902  cd DesarrolloProyecto/
- 1903  python manage.py runserver
- 1904  cc
- 1905  python manage.py runserver
- 1906  git status 
- 1907  python manage.py dumpdata > backup.json
- 1908  git add polls/
- 1909  git add socialace/
- 1910  git commit -m "Acomodado: plantilla, buscador, historial. Agregado: Calendario"
- 1911  git push origin development2
- 1912  git sta
- 1913  git status 
- 1914  rm socialace/
- 1915  git rm socialace/
- 1916  git rm socialace/static/
- 1917  git add backup.json
- 1918  git commit -m "Respaldo de la base de datos"
- 1919  git push origin development2
- 1920  git status 
- 1921  git rm socialace/static/tabs.css
- 1922  git status 
- 1923  git rm socialace/static/img/
- 1924  git rm socialace/static/img/bg/patterns/noise.png
- 1925  git rm socialace/static/img/user.png
- 1926  git rm socialace/static/img/tans.png
- 1927  git rm socialace/static/img/tabs.png
- 1928  git rm socialace/static/img/slider-bg.png
+ 1723  source socialacep/env_socialace/virt/bin/activate
+ 1724  cd DesarrolloProyecto/
+ 1725  python manage.py runserver
+ 1726  git status 
+ 1727  git add polls/
+ 1728  git add socialace/
+ 1729  git status 
+ 1730  git commit -m "Con los albumes arreglado, y la plantilla arreglada"
+ 1731  git push  origin development2
+ 1732  git status 
+ 1733  git rm socialace/static/demonivo.css~
+ 1734  git rm socialace/static/demo.css
+ 1735  git rm socialace/static/docs.css
+ 1736  git rm socialace/static/flat-ui.css
+ 1737  git rm socialace/static/ie8-hacks.css
+ 1738  git rm socialace/static/img/fondo(1).png
+ 1739  git rm socialace/static/js/builder.js
+ 1740  git rm socialace/static/js/controls.js
+ 1741  git status 
+ 1742  git rm socialace/static/js/dragdrop.js
+ 1743  git rm socialace/static/js/jquery.fancybox-1.3.4/style.css
+ 1744  git rm socialace/static/nivo-slider.css
+ 1745  git rm socialace/static/registro.css
+ 1746  git rm socialace/static/reset.css
+ 1747  git rm socialace/static/social-icons.css
+ 1748  git rm socialace/static/style.css
+ 1749  git rm socialace/static/styled-elements.css
+ 1750  git rm socialace/static/superfish.css
+ 1751  git status 
+ 1752  git rm socialace/static/js/jquery.fancybox-1.3.4/style.css~
+ 1753  git status 
+ 1754  git push origin development2
+ 1755  git status 
+ 1756  git commit 
+ 1757  git commit -m "Eliminado archivos restante de css y js"
+ 1758  git status 
+ 1759  source socialacep/env_socialace/virt/bin/activate
+ 1760  cd DesarrolloProyecto/
+ 1761  python manage.py runserver
+ 1762  c
+ 1763  sudo su postgres 
+ 1764  python manage.py syncdb
+ 1765  python manage.py runserver
+ 1766  history 
+ 1767  python manage.py loaddata backup.json
+ 1768  python manage.py runserver
+ 1769  sudo su postgres 
+ 1770  python manage.py syncdb
+ 1771  sudo su postgres 
+ 1772  python manage.py syncdb
+ 1773  python manage.py runserver
+ 1774  heroku config | grep HEROKU_POSTGRESQL
+ 1775  heroku config | grep HEROKU_POSTGRESQL -a socialace
+ 1776  heroku config -a socialace
+ 1777  heroku addons:add heroku-postgresql:socialheroku
+ 1778  heroku addons:add heroku-postgresql:-a socialheroku
+ 1779  heroku addons:add heroku-postgresql:socialheroku -a socialace
+ 1780  heroku addons:add heroku-postgresql:dev -a socialace
+ 1781  heroku config -a socialace
+ 1782  heroku pg:promote HEROKU_POSTGRESQL_YELLOW_URL
+ 1783  heroku pg:promote HEROKU_POSTGRESQL_YELLOW_URL -a socialace
+ 1784  heroku pg:info
+ 1785  heroku pg:info -a socialace
+ 1786  heroku config -a socialace
+ 1787  heroku login
+ 1788  git push herokuOriginal development2:master
+ 1789  git remote -v
+ 1790  git add remote herokuhttps https://github.com/EmilyPagua/DesarrolloProyecto.git
+ 1791  git remote add herokuhttps https://github.com/EmilyPagua/DesarrolloProyecto.git
+ 1792  git remote -v
+ 1793  git push herokuhttps development2:master
+ 1794  git status 
+ 1795  git add .
+ 1796  git status 
+ 1797  git commit -m "Cambios de base de datos, validaciones de cambios"
+ 1798  git remote -v
+ 1799  git remote -v
+ 1800  git remote rename herokuhttps originalHttps
+ 1801  git remote -v
+ 1802  git push origin development2
+ 1803  git push herokuOriginal development2:master
+ 1804  python manage.py runserver
+ 1805  source socialacep/env_socialace/virt/bin/activate
+ 1806  cd DesarrolloProyecto/
+ 1807  python manage.py runserver
+ 1808  sudo su postgres 
+ 1809  python manage.py runserver
+ 1810  python manage.py syncdb
+ 1811  python manage.py runserver
+ 1812  history 
+ 1813  python manage.py dumpdata > backup.json
+ 1814  sudo su postgres 
+ 1815  python manage.py syncdb
+ 1816  git status 
+ 1817  git add .
+ 1818  git commit -m "Comentarios listo, eliminar y modificar album, relacion de amistad, historial, provacidad"
+ 1819  git push origin development2
+ 1820  git push herokuOriginal development2:master
+ 1821  heroku run python manage.py syncdb -a socialace
+ 1822  heroku run python manage.py syncdb
+ 1823  git push heroku master
+ 1824  heroku run python manage.py syncdb
+ 1825  heroku run python manage.py syncdb -a socialace
+ 1826  git status 
+ 1827  git rm .
+ 1828  git status 
+ 1829  git rm .
+ 1830  git rm -r
+ 1831  git rm -n
+ 1832  git status 
+ 1833  git add .
+ 1834  git status 
+ 1835  git rm socialace/plantillas/detalleFoto.html~
+ 1836  git rm socialace/carga/imagenusuario/
+ 1837  git rm -r socialace/carga/imagenusuario/
+ 1838  git rm -r socialace/carga/imagenalbum/
+ 1839  git status 
+ 1840  git commit -m "Eliminando imagenes y archivos extras"
+ 1841  git push origin development2
+ 1842  git status 
+ 1843  git push herokuOriginal development2:master
+ 1844  git status 
+ 1845  git push origin development2
+ 1846  git status 
+ 1847  git add socialace/
+ 1848  git commit -m "Acomando url para que se vea la pagina en el heroku"
+ 1849  git push origin development2
+ 1850  git push herokuOriginal development2:master
+ 1851  git status 
+ 1852  git add socialace/
+ 1853  git commit -m "Acomando url para que se vea la pagina en el heroku2"
+ 1854  git push origin development2
+ 1855  git push herokuOriginal development2:master
+ 1856  heroku run python manage.py syncdb -a socialace
+ 1857  git push herokuOriginal development2:master
+ 1858  git status 
+ 1859  git checkout master
+ 1860  git status 
+ 1861  git rm socialace/static/img/fondo(1).png
+ 1862  git commit -m "Subiendo cambios"
+ 1863  git status 
+ 1864  git add comandos.txt
+ 1865  git commit -m "Se cambio la plantilla de diseño, modificacion de amigos, buscador, historiales"
+ 1866  git push origin master 
+ 1867  git status 
+ 1868  git add socialace/static/img/
+ 1869  git status 
+ 1870  git push origin master 
+ 1871  git status 
+ 1872  git add socialace/static/img/
+ 1873  git status 
+ 1874  git add socialace/static/img/video.jpg
+ 1875  git status 
+ 1876  git checkout development2
+ 1877  git status 
+ 1878  git add socialace/static/images/01.jpg
+ 1879  git add socialace/static/
+ 1880  git add socialace/static/img/example-slide-1.jpg
+ 1881  git add socialace/static/img/example-slide-2.jpg
+ 1882  git add socialace/static/img/example-slide-3.jpg
+ 1883  git add socialace/static/img/example-slide-4.jpg
+ 1884  git add socialace/static/img/fondo(1).png
+ 1885  git add socialace/static/img/pagination.png
+ 1886  git commit -m "Suebiendo algunas fotos de la plantilla "
+ 1887  git push origin development2
+ 1888  git push herokuOriginal development2:master
+ 1889  git status 
+ 1890  git rm socialace/static/
+ 1891  git status 
+ 1892  git commit -m "Eliminando archivos sobrantes"
+ 1893  git push origin development2
+ 1894  git status 
+ 1895  git rm socialace/static/images/06.jpg
+ 1896  git status 
+ 1897  git rm socialace/static/images/07.jpg
+ 1898  git rm socialace/static/images/exaple-image.jpg
+ 1899  git rm socialace/static/images/favicon.ico
+ 1900  git rm socialace/static/img/example-slide-1.jpg
+ 1901  git rm socialace/static/img/example-slide-2.jpg
+ 1902  git rm socialace/static/img/example-slide-3.jpg
+ 1903  git rm socialace/static/img/example-slide-4.jpg
+ 1904  git rm socialace/static/img/pagination.png
+ 1905  git status 
+ 1906  git commit -m "Eliminando archivos sobrantes"
+ 1907  git push origin development2
+ 1908  git status 
+ 1909  git pull origin development2
+ 1910  git status 
+ 1911  git add socialace/static/img/
+ 1912  git commit -m "Subiendo imagenes de la plantilla"
+ 1913  git push origin development2
+ 1914  git push herokuOriginal development2:master
+ 1915  python manage.py  runserver
+ 1916  git status 
+ 1917  git commit -a "Elimandola carpta static, nbo se ven las imagesnes"
+ 1918  git commit -a
+ 1919  git status 
+ 1920  git commit -a
+ 1921  git add socialace/carga/
+ 1922  git commit -m "-"
+ 1923  git push origin development2
+ 1924  git status 
+ 1925  git pull origin development2
+ 1926  git status 
+ 1927  git commit -a
+ 1928  git push origin development2
  1929  git status 
- 1930  git rm socialace/static/img/search.png
- 1931  git rm socialace/static/img/tabs-divider.png
- 1932  git rm socialace/static/img/portfolio-left-shadow.png
- 1933  git rm socialace/static/img/portfolio-divider.png
- 1934  git rm socialace/static/img/perfil.jpg
- 1935  git rm socialace/static/img/password.png
- 1936  git status 
- 1937  git rm socialace/static/img/paisajesDefinido.jpg
- 1938  git rm socialace/static/img/menu-bg.png
- 1939  git rm socialace/static/img/menu-arrow1.png
- 1940  git rm socialace/static/img/menu-arrow.jpg
- 1941  git rm socialace/static/img/logo3.png
- 1942  git rm socialace/static/img/header-glow.png
- 1943  git rm socialace/static/img/footer-glow.png
- 1944  git rm socialace/static/img/fondo(1).png
- 1945  git status 
- 1946  git rm socialace/static/img/footer-bullet.png
- 1947  git rm socialace/static/img/fondo(1).png
- 1948  git rm socialace/static/img/email.png
- 1949  git rm socialace/static/font/font/fontello.woff
- 1950  git rm socialace/static/font/font/fontello.ttf
- 1951  git rm socialace/static/font/font/fontello.svg
- 1952  git rm socialace/static/font/font/fontello.eot
- 1953  git rm 
- 1954  git rm socialace/static/font/demo.html
- 1955  git status 
- 1956  git rm socialace/static/img/dummies/.DS_Store
- 1957  git rm 
- 1958  git rm socialace/static/font/css/fontello.css
- 1959  git rm socialace/static/font/css/fontello-ie7.css
- 1960  git rm socialace/static/font/css/fontello-ie7-codes.css
- 1961  git rm socialace/plantillas/index.html
- 1962  git rm socialace/plantillas/usuarioRegistrar.html
- 1963  git rm 
- 1964  git rm socialace/static/font/LICENSE.txt
+ 1930  git add socialace/static/
+ 1931  git commit -m "suebiendo de nuevo los archivos de css, js e imagenes"
+ 1932  git push origin development2
+ 1933  git status 
+ 1934  git add socialace/settings.py
+ 1935  git commit -m "Settings"
+ 1936  git push origin development2
+ 1937  git push herokuOriginal development2:master
+ 1938  git status 
+ 1939  git rm socialace/carga/
+ 1940  git status 
+ 1941  git rm socialace/carga/imagenalbum/e_playa.jpg
+ 1942  git rm socialace/carga/imagenusuario/fabioly.jpg
+ 1943  git rm socialace/carga/imagenusuario/mily.jpg
+ 1944  git commit -m "elimando las carpetas de imagenes de usuario y album"
+ 1945  git push origin development2
+ 1946  git status 
+ 1947  git add socialace/carga/
+ 1948  git commit -m "elimando las carpetas de imagenes de usuario y album"
+ 1949  git push origin development2
+ 1950  git push herokuOriginal development2:master
+ 1951  c
+ 1952  source socialacep/env_socialace/virt/bin/activate
+ 1953  cd DesarrolloProyecto/
+ 1954  pip freeze
+ 1955  python manage.py runserver
+ 1956  source socialacep/env_socialace/virt/bin/activate
+ 1957  cd DesarrolloProyecto/
+ 1958  git status 
+ 1959  git add socialace/plantillas/buscarHashtag.html
+ 1960  git add polls/
+ 1961  git add socialace/plantillas/agregarFotos.html
+ 1962  git add socialace/plantillas/base.html
+ 1963  git add socialace/plantillas/verAlbumes.html
+ 1964  git add socialace/settings.py
  1965  git status 
- 1966  git rm socialace/plantillas/plantilla.html
- 1967  git rm socialace/static/font/README.txt
- 1968  git rm socialace/static/font/config.json
- 1969  git rm socialace/static/font/css/animation.css
- 1970  git rm 
- 1971  git rm socialace/static/font/css/fontello-codes.css
- 1972  git rm socialace/static/font/css/fontello-embedded.css
- 1973  git status 
- 1974  git rm socialace/static/img/fondo(1).png
- 1975  git status 
- 1976  python manage.py runserver
- 1977  git status 
- 1978  git commit -m "Eliminado archivos de ccs, js e imagenes que sobran"
- 1979  git push origin development2
- 1980  git status 
- 1981  history 
+ 1966  git add socialace/urls.py
+ 1967  git commit -m "Subiendo cambios de url, setting"
+ 1968  git push origin development2
+ 1969  git push herokuOriginal development2:master
+ 1970  python manage.py runserver
+ 1971  git push herokuOriginal development2:master
+ 1972  git commit -m "Subiendo cambios de url, setting"
+ 1973  git push herokuOriginal development2:master
+ 1974  git commit -m "Subiendo cambios de url, setting"
+ 1975  python manage.py  runser
+ 1976  python manage.py  runserver
+ 1977  sudo su postgres 
+ 1978  python manage.py syncdb
+ 1979  sudo su postgres 
+ 1980  python manage.py syncdb
+ 1981  exit
  1982  source socialacep/env_socialace/virt/bin/activate
  1983  cd DesarrolloProyecto/
- 1984  push herokuOriginal development2:master
- 1985  history > comandos.txt
+ 1984  python manage.py syncdb
+ 1985  sudo su postgres 
+ 1986  python manage.py syncdb
+ 1987  python manage.py  runserver
+ 1988  python manage.py syncdb
+ 1989  python manage.py  runserver
+ 1990  sudo su postgres 
+ 1991  python manage.py syncdb
+ 1992  python manage.py  runserver
+ 1993  config heroku: set AWS_ACCESS_KEY_ID = xxx AKIAIRUP4AXZUZUCBMEA = yyy
+ 1994  config heroku: set AKIAIRUP4AXZUZUCBMEA = xxx 2vK1NTPsS6GIKZlVT0yr7hnDfTwaxSsrfPUA+5N0 = yyy
+ 1995  history 
+ 1996  history heroku login
+ 1997  heroku login
+ 1998  config heroku: set AKIAIRUP4AXZUZUCBMEA = xxx 2vK1NTPsS6GIKZlVT0yr7hnDfTwaxSsrfPUA+5N0 = yyy
+ 1999  heroku config: set AKIAIRUP4AXZUZUCBMEA = xxx 2vK1NTPsS6GIKZlVT0yr7hnDfTwaxSsrfPUA+5N0 = yyy
+ 2000  heroku config -a socialace
+ 2001  config heroku -a socialace: set AKIAIRUP4AXZUZUCBMEA = xxx 2vK1NTPsS6GIKZlVT0yr7hnDfTwaxSsrfPUA+5N0 = yyy
+ 2002  heroku config -a socialace: set AKIAIRUP4AXZUZUCBMEA = xxx 2vK1NTPsS6GIKZlVT0yr7hnDfTwaxSsrfPUA+5N0 = yyy
+ 2003  heroku config -a socialace
+ 2004  heroku config
+ 2005  heroku config -a socialace: set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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
+ 2006  config heroku -a socialace: set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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
+ 2007  heroku config: set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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
+ 2008  heroku: set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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
+ 2009  heroku config: set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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 -a socialace
+ 2010  heroku config:set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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 -a socialace
+ 2011  heroku config:set AWS_ACCESS_KEY_ID = AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY = 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 -a socialace -a socialace
+ 2012  heroku config:set AWS_ACCESS_KEY_ID=AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY=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
+ 2013  heroku config:set AWS_ACCESS_KEY_ID=AKIAIRUP4AXZUZUCBMEA AWS_SECRET_ACCESS_KEY=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 -a socialace
+ 2014  heroku config:set S3_BUCKET_NAME=ArchivosMedia
+ 2015  heroku config:set S3_BUCKET_NAME=ArchivosMedia -a socialace
+ 2016  python manage.py  runserver
+ 2017  git status 
+ 2018  git add archivoLogs.txt
+ 2019  git add socialace/
+ 2020  git commit -a "Archivos log, Replica y Like"
+ 2021  git commit -m "Archivos log, Replica y Like"
+ 2022  git push origin development2
+ 2023  git pull origin development2
+ 2024  git push origin development2
+ 2025  git push herokuOriginal development2:master
+ 2026  python manage.py  runserver
+ 2027  heroku run python manage.py syncdb -a socialace
+ 2028  history > comandos.txt 

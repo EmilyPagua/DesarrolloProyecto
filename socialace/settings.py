@@ -2,8 +2,8 @@
 from django.core.urlresolvers import reverse
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-#HEROKU = True
-HEROKU = False
+HEROKU = True
+#HEROKU = False
 
  
  
@@ -73,7 +73,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-MEDIA_ROOT = os.path.join(RUTA_PROYECTO,'carga')
+MEDIA_ROOT/imagenusuario/
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.

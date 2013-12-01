@@ -184,8 +184,35 @@ class RegistroComentario(forms.Form):
         
     def procesar_comentario(self,albumes,usuario):        
         descripcio = self.cleaned_data['descripcion']        
+        count = Comentario.objects.filter(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)
+        if count:
+    	    for aux in count: 
+                aux.delete() 
         comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)        
         comentar.save()
+        print "estoy con el comentario normal"
+        l = Comentario.objects.get(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)
+        k = User.objects.get(id=albumes.fkusuario.id)
+        b = Historial(usuario=k, accion='comentario',fkcomentario=l)
+        b.save()
+     
+    def procesar_replica(self,albumes,usuario,comentReplic):        
+        descripcio = self.cleaned_data['descripcion']        
+        count = Comentario.objects.filter(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)
+        print albumes.id
+        print usuario.username
+        if count:
+    	    for aux in count: 
+                aux.delete()    	
+    
+        comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)        
+        comentar.save()
+        print "estoy con el comentario este es el de replica"
+        l = Comentario.objects.get(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)
+        k = User.objects.get(id=albumes.fkusuario.id)
+        b = Historial(usuario=k, accion='comentario',fkcomentario=l)
+        b.save()
+        
         
 
 #buscandoHashtag

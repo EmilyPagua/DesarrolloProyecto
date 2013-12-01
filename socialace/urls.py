@@ -8,10 +8,11 @@ admin.autodiscover()
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
+    url(r'^logout/$', logout, {'next_page': ''} ,name='logout'),
     url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
     #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
-    url(r'^logout/$', logout, {'next_page': '/loginPrincipal/'} ,name='logout'),
+    
     
     url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
     url(r'^modificarUsuario/(?P<id_usuario>\d+)/$', 'polls.views.modificar_usuario',name ='modificarUsuario'),
@@ -30,6 +31,12 @@ urlpatterns = patterns('',
     url(r'^misComentarios/(?P<id_album>\d+)/$', 'polls.views.misComentarios',name ='misComentarios'),
     
     url(r'^Comentarios/$', 'polls.views.comentario_Mio',name ='comentar'),
+    url(r'^replicarComentario/(?P<id_comentario>\d+)/$', 'polls.views.replicarComentario',name ='replicarComentario'),
+    url(r'^enviarReplicaComentario/(?P<id_comentario>\d+)/$', 'polls.views.EscribirReplicaComentario',name ='EscribirReplicaComentario'),
+    
+    url(r'^likeComentario/(?P<id_comentario>\d+)/$', 'polls.views.likeComentario',name ='likeComentario'),
+    url(r'^borrarComentario/(?P<id_comentario>\d+)/$', 'polls.views.borrarComentario',name ='borrarComentario'),
+    url(r'^Nolike/(?P<id_comentario>\d+)/$', 'polls.views.Nolike',name ='Nolike'),
     
     url(r'^verNotificacion/$', 'polls.views.ver_notificacion',name ='verNotificacion'),    
     url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/(?P<id_amigo>\d+)$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),

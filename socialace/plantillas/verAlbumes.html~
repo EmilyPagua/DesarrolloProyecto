@@ -17,8 +17,8 @@
 			{{ album.nombre }}
 			<img src="{{STATIC_URL}}{{ album.foto}}"  width="280" heigth="280"></a>
 			
-			<a rel="nofollow" href="{% url 'agregarFoto' %}"> <h7> Agregar fotos</h7> </a>
-			<img class="alignleft" alt="cameraplus32.png" title="cameraplus32.png" src="{{STATIC_URL}}img/mono-icons/cameraplus32.png"  width="20" heigth="20"></img>
+			<a rel="nofollow" href="{% url 'agregarFoto' album.id %}"> <h7> <img class="alignleft" alt="cameraplus32.png" title="cameraplus32.png" src="{{STATIC_URL}}img/mono-icons/cameraplus32.png"  width="33" heigth="33"></img></h7> </a>
+			
 			<button class="btn btn-primary dropdown-toggle" type="submit" name="ver" value="ver">
 			<img class="alignleft" alt="monitor32.png" title="monitor32.png" src="{{STATIC_URL}}img/mono-icons/monitor32.png" width="20" heigth="20"></img></button> 
 			<button class="btn btn-primary dropdown-toggle" type="submit" name="modi" value="modi">
