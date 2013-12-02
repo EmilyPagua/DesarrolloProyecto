@@ -150,7 +150,7 @@
 				<ul id="sidebar">
 					<!-- init sidebar -->
 					<li>
-						<h6>Inicio de Seción</h6>		
+						<h6>Inicio de Sesión</h6>		
 						<ul>							
 							<form name="form1" method="post" action=".">
                                     {% csrf_token %}
@@ -168,7 +168,7 @@
 					</li>	
 					
 					<li>
-						<h6>Registrese</h6>		
+						<h6>Registrese en socialace</h6>		
 						<ul>
 							<li class="cat-item"><a rel="nofollow" href="{% url 'registroUsuario' %}">Registro Usuario</a></li>
 							<fb:login-button length="long" onlogin="location.href='<? echo $_SERVER['REQUEST_URI'];?>'"></fb:login-button> 
