@@ -12,7 +12,7 @@ class UsuarioPerfil(models.Model):
 	direccion = models.CharField(max_length=100)
 	facebook = models.CharField(max_length=50,null=True,blank=True)
 	privacidad = models.BooleanField( default=False)
-	foto = models.ImageField(upload_to='carga', null=True,blank=True)
+	foto = models.ImageField(upload_to='imagenusuario', null=True,blank=True)
 	amigos = models.ManyToManyField(User, related_name ='amigos', null=True,blank=True)
 
 	def __str__(self):
@@ -27,7 +27,7 @@ class Album(models.Model):
 	nombre = models.CharField(max_length=100)
 	descripcion = models.TextField(verbose_name='Descripcion',max_length=1000)
 	privacidad = models.BooleanField(default=False)
-	foto = models.ImageField(upload_to='carga', null=True,blank=True)
+	foto = models.ImageField(upload_to='imagenalbum', null=True,blank=True)
 	fkusuario = models.ForeignKey(User)
 
 	def __str__(self):
