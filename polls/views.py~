@@ -257,7 +257,7 @@ def principal_inicio(request):
     amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
     persona = User.objects.filter(id__in=id_per)
-    liked = like.objects.all()
+    liked = Like.objects.all()
     
     contexto = {'usuario': usuario, 'historial':historial,'contenido':contenido,'notificacion':notificacion, 'comentario':comentario,'persona':persona,'liked':liked}
     outfile.write('principal_inicio -- PAGINA INICIAL DEL SISTEMA, SE MUESTRA EL HISTORIAR GENERAN DE LOS USUARIOS DE SOCIALACE\n')

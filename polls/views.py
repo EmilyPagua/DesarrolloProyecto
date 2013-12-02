@@ -6,6 +6,7 @@ from django.contrib.auth.decorators import login_required
 from django.core.urlresolvers import reverse
 from polls.forms import RegistroUsuario, EditarUsuario, RegistroAlbum, RegistroAmigo,RegistroComentario,BuscarHashtag
 from polls.models import UsuarioPerfil, Album ,Notificacion, Contenido, Historial, Contenido, Comentario, Like
+
 from django.contrib.auth.models import User
 from django.db.models import Q
 

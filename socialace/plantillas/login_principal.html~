@@ -85,21 +85,43 @@
 			<!-- HEADER -->
 			<div id="header">
 				<a href="index.html"><img id="logo" src="{{STATIC_URL}}img/logo.png" alt="Nova" with="120" height="120"/></a>
+<<<<<<< HEAD
 							
 				
 				<!-- headline -->
 				<div id="headline">
 					
 				</div>
+
+				<!-- Social -->
+				<div id="social-holder">
+					<ul class="social">
+						<li><a href="http://www.facebook.com" class="poshytip facebook" title="Become a fan"></a></li>
+					</ul>
+				</div>
+				<!-- ENDS Social -->				
+				
+				<!-- headline -->
+				<div id="headline">
+					
+				</div>
+
 				<!-- ENDS headline -->
 				
 				<!-- Slider -->
 			<div id="slider-block">
 				
+<<<<<<< HEAD
 			</div>
 			<!-- ENDS Slider -->
 				
 			</div>
+=======
+			</div>
+			<!-- ENDS Slider -->
+				
+			</div>
+>>>>>>> f5346e12a81f1c8ff145690253f0e6d81d477658
 			<!-- ENDS HEADER -->
 			
 			<!-- MAIN -->
@@ -128,8 +150,13 @@
 					<!-- post -->
 					<div class="post">
 						<h1>Bienvenido</a></h1>
+<<<<<<< HEAD
 						
 						
+=======
+						
+						
+>>>>>>> f5346e12a81f1c8ff145690253f0e6d81d477658
 						<!-- shadow -->
 						<img src="{{STATIC_URL}}img/descripcion.png"  alt="Feature image"  width="500" heigt="500" /></a>
 						<!-- ENDS shadow -->
@@ -144,7 +171,9 @@
 				<ul id="sidebar">
 					<!-- init sidebar -->
 					<li>
+
 						<h4>Inicio de Sesión</h4>		
+
 						<ul>							
 							<form name="form1" method="post" action=".">
                                     {% csrf_token %}
@@ -162,7 +191,9 @@
 					</li>	
 					
 					<li>
-						<h6>Registrese en socialace</h6>		
+
+						<h5>Registrese en socialace</h5>		
+
 						<ul>
 							<li class="cat-item"><a rel="nofollow" href="{% url 'registroUsuario' %}">Registro Usuario</a></li>
 							<fb:login-button length="long" onlogin="location.href='<? echo $_SERVER['REQUEST_URI'];?>'"></fb:login-button> 
@@ -172,6 +203,7 @@
 FB.init("203158246533782","xd_receiver.html"); 
 </script> 
 
+<<<<<<< HEAD
 
 <script type="text/javascript">
   // Specify the language code prior to loading the JavaScript API
@@ -240,6 +272,76 @@ function signinCallback(authResult) {
 						
 				<!-- Twitter -->
 
+=======
+
+<script type="text/javascript">
+  // Specify the language code prior to loading the JavaScript API
+  window.___gcfg = {
+    lang: 'es'
+  }
+
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/client:plusone.js?onload=onLoadCallback';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+ <!-- Place this asynchronous JavaScript just before your </body> tag -->
+    <script type="text/javascript">
+      (function() {
+       var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+       po.src = 'https://apis.google.com/js/client:plusone.js';
+       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+     })();
+    </script>
+
+<script type="text/javascript">
+function signinCallback(authResult) {
+  if (authResult['access_token']) {
+    // Update the app to reflect a signed in user
+    // Hide the sign-in button now that the user is authorized, for example:
+    document.getElementById('signinButton').setAttribute('style', 'display: none');
+  } else if (authResult['error']) {
+    // Update the app to reflect a signed out user
+    // Possible error values:
+    //   "user_signed_out" - User is signed-out
+    //   "access_denied" - User denied access to your app
+    //   "immediate_failed" - Could not automatically log in the user
+    console.log('Sign-in state: ' + authResult['error']);
+  }
+}
+</script>
+
+<span id="signinButton">
+  <span
+    class="g-signin"
+    data-callback="signinCallback"
+    data-clientid="982082487474-jpkgtbep5lct0kjp4q40c8avbbg0ppho.apps.googleusercontent.com"
+    data-cookiepolicy="single_host_origin"
+    data-requestvisibleactions="http://schemas.google.com/AddActivity"
+    data-scope="https://www.googleapis.com/auth/plus.login">
+  </span>
+</span>
+
+						</ul>
+					</li>
+					<!-- ENDS init sidebar -->
+				</ul>
+				<!-- ENDS sidebar -->
+
+				<!-- pagination -->	
+				
+				<!-- ENDS pagination -->
+
+			</div>
+			<!-- ENDS content -->
+		
+		
+				
+						
+				<!-- Twitter -->
+
+>>>>>>> f5346e12a81f1c8ff145690253f0e6d81d477658
 				<!-- ENDS Twitter -->
 	
 	

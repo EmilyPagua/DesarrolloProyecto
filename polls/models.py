@@ -10,7 +10,7 @@ class UsuarioPerfil(models.Model):
 	fkusuario = models.OneToOneField(User)
 	fechanacimiento	= models.DateField(max_length=50)
 	direccion = models.CharField(max_length=100)
-	facebook = models.CharField(max_length=50)
+	facebook = models.CharField(max_length=50,null=True,blank=True)
 	privacidad = models.BooleanField( default=False)
 	foto = models.ImageField(upload_to='carga', null=True,blank=True)
 	amigos = models.ManyToManyField(User, related_name ='amigos', null=True,blank=True)
