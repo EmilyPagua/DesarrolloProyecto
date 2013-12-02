@@ -2,8 +2,8 @@
 from django.core.urlresolvers import reverse
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-HEROKU = True
-#HEROKU = False
+#HEROKU = True
+HEROKU = False
 
  
  
@@ -21,8 +21,7 @@ if not HEROKU:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            #'NAME': 'socialacebd',                      # Or path to database file if using sqlite3.
-			 'NAME': 'socialacebd',
+            'NAME': 'socialacebd',                      # Or path to database file if using sqlite3.			
             # The following settings are not used with sqlite3:
             'USER': 'postgres',
             'PASSWORD': '1234567',
@@ -97,6 +96,7 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
       os.path.join(RUTA_PROYECTO,'static'),
+      os.path.join(RUTA_PROYECTO,'carga'),
 )
 
 # List of finder classes that know how to find static files in

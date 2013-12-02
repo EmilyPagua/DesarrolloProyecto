@@ -1,34 +1,22 @@
 {% extends 'base.html'%}
-{% block contenido%}
-	<script>
-	$(function() {
-		$( "#datepicker" ).datepicker();
-	});
-	</script>
-
-	<!-- content -->
-					<div id="content">
-						<table width="482" height="130" border="1" align="left">                                                         
-				            <tr>
- 							<td>
-                                <label>
-                                     <h2>Mis Amigos</h2>
-                                </label>    							
-                               <br> 
-                               {% for campo in persona %}
-						      	 <label> 
-						       		 <h5>{{ campo.fkusuario.first_name }} </h5>
-  						       						       		
-						       	 </label>	 
-						       {% endfor %}                              
-                                  
-                                
-						    </td>					                                          	                      
-						   	<td>
-                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
-                            </td>
-                             
-                           </table>
-                      </div>
-					<!-- ENDS content -->						
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis amigos</span>
+	<span class="subtitle">Estos son los amigos a los que tengo agregado en mi red social</span>
+</div>
+<!-- ENDS title -->
+<!-- gallery-->
+<ul id="portfolio-list" class="gallery three-cols">
+   {% for campo in persona %}
+	<li class="pink">
+		<a href="{% url 'perfilAmigo' %}" rel="group1"  title="Direccion:{{ campo.usuarioperfil.direccion }} 
+	    Correo: {{ campo.email }}
+	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}" >
+		{{ campo.first_name }} {{ campo.last_name }}
+		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  ></a>
+	</li>
+	{% endfor %}   	
+</ul>
+	<!-- ENDS gallery -->						
 {% endblock %}

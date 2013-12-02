@@ -1,50 +1,113 @@
 {% extends 'base.html'%}
-{% block contenido%}
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}registro.css">
-<link rel="stylesheet" type="text/css" href="{{STATIC_URL}}font/css/fontello.css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="../../themes/base/jquery.ui.all.css">
-        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
-  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
-  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
-  <link rel="stylesheet" href="/resources/demos/style.css" />
+{% block content%}
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js"></script>
+<script type="text/javascript">
 
-		<script>
+jQuery(function($){
+$.datepicker.regional['es'] = {
+closeText: 'Cerrar',
+prevText: 'Anterior',
+nextText: 'Siguiente',
+currentText: 'Hoy',
+monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+monthNamesShort: ['Ene','Feb','Mar','Abr', 'May','Jun','Jul','Ago','Sep', 'Oct','Nov','Dic'],
+dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+dayNamesShort: ['Dom','Lun','Mar','Mié','Juv','Vie','Sáb'],
+dayNamesMin: ['Do','Lu','Ma','Mi','Ju','Vi','Sá'],
+weekHeader: 'Sm',
+dateFormat: 'dd/mm/yy',
+firstDay: 0,
+numberOfMonths: 1,
+isRTL: false,
+showMonthAfterYear: false,
+yearSuffix: ''};
+$.datepicker.setDefaults($.datepicker.regional['es']);
+});
+</script>
+<script>
 	$(function() {
-		$( ".datepicker" ).datepicker();
+		$( ".datepicker" ).datepicker({
+		
+		changeMonth: true,
+		changeYear: true,
+		yearRange: "c-70:2006",
+		minDate:'c-23250:c',
+        maxDate: '0',
+		onSelect: function(dateText, inst) {} });
 	});
-	</script>
+	
+	function validarForm(formulario) {	   
+	  if(formulario.clave.value.length==0) { //comprueba que no esté vacío
+		formulario.clave.focus();
+		alert('Requiere de una clave personal');
+		return false;
+	  }	
+	   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+		formulario.nombre.focus();
+		alert('Requiere de un nombre');
+		return false;
+	  }	
+	   if(formulario.apellido.value.length==0) { //comprueba que no esté vacío
+		formulario.apellido.focus();
+		alert('Requiere de un apellido');
+		return false;
+	  }	
+	   if(formulario.nacimiento.value.length==0) { //comprueba que no esté vacío
+		formulario.nacimiento.focus();
+		alert('Requiere de una fecha de nacimiento');
+		return false;
+	  }	
+	  if(formulario.direccion.value.length==0) { //comprueba que no esté vacío
+		formulario.direccion.focus();
+		alert('Requiere de una direccion');
+		return false;
+	  }
+	  
+	 alert('Sus datos seran modificados');		  
+	  return true;
+	}
+</script>
+<!-- title -->
+<div id="page-title">
+	<span class="title">Modificar datos personales</span>
+	<span class="subtitle">Puede modificar sus datos personales como:email, correo, contraseña</span>
+</div>
+<!-- ENDS title -->
 
-	<!-- content -->
-					<div id="content">
-						<form name="form1" method="post" action= "" >
-						
-						<table width="482" height="130" border="1" align="left">
-                            <form name="form3"  action="{% url 'modificarUsuario' usuario.id %}"  method="post" enctype="multipart/form-data">
-                            {% csrf_token %}
-				            <tr>
- 							<td>
-                                <label>
-                                     <h5>Modificar Datos</h5>
-                                </label>    							
-                               <br>
-                               {% for campo in formulario %}
-                              	 <label> 
-                               		{{ campo.label }} {{ campo }}
-                               	 </label>	 
-                               {% endfor %}	                   
-                               
-						         <br>
-						         <label>
-						               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-						         </label> 
-						    </td>					                                          	                      
-						   	<td>
-                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left"/>  
-                            </td>
-                             
-                           </table>
-                         </form>
-                      </div>
-					<!-- ENDS content -->						
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	<div class="post">
+		
+		<!-- shadow -->
+		
+		 <form enctype="multipart/form-data" name="form3" method="post" action="{% url 'Miperfil' usuario.id %}" onsubmit="return validarForm(this);">
+            {% csrf_token %}
+            <tr>
+			<td>
+               <br>
+               {% for campo in formulario %}
+               
+              	 <label>                
+              		{{ campo.label }} {{ campo }}
+              	  </label>	 
+               {% endfor %}	
+                <br>	                               
+                     <h7>(*) Datos obligatorios</h7>
+                <br>	                             
+              	<label>
+		               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+		        </label> 
+		    </td>					                                          	                      
+		    </tr>
+           </form> 
+		<!-- ENDS shadow -->
+	</div>
+	<!-- ENDS post -->
+</div>
+<!-- ENDS Posts -->	
+
+					
 {% endblock %}
