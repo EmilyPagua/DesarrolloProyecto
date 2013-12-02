@@ -2,10 +2,9 @@
 from django.core.urlresolvers import reverse
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-#HEROKU = True
-HEROKU = False
+HEROKU = True
+#HEROKU = False
 
- 
  
 
 ADMINS = (
