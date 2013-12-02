@@ -161,10 +161,7 @@
 			
 				
 			</div>
-			<div id="breadcrumbs">
-    			<a href="#" title="Home">Notificaciones ()  </a>    			
-    		</div>
-			<!-- ENDS Breadcrumb-->
+		
 			<!-- ENDS HEADER  	{% block contenido%}{% endblock%}	-->
 	
 				<!-- MAIN -->
