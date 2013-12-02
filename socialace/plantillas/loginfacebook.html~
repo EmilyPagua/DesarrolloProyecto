@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='es'>
+<head>
+<meta charset='utf-8'>
+<title>Social ACE login </title>
+<link rel="stylesheet" type="text/css" href='{{STATIC_URL}}style.css'>
+<link rel="stylesheet" type="text/css" href='{{STATIC_URL}}font/css/fontello.css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400italic,600italic,400,600,700' rel='stylesheet' type='text/css'>
+<script type="text/javascript" src='http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js'></script>
+<script type="text/javascript" src='{{STATIC_URL}}js/jquery.easing.1.3.js'></script>
+<script src="//connect.facebook.net/en_US/all.js"></script>
+</head>
+<body>
+<!--Login Section-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+ var js, fjs = d.getElementsByTagName(s)[0];
+ if (d.getElementById(id)) return;
+ js = d.createElement(s); js.id = id;
+ js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=203158246533782";
+ fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));
+</script>
+
+<div class="section" id="section1">
+  <div class="login-form">
+    <h1>Login</h1>
+    <p>Usa tu cuenta de Facebook o Google para acceder a Social ACE.</p>
+    <div class="social"> 
+	<div class="scroll">
+<div class="fb-send" data-href="http://developers.facebook.com/docs/plugins/" data-width="The pixel width of the plugin" data-height="The pixel height of the plugin" data-colorscheme="light">hola send</div>
+	    
+	</div>
+	<hr/>
+	<a href="#section3" class="google"><i class="icon-gplus"></i></a> </div>
+   	<br/>
+  </div>
+</div>
+<!--END: Login Section-->
+
+</body>
+</html>

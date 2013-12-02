@@ -29,7 +29,7 @@
 	border:0;
 	padding:0;
 	margin:0;
-	z-index:0;
+	z-index:60;
 	display:none;
 }
 /* The slices in the Slider */
@@ -37,7 +37,7 @@
 	display:block;
 	position:absolute;
 	z-index:50;
-	height:406px;
+	height:100%;
 }
 /* Caption styles */
 .nivo-caption {
@@ -47,7 +47,7 @@
 	background:#000;
 	color:#fff;
 	opacity:0.8; /* Overridden by captionOpacity setting */
-	width:406px;
+	width:100%;
 	z-index:89;
 }
 .nivo-caption p {
@@ -87,8 +87,15 @@
 
 /* CUSTOM SLIDER ------------------------------------------------------------*/
 
+#slider-block{
+	background: url(../img/slider-bg.png) repeat-x left bottom ;
+	width: 100%;
+	margin-bottom: 23px;
+	margin-top: 40px;
+}
+
 #slider-holder{
-	width: 406px;
+	width: 960px;
 	height: 447px;
 	margin: 0 auto;
 	background: transparent url(../img/slider-shadow.png) no-repeat center bottom;
@@ -96,13 +103,13 @@
 
 #slider {
     position:relative;
-    width:406px; /* Change this to your images width */
-    height: 406px;  /*390px; 337px + 25px; /* Change this to your images height */
+    width:300px; /* Change this to your images width */
+    height: 280px; /*337px + 25px; /* Change this to your images height */
     background: url(../img/loading.gif) no-repeat 50% 50%;
 }
 
 #slider img {
-    position:absolute;
+    position:left;
     top:0px;
     left:0px;
     display:none;
@@ -115,58 +122,54 @@
 
 .nivo-controlNav{
 	position: absolute;
-	bottom: -28px;
-	right: 47px;
+	bottom: -60px;
+	left: 408px;
 	z-index: 9999;
 	height: 56px;
 	padding-left: 20px;
 	padding-right: 20px;
-	background: #363636;
-	border-radius: 10px;
-	-moz-border-radius: 10px;
-	-webkit-border-radius: 10px;
 }
 
 .nivo-controlNav a{
 	display: block;
 	float: left;
-	background: url(../img/slider-nav-buttons.png) no-repeat -16px 0px; 
-	height: 15px;
-	width: 15px;
+	background: url(../img/slider-nav-buttons.png) no-repeat 0px 0px; 
+	height: 13px;
+	width: 13px;
 	margin-top: 21px;
-	margin-right: 5px;
-	margin-left: 5px;
+	margin-right: 2px;
+	margin-left: 2px;
 	text-indent: -9000px;
 }
 
-.nivo-controlNav a:hover{ background-position: 0px 0px;  }
+.nivo-controlNav a:hover{ background-position: -12px 0px;  }
 
-.nivo-controlNav a.active{ background-position: -32px 0px;   }
+.nivo-controlNav a.active{ background-position: -25px 0px;   }
 
 .nivo-directionNav a{
 	display: block;
-	width: 34px;
-	height: 34px;
+	width: 37px;
+	height: 37px;
 	text-indent: -9000px;
 	background: url(../img/slider-arrows.png) no-repeat transparent;
 }
 
 .nivo-directionNav a.nivo-nextNav{ 
 	background-position: 0px 0px;
-	margin-right: -9px;
+	margin-right: -19px;
 	z-index: 1001;
 }
 
 .nivo-directionNav a.nivo-prevNav{ 
-	background-position: -34px 0px;
-	margin-left: -9px;
+	background-position: -37px 0px;
+	margin-left: -19px;
 	z-index: 1001;
 }
 
 .nivo-directionNav a.nivo-nextNav:hover{
-	background-position: 0px -34px;
+	background-position: 0px -37px;
 }
 
 .nivo-directionNav a.nivo-prevNav:hover{
-	background-position: -34px -34px;
+	background-position: -37px -37px;
 }
