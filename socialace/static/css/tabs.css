@@ -2,76 +2,68 @@
 .tabs { 
 	list-style:none; 
 	margin:0 !important;
-	padding: 0px;	
-	height: 32px;
-	background: url({{STATIC_URL}}img/tabs-divider.png) no-repeat bottom center;
+	padding:11px 0px 20px 0px;	
+	height:46px;
 }
 
-body.home .tabs { 
-	padding: 0px 30px;
-
+body.home ul.tabs { 
+	list-style:none; 
+	margin:0 !important;
+	padding:11px 30px 0px 30px;	
+	height:30px;
 }
+
+
 
 /* single tab */
 ul.tabs li { 
-	display: block;
 	float:left;	 
 	text-indent:0;
 	padding:0;
-	margin: 0px 5px 0px 0px !important;
+	margin:0 !important;
 	list-style-image: none !important; 
-	
 }
 
 /* link inside the tab. uses a background image */
 ul.tabs a { 
+	color: #c8c8c8;
+	font-size:14px;
 	display:block;
-	font-size:12px;
 	height: 30px;  
 	line-height:30px;
 	text-align:center;	
 	text-decoration:none;
-	padding: 0px 0px 0px 10px;	
+	padding: 3px 15px;
+	margin:0px;	
+	margin-right: 10px;
 	position:relative;
-	top:0px;
-	background:  url({{STATIC_URL}}img/tabs.png) no-repeat;
-}
-
-ul.tabs a span{ 
-	display:block;
-	height: 100%;
-	padding-right: 10px;
-	background:  url({{STATIC_URL}}img/tabs.png) no-repeat right -40px;
+	top:1px;
+	background: #363636;
+	border-radius: 10px;
+	-moz-border-radius: 20px;
+	-webkit-border-radius: 10px;
 }
 
 #content ul.tabs a{
-	color: #747474;
+	color: #c8c8c8;
 }
 
 ul.tabs a:active {
-	outline:none;
+	outline:none;		
 }
 
 /* when mouse enters the tab move the background image */
-#content ul.tabs a:hover { 
-	background-position: 0px -80px;
-}
-
-#content ul.tabs a:hover span,
-#content ul.tabs a.current span{ 
-	background-position: right -120px;
-}
+#content ul.tabs a:hover { background: #000000;  color: #fff; }
 
 /* active tab uses a class name "current". its highlight is also done by moving the background image. */
 ul.tabs a.current,
 #content ul.tabs a.current:hover,
 ul.tabs li.current a {	
 	cursor:default !important; 
-	color:#2a2d30 !important;
+	color:#363636 !important;
 	display: block;
-	background-position: 0px -80px;
+	background: #ffd800;
 }
-
 
 /* initially all panes are hidden */ 
 .panes .pane {
@@ -96,26 +88,16 @@ ul.tabs li.current a {
 	overflow: hidden;
 	float: left;
 	width: 282px;
+	height: 315px;
 	margin: 0px 0px 30px 30px;
-	background: url({{STATIC_URL}}img/shadow-1-3.png) no-repeat 0px 150px;
-	padding-bottom: 10px;
-}
-
-.panes .blocks-thumbs li .excerpt{
-	line-height: 1.5em;
-	margin-bottom: 20px;
+	background: url(../img/shadow-1-3.png) no-repeat 0px 150px;
 }
 
 #content .panes .blocks-thumbs li .header{
-	display: block;
-	font-family: 'Ubuntu', arial, serif;
 	font-size: 20px;
-	line-height: 1.4em;
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	text-decoration: none;
-	color: #2f3235;
-	border-bottom: 1px solid #c4c7c8;
-	padding-bottom: 10px;
+	color: #696969;
 }
 
 .panes .blocks-thumbs li a.thumb{
@@ -124,35 +106,23 @@ ul.tabs li.current a {
 	width: 282px;
 	height: 150px;
 	margin-bottom: 20px;
-	background: url({{STATIC_URL}}img/plus-sign.png) no-repeat center center;
+	background: url(../img/plus-sign.png) no-repeat center center;
 	border-radius: 10px;
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 }
 
+.panes .blocks-thumbs li a{ display: block; text-decoration: none; }
 
 /* HOME TABS GALLERY ---------------------------------------------------------*/
 
 .panes{
 	margin-top: 30px;
-}
-
-body.home .panes{
-	margin-top: 0px;
+	background: url(../img/front-divider.png) no-repeat top center;
 }
 
 .panes .plain-text{
 	padding: 30px 30px;
-	line-height: 1.5em;
-}
-
-.panes .plain-text h1,
-.panes .plain-text h2,
-.panes .plain-text h3,
-.panes .plain-text h4,
-.panes .plain-text h5,
-.panes .plain-text h6 {
-	margin-bottom: 20px;
 }
 
 .panes .plain-text a{

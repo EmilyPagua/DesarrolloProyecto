@@ -1,0 +1,113 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<!-- title -->
+	<div id="page-title">
+		<span class="title">Ultimas Noticias</span>
+		<span class="subtitle">historial de los amigos</span>
+	</div>
+	<!-- ENDS title -->
+<!-- Posts -->
+				<div id="posts">
+				<!-- post -->
+				{% if historial %} 
+				{% for campo in historial %} 
+					<div class="post">
+						
+						<!-- <div class="n-comments">165</div> -->
+						{% if campo.accion = 'Nuevo album' %}
+						<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3></a>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> Ha creado un nuevo album<hr>
+						<!-- shadow Nuevo album-->
+						<div class="thumb-shadow">
+							<!-- post-thumb -->
+							<div class="post-thumbnail">
+								<img src="{{STATIC_URL}}{{ campo.fkalbum.foto }}"   width="496" heigt="70"/>
+							</div>
+							<!-- ENDS post-thumb -->
+							
+							<div class="the-excerpt">
+							Descripcion:  {{ campo.fkalbum.descripcion}} <br>
+							Privado: {% if campo.fkalbum.privacidad %}Si {% else %} No {% endif%} <br>
+								{% if campo.fkalbum.privacidad %}
+								{% for person in persona %} 
+									{% if person.username = campo.usuario.username  %}
+										Album :<strong>
+										<a href="{% url 'detalleAlbum2' campo.fkalbum.id %}">{{ campo.fkalbum.nombre}} </strong></a><br>
+									{% endif %}									
+								{% endfor %} 	
+									
+									
+								{% else %}
+									Album :<a href="{% url 'detalleAlbum2' campo.fkalbum.id %}"><strong>{{ campo.fkalbum.nombre}} </strong></a><br>
+								
+								{% endif%}
+			
+							</div>		
+						</div>
+						<!-- ENDS shadow Nuevo album-->	
+													
+						{% elif campo.accion = 'Amistad'  %}
+							{% for aux in notificacion %}
+								{% if campo.id = aux.historia.id %}	
+			   						{% if aux.descripcion = 'Amistad' %} {% if aux.status %}
+			   						
+			   			
+			   			<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3></a>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " with="55" height="55" /> Ahora es amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" with="60" height="60"/>
+	   						
+						<!-- shadow  Amistad-->
+						<div class="thumb-shadow">  		
+							<!-- post-thumb -->
+							
+							<!-- ENDS post-thumb -->
+							<div class="the-excerpt">
+								
+							</div>	
+								
+						
+						</div>
+						{% endif %}
+								{% endif %}
+								{% endif %}
+								{% endfor %} 
+						<!-- ENDS shadow Amistad-->
+						
+						{% elif campo.accion = 'Comentar Album'  %}	
+							{% for aux in comentario %}
+        					{% if campo.fkcomentario.id = aux.id %}	
+        				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
+	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " with="55" height="55" />
+						<!-- shadow Nuevo Comentar Album-->
+						<div class="thumb-shadow"> 
+							<!-- post-thumb -->
+							<div class="post-thumbnail">
+								<img src="{{STATIC_URL}}{{ aux.fkalbum.foto }}"  alt="Feature image" width="396" heigt="70"/></a>
+							</div>
+							<!-- ENDS post-thumb --> 		
+							<div class="the-excerpt">
+							<hr>
+							Comento el album de:{{aux.fkalbum.fkusuario.first_name}} {{ aux.fkalbum.fkusuario.last_name}}<br>
+							Nombre del Album: {{ aux.fkalbum.nombre}}
+						
+							</div>	
+							{% endif %}
+							{% endfor %} 
+						</div>
+						<!-- ENDS shadow Comentar Album-->
+						{% endif %}
+					</div>
+					<!-- ENDS post -->
+					
+					{% endfor %}
+					{% else %}
+					no hay histrorial para mostrar
+					{% endif %}
+				</div>
+				<!-- ENDS Posts -->
+				
+				
+	
+	
+
+{% endblock %}

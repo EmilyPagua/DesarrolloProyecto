@@ -1,36 +1,34 @@
 {% extends 'base.html'%}
-{% block contenido%}
-	<!-- content -->
-					<div id="content">
-						<table width="482" height="130" border="1" align="left">                                                         
-				            <tr>
- 							<td>
-                                <label>
-                                     <h4>Mis Albumes</h4>
-                                </label>    							
-                               <br> 
-                               {% for album in albumes %}
-						      	 <label> 
-						       		<h5>{{ album.nombre }}</h5>
-						       		Descripcion: {{ album.descripcion }} 
-						       		<br/>
-						       		<img src="{{STATIC_URL}}{{ album.foto}}" alt="{{album.foto}}" with="50" height="50"/>
-						       		<a rel="nofollow" href="{% url 'agregarFoto' album.id %}"> <h7> Agregar fotos</h7> </a>
-									<a rel="nofollow" href="{% url 'prueba' %}"> <h7>Ver</h7> </a>
-						       	 </label>
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis Albumes</span>
+	<span class="subtitle">Estos son los albumes que he creato hasta la fecha</span>
+</div>
+<!-- ENDS title -->
 
-						       	 <br/>
-
-				                        
-						       {% endfor %}                              
-                                  
-                                
-						    </td>					                                          	                      
-						   	<td>
-                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
-                            </td>
-                             
-                           </table>
-                      </div>
-					<!-- ENDS content -->						
+<!-- gallery-->
+<ul id="portfolio-list" class="gallery three-cols">
+	{% for album in albumes %}
+	<form enctype="multipart/form-data" name="form3" method="post" action="{% url 'detalleAlbum' album.id %}">
+	{% csrf_token %}
+		<li class="pink">
+			<a href="#" rel="group1" class="fancybox" title="{{ album.nombre }}. Descripcion: {{ album.descripcion }} " >
+			{{ album.nombre }}
+			<img src="{{STATIC_URL}}{{ album.foto}}"  width="280" heigth="280"></a>
+			
+			<a rel="nofollow" href="{% url 'agregarFoto' album.id %}"> <h7> Agregar fotos</h7> </a>
+			<img class="alignleft" alt="cameraplus32.png" title="cameraplus32.png" src="{{STATIC_URL}}img/mono-icons/cameraplus32.png"  width="20" heigth="20"></img>
+			<button class="btn btn-primary dropdown-toggle" type="submit" name="ver" value="ver">
+			<img class="alignleft" alt="monitor32.png" title="monitor32.png" src="{{STATIC_URL}}img/mono-icons/monitor32.png" width="20" heigth="20"></img></button> 
+			<button class="btn btn-primary dropdown-toggle" type="submit" name="modi" value="modi">
+			<img class="alignleft" alt="pencil32.png" title="pencil32.png" src="{{STATIC_URL}}img/mono-icons/notepencil32.png" width="20" heigth="20"></img></button>
+			<button class="btn btn-primary dropdown-toggle" type="submit" name="elimi" value="modi">
+			<img class="alignleft" alt="stop32.png" title="stop32.png" src="{{STATIC_URL}}img/mono-icons/stop32.png" width="20" heigth="20"></img></button> 			 			
+		</li>
+	  	
+	</form> 
+	{% endfor %} 
+</ul>
+<!-- ENDS gallery -->						
 {% endblock %}

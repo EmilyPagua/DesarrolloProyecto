@@ -1,65 +1,59 @@
 {% extends 'base.html'%}
-{% block contenido%}
-<!-- Loading Flat UI -->
-		<link href="{{STATIC_URL}}flat-ui.css" rel="stylesheet">
-		<link href="{{STATIC_URL}}docs.css" rel="stylesheet">
-
-		<link rel="shortcut icon" href="{{STATIC_URL}}images/favicon.ico">
-		<!-- END Loading Flat UI -->
-	<script>
+{% block content%}
+				<script>
 	$(function() {
 		$( "#datepicker" ).datepicker();
 	});
 	</script>
 
-	<!-- content -->
-					<div id="content">
-						<table width="482" height="130" border="1" align="left">                                                         
-						 
-				            <tr>
- 							<td>
-                                <label>
-                                     <h5>Mis Notificaciones</h5>
-                                </label>    							
-                               <br> <br> 
-                              
-                               {% for campo in informacion %}
-                               <label> 						       		
-						       		<h6>
-						       		
-						       		{{ campo.historia.usuario.first_name }}
-						       		{{ campo.historia.usuario.last_name }}</h6><h7>
-						       		{{ campo.descripcion }}
-						       		
-						       		</h7>
-						       	 </label>
-						       	   <form name="form3"  action="."  method="post" enctype="multipart/form-data">
-						      	 {% csrf_token %}
-										<label><input  class="form-control" placeholder="amigos" type="text" value="{{ campo.historia.usuario.username }}"></input></label>
-										<!--style="visibility:hidden"-->
-								
-						      
-						       	 
-						       	<br>	
-						       	 <label>
-						               <button class="btn btn-block btn-lg btn-info" type="submit" name="aceptar" value="{{ campo.historia.usuario.username }}" id= "{{ campo.historia.usuario.username }}">Aceptar</button> 
-						         </label> 
-						         <label>
-						               <button class="btn btn-block btn-lg btn-info" type="submit"  name="aceptar">Rechazar</button> 
-						         </label> 
-						       	 
-								 </form>
-						       	 {% endfor %}   
-						       	 
-                              
-						                                  
-                            </td>					                                          	                      
-						   	<td>
-                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
-                            </td>
-                           
-                         </table>
 
-                      </div>
-					<!-- ENDS content -->						
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis notificaciones</span>
+	<span class="subtitle">Estas son las solicutudes de amistad, comentarios de album o de contenido.</span>
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts">
+
+	<!-- post -->
+	<div class="post">
+		{% for campo in informacion %}
+		{% if campo.status %}
+		<!-- shadow -->
+		<div class="thumb-shadow">
+			<!-- ENDS post-thumb -->
+			<div class="the-excerpt">
+		   		<h3>Usted no tiene notificaciones disponibles</h3>					       	
+			</div>		
+		</div>
+		{% else %} 		
+			<h4>
+			{{campo.historia.usuario.first_name }}
+		   		{{ campo.historia.usuario.last_name }}</h4>
+		<!-- shadow -->
+		<div class="thumb-shadow">
+			<!-- ENDS post-thumb -->
+			<div class="the-excerpt">
+		   		
+		   		{{ campo.descripcion }} {{ campo.status }}
+		   		 <form name="form3"  method="post" enctype="multipart/form-data" action="{% url 'notificacionesAprobadas' campo.id campo.historia.usuario.id %}">
+			  	 {% csrf_token %}
+				 <label>
+		       		<button class="btn btn-primary dropdown-toggle" type="submit" name="aceptar" value="{{ album.id }}">Aceptar</button> 
+			
+		 		 </label> 
+		 		 <label>
+		       		 <button class="btn btn-primary dropdown-toggle" type="submit" name="rechazar" value="{{ album.id }}">Rechazar</button> 
+		 		 </label> 
+			   	 </form>					       	
+			</div>		
+		</div>
+ 		{% endif %} 
+ 		  						       	 
+ 		{% endfor %}   						       	 
+	</div>
+</div>
+<!-- ENDS post -->					
 {% endblock %}

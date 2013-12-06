@@ -1,66 +1,56 @@
 {% extends 'base.html'%}
-{% block contenido%}
-	<script>
-	$(function() {
-		$( "#datepicker" ).datepicker();
-	});
-	</script>
+{% block content%}
 
-	<!-- content -->
-					<div id="content">
-						<table width="482" height="130" border="1" align="left">                                                         
-				            <tr>
- 							<td>
-                                <label>
-                                     <h3>Ver Usuario:</h3>
-                                </label> 
-                                <br/>
-                                <br/>   							
-                               <br> 
-                               
-                               
-                               {% for campo in perfil %}
-                               
-						      	 <label> 
-						      			<h6>Nombre: {{ campo.fkusuario.first_name }}
-						    		<br/>
-						    		 {{ campo.foto }}
-						       		Apellido: {{ campo.fkusuario.last_name }}<br/>
-						       		Direccion: {{ campo.direccion }}<br/>
-						       		Twitter: {{ campo.twitter }}<br/>						       		
-						       		Facebook: {{ campo.facebook }}<br/>
-						       		Fecha de Nacimiento: {{ campo.fechanacimiento }}</h6>
-									<br/>
-						       	 </label>	 
-						       {% endfor %}  
-						       
-						        <form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="" >
-						        {% csrf_token %}
-						        {% for campo in formulario %}
-                  	 
-									   		{{ campo }}
-									   	 
-									   {% endfor %}	
-							   
-					               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
-						       </form>
-						    </td>						                                          	                      
-						   	<td>
-                                <img src="{{STATIC_URL}}img/registro.png" alt="SocialAce" with="400" height="400" aling="left">  
-                            </td>
-                             
-                           </table>
-                    
-                      </div>
-					<!-- ENDS content -->						
-					<script> function crearAmigo(){
-							var id_amigo = jQuery("#id_usuario").val();
-
-						var fk_amigo = jQuery("#id_fkamigo").val(id_amigo);
-						//var url = "/verUsuario/" + nombre + "/";
-						//jQuery("#form_busqueda").attr('action', url); onclick="javascript:crearAmigo()
-						console.log(jQuery("#id_fkamigo").val());
-													alert();
-						jQuery("#form_busqueda").submit();
-					}</script>
+<!-- title -->
+<div id="page-title">
+	<span class="title">Solicitar la amistad</span>
+	
+</div>
+<!-- ENDS title -->
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	{% if perfil %}
+	
+		{% for campo in perfil %}
+		<div class="post">
+		<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="{% url 'verUsuario' campo.username %}" >
+				    {% csrf_token %}
+			<h3><a href="{% url 'perfilAmigo' campo.id %}">{{ campo.last_name  }} {{ campo.first_name }}</a></h3>
+			<!-- shadow Nuevo album-->
+			<div class="thumb-shadow">
+				<!-- post-thumb -->
+				<!-- ENDS post-thumb -->
+				<img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto }}"  width="80" heigt="70" />
+				<div class="the-excerpt">
+					<p>
+					<stron>Direccion:</stron> {{ campo.usuarioperfil.direccion }}<br>								       		
+			   		<strom>Facebook:</strom> {{ campo.usuarioperfil.facebook }}<br>
+			   		<strom>Fecha de Nacimiento:</strom> {{ campo.usuarioperfil.fechanacimiento }}<br>
+			   		<stron>Privado:</stron>  
+						{% if campo.usuarioperfil.privacidad %}
+						Si		
+									
+						{% else %}
+						No
+						{% endif %}
+						<br>			       		
+					
+			   		
+				    
+				       <button class="btn btn-hg btn-primary" type="submit" name="enviar">Enviar Solicitud</button> 
+				  
+				</div>		
+			</div>
+			 </form></p>
+			<!-- ENDS shadow Nuevo album-->		
+		</div>
+	
+	<!-- ENDS post -->	
+	{% endfor %}
+	{% else %}	
+		no hay personas con el nombre de:
+	{% endif%}
+</div>
+<!-- ENDS Posts -->
 {% endblock %}
