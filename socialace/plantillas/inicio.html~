@@ -1,0 +1,23 @@
+{% extends 'base.html'%}
+{% comment %} estos son comentarios {% endcomment %} 
+{% block style_css%}
+	
+{% endblock %}	
+{% block encabezado%}
+	<h1>usuarios</h1>
+{% endblock %}	
+{% block contenido%}
+	<p>
+		Actualmente tenemos registrados : 
+		{% with total=usuarios.count %}
+			{{total}} usuarios{{total|pluralize}}
+		{% endwith %}	
+	</p>
+	<ul>
+		{% for dato in usuarios %}
+		<li>{{dato.usu_nombre}}</li>
+		{% empty %}
+		<li>No hay recetas registradas aun .</li>
+		{% endfor %}
+	</ul>
+{% endblock %}	

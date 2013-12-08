@@ -1,0 +1,148 @@
+h1, h2, h3 {
+	font-weight:bold;
+	color:#2a2a2a;
+	margin:0;
+}
+p {
+	margin-bottom:15px;
+	color:#999;
+}
+h1 {
+	margin-bottom:20px;
+}
+hr {
+	border: 1px dashed #eee;
+	margin: 20px 0;
+}
+a {
+	text-decoration:none;
+}
+a.scroll {
+	color: #666;
+	font-weight: bold;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+a.scroll:hover {
+	color: #1a1a1a;
+}
+.section {
+	align:center;
+	margin:0px;
+	bottom:0px;
+	width:1100px;
+	float:right;
+	height:10%;
+	text-align:center;
+}
+.login-form, .signup-form, .forgot-pwd {
+	background:#fff;
+	border-radius: 4px;
+	padding:10px;
+	text-align:center;
+	float:left;
+	margin:5em 30em;
+}
+.login-form, .forgot-pwd {
+	width:300px;
+}
+.signup-form {
+	width:450px;
+}
+.form-wrapper-01 {
+	margin: 0;
+	padding: 0;
+}
+.form-wrapper-01 .inputbox {
+	border: 1px solid #eaedf2;
+	border-radius:3px;
+	height: 40px;
+	padding: 5px 0 5px 30px;
+	width: 70%;
+	outline:none;
+	margin:0;
+	font-family: inherit;
+}
+.login-form .form-wrapper-01 .inputbox {
+	width:100%;
+}
+.form-wrapper-01 .name {
+	background:#eaedf2 url(img/user.png) 10px 13px no-repeat;
+}
+.form-wrapper-01 .email {
+	background:#eaedf2 url(img/email.png) 10px 15px no-repeat;
+}
+.form-wrapper-01 .password {
+	background:#eaedf2 url(img/password.png) 10px 10px no-repeat;
+}
+.form-wrapper-01 .twitter {
+	background:#eaedf2 url(img/email.png) 10px 13px no-repeat;
+}
+.form-wrapper-01 .facebook {
+	background:#eaedf2 url(img/email.png) 10px 15px no-repeat;
+}
+.form-wrapper-01 .googleplus {
+	background:#eaedf2 url(img/email.png) 10px 10px no-repeat;
+}
+.form-wrapper-01 a.button {
+	background: none repeat scroll 0 0 #14B9D5;
+	border: none;
+	border-radius: 1em;
+	color: #FFFFFF;
+	cursor: pointer;
+	font-family: inherit;
+	font-size: 15px;
+	font-weight: 700;
+	padding: 10px 20px;
+}
+.form-wrapper-01 .button:hover {
+	background:#0e778a;
+}
+.form-wrapper-01 a.button > i {
+	font-size:20px;
+}
+
+/*Social Button Styling*/
+.social {
+	margin: 40px 0 10px;
+}
+.social a {
+	color:#fff;
+	text-decoration:none;
+	font-weight:bold;
+	border-radius: 4px 4px 4px 4px;
+	padding:20px 0;
+}
+.social a.facebook {
+	background:#3b5998;
+}
+.social a.facebook:hover {
+	background:#37528c;
+}
+.social .twitter {
+	background:#1daee3;
+	margin: 0 20px;
+}
+.social .twitter:hover {
+	background:#1ca4d6;
+}
+.social .google {
+	background:#d34836;
+}
+.social .google:hover {
+	background:#c74534;
+}
+.social .facebook > i, .social .twitter > i, .social .google > i {
+	border-radius: 4px 0 0 4px;
+	bottom: 3px;
+	font-size: 38px;
+	padding: 10px 14px;
+	position: relative;
+	vertical-align: middle;
+	clear: both;
+}
+.social .facebook > span, .social .twitter > span, .social .google > span {
+	font-size: 18px;
+	letter-spacing: 0.06em;
+	padding:24px 20px 24px 0;
+}

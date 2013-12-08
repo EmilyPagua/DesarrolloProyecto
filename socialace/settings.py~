@@ -74,7 +74,11 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
+<<<<<<< HEAD
+MEDIA_ROOT = s.path.join(RUTA_PROYECTO,'carga')
+=======
 MEDIA_ROOT = os.path.join(RUTA_PROYECTO,'carga')
+>>>>>>> 9120a253dc3089dea7b2b4e8a438879c744302e0
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
