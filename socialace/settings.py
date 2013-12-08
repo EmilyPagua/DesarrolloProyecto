@@ -2,8 +2,8 @@
 from django.core.urlresolvers import reverse
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
-#HEROKU = True
-HEROKU = False
+HEROKU = True
+#HEROKU = False
 
  
  
@@ -21,7 +21,8 @@ if not HEROKU:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-            'NAME': 'socialacebd',                      # Or path to database file if using sqlite3.			
+            #'NAME': 'socialacebd',                      # Or path to database file if using sqlite3.
+			 'NAME': 'socialbd',
             # The following settings are not used with sqlite3:
             'USER': 'postgres',
             'PASSWORD': '1234567',
@@ -78,7 +79,7 @@ MEDIA_ROOT = os.path.join(RUTA_PROYECTO,'carga')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://example.com/media/", "http://media.example.com/"
-MEDIA_URL = '/carga/'
+MEDIA_URL = ''
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -96,7 +97,6 @@ STATICFILES_DIRS = (
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
       os.path.join(RUTA_PROYECTO,'static'),
-      os.path.join(RUTA_PROYECTO,'carga'),
 )
 
 # List of finder classes that know how to find static files in
