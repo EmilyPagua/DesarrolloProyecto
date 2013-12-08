@@ -1,0 +1,57 @@
+{% extends 'base.html'%}
+{% block content%}
+
+<!-- title -->
+<div id="page-title">
+	<span class="title">Solicitar la amistad</span>
+	
+</div>
+<!-- ENDS title -->
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	{% if perfil %}
+	
+		{% for campo in perfil %}
+		<div class="post">
+		<form class="form-wrapper-01" id='formulario' method='post' enctype='multipart/form-data' action="{% url 'verUsuario' campo.username %}" >
+				    {% csrf_token %}
+			<h3><a href="{% url 'perfilAmigo' campo.id %}">{{ campo.last_name  }} {{ campo.first_name }}</a></h3>
+			<!-- shadow Nuevo album-->
+			<div class="thumb-shadow">
+				<!-- post-thumb -->
+				<!-- ENDS post-thumb -->
+				<img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto }}"  width="80" heigt="70" />
+				<div class="the-excerpt">
+					<p>
+					<stron>Direccion:</stron> {{ campo.usuarioperfil.direccion }}<br>								       		
+			   		<strom>Facebook:</strom> {{ campo.usuarioperfil.facebook }}<br>
+			   		<strom>Fecha de Nacimiento:</strom> {{ campo.usuarioperfil.fechanacimiento }}<br>
+			   		<stron>Privado:</stron>  
+						{% if campo.usuarioperfil.privacidad %}
+						Si		
+									
+						{% else %}
+						No
+						{% endif %}
+						<br>			       		
+					
+			   		
+				    
+				       <button class="btn btn-hg btn-primary" type="submit" name="enviar">Enviar Solicitud</button> 
+				  
+				</div>		
+			</div>
+			 </form></p>
+			<!-- ENDS shadow Nuevo album-->		
+		</div>
+	
+	<!-- ENDS post -->	
+	{% endfor %}
+	{% else %}	
+		<stron>No hay personas con el nombre solicitado.</stron>
+		<stron>Haga combinaciones con lasmayusculas y minusculas, ejemplo: Emily </stron>		
+	{% endif%}
+</div>
+<!-- ENDS Posts -->
+{% endblock %}
