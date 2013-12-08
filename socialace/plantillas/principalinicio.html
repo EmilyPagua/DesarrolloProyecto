@@ -22,8 +22,7 @@
 							<div class="post-thumbnail">
 								<img src="{{STATIC_URL}}{{ campo.fkalbum.foto }}"   width="496" heigt="70"/>
 							</div>
-							<!-- ENDS post-thumb -->
-							
+							<!-- ENDS post-thumb -->							
 							<div class="the-excerpt">
 							Descripcion:  {{ campo.fkalbum.descripcion}} <br>
 							Privado: {% if campo.fkalbum.privacidad %}Si {% else %} No {% endif%} <br>
@@ -97,15 +96,14 @@
         					{% if campo.fklike.id = aux.id %}	
         				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
 						<!-- shadow Nuevo Comentar Album-->
-							<div class="thumb-shadow"> 
+						<div class="thumb-shadow"> 
 							<!-- post-thumb -->
 							
 							<!-- ENDS post-thumb --> 		
 							<div class="the-excerpt">
 							<hr>							
 							<h4>{{aux.userLike.first_name}} {{ aux.userLike.last_name}}, ha hecho like sobre tu comentario</h4>
-							 {{ aux.fkcomentario.descripcion}} <br>Del Album: {{ aux.fkcomentario.fkalbum.nombre}}
-						
+							 {{ aux.fkcomentario.descripcion}} <br>Del Album: {{ aux.fkcomentario.fkalbum.nombre}}						
 							</div>	
 							{% endif %}
 							{% endfor %} 
@@ -118,10 +116,11 @@
 					<!-- ENDS post -->
 					
 					{% endfor %}
+					</div>
 					{% else %}
 					<h3>No hay historias disponibes para mostrar</h3>
 					{% endif %}
-				</div>
+				
 							</div>
 				<!-- ENDS Posts -->
 				
