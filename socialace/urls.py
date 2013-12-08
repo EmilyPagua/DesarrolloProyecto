@@ -6,40 +6,33 @@ from django.conf import settings
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'socialace.views.home', name='home'),
-    # url(r'^socialace/', include('socialace.foo.urls')),
-
-    # Uncomment the admin/doc line below to enable admin documentation:
-    # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-    # Uncomment the next line to enable the admin:
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
-    #url(r'^$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
-    url(r'^prueba/$', 'polls.views.prueba', name='prueba'),
-    url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
+    url(r'^$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
+    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
+    url(r'^logout/$', logout, {'next_page': '/loginPrincipal/'} ,name='logout'),
+    
+    url(r'^registroUsuario/$', 'polls.views.registro_usuario', name='registroUsuario'),
     url(r'^modificarUsuario/(?P<id_usuario>\d+)/$', 'polls.views.modificar_usuario',name ='modificarUsuario'),
-    url(r'^modificarAlbum/(?P<id_album>\d+)/$', 'polls.views.modificar_album',name ='modificarAlbum'),
+    url(r'^MiPerfil/(?P<id_usuario>\d+)/$', 'polls.views.ver_MiPerfil',name ='Miperfil'),    
+    
     url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),
-    url(r'^registroAmigo/$', 'polls.views.registro_amigo',name ='registroAmigo'),
-
-    url(r'^verAmigos/$', 'polls.views.ver_amigos',name ='verAmigos'),    
-
+    url(r'^modificarAlbum/(?P<id_album>\d+)/$', 'polls.views.modificar_album',name ='modificarAlbum'),
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),    
+    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.registro_foto',name ='agregarFoto'),
+
+    url(r'^registroAmigo/$', 'polls.views.registro_amigo',name ='registroAmigo'),
+    url(r'^verAmigos/$', 'polls.views.ver_amigos',name ='verAmigos'),
     url(r'^verUsuario/(?P<nombre>.+)/$', 'polls.views.ver_usuario',name ='verUsuario'),
     url(r'^buscar/$', 'polls.views.busqueda',name ='busqueda'),
-    url(r'^logout/$', logout, {'next_page': '/loginPrincipal/'} ,name='logout'),
-    url(r'', include('social_auth.urls')),    
     
+    url(r'^verNotificacion/$', 'polls.views.ver_notificacion',name ='verNotificacion'),    
+    
+    
+    url(r'', include('social_auth.urls')),    
+    url(r'^prueba/$', 'polls.views.prueba', name='prueba'),    
 )
-
-
 urlpatterns += patterns('',
-    (r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
-)
-
-urlpatterns += patterns('',
-    (r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
+    url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),
+    url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.STATIC_ROOT}),
 )
