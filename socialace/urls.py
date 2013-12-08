@@ -5,11 +5,6 @@ from django.contrib.auth.views import login, logout
 from django.conf import settings
 admin.autodiscover()
 
-
-<<<<<<< HEAD
-=======
-
->>>>>>> 21f5c6c9c625d1645e747c7693b65177afcce269
 urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
