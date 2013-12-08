@@ -4,7 +4,7 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 #HEROKU = True
 HEROKU = False
-#HEROKU = False
+
  
  
 
@@ -22,7 +22,7 @@ if not HEROKU:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
             #'NAME': 'socialacebd',                      # Or path to database file if using sqlite3.
-			 'NAME': 'socialbd',
+			 'NAME': 'socialacebd',
             # The following settings are not used with sqlite3:
             'USER': 'postgres',
             'PASSWORD': '1234567',
@@ -74,11 +74,7 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/var/www/example.com/media/"
-<<<<<<< HEAD
-MEDIA_ROOT = s.path.join(RUTA_PROYECTO,'carga')
-=======
 MEDIA_ROOT = os.path.join(RUTA_PROYECTO,'carga')
->>>>>>> 9120a253dc3089dea7b2b4e8a438879c744302e0
 
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
