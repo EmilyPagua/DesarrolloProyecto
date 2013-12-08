@@ -91,7 +91,6 @@ def registro_album(request):
 def ver_amigos(request):
 	
     usuario = request.user
-    import pdb; pdb.set_trace()
     up = UsuarioPerfil.objects.get(fkusuario=usuario)
     amigos = RelacionUsuario.objects.filter(Q(usuario=usuario) | Q(fkamigo=up))
     id_per =[amigo.id for amigo in amigos] #lista por comprension

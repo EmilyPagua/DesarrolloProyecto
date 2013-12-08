@@ -21,7 +21,7 @@
 #content .ui-accordion .ui-accordion-header>a,
 #content .toggle-trigger>a{
 	text-decoration: none;
-	color: #00ccff;
+	color: #363636;
 	font-size: 14px;
 	padding-left: 20px;
 }
@@ -135,90 +135,29 @@
 	padding:0 20px 0 0px;
 }
 
-/* LINK BUTTON BIG ------------------------------------------------------------*/
+/* LINK BUTTON -------------------------------------------------------*/
 
-.link-button-big{
+#content a.link-button,
+#content a.link-button-light{
 	display: table;
-	height: 38px;
-	padding-left: 6px;
+	background: #363636;
+	color: #f1f1f1;
 	text-decoration: none;
-	color: #fff;
-	
-	border-radius: 33px;
-	-moz-border-radius: 33px;
-	-webkit-border-radius: 33px;
-	
-	background: #515558;
-	background: -webkit-gradient(linear, left top, left bottom, from(#515558), to(#131313)); 
-	background: -moz-linear-gradient(top,  #515558,  #131313);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#515558', endColorstr='#131313', GradientType=0);
-	
-	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
-	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
-	box-shadow: 0px 1px 2px rgba(0,0,0,.5);
-}
-	
-.link-button-big span{
-	display: block;
-	height: 100% ;
-	font-size: 18px;
-	line-height: 38px;
-	padding-left: 9px;
-	padding-right: 15px;
-	text-shadow: 0px -2px rgba(0, 0, 0, .8);
+	padding: 3px 10px;
+	border-radius: 10px;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;	
 }
 
-.link-button-big:hover{
-	background: #515558;
-	background: -webkit-gradient(linear, left top, left bottom, from(#131313), to(#515558)); 
-	background: -moz-linear-gradient(top,  #131313,  #515558);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#131313', endColorstr='#515558', GradientType=0);
+#content a.link-button-light{
+	background: #f1f1f1;
+	color: #363636;
 }
 
-/* LINK BUTTON ------------------------------------------------------------*/
+#content a.link-button:hover{ background: #000000; }
 
-#content .link-button{
-	display: table;
-	height: 37px;
-	padding-left: 5px;
-	text-decoration: none;
-	color: #fff;
-	/* background: url({{STATIC_URL}}img/button.png) 1px 0px  no-repeat; */
+#content a.link-button-light:hover{ background: #cecece; }
 	
-	border-radius: 33px;
-	-moz-border-radius: 33px;
-	-webkit-border-radius: 33px;
-	
-	background: #515558;
-	background: -webkit-gradient(linear, left top, left bottom, from(#515558), to(#131313)); 
-	background: -moz-linear-gradient(top,  #515558,  #131313);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#515558', endColorstr='#131313', GradientType=0);
-	
-	-webkit-box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
-	-moz-box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
-	box-shadow: 0px 1px 2px rgba(0,0,0,.5); 
-}
-	
-#content .link-button span{
-	display: block;
-	height: 100% ;
-	font-size: 12px;
-	line-height: 37px;
-	padding-left: 9px;
-	padding-right: 15px;
-	/* background: url({{STATIC_URL}}img/button.png) right -36px  no-repeat; */
-	text-shadow: 0px -1px rgba(0, 0, 0, .8);
-}	
-
-#content .link-button:hover{
-	background: #515558;
-	background: -webkit-gradient(linear, left top, left bottom, from(#131313), to(#515558)); 
-	background: -moz-linear-gradient(top,  #131313,  #515558);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#131313', endColorstr='#515558', GradientType=0);
-}
-
-
-
 /* TABLE ------------------------------------------------------------*/
 
 table, td, th {
@@ -264,27 +203,27 @@ td, th{
 
 
 .lists-check ul li{ 
-	list-style-image: url({{STATIC_URL}}img/bullets/check.png);
+	list-style-image: url(../img/bullets/check.png);
 	line-height: 1.5em;
 }
 	
 .lists-arrow ul{ 
-	list-style-image: url({{STATIC_URL}}img/bullets/arrow.png); 
+	list-style-image: url(../img/bullets/arrow.png); 
 	line-height: 1.5em;
 }
 
 .lists-plus ul{ 
-	list-style-image: url({{STATIC_URL}}img/bullets/plus.png); 
+	list-style-image: url(../img/bullets/plus.png); 
 	line-height: 1.5em;
 }
 
 .lists-star ul{ 
-	list-style-image: url({{STATIC_URL}}img/bullets/star.png); 
+	list-style-image: url(../img/bullets/star.png); 
 	line-height: 1.5em;
 }
 
 .lists-heart ul{ 
-	list-style-image: url({{STATIC_URL}}img/bullets/heart.png); 
+	list-style-image: url(../img/bullets/heart.png); 
 	line-height: 1.5em;
 }
 
@@ -338,191 +277,191 @@ td, th{
 .info-add{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Add.png');
+	background-image: url('../img/knobs-icons/Knob Add.png');
 }
 
 .warning-box{
 	color: #9F6000;
 	background-color: #FEEFB3;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Attention.png');
+	background-image: url('../img/knobs-icons/Knob Attention.png');
 }
 
 .blue-box{
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Blue.png');
+	background-image: url('../img/knobs-icons/Knob Blue.png');
 }
 
 .error-box{
 	color: #D8000C;
 	background-color: #FFBABA;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Cancel.png');
+	background-image: url('../img/knobs-icons/Knob Cancel.png');
 }
 
 .download-box{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Download.png');
+	background-image: url('../img/knobs-icons/Knob Download.png');
 }
 
 .favorite-box{
 	color: #9F6000;
 	background-color: #FEEFB3;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Favorite.png');
+	background-image: url('../img/knobs-icons/Knob Favorite.png');
 }
 
 .information-box{
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Info.png');
+	background-image: url('../img/knobs-icons/Knob Info.png');
 }
 
 .success-box{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Valid Green.png');
+	background-image: url('../img/knobs-icons/Knob Valid Green.png');
 }
 
 .fastforward-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Fast Forward.png');
+	background-image: url('../img/knobs-icons/Knob Fast Forward.png');
 }
 
 .rewind-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Fast Rewind.png');
+	background-image: url('../img/knobs-icons/Knob Fast Rewind.png');
 }
 
 .right-box{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Forward.png');
+	background-image: url('../img/knobs-icons/Knob Forward.png');
 }
 
 .graphite-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Graphite.png');
+	background-image: url('../img/knobs-icons/Knob Graphite.png');
 }
 
 .green-box{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Green.png');
+	background-image: url('../img/knobs-icons/Knob Green.png');
 }
 
 .gray-box{
 	color: #fff;
 	background-color: #999999;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Grey.png');
+	background-image: url('../img/knobs-icons/Knob Grey.png');
 }
 
 .help-box{
 	color: #fff;
 	background-color: #b47bc4;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Help.png');
+	background-image: url('../img/knobs-icons/Knob Help.png');
 }
 
 .left-box{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Left.png');
+	background-image: url('../img/knobs-icons/Knob Left.png');
 }
 
 .loop-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Loop Off.png');
+	background-image: url('../img/knobs-icons/Knob Loop Off.png');
 }
 
 .message-box{
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Message.png');
+	background-image: url('../img/knobs-icons/Knob Message.png');
 }
 
 .orange-box{
 	color: #9F6000;
 	background-color: #FEEFB3;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Orange.png');
+	background-image: url('../img/knobs-icons/Knob Orange.png');
 }
 
 .pause-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Pause.png');
+	background-image: url('../img/knobs-icons/Knob Pause.png');
 }
 
 .play-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Play.png');
+	background-image: url('../img/knobs-icons/Knob Play.png');
 }
 
 .record-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Record Off.png');
+	background-image: url('../img/knobs-icons/Knob Record Off.png');
 }
 
 .red-box{
 	color: #D8000C;
 	background-color: #FFBABA;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Red.png');
+	background-image: url('../img/knobs-icons/Knob Red.png');
 }
 
 .refresh-box{
 	color: #4F8A10;
 	background-color: #DFF2BF;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Refresh.png');
+	background-image: url('../img/knobs-icons/Knob Refresh.png');
 }
 
 .remove-box{
 	color: #D8000C;
 	background-color: #FFBABA;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Remove Red.png');
+	background-image: url('../img/knobs-icons/Knob Remove Red.png');
 }
 
 .search-box{
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Search.png');
+	background-image: url('../img/knobs-icons/Knob Search.png');
 }
 
 .shuffle-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Shuffle Off.png');
+	background-image: url('../img/knobs-icons/Knob Shuffle Off.png');
 }
 
 .smart-box{
 	color: #fff;
 	background-color: #b47bc4;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Smart.png');
+	background-image: url('../img/knobs-icons/Knob Smart.png');
 }
 
 .back-box{
 	color: #9F6000;
 	background-color: #FEEFB3;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Snapback.png');
+	background-image: url('../img/knobs-icons/Knob Snapback.png');
 }
 
 .forward-box{
 	color: #9F6000;
 	background-color: #FEEFB3;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Snapforward.png');
+	background-image: url('../img/knobs-icons/Knob Snapforward.png');
 }
 
 .stop-box{
 	color: #ffffff;
 	background-color: #57737f;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Stop.png');
+	background-image: url('../img/knobs-icons/Knob Stop.png');
 }
 
 .upload-box{
 	color: #00529B;
 	background-color: #BDE5F8;
-	background-image: url('{{STATIC_URL}}img/knobs-icons/Knob Upload.png');
+	background-image: url('../img/knobs-icons/Knob Upload.png');
 }
