@@ -1,0 +1,40 @@
+{% extends 'base.html'%}
+{% block content%}
+<!-- title -->
+ {% for campo in coment %}
+<div id="page-title">
+	<span class="title">Replicar Comentario</span>
+	<span class="subtitle">{{campo.descripcion}}</span>
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	<div class="post">
+		<!-- shadow -->
+		<!-- form -->
+		<form action="{% url 'EscribirReplicaComentario' campo.id %}" method="post" id="commentform" onsubmit="return validarForm(this);">
+		 {% csrf_token %}
+			<fieldset>									
+				<div class="admin-form">
+					<div>
+					   <label >Comentario</label>												
+						{% for aux in formulario %}
+						{{aux}}
+						{% endfor %}												
+					</div>
+					<div><input type="submit" name="enviar" id="submit" tabindex="5" value="Enviar" /></div>
+					<div><input type="hidden" name="comment_post_ID" value="586" /></div>
+				</div>
+				<input type='hidden' name='comment_post_ID' value='586' id='comment_post_ID' />
+				<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+			</fieldset>
+		</form>	   
+		<!-- ENDS shadow -->
+	</div>
+	<!-- ENDS post -->
+</div>
+<!-- ENDS Posts -->	
+{% endfor %}
+{% endblock %}

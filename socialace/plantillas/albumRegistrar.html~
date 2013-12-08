@@ -1,0 +1,73 @@
+{% extends 'base.html'%}
+{% block content%}
+<script type="text/javascript">
+	function validarForm(formulario) {
+	   if(formulario.nombre.value.length==0) { //comprueba que no esté vacío
+		formulario.nombre.focus();   
+		alert('Requiere de un nombre'); 
+		return false; //devolvemos el foco
+	  }
+	  if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
+		formulario.descripcion.focus();
+		alert('Requiere de una descripcion');
+		return false;
+	  }	
+	 
+	  
+	 		  
+	  return true;
+	}
+</script>
+
+<!-- title -->
+<div id="page-title">
+	<span class="title">Crear nuevo Album</span>
+	<span class="subtitle">Crea tu nuevo album de fotos, musica o videos...</span>
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	<div class="post">
+		<!-- shadow -->
+		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+            {% csrf_token %}
+            <tr>
+			<td>
+               <br>
+               {% for campo in formulario %}
+              	 <label> 
+               		{{ campo.label }} <br>{{ campo }}
+               	 </label>
+               	 <br>	 
+               {% endfor %}	
+                <br>	                               
+                     <h7>(*) Datos obligatorios</h7>
+                <br>	                             
+              	<label>
+		               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
+		        </label> 
+		    </td>					                                          	                      
+		    </tr>
+           </form> 
+		<!-- ENDS shadow -->
+	</div>
+	<!-- ENDS post -->
+</div>
+<!-- ENDS Posts -->	
+
+<!-- sidebar -->
+<ul id="sidebar">
+	<!-- init sidebar -->
+	<li>
+		<h6>Creer un nuevo album</h6>		
+		<ul>
+			<img src="{{STATIC_URL}}img/albumes.png" alt="SocialAce" with="260" height="260" aling="left"> 
+		</ul>
+	</li>
+	<!-- ENDS init sidebar -->
+</ul>
+<!-- ENDS sidebar -->
+				
+{% endblock %}

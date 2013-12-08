@@ -1,0 +1,22 @@
+{% extends 'base.html'%}
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis amigos</span>
+	<span class="subtitle">Estos son los amigos a los que tengo agregado en mi red social</span>
+</div>
+<!-- ENDS title -->
+<!-- gallery-->
+<ul id="portfolio-list" class="gallery three-cols">
+   {% for campo in persona %}
+	<li class="pink">
+		<a href="{% url 'perfilAmigo' %}" rel="group1"  title="Direccion:{{ campo.usuarioperfil.direccion }} 
+	    Correo: {{ campo.email }}
+	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}" >
+		{{ campo.first_name }} {{ campo.last_name }}
+		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  ></a>
+	</li>
+	{% endfor %}   	
+</ul>
+	<!-- ENDS gallery -->						
+{% endblock %}

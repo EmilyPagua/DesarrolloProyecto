@@ -1,0 +1,35 @@
+{% extends 'base.html'%}
+{% block content%}
+<!-- title -->
+<div id="page-title">
+	<span class="title">Mis notificaciones aceptadas</span>
+	<span class="subtitle">Estas son las notificaciones y invitaciones que he aceptado</span>
+</div>
+<!-- ENDS title -->
+<!-- Posts -->
+<div id="posts">
+
+	<!-- post -->
+	<div class="post">
+		{% for campo in informacion %}
+		{% if campo.status %}
+		{{campo.id}}
+		<h4>Solicutud de amitad de: {{campo.historia.usuario.first_name }}
+		   		{{ campo.historia.usuario.last_name }}</h4>
+		<!-- shadow -->
+		<div class="thumb-shadow">
+			<!-- ENDS post-thumb -->
+			<div class="the-excerpt">
+		   		
+		   		 Aceptada..!!!
+		   		 					       	
+			</div>		
+		</div>
+		
+ 		{% endif %} 
+ 		  						       	 
+ 		{% endfor %}   						       	 
+	</div>
+</div>
+<!-- ENDS post -->						
+{% endblock %}

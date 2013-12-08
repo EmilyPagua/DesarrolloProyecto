@@ -1,0 +1,37 @@
+{% extends 'base.html'%}
+{% block content%}
+
+
+<!-- title -->
+<div id="page-title">
+	<span class="title">{{albumes.nombre}}</span>
+	<span class="subtitle">Buscando fotos para el album</span>
+</div>
+<!-- ENDS title -->
+
+<!-- Posts -->
+<div id="posts">
+	<!-- post -->
+	<div class="post">
+	
+		<!-- shadow -->
+		
+		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+            {% csrf_token %}
+               {% for aux in formulario %}
+			{{aux.label}} {{aux}}
+			{% endfor%}
+			
+              	<label>
+		               <button class="btn btn-hg btn-primary" type="submit" value="">Aceptar</button> 	                             
+		        </label> 
+		    </td>					                                          	                      
+		    </tr>
+           </form> 
+         
+		<!-- ENDS shadow -->
+	</div>
+	<!-- ENDS post -->
+</div>
+<!-- ENDS Posts -->	
+{% endblock %}
