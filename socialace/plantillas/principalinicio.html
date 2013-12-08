@@ -12,9 +12,7 @@
 				<!-- post -->
 				{% if historial %} 
 				{% for campo in historial %} 
-					<div class="post">
-						
-						<!-- <div class="n-comments">165</div> -->
+					<div class="post">						
 						{% if campo.accion = 'Nuevo album' %}
 						<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3></a>
 	   					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> Ha creado un nuevo album<hr>
@@ -36,8 +34,6 @@
 										<a href="{% url 'detalleAlbum2' campo.fkalbum.id %}">{{ campo.fkalbum.nombre}} </strong></a><br>
 									{% endif %}									
 								{% endfor %} 	
-									
-									
 								{% else %}
 									Album :<a href="{% url 'detalleAlbum2' campo.fkalbum.id %}"><strong>{{ campo.fkalbum.nombre}} </strong></a><br>								
 								{% endif%}
@@ -93,16 +89,15 @@
 						</div>
 						<!-- ENDS shadow Comentar Album-->
 						
-					</div>
+					
 					 {% elif campo.accion = 'like'  %}	
 					  
 					  
 					  {% for aux in liked %}
         					{% if campo.fklike.id = aux.id %}	
         				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
-	   					
 						<!-- shadow Nuevo Comentar Album-->
-						<div class="thumb-shadow"> 
+							<div class="thumb-shadow"> 
 							<!-- post-thumb -->
 							
 							<!-- ENDS post-thumb --> 		
@@ -127,6 +122,7 @@
 					<h3>No hay historias disponibes para mostrar</h3>
 					{% endif %}
 				</div>
+							</div>
 				<!-- ENDS Posts -->
 				
 				
