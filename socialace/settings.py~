@@ -4,9 +4,8 @@ DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 #HEROKU = True
 HEROKU = False
+
 #HEROKU = False
- 
- 
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
