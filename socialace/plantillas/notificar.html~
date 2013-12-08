@@ -25,7 +25,7 @@
 		<div class="thumb-shadow">
 			<!-- ENDS post-thumb -->
 			<div class="the-excerpt">
-		   		<h2>Usted no tiene notificaciones disponibles</h2>					       	
+		   		<h3>Usted no tiene notificaciones disponibles</h3>					       	
 			</div>		
 		</div>
 		{% else %} 		
