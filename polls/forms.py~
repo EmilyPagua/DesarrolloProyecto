@@ -199,7 +199,7 @@ class RegistroComentario(forms.Form):
     def procesar_replica(self,albumes,usuario,comentReplic):        
         descripcio = self.cleaned_data['descripcion']        
         count = Comentario.objects.filter(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)
-        print albumes.id
+        print abumes.id
         print usuario.username
         if count:
     	    for aux in count: 
