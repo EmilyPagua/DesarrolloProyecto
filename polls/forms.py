@@ -189,8 +189,7 @@ class RegistroComentario(forms.Form):
     	    for aux in count: 
                 aux.delete() 
         comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)        
-        comentar.save()
-        print "estoy con el comentario normal"
+        comentar.save()        
         l = Comentario.objects.get(fkalbum=albumes, descripcion=descripcio, userComentador=usuario)
         k = User.objects.get(id=albumes.fkusuario.id)
         b = Historial(usuario=k, accion='comentario',fkcomentario=l)
@@ -206,8 +205,7 @@ class RegistroComentario(forms.Form):
                 aux.delete()    	
     
         comentar = Comentario(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)        
-        comentar.save()
-        print "estoy con el comentario este es el de replica"
+        comentar.save()        
         l = Comentario.objects.get(fkalbum=albumes, descripcion=descripcio, userComentador=usuario,replica=comentReplic)
         k = User.objects.get(id=albumes.fkusuario.id)
         b = Historial(usuario=k, accion='comentario',fkcomentario=l)

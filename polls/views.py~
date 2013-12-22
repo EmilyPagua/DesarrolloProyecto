@@ -120,20 +120,23 @@ def Nolike(request,id_comentario):
 def borrarComentario(request,id_comentario):    
     usuario = request.user
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
-    comentario = get_object_or_404(Comentario, id=id_comentario)
-    album = Album.objects.get(id=comentario.fkalbum.id)
-    albumes = Album.objects.filter(id=album.id)
-    usu = User.objects.get(id= comentario.fkalbum.fkusuario.id )
-    contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
-    comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
-    cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
-    cantidadLike = Like.objects.all()   
-    count = Comentario.objects.get(id=id_comentario, userComentador=usuario)
-    count.delete()    	    		    
-    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
     outfile.write('borrarComentario - BORRANDO COMENTARIO\n')
     outfile.write('borrarComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE\n')
     outfile.close()
+    print "Id comentario"
+    print id_comentario
+    print "Borrando comentario"
+    comentario = get_object_or_404(Comentario, id=id_comentario)
+    album = Album.objects.get(id=comentario.fkalbum.id)
+    count = Comentario.objects.get(id=id_comentario)
+    print count.descripcion 
+    count.delete()    	        		    
+    albumes = Album.objects.filter(id=album.id)    
+    contenido = Contenido.objects.filter(fkalbum=album.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=album.id)      
+    cantidadComentario = Comentario.objects.filter(fkalbum=album.id).count()          
+    cantidadLike = Like.objects.all()       
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
 
 
@@ -171,23 +174,23 @@ def likeComentario(request,id_comentario):
 #Enviar Replicar Comentario
 @login_required
 def EscribirReplicaComentario(request,id_comentario):    
-    usuario = request.user
+    usuario = request.user    
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     outfile.write('EscribirReplicaComentario -- OBTENIENDO EL ID DEL USUARIO QUE QUIERE REALIZAR UNA REPLICA EN ALGUN COMENTARIO\n')
-    comentario = get_object_or_404(Comentario, id=id_comentario)
+    comentario = get_object_or_404(Comentario, id=id_comentario)        
     album = Album.objects.get(id=comentario.fkalbum.id)
-    albumes = Album.objects.filter(id=album.id)
-    usu = User.objects.get(id= comentario.fkalbum.fkusuario.id )
-    contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
-    comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
-    cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
-    cantidadLike = Like.objects.all() 
-    outfile.write('EscribirReplicaComentario -- OBTENIENDO LAS CONTENIDO, USUARIO, ALBUM, COMENTARIO Y LIKE PARA IR A DETALLEALBUM\n')
     if request.method == 'POST':         
         formulario = RegistroComentario(request.POST)
         if formulario.is_valid():
             formulario.procesar_replica(album,usuario,comentario)
             
+    albumes = Album.objects.filter(id=album.id)
+    usu = User.objects.get(id= comentario.fkalbum.fkusuario.id )
+    contenido = Contenido.objects.filter(fkalbum=album.id)
+    comentarioAlbum = Comentario.objects.filter(fkalbum=album.id)      
+    cantidadComentario = Comentario.objects.filter(fkalbum=album.id).count()          
+    cantidadLike = Like.objects.all() 
+    outfile.write('EscribirReplicaComentario -- OBTENIENDO LAS CONTENIDO, USUARIO, ALBUM, COMENTARIO Y LIKE PARA IR A DETALLEALBUM\n')   
     contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
     outfile.close()
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
@@ -221,24 +224,24 @@ def comentario_Mio(request):
 @login_required
 def misComentarios(request,id_album):
     usuario = request.user        
-    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
-    outfile.write('misComentarios -- SE VEN LOS COMENTARIOS QUE HA HECHO LA PERSONA QUE SE ENCUENTRA LOGUEADA E LA APLICACION\n')
-    
     usu = User.objects.get(id=usuario.id)
-    #import pdb; pdb.set_trace() 
-    print usu.id
+    
+    #import pdb; pdb.set_trace()     
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.get(id=albu.id)    
     if request.method == 'POST':         
         formulario = RegistroComentario(request.POST)
-        if formulario.is_valid():
+        if formulario.is_valid():            
             formulario.procesar_comentario(albumes,usu)
             comentarioPersona = Comentario.objects.filter(userComentador=usu.id)      
-            contexto = {'usuario' : usuario, 'comentario':comentarioPersona }
-            return render_to_response('MisComentarios.html',context_instance=RequestContext(request, contexto)) 
-            outfile.close()
+            albu = get_object_or_404(Album, id=id_album)
+            albumes = Album.objects.filter(id=albu.id)
+            contenido = Contenido.objects.filter(fkalbum=albu.id)
+            comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
+            catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()           
+            contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
+            return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))                
             
-    outfile.close()
     contexto = {'usuario' : usuario, 'comentario':comentarioPersona() }
     return render_to_response('comentariosHechos.html',context_instance=RequestContext(request, contexto))    
             
@@ -257,7 +260,7 @@ def principal_inicio(request):
     amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
     id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
     persona = User.objects.filter(id__in=id_per)
-    liked = like.objects.all()
+    liked = Like.objects.all()
     
     contexto = {'usuario': usuario, 'historial':historial,'contenido':contenido,'notificacion':notificacion, 'comentario':comentario,'persona':persona,'liked':liked}
     outfile.write('principal_inicio -- PAGINA INICIAL DEL SISTEMA, SE MUESTRA EL HISTORIAR GENERAN DE LOS USUARIOS DE SOCIALACE\n')

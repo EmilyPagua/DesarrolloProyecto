@@ -4,55 +4,55 @@
 <script type="text/javascript" src="{{STATIC_URL}}js/jqueryImgene.min.js"></script>
 <script type="text/javascript" src="{{STATIC_URL}}js/PictureSlides-jquery-2.0.js"></script>
 <script type="text/javascript">
-		jQuery.PictureSlides.set({
-			// Switches to decide what features to use
-			useFadingIn : true,
-			useFadingOut : true,
-			useFadeWhenNotSlideshow : true,
-			useFadeForSlideshow : true,
-			useDimBackgroundForSlideshow : true,
-			loopSlideshow : false,
-			usePreloading : true,
-			useAltAsTooltip : true,
-			useTextAsTooltip : false,
+	jQuery.PictureSlides.set({
+		// Switches to decide what features to use
+		useFadingIn : true,
+		useFadingOut : true,
+		useFadeWhenNotSlideshow : true,
+		useFadeForSlideshow : true,
+		useDimBackgroundForSlideshow : true,
+		loopSlideshow : false,
+		usePreloading : true,
+		useAltAsTooltip : true,
+		useTextAsTooltip : false,
+		
+		// Fading settings
+		fadeTime : 500, // Milliseconds	
+		timeForSlideInSlideshow : 2000, // Milliseconds
+
+		// At page load
+		startIndex : 1,	
+		startSlideShowFromBeginning : true,
+		startSlideshowAtLoad : false,
+		dimBackgroundAtLoad : false,
+
+		// Large images to use and thumbnail settings
+		images : [
+			{% for campo in contenido %}
+			{
+				image : "{{ campo.urlfoto }}", 
+				alt : "Imagenes",
+				text : "Imagenes"
+			},{% endfor %}
 			
-			// Fading settings
-			fadeTime : 500, // Milliseconds	
-			timeForSlideInSlideshow : 2000, // Milliseconds
+			
+		],
+		thumbnailActivationEvent : "click",
 
-			// At page load
-			startIndex : 1,	
-			startSlideShowFromBeginning : true,
-			startSlideshowAtLoad : false,
-			dimBackgroundAtLoad : false,
-
-			// Large images to use and thumbnail settings
-			images : [
-				{% for campo in contenido %}
-				{
-					image : "{{ campo.urlfoto }}", 
-					alt : "Imagenes",
-					text : "Imagenes"
-				},{% endfor %}
-				
-				
-			],
-			thumbnailActivationEvent : "click",
-
-			// Classes of HTML elements to use
-			mainImageClass : "picture-slides-image", // Mandatory
-			mainImageFailedToLoadClass : "picture-slides-image-load-fail",
-			imageLinkClass : "picture-slides-image-link",
-			fadeContainerClass : "picture-slides-fade-container",
-			imageTextContainerClass : "picture-slides-image-text",
-			previousLinkClass : "picture-slides-previous-image",
-			nextLinkClass : "picture-slides-next-image",
-			imageCounterClass : "picture-slides-image-counter",
-			startSlideShowClass : "picture-slides-start-slideshow",
-			stopSlideShowClass : "picture-slides-stop-slideshow",
-			thumbnailContainerClass: "picture-slides-thumbnails",
-			dimBackgroundOverlayClass : "picture-slides-dim-overlay"
-		});
+		// Classes of HTML elements to use
+		mainImageClass : "picture-slides-image", // Mandatory
+		mainImageFailedToLoadClass : "picture-slides-image-load-fail",
+		imageLinkClass : "picture-slides-image-link",
+		fadeContainerClass : "picture-slides-fade-container",
+		imageTextContainerClass : "picture-slides-image-text",
+		previousLinkClass : "picture-slides-previous-image",
+		nextLinkClass : "picture-slides-next-image",
+		imageCounterClass : "picture-slides-image-counter",
+		startSlideShowClass : "picture-slides-start-slideshow",
+		stopSlideShowClass : "picture-slides-stop-slideshow",
+		thumbnailContainerClass: "picture-slides-thumbnails",
+		dimBackgroundOverlayClass : "picture-slides-dim-overlay"
+	});
 
 	function validarForm(formulario) {
 	   if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
@@ -92,303 +92,271 @@ function suma(numero) {
 	<!-- post -->
 	<div class="post">
 		<!-- shadow -->
-		<div class="thumb-shadow">
-		
+		<div class="thumb-shadow">		
 			<!-- post-thumb -->
 			<div class="post-thumbnailin">
-				<div id="container">
-		
-		<div class="picture-slides-container">
-			{% for campo2 in albumes %}<div class="picture-slides-fade-container">
-				<a class="picture-slides-image-link">										
-					<img class="picture-slides-image" src="{{STATIC_URL}}{{ campo2.foto }}" alt="Foto Album" />					
-				</a>
-				
-			</div>		{% endfor %} 	
-					
-			<div class="navigation-controls">
-				<a href="#" class="picture-slides-previous-image"><<</a>
-				<span class="picture-slides-image-counter"></span>
-				<a href="#" class="picture-slides-next-image">>></a>
-		
-				<a href="#" class="picture-slides-start-slideshow">Iniciar Presentacion</a>
-				<a href="#" class="picture-slides-stop-slideshow">Parar Presentacion</a>
-			</div>					
-		</div>
-	</div>
-		
-			</div>
-			<!-- ENDS post-thumb -->
+				<div id="container">		
+					<div class="picture-slides-container">
+						{% for campo2 in albumes %}<div class="picture-slides-fade-container">
+						<a class="picture-slides-image-link">										
+							<img class="picture-slides-image" src="{{STATIC_URL}}{{ campo2.foto }}" alt="Foto Album" />					
+						</a>
 			
+					</div>		{% endfor %} 	
+					
+					<div class="navigation-controls">
+						<a href="#" class="picture-slides-previous-image"><<</a>
+						<span class="picture-slides-image-counter"></span>
+						<a href="#" class="picture-slides-next-image">>></a>
+		
+						<a href="#" class="picture-slides-start-slideshow">Iniciar Presentacion</a>
+						<a href="#" class="picture-slides-stop-slideshow">Parar Presentacion</a>
+					</div>					
+				</div>
+			</div>		
+			<!-- ENDS post-thumb -->			
 		</div>
 		<!-- ENDS shadow -->
-		
 	</div>
 	<!-- ENDS post -->
 	<!-- Comments-Block -->
-					<div id="comments-block">
-						<div class="n-comments"> {{ cantidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
-		
-						<!-- comments list 
-						<script>alert(validarReplica({{ aux.id }}));</script>
-						-->
-						<ul class="commentlist">
-						{% for nivel in comentarioAlbum %}
-						{% if  nivel.replica %}
-						{% else %}
-						<!-- NIVEL 0 -->
-						<form enctype="multipart/form-data" name="form3" method="post" action=".">
-							<li class="comment" id="comment-18">
-								<div id="div-comment-18" class="comment-body">
-									<div class="comment-author vcard">
-										<img alt='' src="{{STATIC_URL}}{{ nivel.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
-										<cite class="fn">{{ nivel.userComentador.last_name }} {{ nivel.userComentador.first_name }}</cite><span class="says"> escribió:</span>
-									</div>										
-									<p>{{ nivel.descripcion }}<br> 
-									<h5>like:
-									<script> var num=0 </script>
-									{% for aux0 in cantidadLike %}
-									{% if aux0.fkcomentario.id = nivel.id %}
-									<script>  
-									num=num+1 </script>
-									{% endif %}
-									{% endfor %}
-									<script>  document.write(num)
-									</script> </5></p>
-					
-									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
-									</div>
-									{% if nivel.userComentador.id = usuario.id %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
-									</div>
-									{% endif %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
-									</div>
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
-									</div>
-																		
-								</div>
-							</li>
-						</form> 
-						
-						<!-- NIVEL 1 -->						
-							{% for nivel1 in comentarioAlbum %}							
-								{% if  nivel1.replica.id = nivel.id %}
-								<form enctype="multipart/form-data" name="form3" method="post" action=".">
-							<li class="comment" id="comment-18">
-								<div id="div-comment-18" class="comment-body">
-									<div class="comment-author vcard">
-									
-										<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="20" width="20" ></img>
-										<img alt='' src="{{STATIC_URL}}{{nivel1.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /> 
-
-
-										<cite class="fn">{{ nivel1.userComentador.last_name }} {{ nivel1.userComentador.first_name }}</cite><span class="says"> escribió:</span>
-									</div>										
-									<p>{{ nivel1.descripcion }}  </p>
-								
-									<h5>like:
-									<script> var num=0 </script>
-									{% for aux1 in cantidadLike %}
-									{% if aux1.fkcomentario.id = nivel1.id %}
-									<script>  
-									num=num+1 </script>
-									{% endif %}
-									{% endfor %}
-									<script>  document.write(num)
-									</script> </5></p>
-					
-									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
-									</div>
-									{% if nivel.userComentador.id = usuario.id %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
-									</div>
-									{% endif %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
-									</div>
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
-									</div>									
-								</div>
-							</li>
-						</form> 
-						
-						<!-- NIVEL 2 -->						
-							{% for nivel2 in comentarioAlbum %}							
-								{% if  nivel2.replica.id = nivel1.id %}
-								<form enctype="multipart/form-data" name="form3" method="post" action=".">
-							<li class="comment" id="comment-18">
-								<div id="div-comment-18" class="comment-body">
-									<div class="comment-author vcard">
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="20" width="20"></img>
-										<img alt='' src="{{STATIC_URL}}{{nivel2.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
-										<cite class="fn">{{ nivel2.userComentador.last_name }} {{ nivel2.userComentador.first_name }}</cite><span class="says"> escribió:</span>
-									</div>										
-									<p>{{ nivel2.descripcion }}  
-									<h5>like:
-									<script> var num=0 </script>
-									{% for aux1 in cantidadLike %}
-									{% if aux1.fkcomentario.id = nivel2.id %}
-									<script>  
-									num=num+1 </script>
-									{% endif %}
-									{% endfor %}
-									<script>  document.write(num)
-									</script> </5></p>
-					
-									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
-									</div>
-									{% if nivel.userComentador.id = usuario.id %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
-									</div>
-									{% endif %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
-									</div>
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
-									</div>									
-								</div>
-							</li>
-						</form> 
-						<!-- NIVEL 3 -->						
-							{% for nivel3 in comentarioAlbum %}							
-								{% if  nivel3.replica.id = nivel2.id %}
-								<form enctype="multipart/form-data" name="form3" method="post" action=".">
-							<li class="comment" id="comment-18">
-								<div id="div-comment-18" class="comment-body">
-									<div class="comment-author vcard">
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png"  height="20" width="20"></img>
-										<img alt='' src="{{STATIC_URL}}{{nivel3.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
-										<cite class="fn">{{ nivel3.userComentador.last_name }} {{ nivel3.userComentador.first_name }}</cite><span class="says"> escribió:</span>
-									</div>										
-									<p>{{ nivel3.descripcion }} 
-									<h5>like:
-									<script> var num=0 </script>
-									{% for aux1 in cantidadLike %}
-									{% if aux1.fkcomentario.id = nivel3.id %}
-									<script>  
-									num=num+1 </script>
-									{% endif %}
-									{% endfor %}
-									<script>  document.write(num)
-									</script> </5>
-									</p>
-					
-									<div class="reply">
-										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
-									</div>
-									{% if nivel.userComentador.id = usuario.id %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
-									</div>
-									{% endif %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
-									</div>
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
-									</div>									
-								</div>
-							</li>
-						</form> 
-						<!-- NIVEL 4 -->						
-							{% for nivel4 in comentarioAlbum %}							
-								{% if  nivel4.replica.id = nivel3.id %}
-								<form enctype="multipart/form-data" name="form3" method="post" action=".">
-							<li class="comment" id="comment-18">
-								<div id="div-comment-18" class="comment-body">
-									<div class="comment-author vcard">
-										
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
-									<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png"  height="20" width="20"></img>
-										<img alt='' src="{{STATIC_URL}}{{nivel4.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' />
-										<cite class="fn">{{ nivel4.userComentador.last_name }} {{ nivel4.userComentador.first_name }}</cite><span class="says"> escribió:</span>
-									</div>										
-									<p>{{ nivel4.descripcion }} 
-									<h5>like:
-									<script> var num=0 </script>
-									{% for aux1 in cantidadLike %}
-									{% if aux1.fkcomentario.id = nivel4.id %}
-									<script>  
-									num=num+1 </script>
-									{% endif %}
-									{% endfor %}
-									<script>  document.write(num)
-									</script> </5> </p>
-									{% if nivel.userComentador.id = usuario.id %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
-									</div>
-									{% endif %}
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
-									</div>
-									<div class="like">
-									   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
-									</div>									
-								</div>
-							</li>
-						</form> 
-								{% endif   %}						
-							{% endfor %} 
-								{% endif   %}						
-							{% endfor %} 
-								{% endif   %}						
-							{% endfor %} 
-								{% endif   %}						
-							{% endfor %} 
-						{% endif   %}
-						{% endfor %} 
-						</ul>
-						<!-- ENDS comments list -->
-		<!-- comments form -->
-						<div id="respond">
-							<div class="leave-comment">
-								<h2>De su opinion sobre el album</h2>	
-								<!-- form -->
-								 {% for campo in albumes %}
-								<form action="{% url 'misComentarios' campo.id %}" method="post" id="commentform" onsubmit="return validarForm(this);">
-								 {% csrf_token %}
-									<fieldset>									
-										<div class="admin-form">
-											<div>
-											  												
-											   <label >Nota: no escribir caracteres esperciales como: acentos, eñes, entre otros</label>
-												{% for aux in formulario %}
-												{{aux}}
-												{% endfor %}												
-											</div>
-											<div><input type="submit" name="enviar" id="submit" tabindex="5" value="Enviar" /></div>
-											<div><input type="hidden" name="comment_post_ID" value="586" /></div>
-										</div>
-										<input type='hidden' name='comment_post_ID' value='586' id='comment_post_ID' />
-										<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
-									</fieldset>
-								</form>
-								 {% endfor %}
-								<!-- ENDS form -->
+	<div id="comments-block">
+		<div class="n-comments"> {{ cantidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
+			<!-- comments list -->
+			<ul class="commentlist">
+				{% for nivel in comentarioAlbum %}
+				{% if  nivel.replica %}
+				{% else %}
+				<!-- NIVEL 0 -->
+				<form enctype="multipart/form-data" name="form3" method="post" action=".">
+					<li class="comment" id="comment-18">
+						<div id="div-comment-18" class="comment-body">
+							<div class="comment-author vcard">
+								<img alt='' src="{{STATIC_URL}}{{ nivel.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /></img>
+								<cite class="fn">{{ nivel.userComentador.last_name }} {{ nivel.userComentador.first_name }}</cite><span class="says"> escribió:</span>
+							</div>										
+							<p>{{ nivel.descripcion }}<br> 
+							<h5>like:
+							<script> var num=0 </script>
+							{% for aux0 in cantidadLike %}
+							{% if aux0.fkcomentario.id = nivel.id %}
+							<script>  num=num+1 </script>
+							{% endif %}
+							{% endfor %}
+							<script> document.write(num)</script> </5></p>		
+							<div class="reply">
+								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 							</div>
+							{% if nivel.userComentador.id = usuario.id %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
+							</div>
+							{% endif %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'Nolike' nivel.id %}" >NO like</a>
+							</div>
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'likeComentario' nivel.id %}" >like</a>
+							</div>															
 						</div>
-						<!-- ENDS comments form -->	
-					</div>
-					<!-- ENDS Comments-block -->		
-					
-					
+					</li>
+				</form> 			
+				<!-- NIVEL 1 -->						
+				{% for nivel1 in comentarioAlbum %}							
+				{% if  nivel1.replica.id = nivel.id %}
+				<form enctype="multipart/form-data" name="form3" method="post" action=".">
+					<li class="comment" id="comment-18">
+						<div id="div-comment-18" class="comment-body">
+							<div class="comment-author vcard">						
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="20" width="20" ></img>
+								<img alt='' src="{{STATIC_URL}}{{nivel1.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /> </img>
+								<cite class="fn">{{ nivel1.userComentador.last_name }} {{ nivel1.userComentador.first_name }}</cite><span class="says"> escribió:</span>
+							</div>										
+							<p>{{ nivel1.descripcion }}  </p>					
+							<h5>like:
+							<script> var num=0 </script>
+							{% for aux1 in cantidadLike %}
+							{% if aux1.fkcomentario.id = nivel1.id %}
+							<script> num=num+1 </script>
+							{% endif %}
+							{% endfor %}
+							<script>  document.write(num)</script> </5></p>		
+							<div class="reply">
+								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel1.id %}">Reply</a>
+							</div>
+							{% if nivel1.userComentador.id = usuario.id %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel1.id %}" >Borrar</a>
+							</div>
+							{% endif %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'Nolike' nivel1.id %}" >NO like</a>
+							</div>
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'likeComentario' nivel1.id %}" >like</a>
+							</div>									
+						</div>
+					</li>
+				</form> 
+			
+				<!-- NIVEL 2 -->						
+				{% for nivel2 in comentarioAlbum %}							
+				{% if  nivel2.replica.id = nivel1.id %}
+				<form enctype="multipart/form-data" name="form3" method="post" action=".">
+					<li class="comment" id="comment-18">
+						<div id="div-comment-18" class="comment-body">
+							<div class="comment-author vcard">
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="20" width="20"></img>
+								<img alt='' src="{{STATIC_URL}}{{nivel2.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /></img>
+								<cite class="fn">{{ nivel2.userComentador.last_name }} {{ nivel2.userComentador.first_name }}</cite><span class="says"> escribió:</span>
+							</div>										
+							<p>{{ nivel2.descripcion }}  
+							<h5>like:
+							<script> var num=0 </script>
+							{% for aux1 in cantidadLike %}
+							{% if aux1.fkcomentario.id = nivel2.id %}
+							<script> num=num+1 </script>
+							{% endif %}
+							{% endfor %}
+							<script>  document.write(num)</script> </5></p>		
+							<div class="reply">
+								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel2.id %}">Reply</a>
+							</div>
+							{% if nivel2.userComentador.id = usuario.id %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel2.id %}" >Borrar</a>
+							</div>
+							{% endif %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'Nolike' nivel2.id %}" >NO like</a>
+							</div>
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'likeComentario' nivel2.id %}" >like</a>
+							</div>									
+						</div>
+					</li>
+				</form> 
+				<!-- NIVEL 3 -->						
+				{% for nivel3 in comentarioAlbum %}							
+				{% if  nivel3.replica.id = nivel2.id %}
+				<form enctype="multipart/form-data" name="form3" method="post" action=".">
+					<li class="comment" id="comment-18">
+						<div id="div-comment-18" class="comment-body">
+							<div class="comment-author vcard">
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png"  height="20" width="20"></img>
+								<img alt='' src="{{STATIC_URL}}{{nivel3.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /></img>
+								<cite class="fn">{{ nivel3.userComentador.last_name }} {{ nivel3.userComentador.first_name }}</cite><span class="says"> escribió:</span>
+							</div>										
+							<p>{{ nivel3.descripcion }} 
+							<h5>like:
+							<script> var num=0 </script>
+							{% for aux1 in cantidadLike %}
+							{% if aux1.fkcomentario.id = nivel3.id %}
+							<script>  num=num+1 </script>
+							{% endif %}
+							{% endfor %}
+							<script>  document.write(num)</script> </5>
+							</p>		
+							<div class="reply">
+								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel3.id %}">Reply</a>
+							</div>
+							{% if nivel3.userComentador.id = usuario.id %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel3.id %}" >Borrar</a>
+							</div>
+							{% endif %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'Nolike' nivel3.id %}" >NO like</a>
+							</div>
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'likeComentario' nivel3.id %}" >like</a>
+							</div>									
+						</div>
+					</li>
+				</form> 
+				<!-- NIVEL 4 -->						
+				{% for nivel4 in comentarioAlbum %}							
+				{% if  nivel4.replica.id = nivel3.id %}
+				<form enctype="multipart/form-data" name="form3" method="post" action=".">
+					<li class="comment" id="comment-18">
+						<div id="div-comment-18" class="comment-body">
+							<div class="comment-author vcard">							
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png" height="10" width="10"></img>
+								<img class="alignleft" alt="exchange32.png" title="exchange32.png" src="{{STATIC_URL}}img/mono-icons/exchange32.png"  height="20" width="20"></img>
+								<img alt='' src="{{STATIC_URL}}{{nivel4.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /></img>
+								<cite class="fn">{{ nivel4.userComentador.last_name }} {{ nivel4.userComentador.first_name }}</cite><span class="says"> escribió:</span>
+							</div>										
+							<p>{{ nivel4.descripcion }} 
+							<h5>like:
+							<script> var num=0 </script>
+							{% for aux1 in cantidadLike %}
+							{% if aux1.fkcomentario.id = nivel4.id %}
+							<script>  num=num+1 </script>
+							{% endif %}
+							{% endfor %}
+							<script>  document.write(num)</script> </5> </p>
+							{% if nivel4.userComentador.id = usuario.id %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel4.id %}" >Borrar</a>
+							</div>
+							{% endif %}
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'Nolike' nivel4.id %}" >NO like</a>
+							</div>
+							<div class="like">
+							   <a class='comment-reply-link' href="{% url 'likeComentario' nivel4.id %}" >like</a>
+							</div>									
+						</div>
+					</li>
+				</form> 
+						{% endif   %}						
+					{% endfor %} 
+						{% endif   %}						
+					{% endfor %} 
+						{% endif   %}						
+					{% endfor %} 
+						{% endif   %}						
+					{% endfor %} 
+				{% endif   %}
+				{% endfor %} 
+			</ul>
+			<!-- ENDS comments list -->
+			<!-- comments form -->
+			<div id="respond">
+				<div class="leave-comment">
+					<h2>De su opinion sobre el album</h2>	
+					<!-- form -->
+					 {% for campo in albumes %}
+					<form action="{% url 'misComentarios' campo.id %}" method="post" id="commentform" onsubmit="return validarForm(this);">
+					 {% csrf_token %}
+						<fieldset>									
+							<div class="admin-form">
+								<div>
+								  												
+								   <label >Nota: no escribir caracteres esperciales como: acentos, eñes, entre otros</label>
+									{% for aux in formulario %}
+									{{aux}}
+									{% endfor %}												
+								</div>
+								<div><input type="submit" name="enviar" id="submit" tabindex="5" value="Enviar" /></div>
+								<div><input type="hidden" name="comment_post_ID" value="586" /></div>
+							</div>
+							<input type='hidden' name='comment_post_ID' value='586' id='comment_post_ID' />
+							<input type='hidden' name='comment_parent' id='comment_parent' value='0' />
+						</fieldset>
+					</form>
+					 {% endfor %}
+					<!-- ENDS form -->
+				</div>
+			</div>
+			<!-- ENDS comments form -->	
+		</div>
+		<!-- ENDS Comments-block -->				
 </div>
 <!-- ENDS Posts -->	
 	

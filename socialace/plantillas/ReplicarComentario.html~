@@ -1,5 +1,20 @@
 {% extends 'base.html'%}
 {% block content%}
+<script>
+	function validarForm(formulario) {
+	   if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
+		formulario.descripcion.focus();   
+		alert('Requiere de comentario'); 
+		return false; //devolvemos el foco
+	  }
+	  
+	 alert('Su comentario sera enviado..!');	  
+	  return true;
+    
+}
+
+
+</script>
 <!-- title -->
  {% for campo in coment %}
 <div id="page-title">
