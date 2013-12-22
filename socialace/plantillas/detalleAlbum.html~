@@ -205,7 +205,7 @@ function suma(numero) {
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 									</div>
-									{% if nivel.userComentador.id = usuario.id %}
+									{% if nivel1.userComentador.id = usuario.id %}
 									<div class="like">
 									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
 									</div>
@@ -247,7 +247,7 @@ function suma(numero) {
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 									</div>
-									{% if nivel.userComentador.id = usuario.id %}
+									{% if nivel2.userComentador.id = usuario.id %}
 									<div class="like">
 									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
 									</div>
@@ -290,7 +290,7 @@ function suma(numero) {
 									<div class="reply">
 										<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 									</div>
-									{% if nivel.userComentador.id = usuario.id %}
+									{% if nivel3.userComentador.id = usuario.id %}
 									<div class="like">
 									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
 									</div>
@@ -330,7 +330,7 @@ function suma(numero) {
 									{% endfor %}
 									<script>  document.write(num)
 									</script> </5> </p>
-									{% if nivel.userComentador.id = usuario.id %}
+									{% if nivel4.userComentador.id = usuario.id %}
 									<div class="like">
 									   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel.id %}" >Borrar</a>
 									</div>

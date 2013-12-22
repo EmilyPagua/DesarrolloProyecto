@@ -5,6 +5,7 @@ from django.contrib.auth.models import User
 import datetime
 
 
+
 class RegistroUsuario(forms.Form):
     usuario = forms.CharField(max_length=50, label='Usuario (*)')
     clave =  forms.CharField(max_length=20, widget=forms.PasswordInput,label='Clave (*)')
