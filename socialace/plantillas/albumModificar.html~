@@ -20,18 +20,16 @@
 </script>
 <!-- title -->
 <div id="page-title">
-	<span class="title">Mis albumes</span>
-	<span class="subtitle">Seleccione y lea la informacion de cada album y luego modifique el album que desee</span>
+	<span class="title">{{albu.nombre}}</span>
+	<span class="subtitle">modifique la informacion del album</span>
 </div>
 <!-- ENDS title -->
 
 <!-- Posts -->
 <div id="posts">
 	<!-- post -->
-	<div class="post">
-	
-		<!-- shadow -->
-		
+	<div class="post">	
+		<!-- shadow -->		
 		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
             {% csrf_token %}
                {% for campo in formulario %}
@@ -44,7 +42,7 @@
                      <h7>(*) Datos obligatorios</h7>
                 <br>	                             
               	<label>
-		               <button class="btn btn-hg btn-primary" type="submit"  name="acep" value="modi">Aceptar</button> 
+		               <button class="btn btn-hg btn-primary" type="submit"  name="acep" value="acep">Aceptar</button> 
 		        </label> 
 		    </td>					                                          	                      
 		    </tr>
@@ -55,5 +53,17 @@
 	<!-- ENDS post -->
 </div>
 <!-- ENDS Posts -->	
+<!-- sidebar -->
+<ul id="sidebar">
+	<!-- init sidebar -->
+	<li>
+		<h4>Modifique sus datos</h4>		
+		<ul>
+			<img src="{{STATIC_URL}}{{albu.foto}}" alt="SocialAce" with="200" height="200" aling="left"> 
+		</ul>
+	</li>
+	<!-- ENDS init sidebar -->
+</ul>
+<!-- ENDS sidebar -->
 					
 {% endblock %}

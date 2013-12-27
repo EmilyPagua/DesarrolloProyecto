@@ -114,7 +114,6 @@ def Nolike(request,id_comentario):
 
 
 
-
 #Enviar Borrar Comentario
 @login_required
 def borrarComentario(request,id_comentario):    
@@ -275,7 +274,13 @@ def registro_usuario(request):
     outfile.close()    
     if request.method == 'POST':
         formulario = RegistroUsuario(request.POST, request.FILES)
-        if formulario.is_valid():
+        if formulario.is_valid():	        
+	        #import pdb; pdb.set_trace()
+	        contusu = User.objects.filter(username=request.POST['usuario']).count()	        
+	        if contusu:	            
+	            mensaje = "El usuario ya existe, ingrese otro nombre de usuario."
+	            contexto = {'formulario':RegistroUsuario() ,'mensaje':mensaje}
+	            return render_to_response('usuarioRegistrar.html',context_instance=RequestContext(request, contexto))	       	        
 	        formulario.procesar_registro()
 	        return HttpResponseRedirect(reverse('login')) 
 	          
@@ -291,20 +296,30 @@ def modificar_usuario(request,id_usuario):
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     outfile.write('modificar_usuario -- OBTENIENDO LOS DATOS DEL USUARIO PARA SER MODIFICADOS\n')
     outfile.close()    
+    
     usuario = get_object_or_404(User, id=id_usuario)
     if request.method == 'POST':
-        print request.POST['foto']
+        print "voy a modificar"
+        #import pdb; pdb.set_trace() 
         formulario = EditarUsuario(request.POST, request.FILES)
         if formulario.is_valid():
-            formulario.modificar_registro(usuario)           
+            formulario.modificar_registro(usuario)                 
+            amigos = UsuarioPerfil.objects.filter(amigos=usuario.id)
+            id_per = [amigo.id+1 for amigo in amigos] #lista por comprension
+            persona = User.objects.filter(id__in=id_per)
+            usu = User.objects.filter(id=id_usuario)    
+            albumes = Album.objects.filter(fkusuario=usuario)
+            contexto = {'usuario': usuario, 'usu':usu,'albumes':albumes,'persona':persona}
+    	    return render_to_response('verMiPerfil.html',context_instance=RequestContext(request,contexto))
+          
+            
     form_data = {        
         'nombre': usuario.first_name,
         'apellido' : usuario.last_name,       
         'direccion' : usuario.usuarioperfil.direccion,        
         'facebook' : usuario.usuarioperfil.facebook,
         'correo' : usuario.email,
-        'privacidad' : usuario.usuarioperfil.privacidad,
-        'foto' : usuario.usuarioperfil.foto,
+        'privacidad' : usuario.usuarioperfil.privacidad,       
     }
     contexto = {'formulario': EditarUsuario(initial=form_data), 'usuario': usuario}
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
@@ -367,6 +382,7 @@ def detalle_album(request,id_album):
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.filter(id=albu.id)
+
     contenido = Contenido.objects.filter(fkalbum=albu.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()                    
@@ -374,16 +390,16 @@ def detalle_album(request,id_album):
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     outfile.write('Detalle_album -- SE MUESTRA UN ALBUM EN OARTICULAR, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS\n')
     outfile.close()
+   
 
     #Modificar Album
     if 'modi' in request.POST:        
         form_data = {
             'nombre': albu.nombre,
             'descripcion': albu.descripcion,
-            'privacidad' : albu.privacidad,
-            'foto' : albu.foto,
+            'privacidad' : albu.privacidad,           
    	    }
-        contexto = {'formulario': RegistroAlbum(initial=form_data), 'usuario': usuario, 'album': albumes}
+        contexto = {'formulario': RegistroAlbum(initial=form_data), 'usuario': usuario, 'albu': albu}
         return render_to_response('albumModificar.html',context_instance=RequestContext(request, contexto))    
     
     #Ver album, ver sus fotos y comentarios
@@ -402,8 +418,7 @@ def detalle_album(request,id_album):
     if 'elimi' in request.POST:
         albumes.delete()
         return HttpResponseRedirect(reverse('verAlbumes'))  
-            
-            
+                        
     contexto = {'usuario' : usuario}
     return render_to_response('comentariosHechos.html',context_instance=RequestContext(request, contexto))    
   
@@ -437,6 +452,8 @@ def ver_notificacion(request):
         if formulario.is_valid():
             formulario.procesar_amigo(usuario)
             return HttpResponseRedirect(reverse('principalInicio')) 
+     
+    
             
     informacion = Notificacion.objects.filter(usuario=usuario)
     contexto = {'informacion': informacion,'usuario': usuario}
@@ -452,19 +469,26 @@ def notificaciones_aprobadas(request,id_notificacion,id_amigo):
     usuario = request.user
     noti = get_object_or_404(Notificacion, id=id_notificacion)
     notifica = Notificacion.objects.filter(id=noti.id)
-    notifica.update(status='true')
-    informacion = Notificacion.objects.filter(usuario=usuario)    
-    k = User.objects.get(id=usuario.id)
-    l = User.objects.get(id=id_amigo)
-    l.usuarioperfil.amigos.add(k)
-    l.save()
-    k.usuarioperfil.amigos.add(l)
-    k.save()
+    informacion = Notificacion.objects.filter(usuario=usuario)       
     
     if 'aceptar' in request.POST:
+        notifica.update(status='true')        
+        k = User.objects.get(id=usuario.id)
+        l = User.objects.get(id=id_amigo)
+        l.usuarioperfil.amigos.add(k)
+        l.save()
+        k.usuarioperfil.amigos.add(l)
+        k.save()
         contexto = {'usuario' : usuario,'informacion':informacion }
-        
         return render_to_response('verNotificacionesAceptadas.html',context_instance=RequestContext(request, contexto))    
+            
+    if 'rechazar' in request.POST:
+        print "Rechazar"
+        count = Comentario.objects.get(id=id_comentario)
+        print count.descripcion 
+        count.delete() 
+        contexto = {'usuario' : usuario,'informacion':informacion }
+       
     return HttpResponseRedirect(reverse('principalInicio')) 	        
   
    

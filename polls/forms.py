@@ -13,8 +13,7 @@ class RegistroUsuario(forms.Form):
     nacimiento = forms.CharField(max_length=50, label='Nacimiento (*)')
     direccion =  forms.CharField(max_length=50, label='Direccion (*)')
     facebook =  forms.CharField(max_length=50, label='Facebook',required=False)
-    correo =  forms.CharField(max_length=50, label='Correo')
-    
+    correo =  forms.CharField(max_length=50, label='Correo')    
     foto = forms.ImageField(label='Foto', required=False)    
     privacidad =  forms.BooleanField(label='Privacidad',required=False)
     
@@ -49,7 +48,7 @@ class RegistroUsuario(forms.Form):
         facebook = self.cleaned_data['facebook']
         email = self.cleaned_data['correo']
         privacidad = self.cleaned_data['privacidad']
-        foto = self.cleaned_data.get('foto', None)
+        foto = self.cleaned_data.get('foto')
         usuario = User(username=username, first_name=name, last_name=lastname, email=email)
         usuario.set_password(password)
         usuario.save()
@@ -65,11 +64,11 @@ class EditarUsuario(forms.Form):
     apellido = forms.CharField(max_length=50, label='Apellido (*)')
     nacimiento = forms.CharField(max_length=50, label='Nacimiento (*)')
     direccion =  forms.CharField(max_length=50, label='Direccion (*)')
-    facebook =  forms.CharField(max_length=50, label='Facebook',required=False)
-    
+    facebook =  forms.CharField(max_length=50, label='Facebook',required=False)    
     correo =  forms.CharField(max_length=50, label='Correo')
     privacidad =  forms.BooleanField(label='Privacidad',required=False)
     foto = forms.ImageField(label='Foto', required=False)    
+    
   
     def __init__(self, *args, **kwargs):
         super(EditarUsuario, self).__init__(*args, **kwargs)
@@ -92,7 +91,8 @@ class EditarUsuario(forms.Form):
         return fecha
         
     def modificar_registro(self, usuario):
-        (self.cleaned_data['clave'])
+        (self.cleaned_data['clave'])        
+        print "en el modificar_registro"
         usuario.first_name = self.cleaned_data['nombre']
         usuario.last_name = self.cleaned_data['apellido']
         usuario.usuarioperfil.fechanacimiento = self.cleaned_data['nacimiento']
@@ -100,7 +100,9 @@ class EditarUsuario(forms.Form):
         usuario.usuarioperfil.facebook = self.cleaned_data['facebook']
         usuario.email = self.cleaned_data['correo']
         usuario.usuarioperfil.privacidad = self.cleaned_data['privacidad']
-        foto = self.cleaned_data.get('foto', None)
+        #foto = self.cleaned_data.get('foto', None)
+        foto = self.cleaned_data['foto']   
+        print foto
         if foto:
             usuario.usuarioperfil.foto = foto
         usuario.usuarioperfil.save()

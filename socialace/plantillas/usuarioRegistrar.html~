@@ -200,6 +200,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 					<div class="post">
 						<h1>Registrar datos</a></h1>
 						<!-- shadow -->
+						{{ campo.mensaje }}
 						 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
                             {% csrf_token %}
 				            <tr>
@@ -214,13 +215,8 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
                                      <h7>(*) Datos obligatorios</h7>
                                 <br>	                             
                               	<label>
-						               <button class="btn btn-hg btn-primary" type="submit" value="Update profile">Aceptar</button> 
+						               <button class="btn btn-hg btn-primary" type="submit">Aceptar</button> 
 						        </label> 
-						       <input type="file" id="files"/>
-<p id="status">Please select a file</p>
-<div style="border:1px solid gray;width:300px;"  id="preview"><img src="/static/media/default.png" style="width:300px;" /></div>
-
-
 						    </td>					                                          	                      
 						    </tr>
                            </form> 
@@ -271,35 +267,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 	
 	</div>
 	<!-- ENDS WRAPPER -->
-	<script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
-<script type="text/javascript" src="/static/js/lodash.min.js"></script>
-<script type="text/javascript" src="/static/js/s3upload.js"></script>
-
-<script type="text/javascript">
-function s3_upload(){
-    var s3upload = new S3Upload({
-        file_dom_selector: '#files',
-        s3_sign_put_url: '/sign_s3/',
-        onProgress: function(percent, message) {
-            $('#status').html('Upload progress: ' + percent + '% ' + message);
-        },
-        onFinishS3Put: function(public_url) {
-            $('#status').html('Upload completed. Uploaded to: '+ public_url);
-            $("#avatar_url").val(public_url);
-            $("#preview").html('<img src="'+public_url+'" style="width:300px;" />');
-        },
-        onError: function(status) {
-            $('#status').html('Upload error: ' + status);
-        }
-    });
-}
-
-$().ready(function() {
-    $('#files').on("change", s3_upload);
-});
-</script>
-
-	</body>
 	
+	</body>
 	
 </html>

@@ -16,19 +16,11 @@
 
 <!-- Posts -->
 <div id="posts">
-
+ 
 	<!-- post -->
 	<div class="post">
 		{% for campo in informacion %}
-		{% if campo.status %}
-		<!-- shadow -->
-		<div class="thumb-shadow">
-			<!-- ENDS post-thumb -->
-			<div class="the-excerpt">
-		   		<h3>Usted no tiene notificaciones disponibles</h3>					       	
-			</div>		
-		</div>
-		{% else %} 		
+			
 			<h4>
 			{{campo.historia.usuario.first_name }}
 		   		{{ campo.historia.usuario.last_name }}</h4>
@@ -42,15 +34,16 @@
 			  	 {% csrf_token %}
 				 <label>
 		       		<button class="btn btn-primary dropdown-toggle" type="submit" name="aceptar" value="{{ album.id }}">Aceptar</button> 
+		       		</label> 
+		       		<label> 
+					<button class="btn btn-primary dropdown-toggle" type="submit" name="rechazar" value="{{ album.id }}">Rechazar</button> 
 			
 		 		 </label> 
-		 		 <label>
-		       		 <button class="btn btn-primary dropdown-toggle" type="submit" name="rechazar" value="{{ album.id }}">Rechazar</button> 
-		 		 </label> 
+		 		
 			   	 </form>					       	
 			</div>		
 		</div>
- 		{% endif %} 
+ 		
  		  						       	 
  		{% endfor %}   						       	 
 	</div>

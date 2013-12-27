@@ -33,7 +33,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 		changeMonth: true,
 		changeYear: true,
 		yearRange: "c-70:2006",
-		minDate:'c-23250:c',
+		minDate:'c-24250:c',
         maxDate: '0',
 		onSelect: function(dateText, inst) {} });
 	});
@@ -79,20 +79,15 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 <!-- Posts -->
 <div id="posts">
 	<!-- post -->
-	<div class="post">
-		
-		<!-- shadow -->
-		
-		 <form enctype="multipart/form-data" name="form3" method="post" action="{% url 'Miperfil' usuario.id %}" onsubmit="return validarForm(this);">
+	<div class="post">		
+		<!-- shadow -->		
+		 <form enctype="multipart/form-data" name="form3" method="post" action="{% url 'modificarUsuario' usuario.id %}" onsubmit="return validarForm(this);">
             {% csrf_token %}
             <tr>
 			<td>
                <br>
-               {% for campo in formulario %}
-               
-              	 <label>                
-              		{{ campo.label }} {{ campo }}
-              	  </label>	 
+               {% for campo in formulario %}               
+              	 <label>  {{ campo.label }} {{ campo }}</label>	 
                {% endfor %}	
                 <br>	                               
                      <h7>(*) Datos obligatorios</h7>
@@ -102,12 +97,22 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 		        </label> 
 		    </td>					                                          	                      
 		    </tr>
-           </form> 
+         </form> 
 		<!-- ENDS shadow -->
 	</div>
 	<!-- ENDS post -->
 </div>
 <!-- ENDS Posts -->	
-
-					
+<!-- sidebar -->
+<ul id="sidebar">
+	<!-- init sidebar -->
+	<li>
+		<h4>Modifique sus datos</h4>		
+		<ul>
+			<img src="{{STATIC_URL}}{{usuario.usuarioperfil.foto}}" alt="SocialAce" with="300" height="300" aling="left"> 
+		</ul>
+	</li>
+	<!-- ENDS init sidebar -->
+</ul>
+<!-- ENDS sidebar -->				
 {% endblock %}

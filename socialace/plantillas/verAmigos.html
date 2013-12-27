@@ -14,7 +14,7 @@
 	    Correo: {{ campo.email }}
 	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}" >
 		{{ campo.first_name }} {{ campo.last_name }}
-		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  ></a>
+		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  with="300" height="265" ></a>
 	</li>
 	{% endfor %}   	
 </ul>

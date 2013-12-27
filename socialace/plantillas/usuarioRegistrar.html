@@ -200,6 +200,7 @@ $.datepicker.setDefaults($.datepicker.regional['es']);
 					<div class="post">
 						<h1>Registrar datos</a></h1>
 						<!-- shadow -->
+						{{ mensaje }}
 						 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
                             {% csrf_token %}
 				            <tr>
