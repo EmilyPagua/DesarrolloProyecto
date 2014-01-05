@@ -66,7 +66,7 @@ input{
 #container{
 	background: #fff;
 	overflow: hidden;
-	width: 452px;
+	width: 422px;
 	height: 372px;
 	margin: 2em auto 0;
 	padding: 2em 1em 4em;

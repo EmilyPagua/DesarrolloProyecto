@@ -9,7 +9,7 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
     url(r'^$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^$', logout, {'next_page': ''} ,name='logout'),
-    url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
+    #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='loginPrincipal'),
     #url(r'^loginPrincipal/$', login,{'template_name':'login_principal.html'}, name='login'),
     url(r'^principalInicio/$', 'polls.views.principal_inicio', name='principalInicio'),
     
@@ -42,7 +42,7 @@ urlpatterns = patterns('',
     url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/(?P<id_amigo>\d+)$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),
     url(r'^MisNotificaciones/$', 'polls.views.notificaciones_aceptadas',name ='misNotificaciones'),
     
-    
+    url(r'^eliminarContenido/(?P<id_album>\d+)/$', 'polls.views.eliminarContenido',name ='eliminarContenido'),
     url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.agregarFoto',name ='agregarFoto'),
     url(r'^buscarHashtag/(?P<id_album>\d+)/$', 'polls.views.buscarHashtag',name ='buscarHashtag'),
     url(r'^guardarFoto/(?P<id_album>\d+)/$', 'polls.views.guardarFoto',name ='guardarFoto'),

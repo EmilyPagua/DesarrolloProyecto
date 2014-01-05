@@ -1,59 +1,11 @@
 {% extends 'base.html'%}
 {% block content%}
-<link rel="stylesheet" href="{{STATIC_URL}}css/picture-slides.css" type="text/css">
-<script type="text/javascript" src="{{STATIC_URL}}js/jqueryImgene.min.js"></script>
-<script type="text/javascript" src="{{STATIC_URL}}js/PictureSlides-jquery-2.0.js"></script>
+
+<script src="{{STATIC_URL}}jquery-1.4.4.min.js" type="text/javascript"></script>
+<script src="{{STATIC_URL}}jsCarousel-2.0.0.js" type="text/javascript"></script>
+<link href="{{STATIC_URL}}jsCarousel-2.0.0.css" rel="stylesheet" type="text/css" />
 <script type="text/javascript">
-	jQuery.PictureSlides.set({
-		// Switches to decide what features to use
-		useFadingIn : true,
-		useFadingOut : true,
-		useFadeWhenNotSlideshow : true,
-		useFadeForSlideshow : true,
-		useDimBackgroundForSlideshow : true,
-		loopSlideshow : false,
-		usePreloading : true,
-		useAltAsTooltip : true,
-		useTextAsTooltip : false,
-		
-		// Fading settings
-		fadeTime : 500, // Milliseconds	
-		timeForSlideInSlideshow : 2000, // Milliseconds
-
-		// At page load
-		startIndex : 1,	
-		startSlideShowFromBeginning : true,
-		startSlideshowAtLoad : false,
-		dimBackgroundAtLoad : false,
-
-		// Large images to use and thumbnail settings
-		images : [
-			{% for campo in contenido %}
-			{
-				image : "{{ campo.urlfoto }}", 
-				alt : "Imagenes",
-				text : "Imagenes"
-			},{% endfor %}
-			
-			
-		],
-		thumbnailActivationEvent : "click",
-
-		// Classes of HTML elements to use
-		mainImageClass : "picture-slides-image", // Mandatory
-		mainImageFailedToLoadClass : "picture-slides-image-load-fail",
-		imageLinkClass : "picture-slides-image-link",
-		fadeContainerClass : "picture-slides-fade-container",
-		imageTextContainerClass : "picture-slides-image-text",
-		previousLinkClass : "picture-slides-previous-image",
-		nextLinkClass : "picture-slides-next-image",
-		imageCounterClass : "picture-slides-image-counter",
-		startSlideShowClass : "picture-slides-start-slideshow",
-		stopSlideShowClass : "picture-slides-stop-slideshow",
-		thumbnailContainerClass: "picture-slides-thumbnails",
-		dimBackgroundOverlayClass : "picture-slides-dim-overlay"
-	});
-
+	
 	function validarForm(formulario) {
 	   if(formulario.descripcion.value.length==0) { //comprueba que no esté vacío
 		formulario.descripcion.focus();   
@@ -64,61 +16,74 @@
 	 alert('Su comentario sera enviado..!');	  
 	  return true;
     
-}
-var resultado = 1;
+	}
+	var resultado = 1;
 
-function suma(numero) {
-    var num = numero + 1 
-    return num
-} 
+	function suma(numero) {
+	    var num = numero + 1 
+	    return num
+	} 
+	
+    $(document).ready(function() {
+
+        $('#carouselv').jsCarousel({ onthumbnailclick: function(src) { alert(src); }, autoscroll: true, masked: false, itemstodisplay: 3, orientation: 'v' });
+        $('#carouselh').jsCarousel({ onthumbnailclick: function(src) { alert(src); }, autoscroll: false, circular: true, masked: false, itemstodisplay: 5, orientation: 'h' });
+        $('#carouselhAuto').jsCarousel({ onthumbnailclick: function(src) { alert(src); }, autoscroll: true, masked: true, itemstodisplay: 5, orientation: 'h' });
+
+    });       
+        
+    </script>
 
 
-</script>
 <!-- title -->
 
 <div id="page-title">
-	{% for campo in albumes %}
+	{% for campo1 in albumes %}
 	<span class="title">
-	<img src="{{STATIC_URL}}{{ campo.foto }}" title="Portada" alt="" width="70" height="70"/></a> {{ campo.nombre }}</span>
-	<span class="subtitle">Descripcion: {{ campo.descripcion }}</span>
+	<img src="{{STATIC_URL}}{{ campo.foto }}" title="Portada" alt="" width="70" height="70"/></a> {{ campo1.nombre }}</span>
+	<span class="subtitle">Descripcion: {{ campo1.descripcion }}</span>
 	{% endfor %} 
 					
 </div>
 <!-- ENDS title -->
 
+<!-- ENDS title -->
+<div id="page-content">
+	<!-- one col -->
+    <div id="contents">
+        <div id="v2">
+            <div id="demo-wrapper">           
+                <div id="demo-right">                    
+                    <div id="hWrapperAuto">
+                        <div id="carouselhAuto">
+                        	{% for campo in contenidofoto %}
+							{% if  campo.urlfoto %}
+			          		<div>
+                                <img alt="campo.urlfoto" src="{{campo.urlfoto}}" /><br />
+                                <span class="thumbnail-text">Image Text</span></div>
+			          		{% endif %}
+			          		{% endfor %}
+			          					          		
+                            {% for campoaudio in contenidoaudio %}
+                            {% if  campoaudio.urlaudio %}	
+                            <div>
+                                 <iframe width="213" height="224" scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url="{{campoaudio.urlaudio}}&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe>
+                                 <span class="thumbnail-text">Image Text</span></div>					
+			        		{% endif %}	
+							{% endfor %}					               
+                                                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="clear "></div>
+	<!-- ENDS one col -->	
+</div>
 
 <!-- Posts -->
-<div id="posts" class="single">
-	<!-- post -->
-	<div class="post">
-		<!-- shadow -->
-		<div class="thumb-shadow">		
-			<!-- post-thumb -->
-			<div class="post-thumbnailin">
-				<div id="container">		
-					<div class="picture-slides-container">
-						{% for campo2 in albumes %}<div class="picture-slides-fade-container">
-						<a class="picture-slides-image-link">										
-							<img class="picture-slides-image" src="{{STATIC_URL}}{{ campo2.foto }}" alt="Foto Album" />					
-						</a>
-			
-					</div>		{% endfor %} 	
-					
-					<div class="navigation-controls">
-						<a href="#" class="picture-slides-previous-image"><<</a>
-						<span class="picture-slides-image-counter"></span>
-						<a href="#" class="picture-slides-next-image">>></a>
-		
-						<a href="#" class="picture-slides-start-slideshow">Iniciar Presentacion</a>
-						<a href="#" class="picture-slides-stop-slideshow">Parar Presentacion</a>
-					</div>					
-				</div>
-			</div>		
-			<!-- ENDS post-thumb -->			
-		</div>
-		<!-- ENDS shadow -->
-	</div>
-	<!-- ENDS post -->
+<div id="posts" class="single">	
 	<!-- Comments-Block -->
 	<div id="comments-block">
 		<div class="n-comments"> {{ cantidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
@@ -358,7 +323,6 @@ function suma(numero) {
 		</div>
 		<!-- ENDS Comments-block -->				
 	</div>
-</div>
 <!-- ENDS Posts -->	
 	
 {% endblock %}

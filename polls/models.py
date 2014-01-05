@@ -41,7 +41,7 @@ class Contenido(models.Model):
     urlaudio = models.CharField(max_length=200,null=True,blank=True)
 	
     def __str__(self):
-        return self.fkalbum.nombre+' Foto: '+self.urlfoto
+        return self.fkalbum.nombre
 
 class Comentario(models.Model):
     fkalbum	= models.ForeignKey(Album)

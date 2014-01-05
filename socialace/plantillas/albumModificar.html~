@@ -25,45 +25,65 @@
 </div>
 <!-- ENDS title -->
 
-<!-- Posts -->
-<div id="posts">
-	<!-- post -->
-	<div class="post">	
-		<!-- shadow -->		
-		 <form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
-            {% csrf_token %}
-               {% for campo in formulario %}
-              	    <label> 
-               		{{ campo.label }}<br> {{ campo }}
-               		</label>
-               	<br>	 
-               {% endfor %}	
-                <br>	                               
-                     <h7>(*) Datos obligatorios</h7>
-                <br>	                             
-              	<label>
-		               <button class="btn btn-hg btn-primary" type="submit"  name="acep" value="acep">Aceptar</button> 
-		        </label> 
-		    </td>					                                          	                      
-		    </tr>
-           </form> 
-         
-		<!-- ENDS shadow -->
+<div id="page-content">
+<!-- 2 cols -->
+	<div class="one-half">
+		<h4>Datos del Album </h4>
+		<p>
+			<form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+		        {% csrf_token %}
+		           {% for campo in formulario %}
+		          	    <label> 
+		           		{{ campo.label }}<br> {{ campo }}
+		           		</label>
+		           	<br>	 
+		           {% endfor %}	
+		            <br>	                               
+		                 <h7>(*) Datos obligatorios</h7>
+		            <br>	                             
+		          	<label>
+				           <button class="btn btn-hg btn-primary" type="submit"  name="acep" value="acep">Aceptar</button> 
+				    </label> 		              
+			   </form> 
+		   </p>
 	</div>
-	<!-- ENDS post -->
+	<div class="one-half last">
+		<h4>Fotoportada del Album</h4>
+		<p>
+			<ul>
+				<img src="{{STATIC_URL}}{{albu.foto}}" alt="SocialAce" with="200" height="200" aling="left"> 
+			</ul>
+		</p>
+	</div>
+<div class="clear "></div>
+<!-- ENDS 2 cols -->
 </div>
-<!-- ENDS Posts -->	
-<!-- sidebar -->
-<ul id="sidebar">
-	<!-- init sidebar -->
-	<li>
-		<h4>Modifique sus datos</h4>		
-		<ul>
-			<img src="{{STATIC_URL}}{{albu.foto}}" alt="SocialAce" with="200" height="200" aling="left"> 
-		</ul>
-	</li>
-	<!-- ENDS init sidebar -->
+<!-- filter -->
+<ul id="portfolio-filter" class="filter">
+	<li><h3>Contenifo del Album, </h3><h4>Haga click en la X si desea eliminar algun elemento del album</h4></li>	
 </ul>
-<!-- ENDS sidebar -->
-					
+<!-- ENDS filter -->
+<!-- gallery-->
+<ul id="portfolio-list" class="gallery three-cols">
+	{% for foto in contenidofoto %}
+	<form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
+		<li class="pink">
+			<a href="{{foto.urlfoto}}" rel="group1" class="fancybox" title="{{foto.urlfoto}}">
+			<img src="{{foto.urlfoto}}" alt="Pic" width="250" heigth="250"></a>
+			<a rel="nofollow" href="{% url 'eliminarContenido' foto.id %}"> <h7> <img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" heigth="33"></img></h7> </a>
+		</li>
+	</form> 	
+	 {% endfor %}	
+	 {% for audio in contenidoaudio %}	 
+	 <li class="pink">
+		<a href="{{audio.urlaudio}}" rel="group1" class="fancybox" title="{{audio.urlaudio}}">
+		<iframe width="260" heigth="260" scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url="{{audio.urlaudio}}&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe></a>
+		<a rel="nofollow" href="{% url 'eliminarContenido' audio.id %}"> <h7> <img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" heigth="33"></img></h7> </a>
+	</li>	 
+	 {% endfor %}	
+
+				
+</ul>
+<!-- ENDS gallery -->	
+
 {% endblock %}

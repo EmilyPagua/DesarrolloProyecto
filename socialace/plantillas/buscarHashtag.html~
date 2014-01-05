@@ -34,9 +34,6 @@
 </div>
 <!-- ENDS title -->
 
-
-
-
 <!-- page-content -->
 <div id="page-content">
  <button class="upload">Subir imágenes</button>
@@ -57,6 +54,14 @@
 	 		var imagenes = {}; // Guarda el URL de las imágenes traísdas desde IG *no es un arreglo, sino un objeto!
 	 		var igUrl ="https://api.instagram.com/v1/tags/{{p}}/media/recent/?access_token=563704717.5b9e1e6.4f296fd9e3a5449aa35c2beefb4db0d1";
 	 		var mostradas= [];
+	 		SC.initialize({
+		  		client_id: '1fd6b24c0b9bba2f82dc869df8e2bbb2'
+			});
+			
+			var page_size = 20;
+		
+			
+		
 			jQuery('.instagram-search').click(function(evt) {
 	 			$.ajax({
 					type: "GET",
@@ -81,6 +86,16 @@
 						});
 					}
 				});
+				
+				SC.get('/tracks', { q: '{{mujer}}', license: 'cc-by-sa',limit: page_size }, function(tracks) {
+				console.log(tracks);
+	    			for (var i = 0; i < tracks.length; i++) {	    	
+	    				console.log(tracks[i].uri);	    	
+	    				$("p").append("<div class='instagram-placeholder'><iframe width='100%' height='120%' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=" + tracks[i].uri +"&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe><input type='checkbox' id='"+ i+"' value='" + tracks[i].uri +"' class='check'><div>");
+	    			}
+				});
+				
+				
 			});
 			jQuery('.upload').click(function(evt) {
    
@@ -92,7 +107,7 @@
 						'csrfmiddlewaretoken': '{{ csrf_token }}'
 	   				}
     			}).done(function() {
-        			alert('Ya subieron las imágenes!')
+        			alert('Ya subieron los archivos!')
     			}).fail(function() {
         			alert('No subieron!');
     			});
@@ -107,14 +122,14 @@
 		<h6><img src="{{STATIC_URL}}img/SoundCloud_logo.png""  width="80" heigth="80"> </h6>		
 		
 		<p><script src="http://connect.soundcloud.com/sdk.js"></script>
-		<script>
+		<!-- <script>
 		SC.initialize({
 		  client_id: '1fd6b24c0b9bba2f82dc869df8e2bbb2'
 		});
 		
 		var page_size = 20;
 		
-		SC.get('/tracks', { q: '{{p}}', license: 'cc-by-sa',limit: page_size }, function(tracks) {
+		SC.get('/tracks', { q: '{{mujer}}', license: 'cc-by-sa',limit: page_size }, function(tracks) {
 		console.log(tracks);
 	    for (var i = 0; i < tracks.length; i++) {	    	
 	    	console.log(tracks[i].uri);	    	
@@ -122,13 +137,7 @@
 	    	}
 		});
 		
-		SC.get('/tracks', { q: '{{p}}', license: 'cc-by-sa', limit: page_size, offset: page_size }, function(tracks) {
-        console.log(tracks);
-	    for (var i = 0; i < tracks.length; i++) {	    	
-	    	console.log(tracks[i].uri);	    	
-	    	$("p").append("<div class='instagram-placeholder'><iframe width='100%' height='120%' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url=" + tracks[i].uri +"&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe><input type='checkbox' id='"+ i+"' value='" + tracks[i].uri +"' class='check'><div>");
-});		
-		</script></p>
+		</script>  --></p>
 	</div>
 	
 		<div class="one-third last">

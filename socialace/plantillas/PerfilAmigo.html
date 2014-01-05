@@ -9,8 +9,7 @@
 				
 <!-- page-content -->
 <div id="page-content">	
-	
-		
+
 		<h3>Datos Basicos</h3>
 		<div>
 			{% for aux in usu %}
@@ -21,13 +20,11 @@
 	   	    <strong>Email: </strong>{{ aux.email }}	   	   
 	   	    <strong>Privado: </strong>	   	    
 	   	    {% if aux.usuarioperfil.privacidad %}Si <br>
-   	        	{% for campo in persona %}
-   	        		{% if campo.username = usuario.username  %}
-   	        <stron>AMIGO</stron> 
-   	        </p>	
+	   	        </p>	
    		</div> 	  
-   		
-		<hr>
+   	    {% for campo in persona %}
+   	    	{% if campo.username = usuario.username  %}
+   	    <hr>
 		<h3>Mis amigos</a></h3>
 		<div>
 			<ul>
@@ -60,15 +57,12 @@
 			
 			{% else %}
 			
-			 </p>	
-   		</div> 
-   		<hr>	
-		
+			 
+   		
 	    	{% endif %}
 	    	
         	{% endfor %}	   	        
-    	 	{% else %}No<br>	
-			 	<stron>--</stron> 
+    	 	{% else %}No<br>				 
 				</ul>
 			</div>
 			

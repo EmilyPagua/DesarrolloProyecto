@@ -1,4 +1,5 @@
 #coding=utf-8
+import re
 from django.http import HttpResponse,HttpResponseRedirect
 from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404
@@ -28,9 +29,6 @@ def prueba(request,id_album):
     infile.close() 
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
 
-	        
-  
-  
 
 #---------------- I N S T A G R A M------------------
 #hashtag 
@@ -75,13 +73,27 @@ def guardarFoto(request,id_album):
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     if request.method == 'POST':
-       outfile.write('guardarFoto -- GUARDANDO FOTOS EN UN ARREGLO PARA SER GUARDADAS EN EL MODEL CONTENIDO\n')
-       imagenes = request.POST.getlist('imagenes[]')
-       
+        outfile.write('guardarFoto -- GUARDANDO FOTOS EN UN ARREGLO PARA SER GUARDADAS EN EL MODEL CONTENIDO\n')
+        imagenes = request.POST.getlist('imagenes[]')
+     	videos = request.POST.getlist('videos[]')
+
     for imagen in imagenes: 
-       contenido= Contenido(urlfoto=imagen,fkalbum=albu)
-       outfile.write('guardarFoto -- GUARDANDO QUE SE OBTUVIERON DEL INSTAGRAM\n')
-       contenido.save()     
+      
+        if re.match("http://api.soundcloud", imagen):
+   	        print "audio----"
+   	        contenido= Contenido(urlaudio=imagen,fkalbum=albu)       
+
+        if re.match("http://distilleryimage", imagen):
+   	        print "imagen"
+   	        contenido= Contenido(urlfoto=imagen,fkalbum=albu)       
+   	        
+        outfile.write('guardarFoto -- GUARDANDO QUE SE OBTUVIERON DEL INSTAGRAM\n')
+        contenido.save()     
+        
+    for video in videos:   
+        contenido2= Contenido(urlvideo=video,fkalbum=albu)
+        outfile.write('guardarFoto -- GUARDANDO VIDEOS QUE SE OBTUVIERON DE YOUTUBE\n')
+        contenido2.save() 
     
     outfile.close()
     return HttpResponse(status=200) 
@@ -101,12 +113,14 @@ def Nolike(request,id_comentario):
     contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
-    cantidadLike = Like.objects.all()   
+    cantidadLike = Like.objects.all() 
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=album.id)  
     count = Like.objects.filter(fkcomentario = comentario, userLike=usuario)
     if count:
     	for aux in count: 
             aux.delete()    	
-    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike,'contenidofoto':contenidofoto , 'contenidoaudio':contenidoaudio }
     outfile.write('LikeComentario - OBTENIENDO USUARIO QUE HIZO LIKE\n')
     outfile.write('LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE\n')
     outfile.close()
@@ -121,49 +135,57 @@ def borrarComentario(request,id_comentario):
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     outfile.write('borrarComentario - BORRANDO COMENTARIO\n')
     outfile.write('borrarComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE\n')
-    outfile.close()
-    print "Id comentario"
-    print id_comentario
-    print "Borrando comentario"
+    outfile.close()    
     comentario = get_object_or_404(Comentario, id=id_comentario)
     album = Album.objects.get(id=comentario.fkalbum.id)
     count = Comentario.objects.get(id=id_comentario)
-    print count.descripcion 
     count.delete()    	        		    
     albumes = Album.objects.filter(id=album.id)    
     contenido = Contenido.objects.filter(fkalbum=album.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=album.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=album.id).count()          
-    cantidadLike = Like.objects.all()       
-    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
+    cantidadLike = Like.objects.all()    
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=album.id)  
+       
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike,'contenidofoto':contenidofoto ,'contenidoaudio':contenidoaudio }
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
 
 
 #Enviar like comentario
 @login_required
-def likeComentario(request,id_comentario):    
+def likeComentario(request,id_comentario):        
     usuario = request.user
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     comentario = get_object_or_404(Comentario, id=id_comentario)
     album = Album.objects.get(id=comentario.fkalbum.id)
     albumes = Album.objects.filter(id=album.id)
-    usu = User.objects.get(id= comentario.fkalbum.fkusuario.id )
+    usu = User.objects.get(id= usuario.id )
     contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
     cantidadLike = Like.objects.all()   
     count = Like.objects.filter(fkcomentario = comentario, userLike=usuario)
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=album.id)        
     if count:
     	for aux in count: 
             aux.delete()    	
     		
     Liked = Like(fkcomentario=comentario, userLike=usuario,like=True)        
-    Liked.save()           
+    Liked.save() 
+    #import pdb; pdb.set_trace()          
     l = Like.objects.get(fkcomentario = comentario, userLike=usuario)
     k = User.objects.get(id=album.fkusuario.id)
-    b = Historial(usuario=k, accion='like',fklike=l)
+    #llenar historial
+    b = Historial(usuario=usu, accion='like',fklike=l)
     b.save()
-    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
+    #llenar notificacion
+    if not re.match(k.username, usu.username):    	
+    	c = Notificacion(usuario=k, historia=b, descripcion ='Le dio like a tu Comentario: ' + comentario.descripcion)
+        c.save()
+    
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike, 'contenidofoto':contenidofoto , 'contenidoaudio':contenidoaudio }
     outfile.write('LikeComentario - OBTENIENDO USUARIO QUE HIZO LIKE\n')
     outfile.write('LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE\n')
     outfile.close()
@@ -178,6 +200,9 @@ def EscribirReplicaComentario(request,id_comentario):
     outfile.write('EscribirReplicaComentario -- OBTENIENDO EL ID DEL USUARIO QUE QUIERE REALIZAR UNA REPLICA EN ALGUN COMENTARIO\n')
     comentario = get_object_or_404(Comentario, id=id_comentario)        
     album = Album.objects.get(id=comentario.fkalbum.id)
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=album.id)  
+    
     if request.method == 'POST':         
         formulario = RegistroComentario(request.POST)
         if formulario.is_valid():
@@ -190,7 +215,7 @@ def EscribirReplicaComentario(request,id_comentario):
     cantidadComentario = Comentario.objects.filter(fkalbum=album.id).count()          
     cantidadLike = Like.objects.all() 
     outfile.write('EscribirReplicaComentario -- OBTENIENDO LAS CONTENIDO, USUARIO, ALBUM, COMENTARIO Y LIKE PARA IR A DETALLEALBUM\n')   
-    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike }
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike, 'contenidofoto':contenidofoto, 'contenidoaudio':contenidoaudio }
     outfile.close()
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
         
@@ -223,9 +248,7 @@ def comentario_Mio(request):
 @login_required
 def misComentarios(request,id_album):
     usuario = request.user        
-    usu = User.objects.get(id=usuario.id)
-    
-    #import pdb; pdb.set_trace()     
+    usu = User.objects.get(id=usuario.id)        
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.get(id=albu.id)    
     if request.method == 'POST':         
@@ -237,8 +260,10 @@ def misComentarios(request,id_album):
             albumes = Album.objects.filter(id=albu.id)
             contenido = Contenido.objects.filter(fkalbum=albu.id)
             comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
-            catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()           
-            contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
+            cantidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()           
+            contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=albu.id)
+            contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=albu.id)      
+            contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'cantidadComentario':cantidadComentario, 'contenidofoto':contenidofoto, 'contenidoaudio':contenidoaudio  }
             return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))                
             
     contexto = {'usuario' : usuario, 'comentario':comentarioPersona() }
@@ -275,7 +300,7 @@ def registro_usuario(request):
     if request.method == 'POST':
         formulario = RegistroUsuario(request.POST, request.FILES)
         if formulario.is_valid():	        
-	        #import pdb; pdb.set_trace()
+
 	        contusu = User.objects.filter(username=request.POST['usuario']).count()	        
 	        if contusu:	            
 	            mensaje = "El usuario ya existe, ingrese otro nombre de usuario."
@@ -383,12 +408,14 @@ def detalle_album(request,id_album):
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.filter(id=albu.id)
 
-    contenido = Contenido.objects.filter(fkalbum=albu.id)
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=albu.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=albu.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()                    
     cantidadLike = Like.objects.all() 
+    
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
-    outfile.write('Detalle_album -- SE MUESTRA UN ALBUM EN OARTICULAR, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS\n')
+    outfile.write('Detalle_album -- SE MUESTRA UN ALBUM EN PARTICULAR, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS\n')
     outfile.close()
    
 
@@ -399,12 +426,12 @@ def detalle_album(request,id_album):
             'descripcion': albu.descripcion,
             'privacidad' : albu.privacidad,           
    	    }
-        contexto = {'formulario': RegistroAlbum(initial=form_data), 'usuario': usuario, 'albu': albu}
+        contexto = {'formulario': RegistroAlbum(initial=form_data), 'usuario': usuario, 'albu': albu, 'contenidofoto':contenidofoto, 'contenidoaudio':contenidoaudio }
         return render_to_response('albumModificar.html',context_instance=RequestContext(request, contexto))    
     
     #Ver album, ver sus fotos y comentarios
     if 'ver' in request.POST:       
-        contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario,'cantidadLike':cantidadLike  }
+        contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario, 'cantidadLike':cantidadLike, 'contenidoaudio':contenidoaudio, 'contenidofoto' : contenidofoto,  }
         return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto)) 
     
     #Agregar fotos al album
@@ -432,12 +459,41 @@ def detalle_album2(request,id_album):
     usuario = request.user
     albu = get_object_or_404(Album, id=id_album)
     albumes = Album.objects.filter(id=albu.id)
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=albu.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=albu.id)    
     contenido = Contenido.objects.filter(fkalbum=albu.id)
-    comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)      
-    catidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()           
-    contexto = {'usuario' : usuario, 'albumes' : albumes, 'contenido' : contenido, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'catidadComentario':catidadComentario  }
+    comentarioAlbum = Comentario.objects.filter(fkalbum=albu.id)    
+    cantidadLike = Like.objects.all()   
+    cantidadComentario = Comentario.objects.filter(fkalbum=albu.id).count()           
+    contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum, 'formulario' : RegistroComentario(),'cantidadComentario':cantidadComentario, 'contenidoaudio':contenidoaudio, 'contenidofoto' : contenidofoto ,'cantidadLike':cantidadLike }
     return render_to_response('detalleAlbum.html',context_instance=RequestContext(request, contexto))    
 	
+
+#eliminar contenido: foto, audio y video
+@login_required
+def eliminarContenido(request,id_contenido):   
+    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
+    outfile.write('eliminarContenido -- OBTENIENDO USUARIO Y EL ID DE CONTENIDO QUE VA A ELIMINAR\n')    
+    usuario = request.user
+    contenido = get_object_or_404(Contenido, id=id_contenido)
+    print id_contenido
+    print contenido.fkalbum
+    albu = Album.objects.get(id=contenido.fkalbum.id) 
+    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=albu.id)
+    contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=albu.id)
+    form_data = {
+            'nombre': albu.nombre,
+            'descripcion': albu.descripcion,
+            'privacidad' : albu.privacidad,           
+   	    }
+    
+    contenido.delete()
+    
+    contexto = {'formulario': RegistroAlbum(initial=form_data), 'usuario': usuario, 'albu': albu, 'contenidofoto':contenidofoto, 'contenidoaudio':contenidoaudio }
+    outfile.write('eliminarContenido -- Elimando el contenido\n')
+    outfile.close()
+    return render_to_response('albumModificar.html',context_instance=RequestContext(request, contexto))    
+    
 
 #---------------- N O T I F I C A C I O N E S ------------------
 

@@ -14,8 +14,34 @@
 {% for campo in historial %} 
 	<div class="post">						
 		{% if campo.accion = 'Nuevo album' %}
-		<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3></a>
-		<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> Ha creado un nuevo album<hr>
+
+		
+		{% if campo.usuario.usuarioperfil.privacidad %}
+		<script> var num= </script>
+
+		{% for person in persona %} 					
+		{% if person.username = campo.usuario.username %}
+		<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+		<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+		{% elif person.username = aux.fkcomentario.userComentador.username %}					
+		<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+		<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+		{% else %}	
+		<script>  num='no' </script>
+		<script> document.write(num)</script> 
+		
+		{% endif %}														
+		{% endfor %} 
+			
+		<script>  if (num='no')	{ document.write("es imposible") } </script> 
+		
+		
+		{% else %}	
+		<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+		<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" />  							
+		{% endif%}
+		
+		 Ha creado un nuevo album<hr>
 		<!-- shadow Nuevo album-->
 		<div class="thumb-shadow">
 			<!-- post-thumb -->
@@ -68,8 +94,23 @@
 				{% elif campo.accion = 'comentario'  %}	
 					{% for aux in comentario %}
 					{% if campo.fkcomentario.id = aux.id %}	
-				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
-				<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " with="55" height="55" />
+				
+				{% if campo.usuario.usuarioperfil.privacidad %}
+					{% for person in persona %} 					
+					{% if person.username = campo.usuario.username %}
+					<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+					{% elif person.username = aux.fkcomentario.userComentador.username %}					
+					<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+					{% endif %}														
+					{% endfor %} 	
+					{% else %}	
+					<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" />  							
+					{% endif%}
+				
+				
 				<!-- shadow Nuevo Comentar Album-->
 				<div class="thumb-shadow"> 
 					<!-- post-thumb -->
@@ -80,8 +121,17 @@
 					<div class="the-excerpt">
 					<hr>							
 					<h4>{{aux.userComentador.first_name}} {{ aux.userComentador.last_name}}, ha comentado tu album</h4>
-					Nombre del Album: {{ aux.fkalbum.nombre}}
-				
+					
+					{% if aux.fkalbum.privacidad %}
+				{% for person in persona %} 
+					{% if person.username = campo.usuario.username  %}
+						Album :<strong>
+						<a href="{% url 'detalleAlbum2' aux.fkalbum.id %}">{{ aux.fkalbum.nombre}} </strong></a><br>
+					{% endif %}									
+				{% endfor %} 	
+				{% else %}
+					Album :<a href="{% url 'detalleAlbum2' aux.fkalbum.id %}"><strong>{{ aux.fkalbum.nombre}} </strong></a><br>								
+				{% endif%}
 					</div>	
 					{% endif %}
 					{% endfor %} 
@@ -89,12 +139,26 @@
 				<!-- ENDS shadow Comentar Album-->
 				
 			
-			 {% elif campo.accion = 'like'  %}	
-			  
-			  
-			  {% for aux in liked %}
+			 {% elif campo.accion = 'like'  %}				  
+			  	{% for aux in liked %}
 					{% if campo.fklike.id = aux.id %}	
-				<h3>{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</h3>
+					
+					{% if campo.usuario.privacidad %}
+					{% for person in persona %} 					
+					{% if person.username = campo.usuario.username %}
+					<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+					{% elif person.username = aux.fkcomentario.userComentador.username %}					
+					<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" /> 
+					{% endif %}														
+					{% endfor %} 	
+					{% else %}	
+					<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{campo.usuario.last_name}} {{campo.usuario.first_name}}</h3></a>
+					<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}}" with="55" height="55" />  							
+					{% endif%}
+					
+				
 				<!-- shadow Nuevo Comentar Album-->
 				<div class="thumb-shadow"> 
 					<!-- post-thumb -->
@@ -102,17 +166,32 @@
 					<!-- ENDS post-thumb --> 		
 					<div class="the-excerpt">
 					<hr>							
-					<h4>{{aux.userLike.first_name}} {{ aux.userLike.last_name}}, ha hecho like sobre tu comentario</h4>
-					 {{ aux.fkcomentario.descripcion}} <br>Del Album: {{ aux.fkcomentario.fkalbum.nombre}}						
+					<h4>Ha hecho like sobre el comentario de: {{aux.fkcomentario.userComentador.last_name}} {{aux.fkcomentario.userComentador.first_name}} <br>
+					Comentario: {{ aux.fkcomentario.descripcion}} <br>
+					 
+					{% if aux.fkcomentario.fkalbum.privacidad %}
+					{% for person in persona %} 					
+					{% if person.username = campo.usuario.username %}
+					Album :
+					<a href="{% url 'detalleAlbum2' aux.fkcomentario.fkalbum.id %}">{{ aux.fkcomentario.fkalbum.nombre}} </a><br>
+					{% elif person.username = aux.fkcomentario.userComentador.username %}
+					Album :
+					<a href="{% url 'detalleAlbum2' aux.fkcomentario.fkalbum.id %}">{{ aux.fkcomentario.fkalbum.nombre}} </a><br>
+					{% endif %}									
+					
+					{% endfor %} 	
+					{% else %}	
+					Album :<a href="{% url 'detalleAlbum2' aux.fkcomentario.fkalbum.id %}"><strong>{{ aux.fkcomentario.fkalbum.nombre}}</a><br>								
+					{% endif%}</h4>									 
 					</div>	
 					{% endif %}
 					{% endfor %} 
 				</div>
 			 
 			  
-			  </div>
+			 
 			  {% endif %}
-			
+			 </div>
 			<!-- ENDS post -->
 						
 			{% endfor %}
