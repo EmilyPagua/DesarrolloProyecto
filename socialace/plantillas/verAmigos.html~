@@ -1,5 +1,7 @@
 {% extends 'base.html'%}
 {% block content%}
+
+
 <!-- title -->
 <div id="page-title">
 	<span class="title">Mis amigos</span>
@@ -9,12 +11,31 @@
 <!-- gallery-->
 <ul id="portfolio-list" class="gallery three-cols">
    {% for campo in persona %}
+   <script language="Javascript"> 
+	function confirmar(id){ 
+	var ids = id
+	confirmar=confirm("Deseas eliminar este amigo"); 
+	if (confirmar) 
+	// si pulsamos en aceptar	
+	//alert(id); 
+	window.location.href = id;
+	else 
+	// si pulsamos en cancelar
+	
+	window.location.href = "{% url 'verAmigos' %}";
+	//alert('No se eliminara'); 
+	} 
+	</script>
 	<li class="pink">
-		<a href="{% url 'perfilAmigo' campo.id %}" rel="group1"  title="Direccion:{{ campo.usuarioperfil.direccion }} 
+		<a href="{% url 'perfilAmigo' campo.id %}" rel="group1"  title="{{campo.id}} Direccion:{{ campo.usuarioperfil.direccion }} 
 	    Correo: {{ campo.email }}
-	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}" >
-		{{ campo.first_name }} {{ campo.last_name }}
-		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  with="300" height="250" ></a>
+	    Fecha de Nacimiento: {{ campo.usuarioperfil.fechanacimiento }}">
+		<img src="{{STATIC_URL}}{{campo.usuarioperfil.foto}}"  width="250" height="250" >
+		</a>
+		<a rel="nofollow" href="javascript:confirmar('{% url 'borrarAmigo' campo.id %}')"> 
+			<img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" height="33"></img> 
+		</a>
+		<h4>{{ campo.first_name }} {{ campo.last_name }}</h4>
 	</li>
 	{% endfor %}   	
 </ul>

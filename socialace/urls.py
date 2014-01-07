@@ -20,7 +20,8 @@ urlpatterns = patterns('',
     
     url(r'^registroAlbum/$', 'polls.views.registro_album',name ='registroAlbum'),    
     url(r'^verAlbumes/$', 'polls.views.ver_albumes',name ='verAlbumes'),        
-    url(r'^detalleAlbum/(?P<id_album>\d+)/$', 'polls.views.detalle_album', name='detalleAlbum'), 
+    url(r'^detalleAlbum/(?P<id_album>\d+)/$', 'polls.views.detalle_album', name='detalleAlbum'),
+    url(r'^ModificarAlbum/(?P<id_album>\d+)/$', 'polls.views.ModificarAlbum', name='ModificarAlbum'),  
 
     url(r'^detalleAlbum2/(?P<id_album>\d+)/$', 'polls.views.detalle_album2', name='detalleAlbum2'), 
     url(r'^registroAmigo/$', 'polls.views.registro_amigo',name ='registroAmigo'),
@@ -29,7 +30,8 @@ urlpatterns = patterns('',
     url(r'^buscar/$', 'polls.views.busqueda',name ='busqueda'),
     url(r'^perfilAmigo/(?P<id_usuario>\d+)/$', 'polls.views.ver_PerfilAmigo',name ='perfilAmigo'),    
     url(r'^misComentarios/(?P<id_album>\d+)/$', 'polls.views.misComentarios',name ='misComentarios'),
-    
+    url(r'^borrarAmigo/(?P<id_amigo>\d+)/$', 'polls.views.borrarAmigo',name ='borrarAmigo'),
+	
     url(r'^Comentarios/$', 'polls.views.comentario_Mio',name ='comentar'),
     url(r'^replicarComentario/(?P<id_comentario>\d+)/$', 'polls.views.replicarComentario',name ='replicarComentario'),
     url(r'^enviarReplicaComentario/(?P<id_comentario>\d+)/$', 'polls.views.EscribirReplicaComentario',name ='EscribirReplicaComentario'),

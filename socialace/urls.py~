@@ -29,7 +29,8 @@ urlpatterns = patterns('',
     url(r'^buscar/$', 'polls.views.busqueda',name ='busqueda'),
     url(r'^perfilAmigo/(?P<id_usuario>\d+)/$', 'polls.views.ver_PerfilAmigo',name ='perfilAmigo'),    
     url(r'^misComentarios/(?P<id_album>\d+)/$', 'polls.views.misComentarios',name ='misComentarios'),
-    
+    url(r'^borrarAmigo/(?P<id_amigo>\d+)/$', 'polls.views.borrarAmigo',name ='borrarAmigo'),
+	
     url(r'^Comentarios/$', 'polls.views.comentario_Mio',name ='comentar'),
     url(r'^replicarComentario/(?P<id_comentario>\d+)/$', 'polls.views.replicarComentario',name ='replicarComentario'),
     url(r'^enviarReplicaComentario/(?P<id_comentario>\d+)/$', 'polls.views.EscribirReplicaComentario',name ='EscribirReplicaComentario'),
@@ -42,7 +43,7 @@ urlpatterns = patterns('',
     url(r'^notificacioneAprobadas/(?P<id_notificacion>\d+)/(?P<id_amigo>\d+)$', 'polls.views.notificaciones_aprobadas',name ='notificacionesAprobadas'),
     url(r'^MisNotificaciones/$', 'polls.views.notificaciones_aceptadas',name ='misNotificaciones'),
     
-    url(r'^eliminarContenido/(?P<id_album>\d+)/$', 'polls.views.eliminarContenido',name ='eliminarContenido'),
+    url(r'^eliminarContenido/(?P<id_contenido>\d+)/$', 'polls.views.eliminarContenido',name ='eliminarContenido'),
     url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.agregarFoto',name ='agregarFoto'),
     url(r'^buscarHashtag/(?P<id_album>\d+)/$', 'polls.views.buscarHashtag',name ='buscarHashtag'),
     url(r'^guardarFoto/(?P<id_album>\d+)/$', 'polls.views.guardarFoto',name ='guardarFoto'),

@@ -63,26 +63,42 @@
 	<li><h3>Contenifo del Album, </h3><h4>Haga click en la X si desea eliminar algun elemento del album</h4></li>	
 </ul>
 <!-- ENDS filter -->
+ <script language="Javascript"> 
+	function confirmar(id){ 
+	var ids = id
+	confirmar=confirm("Deseas eliminar este contenido"); 
+	if (confirmar) 
+	// si pulsamos en aceptar		
+	window.location.href = id;
+	else 
+	window.location.href = "{% url 'ModificarAlbum' albu.id %}";
+	//alert('No se eliminara'); 
+	} 
+	</script>
 <!-- gallery-->
-<ul id="portfolio-list" class="gallery three-cols">
-	{% for foto in contenidofoto %}
-	<form enctype="multipart/form-data" name="form3" method="post" action="." onsubmit="return validarForm(this);">
-		<li class="pink">
-			<a href="{{foto.urlfoto}}" rel="group1" class="fancybox" title="{{foto.urlfoto}}">
-			<img src="{{foto.urlfoto}}" alt="Pic" width="250" heigth="250"></a>
-			<a rel="nofollow" href="{% url 'eliminarContenido' foto.id %}"> <h7> <img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" heigth="33"></img></h7> </a>
-		</li>
-	</form> 	
-	 {% endfor %}	
+<ul id="portfolio-list" class="gallery three-cols">		
+	 {% for video in contenidovideo %}	 
+	 <li class="pink">
+		<a href="{{video.urlvideo}}" rel="group1" class="fancybox" title="{{video.urlvideo}}">
+		<iframe width="260" heigth="260" scrolling='no' frameborder='no' src='{{video.urlvideo}}&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe></a>
+		<a rel="nofollow" href="{% url 'eliminarContenido' video.id %}"><img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" height="33"></img></a>
+	</li>	 
+	 {% endfor %}
 	 {% for audio in contenidoaudio %}	 
 	 <li class="pink">
 		<a href="{{audio.urlaudio}}" rel="group1" class="fancybox" title="{{audio.urlaudio}}">
 		<iframe width="260" heigth="260" scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url="{{audio.urlaudio}}&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe></a>
-		<a rel="nofollow" href="{% url 'eliminarContenido' audio.id %}"> <h7> <img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" heigth="33"></img></h7> </a>
+		<a rel="nofollow" href="{% url 'eliminarContenido' audio.id %}"><img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" height="33"></img></a>
 	</li>	 
+	 {% endfor %}
+	 {% for foto in contenidofoto %}
+	<li class="pink">
+		<a href="{{foto.urlfoto}}" rel="group1" class="fancybox" title="{{foto.urlfoto}}">
+		<img src="{{foto.urlfoto}}" alt="Pic" width="250" height="250"></a>
+		<a rel="nofollow" href="javascript:confirmar('{% url 'eliminarContenido' foto.id %}')"> 
+			<img class="alignleft" alt="cameraplus32.png" title="Eliminar" src="{{STATIC_URL}}img/mono-icons/stop32.png"  width="33" height="33"></img></a>
+	</li>
 	 {% endfor %}	
-
-				
 </ul>
 <!-- ENDS gallery -->	
 

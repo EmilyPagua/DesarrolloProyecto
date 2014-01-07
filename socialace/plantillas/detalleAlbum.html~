@@ -30,8 +30,7 @@
         $('#carouselh').jsCarousel({ onthumbnailclick: function(src) { alert(src); }, autoscroll: false, circular: true, masked: false, itemstodisplay: 5, orientation: 'h' });
         $('#carouselhAuto').jsCarousel({ onthumbnailclick: function(src) { alert(src); }, autoscroll: true, masked: true, itemstodisplay: 5, orientation: 'h' });
 
-    });       
-        
+    });               
     </script>
 
 
@@ -55,23 +54,32 @@
             <div id="demo-wrapper">           
                 <div id="demo-right">                    
                     <div id="hWrapperAuto">
-                        <div id="carouselhAuto">
-                        	{% for campo in contenidofoto %}
-							{% if  campo.urlfoto %}
-			          		<div>
-                                <img alt="campo.urlfoto" src="{{campo.urlfoto}}" /><br />
-                                <span class="thumbnail-text">Image Text</span></div>
+                        <div id="carouselhAuto">							                        	
+                        	{% for video in contenidovideo %}
+							{% if  video.urlvideo %}
+			          		<div>                                
+                                 <iframe width="213" height="224" src="{{video.urlvideo}}" data-fake="images/slides/up-official-trailer-fake.jpg" frameborder="0" allowfullscreen></iframe>
+                                 <span class="thumbnail-text">Video</span>
+							</div>
 			          		{% endif %}
 			          		{% endfor %}
 			          					          		
                             {% for campoaudio in contenidoaudio %}
                             {% if  campoaudio.urlaudio %}	
                             <div>
-                                 <iframe width='100%' height='120%' scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url="{{campoaudio.urlaudio}}&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe>
-                                 <span class="thumbnail-text">Image Text</span></div>					
+                                 <iframe width="213" height="224" scrolling='no' frameborder='no' src='https://w.soundcloud.com/player/?url="{{campoaudio.urlaudio}}&amp;color=a05828&amp;auto_play=false&amp;show_artwork=true'></iframe>
+                                 <span class="thumbnail-text">Audio</span>
+							</div>					
 			        		{% endif %}	
-							{% endfor %}					               
-                                                    
+							{% endfor %}
+							{% for campo in contenidofoto %}
+							{% if  campo.urlfoto %}
+			          		<div>
+                                <img alt="campo.urlfoto" src="{{campo.urlfoto}}" /><br />
+                                <span class="thumbnail-text">Image Text</span>
+							</div>
+			          		{% endif %}							
+			          		{% endfor %}                                                    
                         </div>
                     </div>
                 </div>
@@ -86,7 +94,8 @@
 <div id="posts" class="single">	
 	<!-- Comments-Block -->
 	<div id="comments-block">
-		<div class="n-comments"> {{ cantidadComentario  }} </div> <div class="n-comments-text">Comentarios</div>
+		<div class="n-comments"> {{ cantidadComentario  }} </div> 
+		<div class="n-comments-text">Comentarios</div>
 			<!-- comments list -->
 			<ul class="commentlist">
 				{% for nivel in comentarioAlbum %}
@@ -108,7 +117,7 @@
 							<script>  num=num+1 </script>
 							{% endif %}
 							{% endfor %}
-							<script> document.write(num)</script> </5></p>		
+							<script> document.write(num)</script> </h5></p>		
 							<div class="reply">
 								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel.id %}">Reply</a>
 							</div>
@@ -137,7 +146,7 @@
 								<img alt='' src="{{STATIC_URL}}{{nivel1.userComentador.usuarioperfil.foto }}" class='avatar avatar-60 photo' height='60' width='60' /> </img>
 								<cite class="fn">{{ nivel1.userComentador.last_name }} {{ nivel1.userComentador.first_name }}</cite><span class="says"> escribió:</span>
 							</div>										
-							<p>{{ nivel1.descripcion }}  </p>					
+							<p>{{ nivel1.descripcion }}  				
 							<h5>like:
 							<script> var num=0 </script>
 							{% for aux1 in cantidadLike %}
@@ -145,7 +154,7 @@
 							<script> num=num+1 </script>
 							{% endif %}
 							{% endfor %}
-							<script>  document.write(num)</script> </5></p>		
+							<script>  document.write(num)</script> </h5></p>		
 							<div class="reply">
 								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel1.id %}">Reply</a>
 							</div>
@@ -162,8 +171,7 @@
 							</div>									
 						</div>
 					</li>
-				</form> 
-			
+				</form> 			
 				<!-- NIVEL 2 -->						
 				{% for nivel2 in comentarioAlbum %}							
 				{% if  nivel2.replica.id = nivel1.id %}
@@ -184,7 +192,7 @@
 							<script> num=num+1 </script>
 							{% endif %}
 							{% endfor %}
-							<script>  document.write(num)</script> </5></p>		
+							<script>  document.write(num)</script> </h5></p>		
 							<div class="reply">
 								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel2.id %}">Reply</a>
 							</div>
@@ -223,8 +231,7 @@
 							<script>  num=num+1 </script>
 							{% endif %}
 							{% endfor %}
-							<script>  document.write(num)</script> </5>
-							</p>		
+							<script>  document.write(num)</script> </h5></p>		
 							<div class="reply">
 								<a class='comment-reply-link' href="{% url 'replicarComentario' nivel3.id %}">Reply</a>
 							</div>
@@ -264,7 +271,7 @@
 							<script>  num=num+1 </script>
 							{% endif %}
 							{% endfor %}
-							<script>  document.write(num)</script> </5> </p>
+							<script>  document.write(num)</script> </h5> </p>
 							{% if nivel4.userComentador.id = usuario.id %}
 							<div class="like">
 							   <a class='comment-reply-link' href="{% url 'borrarComentario' nivel4.id %}" >Borrar</a>
@@ -320,9 +327,9 @@
 				</div>
 			</div>
 			<!-- ENDS comments form -->	
-		</div>
-		<!-- ENDS Comments-block -->				
 	</div>
+	<!-- ENDS Comments-block -->				
+</div>
 <!-- ENDS Posts -->	
 	
 {% endblock %}

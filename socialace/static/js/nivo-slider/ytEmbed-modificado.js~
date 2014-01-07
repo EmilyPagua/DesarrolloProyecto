@@ -195,12 +195,14 @@ var ytEmbed = {
                 span.appendChild(img);
                 var em = document.createElement('em');
                 span.appendChild(em);
+
+		
                 
                 // Checkbox...
                 var checkbox = document.createElement('input');
                 checkbox.setAttribute('type', 'checkbox');
                 checkbox.setAttribute('name', 'selectedVideos[]');
-                checkbox.setAttribute('value',  'http://www.youtube.com/profile?user=' + entry.video  );
+                checkbox.setAttribute('value', 'http://www.youtube.com/embed/' + json.data.items[i].id + '?autoplay=2&modestbranding=1');
 
                 // uploaded
                 if (this.cfg.layout == 'thumbnails') {
@@ -267,31 +269,12 @@ var ytEmbed = {
                             cfg: cfg
                         }));
                     }
-                    a.innerHTML = 'Load next...';
+                    a.innerHTML = 'Proximos...';
                     li.appendChild(a); //do through bind
                     pul.appendChild(li);
                 }
 
-                if (json.data.startIndex > 1) {
-                    var li = document.createElement('li');
-
-                    var a = document.createElement('a');
-                    a.setAttribute('class', 'ytPrev');
-                    a.style.cursor = 'pointer';
-
-                    if (a.addEventListener) {
-                        a.addEventListener('click', ytEmbed.Anterior.bind(this, {
-                            cfg: cfg
-                        }), false);
-                    } else if (a.attachEvent) {
-                        a.attachEvent('onclick', ytEmbed.Anterior.bind(this, {
-                            cfg: cfg
-                        }));
-                    }
-                    a.innerHTML = 'Load previous...';
-                    li.appendChild(a);
-                    pul.appendChild(li);
-                }
+                
 
                 div.appendChild(pul);
             }
@@ -308,7 +291,7 @@ var ytEmbed = {
 
         var hold = document.createElement('div');
         hold.className = 'ytPlayer';
-
+	
         var iframe = document.createElement('iframe');
         iframe.setAttribute('id', cfg.block + 'Player');
         iframe.setAttribute('width', cfg.width);
