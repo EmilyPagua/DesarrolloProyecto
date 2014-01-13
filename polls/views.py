@@ -443,7 +443,7 @@ def eliminarContenido(request,id_contenido):
     usuario = request.user
     contenido = get_object_or_404(Contenido, id=id_contenido)
     albu = Album.objects.get(id=contenido.fkalbum.id) 
-    outfile.write('eliminarContenido --  USER:'+ usuario.username +' NAME:'+ usuario.first_name + ' LASTNAME:' + usuario.last_name + ',  SE ELIMINARA EL CONTENDO '+contenido.id+' DEL ALBUM: '+albu.nombre+'\n')    
+    outfile.write('eliminarContenido --  USER:'+ usuario.username +' NAME:'+ usuario.first_name + ' LASTNAME:' + usuario.last_name + ',  SE ELIMINARA EL CONTENDO  DEL ALBUM: '+albu.nombre+'\n')    
 
     contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=albu.id)
     contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=albu.id)
