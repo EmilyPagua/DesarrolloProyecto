@@ -56,6 +56,8 @@ class RegistroUsuario(forms.Form):
         if foto:
             perfil.foto = foto
         perfil.save()
+        usuario.usuarioperfil.amigos.add(usuario)
+        usuario.save()
 
         
 class EditarUsuario(forms.Form):    
@@ -92,7 +94,6 @@ class EditarUsuario(forms.Form):
         
     def modificar_registro(self, usuario):
         (self.cleaned_data['clave'])        
-        print "en el modificar_registro"
         usuario.first_name = self.cleaned_data['nombre']
         usuario.last_name = self.cleaned_data['apellido']
         usuario.usuarioperfil.fechanacimiento = self.cleaned_data['nacimiento']
@@ -102,7 +103,6 @@ class EditarUsuario(forms.Form):
         usuario.usuarioperfil.privacidad = self.cleaned_data['privacidad']
         #foto = self.cleaned_data.get('foto', None)
         foto = self.cleaned_data['foto']   
-        print foto
         if foto:
             usuario.usuarioperfil.foto = foto
         usuario.usuarioperfil.save()
@@ -155,7 +155,6 @@ class RegistroAmigo(forms.Form):
         
     def procesar_notificacion(self, usuario):      	
         id_amigo = self.cleaned_data['amigos']
-        #import pdb; pdb.set_trace()   
         print self.cleaned_data['amigos']    
         l = User.objects.get(username=id_amigo)
         k = User.objects.get(id=usuario.id)
@@ -166,13 +165,7 @@ class RegistroAmigo(forms.Form):
         #llenar notificacion
         c = Notificacion(usuario=l, historia=b, descripcion ='Amistad')
         c.save()
-       
 
-#ACOMODANDO
-    def procesar_amigo(self, usuario):        
-        k = User.objects.get(id=usuario.id)
-        id_amigo = self.cleaned_data['amigos']                   
-        l = User.objects.get(username=id_amigo)
         
        
 

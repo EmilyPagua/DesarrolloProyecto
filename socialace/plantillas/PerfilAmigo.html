@@ -9,95 +9,121 @@
 				
 <!-- page-content -->
 <div id="page-content">	
-
-		<h3>Datos Basicos</h3>
-		<div>
-			{% for aux in usu %}
+	<h3>Datos Basicos</h3>
+	<div>
+		{% for aux in usu %}
 			<p> <img src="{{STATIC_URL}}{{ aux.usuarioperfil.foto}}" alt="{{ aux.usuarioperfil.foto}}" with="50" height="50"/> 		
 			<strong>Nombre Completo:</strong>{{ aux.last_name}} {{ aux.first_name}}. <br>
-		    <strong>Mi direccion es:</strong> {{ aux.usuarioperfil.direccion}}. 
-		    <strong>Mi fecha de nacimiento es:</strong> {{ aux.usuarioperfil.fechanacimiento}}<br>
-	   	    <strong>Email: </strong>{{ aux.email }}	   	   
-	   	    <strong>Privado: </strong>	   	    
-	   	    {% if aux.usuarioperfil.privacidad %}Si <br>
-	   	        </p>	
-   		</div> 	  
-   	    {% for campo in persona %}
-   	    	{% if campo.username = usuario.username  %}
-   	    <hr>
-		<h3>Mis amigos</a></h3>
-		<div>
-			<ul>
-			{% if persona %}
-			{% for campo in persona %}
-				<li><img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="20" height="20"/> 					<strong>Nombre:</strong>{{ campo.last_name}} {{ campo.first_name}}. </li>
-			{% endfor %}
-			{% else %}
-			 	<li><strong>No tiene amigos asociados</strong></li>
-			{% endif %}	
-			</ul>
-		</div>
-		
-		<hr>
-		<h3>Mis Albumes</a></h3>
-		<div>
-			<ul>
-			{% if albumes %}
-			{% for campo in albumes %}
-			<li><img src="{{STATIC_URL}}{{ campo.foto}}" alt="{{ campo.foto}}" with="20" height="20"/> 		
-			<a href="{% url 'detalleAlbum2' campo.id %}"><strong>{{ campo.nombre}} </strong></a>{{ campo.descripcion}}. 
-			</li>
-			{% endfor %}
-			{% else %}
-			 	<li><strong>No tiene albumes asociados</strong></li>
-			{% endif %}	
-			</ul>
-		</div>	
-		
-			
-			{% else %}
-			
-			 
-   		
-	    	{% endif %}
-	    	
-        	{% endfor %}	   	        
-    	 	{% else %}No<br>				 
-				</ul>
-			</div>
-			
-		
+			<strong>Mi direccion es:</strong> {{ aux.usuarioperfil.direccion}}. 
+			<strong>Mi fecha de nacimiento es:</strong> {{ aux.usuarioperfil.fechanacimiento}}<br>
+			<strong>Email: </strong>{{ aux.email }}	   	   
+			<strong>Privado: </strong>	   	    
+			{% if aux.usuarioperfil.privacidad %}Si <br></p>				
+	</div> 	  
+				{% for campo in persona %}
+					{% if campo.username = usuario.username  %}
+						<hr>
+						<h3>Mis amigos</h3>
+						<div>
+							<ul>
+							{% if persona %}
+								{% for person in persona %}
+									{% if person.username = aux.username %}
+									{% else %}
+										<li>
+											<img src="{{STATIC_URL}}{{ person.usuarioperfil.foto}}" alt="{{ person.usuarioperfil.foto}}" width="20" height="20"/> 			
+											<strong>Nombre:</strong>{{ person.last_name}} {{ person.first_name}}. 
+										</li>
+									{% endif %}	
+								{% endfor %}
+							{% else %}
+								<li>
+									<strong>No tiene amigos asociados</strong>
+								</li>
+							{% endif %}	
+							</ul>
+						</div>
+						<hr>
+						<h3>Mis Albumes</h3>
+						<div>
+							<ul>
+								{% if albumes %}
+									{% for albu in albumes %}
+										<li>
+											<img src="{{STATIC_URL}}{{ albu.foto}}" alt="{{ albu.foto}}" width="20" height="20"/> 		
+											<a href="{% url 'detalleAlbum2' albu.id %}">
+												<strong>{{ albu.nombre}} </strong>
+											</a>{{ albu.descripcion}}. 
+										</li>
+									{% endfor %}
+								{% else %}
+									<li>
+										<strong>No tiene albumes asociados</strong>
+									</li>
+								{% endif %}	
+							</ul>
+						</div>
+					{% else %}		
+					{% endif %}					
+				{% endfor %}	   	        
+			{% else %}No<br>				 						
+</div>					
 				<hr>
 				<h3>Mis amigos</a></h3>
 				<div>
 					<ul>
-					{% if persona %}
-					{% for campo in persona %}
-						<li><img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" with="20" height="20"/> 			<strong>Nombre:</strong>{{ campo.last_name}} {{ campo.first_name}}. </li>
-					{% endfor %}
-					{% else %}
-					 	<li><strong>No tiene amigos asociados</strong></li>
-					{% endif %}	
+						{% if persona %}
+							{% for campo in persona %}
+								{% if campo.username = aux.username %}
+								{% else %}
+									<li>
+										<img src="{{STATIC_URL}}{{ campo.usuarioperfil.foto}}" alt="{{ campo.usuarioperfil.foto}}" width="20" height="20"/> 			
+										<strong>Nombre:</strong>{{ campo.last_name}} {{ campo.first_name}}. 
+									</li>
+								{% endif %}	
+							{% endfor %}
+						{% else %}
+							<li>
+								<strong>No tiene amigos asociados</strong>
+							</li>
+						{% endif %}	
 					</ul>
 				</div>
-		
+	
 				<hr>
-				<h3>Mis Albumes</a></h3>
+				<h3>Mis Albumes</h3>
 				<div>
 					<ul>
 					{% if albumes %}
-					{% for campo in albumes %}
-					<li><img src="{{STATIC_URL}}{{ campo.foto}}" alt="{{ campo.foto}}" with="20" height="20"/> 		
-					<a href="{% url 'detalleAlbum2' campo.id %}"><strong>{{ campo.nombre}} </strong></a>{{ campo.descripcion}}. 
-					</li>
-					{% endfor %}
+						{% for campo in albumes %}
+							{% if campo.privacidad %}
+								{% for per in persona %}
+									{% if per.username = aux.username %}
+										<li>
+											<img src="{{STATIC_URL}}{{ campo.foto}}" alt="{{ campo.foto}}" width="20" height="20"/> 		
+											<a href="{% url 'detalleAlbum2' campo.id %}">
+											<strong>{{ campo.nombre}} : </strong></a>{{ campo.descripcion}} 
+											<strong>Privado: Si </strong>
+										</li>
+									{% endif %}	
+								{% endfor %}
+							{% else %}
+								<li>
+									<img src="{{STATIC_URL}}{{ campo.foto}}" alt="{{ campo.foto}}" width="20" height="20"/> 		
+									<a href="{% url 'detalleAlbum2' campo.id %}">
+									<strong>{{ campo.nombre}} : </strong></a>{{ campo.descripcion}} 
+									<strong>Privado: No </strong>
+								</li>
+							{% endif %}	
+						{% endfor %}
 					{% else %}
-					 	<li><strong>No tiene albumes asociados</strong></li>
+						<li>
+							<strong>No tiene albumes asociados</strong>
+						</li>
 					{% endif %}	
 					</ul>
 				</div>	
-		{% endif %}
-		{% endfor %}	   
-						
+			{% endif %}
+		{% endfor %}	   				
 </div>						
 {% endblock %}

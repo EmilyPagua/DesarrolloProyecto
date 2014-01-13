@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8000/" />
+<title>RegistroUsuario</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">RegistroUsuario</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=Registro Usuario</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_usuario</td>
+	<td>daneyaga</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_clave</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nombre</td>
+	<td>Daney</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_apellido</td>
+	<td>Guarenas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nacimiento</td>
+	<td>02/01/1991</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_direccion</td>
+	<td>Los Teques</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_facebook</td>
+	<td>Daney Guarenas</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_correo</td>
+	<td>guarenasdaney@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_foto</td>
+	<td>/home/mily/Imágenes/daney.jpg</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=id_privacidad</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Sus datos fueron insertados con exito..!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_usuario</td>
+	<td>ana</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_clave</td>
+	<td>12345678</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nombre</td>
+	<td>Ana</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_apellido</td>
+	<td>Morales</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nacimiento</td>
+	<td>01/01/2014</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=id_nacimiento</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nacimiento</td>
+	<td>01/01/2000</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_direccion</td>
+	<td>Los Teques</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_facebook</td>
+	<td>Ana Morales</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_correo</td>
+	<td>anamorales@gmail.com</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_foto</td>
+	<td>/home/mily/Imágenes/lizbeth.jpg</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=id_privacidad</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>//button[@type='submit']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Sus datos fueron insertados con exito..!</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

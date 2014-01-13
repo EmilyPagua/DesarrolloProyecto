@@ -56,6 +56,8 @@ class RegistroUsuario(forms.Form):
         if foto:
             perfil.foto = foto
         perfil.save()
+        usuario.usuarioperfil.amigos.add(usuario)
+        usuario.save()
 
         
 class EditarUsuario(forms.Form):    
@@ -78,7 +80,7 @@ class EditarUsuario(forms.Form):
         self.fields['nacimiento'].widget.attrs = {'placeholder': 'nacimiento', 'class': 'datepicker form-control'}
         self.fields['direccion'].widget.attrs = {'placeholder': 'direccion', 'class': 'form-control'}
         self.fields['facebook'].widget.attrs = {'placeholder': 'facebook', 'class': 'form-control'}
-        #self.fields['foto'].widget.attrs = {'placeholder': 'foto', 'class': 'form-control'}
+        self.fields['foto'].widget.attrs = {'placeholder': 'foto', 'class': 'form-control'}
         self.fields['correo'].widget.attrs = {'placeholder': 'correo', 'class': 'form-control'}
         
     def clean_nacimiento(self):
@@ -155,7 +157,6 @@ class RegistroAmigo(forms.Form):
         
     def procesar_notificacion(self, usuario):      	
         id_amigo = self.cleaned_data['amigos']
-        #import pdb; pdb.set_trace()   
         print self.cleaned_data['amigos']    
         l = User.objects.get(username=id_amigo)
         k = User.objects.get(id=usuario.id)
@@ -166,13 +167,7 @@ class RegistroAmigo(forms.Form):
         #llenar notificacion
         c = Notificacion(usuario=l, historia=b, descripcion ='Amistad')
         c.save()
-       
 
-#ACOMODANDO
-    def procesar_amigo(self, usuario):        
-        k = User.objects.get(id=usuario.id)
-        id_amigo = self.cleaned_data['amigos']                   
-        l = User.objects.get(username=id_amigo)
         
        
 
@@ -225,68 +220,4 @@ class BuscarHashtag(forms.Form):
        
    def procesar_album(self,usuario):
        hashtag = self.cleaned_data['hashtag']
-
-
-
-#agregarfotos
-class RegistroFoto(forms.Form):
-    foto0 = forms.CharField(max_length=200, label='Fotos0',required=False)    
-    foto1 = forms.CharField(max_length=200, label='Fotos1',required=False)    
-    foto2 = forms.CharField(max_length=200, label='Fotos2',required=False)    
-    foto3 = forms.CharField(max_length=200, label='Fotos3',required=False)    
-    foto4 = forms.CharField(max_length=200, label='Fotos4',required=False)    
-    foto5 = forms.CharField(max_length=200, label='Fotos5',required=False)    
-    foto6 = forms.CharField(max_length=200, label='Fotos6',required=False)    
-    foto7 = forms.CharField(max_length=200, label='Fotos7',required=False)    
-    foto8 = forms.CharField(max_length=200, label='Fotos8',required=False)    
-    foto9 = forms.CharField(max_length=200, label='Fotos9',required=False)    
-                                              
-                  
-    def __init__(self,*args, **kwargs):	
-        super(RegistroFoto, self).__init__(*args, **kwargs)
-        self.fields['foto0'].widget.attrs = {'placeholder': 'foto0', 'class': 'form-control'}
-        self.fields['foto1'].widget.attrs = {'placeholder': 'foto1', 'class': 'form-control'}
-        self.fields['foto2'].widget.attrs = {'placeholder': 'foto2', 'class': 'form-control'}
-        self.fields['foto3'].widget.attrs = {'placeholder': 'foto3', 'class': 'form-control'}
-        self.fields['foto4'].widget.attrs = {'placeholder': 'foto4', 'class': 'form-control'}
-        self.fields['foto5'].widget.attrs = {'placeholder': 'foto5', 'class': 'form-control'}
-        self.fields['foto6'].widget.attrs = {'placeholder': 'foto6', 'class': 'form-control'}
-        self.fields['foto7'].widget.attrs = {'placeholder': 'foto7', 'class': 'form-control'}
-        self.fields['foto8'].widget.attrs = {'placeholder': 'foto8', 'class': 'form-control'}
-        self.fields['foto9'].widget.attrs = {'placeholder': 'foto9', 'class': 'form-control'}#,'style':'visibility:hidden'}
-        
-
-    def procesar_foto(self, usuario, album):      	
-        foto0 = self.cleaned_data['foto0']
-        foto1 = self.cleaned_data['foto1']
-        foto2 = self.cleaned_data['foto2']
-        foto3 = self.cleaned_data['foto3']
-        foto4 = self.cleaned_data['foto4']
-        foto5 = self.cleaned_data['foto5']
-        foto6 = self.cleaned_data['foto6']
-        foto7 = self.cleaned_data['foto7']
-        foto8 = self.cleaned_data['foto8']
-        foto9 = self.cleaned_data['foto9']
-        
-        contenido0 = Contenido(fkalbum= album, descripcion= foto0)
-        contenido0.save()
-        contenido1 = Contenido(fkalbum= album, descripcion= foto1)
-        contenido1.save()
-        contenido2 = Contenido(fkalbum= album, descripcion= foto2)
-        contenido2.save()
-        contenido3 = Contenido(fkalbum= album, descripcion= foto3)
-        contenido3.save() 
-        contenido4 = Contenido(fkalbum= album, descripcion= foto4)
-        contenido4.save()
-        contenido5 = Contenido(fkalbum= album, descripcion= foto5)
-        contenido5.save()
-        contenido6 = Contenido(fkalbum= album, descripcion= foto6)
-        contenido6.save()
-        contenido7 = Contenido(fkalbum= album, descripcion= foto7)
-        contenido7.save()
-        contenido8 = Contenido(fkalbum= album, descripcion= foto8)
-        contenido8.save()
-        contenido9 = Contenido(fkalbum= album, descripcion= foto9)
-        contenido9.save()
-        
 

@@ -49,8 +49,7 @@ urlpatterns = patterns('',
     url(r'^buscarHashtag/(?P<id_album>\d+)/$', 'polls.views.buscarHashtag',name ='buscarHashtag'),
     url(r'^guardarFoto/(?P<id_album>\d+)/$', 'polls.views.guardarFoto',name ='guardarFoto'),
     
-    url(r'', include('social_auth.urls')),    
-    url(r'^prueba/(?P<id_album>\d+)/$', 'polls.views.prueba', name='prueba'),    
+    url(r'', include('social_auth.urls')),        
 )
 urlpatterns += patterns('',
     url(r'^media/(?P<path>.*)$', 'django.views.static.serve', {'document_root': settings.MEDIA_ROOT}),

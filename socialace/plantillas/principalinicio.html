@@ -17,7 +17,7 @@
 					{% if aux.id = campo.usuario.id  %} 
 						<div class="post">								
 							<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ aux.last_name }} {{ aux.first_name }}</h3></a>
-							<img src="{{STATIC_URL}}{{ aux.usuarioperfil.foto }}" alt="{{aux.usuarioperfil.foto}}" with="55" height="55" /> Tiene un nuevo: {{campo.accion}}<hr>
+							<img src="{{STATIC_URL}}{{ aux.usuarioperfil.foto }}" alt="{{aux.usuarioperfil.foto}}" width="55" height="55" /> Tiene un nuevo: {{campo.accion}}<hr>
 							<!-- NUEVO ALBUM-->								
 							{% if campo.accion = 'Nuevo album' %}
 								<div class="thumb-shadow">
@@ -42,7 +42,7 @@
 											{% if aux.status %}										
 												<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</a></h3>
 												<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " width="55" height="55" /> Ahora es amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	
-												<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" withd="60" height="60"/>												
+												<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" width="60" height="60"/>												
 												<!-- shadow  Amistad-->
 												<div class="thumb-shadow">  		
 													<!-- ENDS post-thumb -->

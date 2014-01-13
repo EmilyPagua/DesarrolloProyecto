@@ -1,0 +1,26 @@
+from polls.models import UsuarioPerfil
+from django.contrib.auth.models import User
+import factory
+
+
+class Usuario(factory.Factory):
+
+    username = "Mimia"
+    name = "Mimia"
+    lastname = "Lo"
+    fechaNac = "02/01/1991"
+    email = "mimiaLo@gmail.com"
+    
+class Perfil(factory.Factory):
+
+    direccion = "Caracas"
+    facebook = "Mimia Lo"
+    privacidad = "True"
+    foto = "imagenusuario/daney_4.jpg"
+    
+class RegistroUsuario(factory.Factory, factory.Factory):
+
+    direccion = "Caracas"
+    facebook = "Mimia Lo"
+    privacidad = "True"
+    foto = "imagenusuario/daney_4.jpg"    
