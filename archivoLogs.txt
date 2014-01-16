@@ -42,3 +42,919 @@ notificaciones_aprobadas -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUEST
 principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
 ver_albumes -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
 ver_MiPerfil -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, VER DATOS BASICOS, DE ALBUMES Y DE AMISTAD
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRA UN ALBUM: Playa, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:emilyfpg NAME:Emily LASTNAME:Pagua,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Playa
+eliminarContenido -- Elimando el contenido
+eliminarContenido --  USER:emilyfpg NAME:Emily LASTNAME:Pagua,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Playa
+eliminarContenido -- Elimando el contenido
+ver_amigos -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE ELIMINARA A UNO DE SUS AMIGOS
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRA UN ALBUM: Playa, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRA UN ALBUM: Playa, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/75915158
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/45100300
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/J-Wa5WaZNbA?autoplay=2&modestbranding=1
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/MLjXdzLLojs?autoplay=2&modestbranding=1
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:john NAME:  LASTNAME: .
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+ver_MiPerfil -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, VER DATOS BASICOS, DE ALBUMES Y DE AMISTAD
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+modificar_usuario -- USER: daneyaga NAME:Daney LASTNAME:Guarenas, SE ESTAN ENVIANDO LOS DATOS DEL USUARIO PARA SER
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+modificar_usuario -- USER: daneyaga NAME:Daney LASTNAME:Guarenas, SE ESTAN ENVIANDO LOS DATOS DEL USUARIO PARA SER
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+modificar_usuario -- USER: daneyaga NAME:Daney LASTNAME:Guarenas, SE ESTAN ENVIANDO LOS DATOS DEL USUARIO PARA SER
+registro_usuario --  SE ESTA INGRESANDO LOS DATOS DEL USUARIO EN SISTEMA
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+modificar_usuario -- USER: daneyaga NAME:Daney LASTNAME:Guarenas, SE ESTAN ENVIANDO LOS DATOS DEL USUARIO PARA SER
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+modificar_usuario -- USER: daneyaga NAME:Daney LASTNAME:Guarenas, SE ESTAN ENVIANDO LOS DATOS DEL USUARIO PARA SER
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/508cYNezF9U?autoplay=2&modestbranding=1
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/a7333da47f2f11e39abd12c1b09be448_6.jpg
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/24725380
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:daneyaga NAME:Daney LASTNAME:Guarenas,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Mana
+eliminarContenido -- Elimando el contenido
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://distilleryimage7.s3.amazonaws.com/5b7082a47f3011e3a52b12ea8db8b0b3_6.jpg
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/24725380
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/508cYNezF9U?autoplay=2&modestbranding=1
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:daneyaga NAME:Daney LASTNAME:Guarenas,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Mana
+eliminarContenido -- Elimando el contenido
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE ELIMINARA A UNO DE SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+registro_album -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE ELIMINARA A UNO DE SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE ELIMINARA A UNO DE SUS AMIGOS
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE ELIMINARA A UNO DE SUS AMIGOS
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/508cYNezF9U?autoplay=2&modestbranding=1
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://distilleryimage7.s3.amazonaws.com/392a7d367f3411e3a9ac12f7f9059057_6.jpg
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/24725380
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:daneyaga NAME:Daney LASTNAME:Guarenas,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Mana
+eliminarContenido -- Elimando el contenido
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+modificar_usuario -- USER: daneyaga NAME:Daney LASTNAME:Guarenas, SE ESTAN ENVIANDO LOS DATOS DEL USUARIO PARA SER
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+registro_usuario --  SE ESTA INGRESANDO LOS DATOS DEL USUARIO EN SISTEMA
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://distilleryimage2.s3.amazonaws.com/7504bbe47fea11e3877f12bffcd6e56e_6.jpg
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://distilleryimage2.s3.amazonaws.com/7504bbe47fea11e3877f12bffcd6e56e_6.jpg
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://www.youtube.com/embed/0yvSkYpVZ_I?autoplay=2&modestbranding=1
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://www.youtube.com/embed/0yvSkYpVZ_I?autoplay=2&modestbranding=1
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://distilleryimage2.s3.amazonaws.com/7504bbe47fea11e3877f12bffcd6e56e_6.jpg
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://www.youtube.com/embed/0yvSkYpVZ_I?autoplay=2&modestbranding=1
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://www.youtube.com/embed/0yvSkYpVZ_I?autoplay=2&modestbranding=1
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://distilleryimage3.s3.amazonaws.com/30fc0c587feb11e388c60e939af87ceb_6.jpg
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://www.youtube.com/embed/0yvSkYpVZ_I?autoplay=2&modestbranding=1
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://distilleryimage3.s3.amazonaws.com/710b295a7feb11e3969a0ebd25b736fb_6.jpg
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+agregarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:emilyfpg NAME: Emily LASTNAME: Pagua OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+principal_inicio -- USER:john NAME:  LASTNAME: .
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+agregarFoto -- USER:john NAME:  LASTNAME: 
+agregarFoto -- USER:john NAME:  LASTNAME: 
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRA UN ALBUM: Playa, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO: 
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO: 
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+principal_inicio -- USER:john NAME:  LASTNAME: .
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_albumes -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:emilyfpg NAME: Emily LASTNAME: Pagua.
+ver_notificacion -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_albumes -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:emilyfpg NAME:Emily LASTNAME:Pagua, SE MUESTRA UN ALBUM: Playa, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, MOSTRANDO PERLFIL DE LOS AMIGOS
+detalle_album2 --  USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRA EL ALBUM DE OTRO USUARIO QUE NO ESTE LOGUEADO EN EL SISTEMA
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+replicarComentario -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua GUARDANDO LA PREPLICA DEL COMENTARIO:  
+EscribirReplicaComentario -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua REPLICO EL COMENTARIO: DEL ALBUM: Playa
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+registro_usuario --  SE ESTA INGRESANDO LOS DATOS DEL USUARIO EN SISTEMA
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://distilleryimage9.s3.amazonaws.com/6078e552815111e380730e108e67a249_6.jpg
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/24725380
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/508cYNezF9U?autoplay=2&modestbranding=1
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:daneyaga NAME:Daney LASTNAME:Guarenas,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Mana
+eliminarContenido -- Elimando el contenido
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/508cYNezF9U?autoplay=2&modestbranding=1
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/3d385c70815211e38cfc0a8ad096ebe0_6.jpg
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/24725380
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:daneyaga NAME:Daney LASTNAME:Guarenas,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Mana
+eliminarContenido -- Elimando el contenido
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_usuario --  SE ESTA INGRESANDO LOS DATOS DEL USUARIO EN SISTEMA
+registro_usuario --  SE ESTA INGRESANDO LOS DATOS DEL USUARIO EN SISTEMA
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE ELIMINARA A UNO DE SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+notificaciones_aceptadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, NOTIFICACIONES QUE USUARIO A ACEPTADO
+notificaciones_aceptadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, NOTIFICACIONES QUE USUARIO A ACEPTADO
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+borrarAmigo -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE ELIMINARA A UNO DE SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_amigos -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VERAN TODO SUS AMIGOS
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+ver_usuario -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE VEN LOS USUARIOS QUE FUERON OBTENIDOS EN EL BUSCADOR DE AMIGOS
+principal_inicio -- USER:fabiolypg NAME: Fabioly LASTNAME: Pagua.
+ver_notificacion -- USER:fabiolypg NAME:Fabioly LASTNAME:Pagua, SE MUESTRAN TODAS SUS NOTIFICACIONES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_notificacion -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN TODAS SUS NOTIFICACIONES
+notificaciones_aprobadas -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRAN LAS NOTIFICACIONES HAN SIDO APROBADAS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+registro_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas YA SE REGISTRO NUEVO ALBUM
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://www.youtube.com/embed/508cYNezF9U?autoplay=2&modestbranding=1
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://distilleryimage1.s3.amazonaws.com/240f4ce6815611e3b92312c1a4c98edd_6.jpg
+guardarFoto -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/24725380
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+eliminarContenido --  USER:daneyaga NAME:Daney LASTNAME:Guarenas,  SE ELIMINARA EL CONTENDO  DEL ALBUM: Mana
+eliminarContenido -- Elimando el contenido
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Mana, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+detalle_album2 --  USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA EL ALBUM DE OTRO USUARIO QUE NO ESTE LOGUEADO EN EL SISTEMA
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+replicarComentario -- USER:daneyaga NAME: Daney LASTNAME: Guarenas GUARDANDO LA PREPLICA DEL COMENTARIO:  
+EscribirReplicaComentario -- USER:daneyaga NAME: Daney LASTNAME: Guarenas REPLICO EL COMENTARIO: DEL ALBUM: Playa
+borrarComentario - USER:daneyaga NAME: Daney LASTNAME: Guarenas BORRANDO COMENTARIO: Yo tambien quiero comentar tu album Emily Pagua DEL ALBUM: Playa
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_albumes -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE OBSERVAN TODOS SUS ALBUMES
+Detalle_album -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA UN ALBUM: Playita, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+detalle_album2 --  USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA EL ALBUM DE OTRO USUARIO QUE NO ESTE LOGUEADO EN EL SISTEMA
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+detalle_album2 --  USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA EL ALBUM DE OTRO USUARIO QUE NO ESTE LOGUEADO EN EL SISTEMA
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+ver_amigos -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE VERAN TODO SUS AMIGOS
+ver_PerfilAmigo -- USER:daneyaga NAME:Daney LASTNAME:Guarenas, MOSTRANDO PERLFIL DE LOS AMIGOS
+detalle_album2 --  USER:daneyaga NAME:Daney LASTNAME:Guarenas, SE MUESTRA EL ALBUM DE OTRO USUARIO QUE NO ESTE LOGUEADO EN EL SISTEMA
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+LikeComentario - USER:daneyaga NAME: Daney LASTNAME: Guarenas NO LE GUSTA EL COMENTARIO: Todos hemos ido a esta playa tan hermosa, gracias por todo, se les quiere ALBUM: Playa
+principal_inicio -- USER:daneyaga NAME: Daney LASTNAME: Guarenas.
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+principal_inicio -- USER:john NAME:  LASTNAME: .
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+principal_inicio -- USER:john NAME:  LASTNAME: .
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+principal_inicio -- USER:john NAME:  LASTNAME: .
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://api.soundcloud1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+principal_inicio -- USER:john NAME:  LASTNAME: .
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_8.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://api.soundcloud1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+EscribirReplicaComentario -- USER:john NAME:  LASTNAME:  REPLICO EL COMENTARIO: DEL ALBUM: Albumsito lindo 1
+Detalle_album -- USER:john NAME: LASTNAME:, SE MUESTRA UN ALBUM: Albumsito lindo 1, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+agregarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE
+agregarFoto -- USER:john NAME:  LASTNAME: 
+borrarAmigo -- USER:john NAME: LASTNAME:, SE ELIMINARA A UNO DE SUS AMIGOS
+Detalle_album -- USER:john NAME: LASTNAME:, SE MUESTRA UN ALBUM: Albumsito lindo 1, JUNTO CON SUS COMENTARIOS, LIKE, Y REPLICAS DE COMENTARIOS
+EscribirReplicaComentario -- USER:john NAME:  LASTNAME:  REPLICO EL COMENTARIO: DEL ALBUM: Albumsito lindo 1
+guardarFoto -- USER:john NAME:  LASTNAME:  OBTENIENDO LOS ARREGLOS DEL CONTENIDO
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://api.soundcloud.com/tracks/87318020
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1
+guardarFoto -- USER:john NAME:  LASTNAME:  GUARDANDO CONTENIDOhttp://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2
+LikeComentario - USER:john NAME:  LASTNAME:  NO LE GUSTA EL COMENTARIO: Album prueba 1 ALBUM: Albumsito lindo 1
+principal_inicio -- USER:john NAME:  LASTNAME: .
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+registro_amigo -- USER:john NAME: LASTNAME:, SE AGREGARA UN AMIGO NUEVO
+replicarComentario -- USER:john NAME:  LASTNAME:  GUARDANDO LA PREPLICA DEL COMENTARIO:  
+comentario_Mio -- USER:john NAME:  LASTNAME: , SE MOSTRARAN SUS COMENTARIOS
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+ver_notificacion -- USER:john NAME: LASTNAME:, SE MUESTRAN TODAS SUS NOTIFICACIONES
+LikeComentario - ENVIANDO POR CONTEXTO AL: USUARIO, ALBUMES, CONTENIDO, COMENTARIO, FOMULARIO Y LIKE

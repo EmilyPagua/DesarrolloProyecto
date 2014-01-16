@@ -131,18 +131,190 @@ class VerMisComentarios(TestCase):
         response = self.client.get(reverse('comentar'))
         self.assertEqual(response.status_code, 200)
         
+        
+#7VIEWS --------------Principal Inicio (principal_inicio)
+class PaginaPrincipal(TestCase):
 
-#7VIEWS --------------Guardar Contenido (guardarFoto)
-class AgregarContenido(TestCase):
     def setUp(self): 
         self.client = Client()   
-        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
-        self.album = Fac_Album(fkusuario = self.usuario)
-        self.imagenes = {'http://distilleryimage5.s3.amazonaws.com/aed48bf45ec211e38bd512a12d5e0079_6.jpg', 
-                       'http://distilleryimage7.s3.amazonaws.com/ba60d4bc5ebf11e38ec60ed5b89ef40f_6.jpg',}
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
    	       	    
-    def test_GuardarContenido(self):                
+    def test_VerMisComentarios(self):                
         self.client.login(username=self.usuario.username, password='johnpassword')
-        response = self.client.get(reverse('guardarFoto', self.album))
-        self.assertEqual(response.status_code, 200)        
+        response = self.client.get(reverse('principalInicio'))
+        self.assertEqual(response.status_code, 200)
         
+   
+#8VIEWS --------------Guardar Contenido (guardarFoto)----------------------
+class GuardarContenido(TestCase):    
+    def setUp(self): 
+        
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)        
+        self.request = {
+                      'imagenes[]': ['http://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_6.jpg',
+                                     'http://distilleryimage0.s3.amazonaws.com/10f276ee7fec11e3ad560e19b48852cc_7.jpg', 
+                                     'http://api.soundcloud.com/tracks/87318020'],
+                       'videos[]':  ['http://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=1', 
+                                     'http://www.youtube.com/embed/X-77txuiVXs?autoplay=2&modestbranding=2']}        
+           
+    def test_GuardarfotoPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('guardarFoto',kwargs={'id_album': self.album.id}),self.request)
+        self.assertEqual(response.status_code, 200) 
+   
+    def test_GuardarfotoGet(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.get(reverse('guardarFoto',kwargs={'id_album': self.album.id}),self.request)
+        self.assertEqual(response.status_code, 404)          	    
+ 
+ 
+ #9VIEWS --------------Guardar Contenido (agregarFoto)----------------------
+class AgregarContenido(TestCase):    
+    def setUp(self): 
+        
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)                      
+        self.request = { 'hashtag': 'Playa'}   
+           
+    def test_AgregarContenidoPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('agregarFoto',kwargs={'id_album': self.album.id}),self.request)
+        self.assertEqual(response.status_code, 200) 
+   
+   
+    def test_AgregarContenidoGet(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.get(reverse('agregarFoto',kwargs={'id_album': self.album.id}),self.request)
+        self.assertEqual(response.status_code, 200)   
+               	    
+ 
+ #10VIEWS --------------Guardar ReplicaComentario (replicarComentario)----------------------
+class ReplicaComentario(TestCase):    
+    def setUp(self): 
+        
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)   
+        self.usuarioComentador = User.objects.create_user('ana', 'ana@thebeatles.com', 'anapassword')                
+        self.comentario = Fac_Comentario(fkalbum = self.album, userComentador = self.usuarioComentador )                        
+           
+    def test_ReplicaComentarioPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('replicarComentario',kwargs={'id_comentario': self.comentario.id}))
+        self.assertEqual(response.status_code, 200) 
+   
+  
+ #11VIEWS --------------VerNorificaciones (ver_notificacion)----------------------
+class VerNorificaciones(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')                           
+           
+    def test_VerNorificacionesPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('verNotificacion'))
+        self.assertEqual(response.status_code, 200) 
+
+    def test_VerNorificacionesGet(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.get(reverse('verNotificacion'))
+        self.assertEqual(response.status_code, 200)
+
+
+#12VIEWS --------------RegistroAmistad (registro_amigo)----------------------
+class RegistroAmistad(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')                           
+        self.usuarioperfil = Fac_UsuarioPerfil(fkusuario = self.usuario)                
+           
+    def test_RegistroAmistadPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('registroAmigo'))
+        self.assertEqual(response.status_code, 200) 
+
+    def test_VerNorificacionesGet(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('registroAmigo'))
+        self.assertEqual(response.status_code, 200)
+        
+
+#13VIEWS --------------BorrarAmigo (borrarAmigo)----------------------
+class BorrarAmigo(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')                           
+        self.usuarioperfil = Fac_UsuarioPerfil(fkusuario = self.usuario)                
+        self.amigo = User.objects.create_user('ana', 'lennon@thebeatles.com', 'anapassword')                           
+        self.amigoperfil = Fac_UsuarioPerfil2(fkusuario = self.amigo )                
+           
+    def test_BorrarAmigoGet(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.get(reverse('borrarAmigo',kwargs={'id_amigo': self.amigo.id}))
+        self.assertEqual(response.status_code, 200) 
+  
+  
+
+#14VIEWS --------------Nolike (Nolike)----------------------
+class Nolike(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)   
+        self.usuarioComentador = User.objects.create_user('ana', 'ana@thebeatles.com', 'anapassword')                
+        self.comentario = Fac_Comentario(fkalbum = self.album, userComentador = self.usuarioComentador )                        
+        
+           
+    def test_NolikePost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('Nolike',kwargs={'id_comentario': self.comentario.id}))
+        self.assertEqual(response.status_code, 200) 
+
+#15VIEWS --------------likeComentario (likeComentario)----------------------
+class like(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)   
+        self.usuarioComentador = User.objects.create_user('ana', 'ana@thebeatles.com', 'anapassword')                
+        self.comentario = Fac_Comentario(fkalbum = self.album, userComentador = self.usuarioComentador )                        
+        
+           
+    def test_NolikePost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('likeComentario',kwargs={'id_comentario': self.comentario.id}))
+        self.assertEqual(response.status_code, 200) 
+
+detalle_album
+#16VIEWS --------------EscribirReplicaComentario (EscribirReplicaComentario)----------------------
+class EscribirReplicaComentario(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)   
+        self.usuarioComentador = User.objects.create_user('ana', 'ana@thebeatles.com', 'anapassword')                
+        self.comentario = Fac_Comentario(fkalbum = self.album, userComentador = self.usuarioComentador )                        
+        
+           
+    def test_EscribirReplicaComentarioPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('EscribirReplicaComentario',kwargs={'id_comentario': self.comentario.id}))
+        self.assertEqual(response.status_code, 200) 
+
+
+#17VIEWS --------------DetalleAlbum (DetalleAlbum)----------------------
+class DetalleAlbum(TestCase):    
+    def setUp(self):         
+        self.client = Client()   
+        self.usuario = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')        
+        self.album = Fac_Album(fkusuario = self.usuario)   
+        
+           
+    def test_EscribirReplicaComentarioPost(self):                
+        self.client.login(username=self.usuario.username, password='johnpassword')
+        response = self.client.post(reverse('detalleAlbum',kwargs={'id_album': self.album.id}))
+        self.assertEqual(response.status_code, 200) 
+                

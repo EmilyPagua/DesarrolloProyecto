@@ -25,66 +25,54 @@ def agregarFoto(request,id_album):
         p = request.POST['hashtag']
         contexto = {'usuario': usuario,'p':p,'albumes':albumes}
         outfile.write('agregarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name + '\n')    
-        outfile.close()
+        outfile.close()        
         return render_to_response('buscarHashtag.html',context_instance=RequestContext(request, contexto))
 
     contexto = {'usuario': usuario, 'formulario': BuscarHashtag(),'albumes':albumes}  
     outfile.write('agregarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' OBTENIENDO LAS FOTOS QUE SON CAPTURADAS DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE\n')
-    outfile.close()
+    outfile.close()    
     return render_to_response('agregarFotos.html',context_instance=RequestContext(request, contexto))
-
-
-#paso de hashtag 
-@login_required
-def buscarHashtag(request):
-    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.    
-    usuario = request.user
-    contexto = {'usuario': usuario, 'formulario': BuscarHashtag()}
-    outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
-    outfile.write('buscarHashtag --USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' OBTENIENDO IMAGENES DEL INSTAGRAM, SOUNDCLOUD, YOUTUBE\n')
-    outfile.close()        
-    return render_to_response('buscarHashtag.html',context_instance=RequestContext(request, contexto))
 
 
 #Guardando Imagenes
 @login_required
 def guardarFoto(request,id_album):
     outfile = open('archivoLogs.txt', 'a')     
+    
     usuario = request.user
-    albu = get_object_or_404(Album, id=id_album)
+    albu = get_object_or_404(Album, id=id_album)        
     if request.method == 'POST':
         outfile.write('guardarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' OBTENIENDO LOS ARREGLOS DEL CONTENIDO\n')
         imagenes = request.POST.getlist('imagenes[]')
      	videos = request.POST.getlist('videos[]')
-
-    for imagen in imagenes: 
-      
-        if re.match("http://api.soundcloud", imagen):
-   	        print "audio----"
-   	        contenido= Contenido(urlaudio=imagen,fkalbum=albu)       
-
-        if re.match("http://distilleryimage", imagen):
-   	        print "imagen"
-   	        contenido= Contenido(urlfoto=imagen,fkalbum=albu)       
-   	        
-        outfile.write('guardarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' GUARDANDO CONTENIDO'+ imagen +'\n')
-        contenido.save()     
-        
-    for video in videos: 
-        print "video"
-        contenido2= Contenido(urlvideo=video,fkalbum=albu)         
-        outfile.write('guardarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' GUARDANDO CONTENIDO'+ video +'\n')
-        contenido2.save() 
     
-    outfile.close()
-    return HttpResponse(status=200) 
-    
+        for imagen in imagenes: 
+		  
+            if re.match("http://api.soundcloud", imagen):
+	   	        print "audio"
+	   	        contenido= Contenido(urlaudio=imagen,fkalbum=albu)       
+       	    if re.match("http://distilleryimage", imagen):
+	   	        print "imagen"
+	   	        contenido= Contenido(urlfoto=imagen,fkalbum=albu)       
+	   	        
+            outfile.write('guardarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' GUARDANDO CONTENIDO'+ imagen +'\n')
+            contenido.save()     
+		    
+        for video in videos: 
+            print "video"
+            contenido2= Contenido(urlvideo=video,fkalbum=albu)         
+            outfile.write('guardarFoto -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' GUARDANDO CONTENIDO'+ video +'\n')
+            contenido2.save()     
+        outfile.close()
+        return HttpResponse(status=200) 
+    return HttpResponse(status=404) 
+       
        
 #---------------- C O M E N T A R I O S-----------------
 
 #Enviar like comentario
 @login_required
-def Nolike(request,id_comentario):    
+def Nolike(request,id_comentario):        
     usuario = request.user
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     comentario = get_object_or_404(Comentario, id=id_comentario)
@@ -94,8 +82,8 @@ def Nolike(request,id_comentario):
     contenido = Contenido.objects.filter(fkalbum=comentario.fkalbum.id)
     comentarioAlbum = Comentario.objects.filter(fkalbum=comentario.fkalbum.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=comentario.fkalbum.id).count()          
-    cantidadLike = Like.objects.all() 
-    contenidofoto = Contenido.objects.filter(urlfoto__stloartswith="http://distilleryimage", fkalbum=album.id)    
+    cantidadLike = Like.objects.all()
+    contenidofoto  = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)    
     contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud" , fkalbum=album.id) 
     contenidovideo = Contenido.objects.filter(urlvideo__startswith="http://www.youtube.com", fkalbum=album.id)     
     count = Like.objects.filter(fkcomentario = comentario, userLike=usuario)
@@ -124,7 +112,7 @@ def borrarComentario(request,id_comentario):
     comentarioAlbum = Comentario.objects.filter(fkalbum=album.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=album.id).count()          
     cantidadLike = Like.objects.all()    
-    contenidofoto = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)
+    contenidofoto  = Contenido.objects.filter(urlfoto__startswith="http://distilleryimage", fkalbum=album.id)
     contenidoaudio = Contenido.objects.filter(urlaudio__startswith="http://api.soundcloud", fkalbum=album.id)
     contenidovideo = Contenido.objects.filter(urlvideo__startswith="http://www.youtube.com", fkalbum=album.id)             
     contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike,'contenidofoto':contenidofoto ,'contenidoaudio':contenidoaudio , 'contenidovideo':contenidovideo }    
@@ -193,7 +181,7 @@ def EscribirReplicaComentario(request,id_comentario):
     comentarioAlbum = Comentario.objects.filter(fkalbum=album.id)      
     cantidadComentario = Comentario.objects.filter(fkalbum=album.id).count()          
     cantidadLike = Like.objects.all() 
-    outfile.write('EscribirReplicaComentario -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' REPLICO EL COMENTARIO: '+ comentario.descripcion +' DEL ALBUM: '+ album.nombre+'\n')   
+    outfile.write('EscribirReplicaComentario -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' REPLICO EL COMENTARIO: DEL ALBUM: '+ album.nombre+'\n')   
     
     contexto = {'usuario' : usuario, 'albumes' : albumes, 'comentarioAlbum' : comentarioAlbum,'formulario': RegistroComentario(), 'cantidadComentario':cantidadComentario ,'cantidadLike':cantidadLike, 'contenidofoto':contenidofoto, 'contenidoaudio':contenidoaudio, 'contenidovideo':contenidovideo }
     outfile.close()
@@ -205,11 +193,13 @@ def EscribirReplicaComentario(request,id_comentario):
 def replicarComentario(request,id_comentario):    
     usuario = request.user
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.    
-    coment = Comentario.objects.filter(id=id_comentario)          
+    coment = Comentario.objects.filter(id=id_comentario)              
     contexto = {'usuario' : usuario, 'formulario': RegistroComentario(),'coment':coment }
-    outfile.write('replicarComentario -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' GUARDANDO LA PREPLICA DEL COMENTARIO: '+ coment.descripcion +' \n')
+    outfile.write('replicarComentario -- USER:'+ usuario.username +' NAME: '+ usuario.first_name + ' LASTNAME: ' + usuario.last_name +' GUARDANDO LA PREPLICA DEL COMENTARIO:  \n')
+
     outfile.close()
     return render_to_response('ReplicarComentario.html',context_instance=RequestContext(request, contexto))
+
 
 #comentarios mios
 @login_required
@@ -522,8 +512,7 @@ def notificaciones_aprobadas(request,id_notificacion,id_amigo):
         contexto = {'usuario' : usuario,'informacion':informacion }
         return render_to_response('verNotificacionesAceptadas.html',context_instance=RequestContext(request, contexto))    
             
-    if 'rechazar' in request.POST:
-        print "Rechazar"
+    if 'rechazar' in request.POST:        
         noti.delete() 
         contexto = {'usuario' : usuario,'informacion':informacion }
        
@@ -557,14 +546,15 @@ def registro_amigo(request):
             formulario.procesar_amigo(usuario)
             return HttpResponseRedirect(reverse('principalInicio'))
     formulario = RegistroAmigo()
-    contexto = {'usuario': usuario, 'perfil': perfil, 'formulario': formulario}
+    contexto = {'usuario': usuario,  'formulario': formulario}
     outfile.write('registro_amigo -- USER:'+ usuario.username +' NAME:'+ usuario.first_name + ' LASTNAME:' + usuario.last_name + ', SE AGREGARA UN AMIGO NUEVO\n')
     outfile.close()
     return render_to_response('verUsuario.html',context_instance=RequestContext(request,contexto))
 
 #Eliminar amigo
 @login_required
-def borrarAmigo(request,id_amigo):       
+def borrarAmigo(request,id_amigo): 
+    
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.    
     usuario = request.user
     usu_amigo = get_object_or_404(User, id=id_amigo)	    
@@ -610,7 +600,6 @@ def ver_usuario(request, nombre):
     if 'enviar' in request.POST:            
         l = User.objects.get(username=nombre)
         k = User.objects.get(id=usuario.id)
-        print l
         #llenar historial
         b = Historial(usuario=k, accion='Amistad')
         b.save()
@@ -653,6 +642,7 @@ def busqueda(request):
     outfile = open('archivoLogs.txt', 'a') # Indicamos el valor 'w'.
     outfile.write('busqueda -- BUSCANDO PEROSNA EN EL BUSCADOR\n')
     outfile.close()
+    #import pdb; pdb.set_trace()      
     
     if request.method=='GET' or not request.POST.__contains__('start'):
         return HttpResponseForbidden()

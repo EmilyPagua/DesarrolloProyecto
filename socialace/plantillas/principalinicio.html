@@ -40,8 +40,7 @@
 									{% if campo.id = aux.historia.id %}	
 										{% if aux.descripcion = 'Amistad' %} 
 											{% if aux.status %}										
-												<h3><a href="{% url 'perfilAmigo' campo.usuario.id %}">{{ campo.usuario.last_name }} {{ campo.usuario.first_name }}</a></h3>
-												<img src="{{STATIC_URL}}{{ campo.usuario.usuarioperfil.foto }}" alt="{{campo.usuario.usuarioperfil.foto}} " width="55" height="55" /> Ahora es amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	
+												Ahora es amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	
 												<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" width="60" height="60"/>												
 												<!-- shadow  Amistad-->
 												<div class="thumb-shadow">  		
@@ -126,8 +125,8 @@
 										<!-- shadow  Amistad-->
 										<div class="thumb-shadow">  													
 											<div class="the-excerpt">
-											<h4> Con: {{ aux.usuario.last_name }} {{ aux.usuario.first_name }}</h4>
-											<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}" alt="Feature image" width="60" height="60"/>	
+											<h4> Ahora es amigo de:{{ aux.usuario.last_name }}{{ aux.usuario.first_name }}	</h4>
+											<img src="{{STATIC_URL}}{{ aux.usuario.usuarioperfil.foto }}"  alt="Feature image" width="60" height="60"/>						
 											</div>	
 										</div>
 									{% endif %}

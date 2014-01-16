@@ -33,11 +33,26 @@ class Fac_UsuarioPerfil(factory.Factory):
         if create:
             p.save()
         return p   
- 
+
+#Perfil Usuario
+class Fac_UsuarioPerfil2(factory.Factory):
+    FACTORY_FOR = UsuarioPerfil
+    fechanacimiento	= '1991-02-01'
+    direccion = 'Caracas'
+    facebook = 'PruebaCaracas'
+    privacidad = False
+    
+    @classmethod
+    def _prepare(cls, create, **kwargs):
+        p=super(cls,Fac_UsuarioPerfil)._prepare(create, **kwargs)
+        if create:
+            p.save()
+        return p 
 #Album
 class Fac_Album(factory.Factory):
     FACTORY_FOR = Album
-    nombre = 'Album 1'
+    
+    nombre = 'Albumsito lindo 1'
     descripcion = 'Album prueba 1'
     privacidad = False 
     
@@ -48,15 +63,32 @@ class Fac_Album(factory.Factory):
             p.save()
         return p   
 
-#Album
+#Comentario
 class Fac_Comentario(factory.Factory):
-    FACTORY_FOR = Comentario      
-    descripcion = 'Nuevo comentario'
-    fkalbum =  Fac_Album ( fkusuario = Fac_Usuario() )
+    FACTORY_FOR = Comentario
+    
+    descripcion = 'Album prueba 1'
     
     @classmethod
     def _prepare(cls, create, **kwargs):
-        p=super(cls,Fac_Album)._prepare(create, **kwargs)
+        p=super(cls,Fac_Comentario)._prepare(create, **kwargs)
         if create:
             p.save()
-        return p   
+        return p  
+
+#Contenido
+class Fac_Contenido(factory.Factory):
+    FACTORY_FOR = Contenido
+        
+    urlfoto = "http://distilleryimage1"
+    urlvideo = "http://api.soundcloud1"
+    urlaudio = "http://www.youtube.com1"
+    
+    @classmethod
+    def _prepare(cls, create, **kwargs):
+        p=super(cls,Fac_Contenido)._prepare(create, **kwargs)
+        if create:
+            p.save()
+        return p  
+
+

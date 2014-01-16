@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head profile="http://selenium-ide.openqa.org/profiles/test-case">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="selenium.base" href="http://localhost:8000/" />
+<title>GestionAlbum</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">GestionAlbum</td></tr>
+</thead><tbody>
+<tr>
+	<td>open</td>
+	<td>/principalInicio/</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=HOME</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=CREAR</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_nombre</td>
+	<td>Mana</td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_descripcion</td>
+	<td>mama de vida y de mi corazon</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=id_privacidad</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_foto</td>
+	<td>/home/mily/Imágenes/l montana.jpg</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//button[@type='submit'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>css=img.alignleft</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_hashtag</td>
+	<td>mama</td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>//button[@value='']</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=1</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@id='1'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>xpath=(//input[@name='selectedVideos[]'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>chooseCancelOnNextConfirmation</td>
+	<td></td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>css=button.upload</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertConfirmation</td>
+	<td>Ya subieron los archivos, desea seguir subiendo archivos?</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=ver</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_descripcion</td>
+	<td>este es mi nuevo album creado</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=submit</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Su comentario sera enviado..!</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=ALBUMES</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=modi</td>
+	<td></td>
+</tr>
+<tr>
+	<td>type</td>
+	<td>id=id_descripcion</td>
+	<td>ya no eres mama de vida y de mi corazon</td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>id=id_privacidad</td>
+	<td></td>
+</tr>
+<tr>
+	<td>click</td>
+	<td>name=acep</td>
+	<td></td>
+</tr>
+<tr>
+	<td>assertAlert</td>
+	<td>Su album sera modificado</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=modi</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>xpath=(//img[@alt='cameraplus32.png'])[2]</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=ALBUMES</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=ver</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=ALBUMES</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>name=elimi</td>
+	<td></td>
+</tr>
+<tr>
+	<td>clickAndWait</td>
+	<td>link=HOME</td>
+	<td></td>
+</tr>
+
+</tbody></table>
+</body>
+</html>

@@ -45,8 +45,7 @@ urlpatterns = patterns('',
     url(r'^MisNotificaciones/$', 'polls.views.notificaciones_aceptadas',name ='misNotificaciones'),
     
     url(r'^eliminarContenido/(?P<id_contenido>\d+)/$', 'polls.views.eliminarContenido',name ='eliminarContenido'),
-    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.agregarFoto',name ='agregarFoto'),
-    url(r'^buscarHashtag/(?P<id_album>\d+)/$', 'polls.views.buscarHashtag',name ='buscarHashtag'),
+    url(r'^agregarFoto/(?P<id_album>\d+)/$', 'polls.views.agregarFoto',name ='agregarFoto'),    
     url(r'^guardarFoto/(?P<id_album>\d+)/$', 'polls.views.guardarFoto',name ='guardarFoto'),
     
     url(r'', include('social_auth.urls')),        

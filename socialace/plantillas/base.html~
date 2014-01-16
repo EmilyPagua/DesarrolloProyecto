@@ -82,14 +82,9 @@
 
       
 </head>
-	
-	
 	<body class="">
-	
-	
 		<!-- WRAPPER -->
-		<div id="wrapper">
-		
+		<div id="wrapper">		
 			<!-- HEADER -->
 				<div id="header">
 				<a href="{% url 'principalInicio' %}"><img id="logo" src="{{STATIC_URL}}img/logo.png" alt="Nova" with="120" height="120"/></a>
@@ -97,156 +92,145 @@
 				<div id="social-holder">
 					<ul class="social">
 						<label color="red"><h3>Usuario:{{ usuario.last_name }} {{ usuario.first_name }}</h3></label>					
-						<label><img src=" {{STATIC_URL}}{{usuario.usuarioperfil.foto}}" alt="{{STATIC_URL}}{{usuario.usuarioperfil.foto}}"  with="50" height="70"/> </label>
+						<label><img src="{{STATIC_URL}}{{usuario.usuarioperfil.foto}}" alt="{{STATIC_URL}}{{usuario.usuarioperfil.foto}}"  with="50" height="70"/> </label>
 					</ul>
 				</div>
 				<!-- ENDS Social -->
 				<!-- Navigation -->
 				<ul id="nav" class="sf-menu">
-					<li><a href="{% url 'principalInicio' %}">HOME</a></li>
-					<li><a href="{% url 'verNotificacion' %}">NOTIFICACION</a>
+					<li>
+						<a href="{% url 'principalInicio' %}">HOME</a>
+					</li>
+					<li>
+						<a href="{% url 'verNotificacion' %}">NOTIFICACION
+						</a>
 						<ul>
-							<li><a href="{% url 'misNotificaciones' %}"><span> Aceptadas</span></a></li>
-													
+							<li>
+								<a href="{% url 'misNotificaciones' %}">
+									<span> Aceptadas</span>
+								</a>
+							</li>													
 						</ul>
 					</li>
-					<li><a href="{% url 'verAmigos' %}">AMIGOS</a>
-						
+					<li>
+						<a href="{% url 'verAmigos' %}">AMIGOS</a>						
 					</li>
 					<li><a href="{% url 'verAlbumes' %}">ALBUMES</a>
-						<ul>
-							
-									<li><a href="{% url 'registroAlbum' %}"><span>CREAR</span></a></li>
-									
+						<ul>							
+							<li>
+								<a href="{% url 'registroAlbum' %}">CREAR</a>
+							</li>															
+						</ul>
+					</li>
+					<li>
+						<a href="{% url 'Miperfil' usuario.id %}">PERFIL
+						</a>
+						<ul>							
+							<li>
+								<a href="{% url 'modificarUsuario' usuario.id %}">MODIFICAR</a>
+							</li>
+							<li>
+								<a href="{% url 'comentar' %}">
+									<span>COMENTARIO</span>
+								</a>
 							</li>
 						</ul>
 					</li>
-					<li><a href="{% url 'Miperfil' usuario.id %}">PERFIL</a>
-						<ul>
-							
-							<li><a href="{% url 'modificarUsuario' usuario.id %}"><span>MODIFICAR</span></a></li>
-							<li><a href="{% url 'comentar' %}"><span>COMENTARIO</span></a></li>
-						</ul>
-					</li>
-					<li><a href="{% url 'logout' %}">SALIR</a></li>
-					
+					<li>
+						<a href="{% url 'logout' %}">SALIR
+						</a>
+					</li>					
 				</ul>
-				<!-- Navigation -->	
-				
-				
+				<!-- Navigation -->									
 				<!-- search -->
-				<div class="top-search">
-				
-				<form id="searchform" class="formulariodemo cf" action="" method='POST'>
-                {% csrf_token %}
-  					<input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
-  					<button type="submit" onclick="javascript:buscarUsuario();" name="buscar" >buscar</button>
-  				</form>
-  				
-				
+				<div class="top-search">				
+					<form id="searchform" class="formulariodemo cf" action="" method='POST'>
+					{% csrf_token %}
+						<input type="text" placeholder="buscar personas.. " required name="q" id="busqueda"/>
+						<button type="submit" onclick="javascript:buscarUsuario();" name="buscar" >buscar</button>
+					</form>
 				</div>
-				<!-- ENDS search -->
-				
+				<!-- ENDS search -->				
 				<!-- headline -->
-				<div id="headline">
+				<div id="headline">					
+				</div>
+				<!-- ENDS headline -->				
+				<!-- Slider -->
+				<div id="slider-block">				
+				</div>
+				<!-- ENDS Slider -->				
+			</div>		
+			<!-- ENDS HEADER  	{% block contenido%}{% endblock%}	-->	
+			<!-- MAIN -->
+			<div id="main">		
+				<!-- content -->
+				<div id="content">
+					
+					{% block content%}{% endblock%}	
+					<!-- pagination -->	
+					<div class="clear"></div>
+					
+					<!-- ENDS pagination -->
+
+				</div>
+				<!-- ENDS content -->
+				<script> 
+					function dir(object) {
+						stuff = [];
+						for (s in object) {
+							stuff.push(s);
+						}
+						stuff.sort();
+						return stuff;
+					}			
+					var nombres = []
+					jQuery("#busqueda").autocomplete({source: function(req, add){
+						jQuery.ajax({
+							url: "{% url 'busqueda' %}",
+							async: false,
+							dataType:'json',
+							type:'POST',
+							data: {
+								start: function() { return jQuery("#busqueda").val(); },
+							},
+							success: function(data) {
+								//create array for response objects
+								var suggestions = [];						
+								console.log(dir(data.items));		 
+								//process response
+								jQuery.each(data.items, function(i, val){
+									person = data.items[i].evalJSON();
+									suggestions.push(person.nombre);
+								});		 
+								console.log(suggestions);
+								//pass array to callback
+								add(suggestions);
+							}
+						});
+					}});
+					function buscarUsuario(){
+						var nombre = jQuery("#busqueda").val()
+						var url = "/verUsuario/" + nombre + "/";
+						jQuery("#searchform").attr('action', url);
+						jQuery("#searchform").submit();
+					}    
+				</script>
+			</div>
+			<!-- ENDS MAIN -->		
+			<!-- FOOTER -->
+			<div id="footer">
+				<!-- ENDS footer-cols -->
+				<!-- Bottom -->
+				<div id="bottom">
+					 Proyecto de Desarrollo 2013-2014. 
+					 Emily Pagua - Andreina Palmera 
+					 <div id="to-top" class="poshytip" title="To top"></div>
 					
 				</div>
-				<!-- ENDS headline -->
-				
-				<!-- Slider -->
-			<div id="slider-block">
-				
+				<!-- ENDS Bottom -->
 			</div>
-			<!-- ENDS Slider -->
-			
-				
-			</div>
-		
-			<!-- ENDS HEADER  	{% block contenido%}{% endblock%}	-->
-	
-				<!-- MAIN -->
-			<div id="main">
-		
-			<!-- content -->
-			<div id="content">
-				
-				{% block content%}{% endblock%}	
-				<!-- pagination -->	
-				<div class="clear"></div>
-				
-				<!-- ENDS pagination -->
-
-			</div>
-			<!-- ENDS content -->
-		<script> 
-		function dir(object) {
-    stuff = [];
-    for (s in object) {
-        stuff.push(s);
-    }
-    stuff.sort();
-    return stuff;
-}
-			
-		var nombres = []
-		jQuery("#busqueda").autocomplete({source: function(req, add){
-        jQuery.ajax({
-            url: "{% url 'busqueda' %}",
-            async: false,
-            dataType:'json',
-            type:'POST',
-            data: {
-                start: function() { return jQuery("#busqueda").val(); },
-            },
-            success: function(data) {
-                //create array for response objects
-                var suggestions = [];
-                
-                console.log(dir(data.items));
- 
-                //process response
-                jQuery.each(data.items, function(i, val){
-                    person = data.items[i].evalJSON();
-                    suggestions.push(person.nombre);
-                });
- 
- 				console.log(suggestions);
-                //pass array to callback
-                add(suggestions);
-            }
-            
-            
-        });
-    }});
-    
-    function buscarUsuario(){
-    	var nombre = jQuery("#busqueda").val()
-        var url = "/verUsuario/" + nombre + "/";
-    	jQuery("#searchform").attr('action', url);
-    	jQuery("#searchform").submit();
-    }
-    
-		</script>
-	</div>
-		<!-- ENDS MAIN -->
-		
-		<!-- FOOTER -->
-		<div id="footer">
-			<!-- ENDS footer-cols -->
-			<!-- Bottom -->
-			<div id="bottom">
-				 Proyecto de Desarrollo 2013-2014. 
-				 Emily Pagua - Andreina Palmera 
-				 <div id="to-top" class="poshytip" title="To top"></div>
-				
-			</div>
-			<!-- ENDS Bottom -->
+		<!-- ENDS FOOTER -->	
 		</div>
-		<!-- ENDS FOOTER -->
-	
-	</div>
-	<!-- ENDS WRAPPER -->
-	
-	</body>
-	
+	<!-- ENDS WRAPPER -->	
+	</body>	
 </html>

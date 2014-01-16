@@ -36,7 +36,7 @@ class Album(models.Model):
 
 class Contenido(models.Model):
     fkalbum	= models.ForeignKey(Album)
-    urlfoto = models.CharField(max_length=200,null=True,blank=True)
+    urlfoto  = models.CharField(max_length=200,null=True,blank=True)
     urlvideo = models.CharField(max_length=200,null=True,blank=True)
     urlaudio = models.CharField(max_length=200,null=True,blank=True)
 	
